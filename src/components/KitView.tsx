@@ -156,29 +156,16 @@ export function KitView({ initial, preview }: { initial: Kit; preview?: { elapse
             </div>
           </section>
 
-          <div className="grid grid-cols-1 gap-3.5 sm:grid-cols-2">
-            {/* Social — lilac */}
-            <section className="tile flex flex-col gap-3 bg-lilac p-6 text-lilac-ink">
-              <h2 className="text-xl font-bold text-ink">Pin and carousel</h2>
-              <div className="flex gap-2.5">
-                <div className="h-24 w-16 rounded-[10px] bg-white/90" />
-                <div className="h-16 w-16 rounded-[10px] bg-white/90" />
-                <div className="h-16 w-16 rounded-[10px] bg-white/90" />
-              </div>
-              <div className="text-[13px] leading-snug">{kit.social[0]?.title ? `“${kit.social[0].title}”` : <span className="opacity-70">Writing the pin…</span>}</div>
-            </section>
-
-            {/* Markets — mint */}
-            <section className="tile flex flex-col gap-3 bg-mint p-6 text-mint-ink">
-              <h2 className="text-xl font-bold text-ink">{kit.localizations.length || 4} markets</h2>
-              <div className="flex flex-col gap-1.5 text-sm">
-                {kit.localizations.length ? kit.localizations.map((l) => (
-                  <div key={l.id} className="flex justify-between gap-3"><span>{MARKET[l.market] ?? l.market}</span><span className="font-bold">{fmtMoney(l.price)}</span></div>
-                )) : <Skeleton lines={4} light />}
-              </div>
-              <div className="text-xs">Shipping from your studio included.</div>
-            </section>
-          </div>
+          {/* Markets — mint */}
+          <section className="tile flex flex-col gap-3 bg-mint p-6 text-mint-ink">
+            <h2 className="text-xl font-bold text-ink">{kit.localizations.length || 4} markets</h2>
+            <div className="grid grid-cols-1 gap-x-10 gap-y-1.5 text-sm sm:grid-cols-2">
+              {kit.localizations.length ? kit.localizations.map((l) => (
+                <div key={l.id} className="flex justify-between gap-3"><span>{MARKET[l.market] ?? l.market}</span><span className="font-bold tabular-nums">{fmtMoney(l.price)}</span></div>
+              )) : <Skeleton lines={4} light />}
+            </div>
+            <div className="text-xs">Shipping from your studio included.</div>
+          </section>
         </div>
       </div>
 

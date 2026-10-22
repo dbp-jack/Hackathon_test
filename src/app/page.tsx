@@ -1,4 +1,5 @@
 import { Dropzone } from "@/components/Dropzone";
+import { OutputExample } from "@/components/OutputExample";
 import { OUTPUTS, PLANS } from "@/lib/types";
 import { MESSAGES, fmt, type OutputKey } from "@/lib/i18n";
 import { getLocale } from "@/lib/i18n-server";
@@ -11,7 +12,7 @@ const TILE: Record<string, string> = {
   lilac: "bg-lilac text-ink [&_.sub]:text-lilac-ink",
   blush: "bg-blush text-ink [&_.sub]:text-blush-ink",
 };
-const SPAN: Record<string, string> = { listing: "lg:col-span-3", photos: "lg:col-span-2", shorts: "lg:col-span-3", markets: "lg:col-span-2", social: "lg:col-span-2", publish: "lg:col-span-2" };
+const SPAN: Record<string, string> = { listing: "sm:col-span-2 lg:col-span-3", photos: "lg:col-span-2", shorts: "lg:col-span-3", markets: "lg:col-span-2", publish: "lg:col-span-2" };
 
 export default async function UploadPage() {
   const t = MESSAGES[await getLocale()];
@@ -35,12 +36,13 @@ export default async function UploadPage() {
         </div>
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-12">
           {OUTPUTS.map((o) => (
-            <div key={o.key} className={`tile flex min-h-[150px] flex-col justify-between p-4.5 ${TILE[o.color]} ${SPAN[o.key]}`}>
+            <div key={o.key} className={`tile flex flex-col gap-3 p-4.5 ${TILE[o.color]} ${SPAN[o.key]}`}>
               <Icon name={o.key} />
               <div>
                 <div className="text-lg font-bold">{t.outputs[o.key as OutputKey][0]}</div>
                 <div className="sub text-[13px]">{t.outputs[o.key as OutputKey][1]}</div>
               </div>
+              <div aria-hidden className="mt-auto h-[136px]"><OutputExample kind={o.key} /></div>
             </div>
           ))}
         </div>

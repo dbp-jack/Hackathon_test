@@ -19,7 +19,7 @@ const ACTIONS: { step: ClaudeStep; summary: string }[] = [
   { step: "write_hooks", summary: "wrote 3 hooks: “3 hours at the wheel. 30 seconds.”, “What goes into one $42 mug”, “No talking. Just clay.”" },
   { step: "cut_points", summary: "cut 4 videos with 3 hooks" },
   { step: "localize", summary: "wrote about 1,240 words in 5 languages" },
-  { step: "format_for_channel", summary: "formatted for 3 channels, wrote the pin" },
+  { step: "format_for_channel", summary: "formatted for 3 channels" },
 ];
 
 const FRAMES: [string, string, string, number | null, number, string][] = [

@@ -115,7 +115,6 @@ export const OUTPUTS = [
   { key: "photos", name: "5 photos", detail: "Picked from your footage", minutes: 30, color: "blue" },
   { key: "shorts", name: "3 shorts", detail: "TikTok, Reels, Shorts — three different hooks", minutes: 60, color: "ink" },
   { key: "markets", name: "4 markets", detail: "UK, DE, AU, CA — translated and priced", minutes: 20, color: "mint" },
-  { key: "social", name: "Pin and carousel", detail: "Pinterest and Instagram, ready to post", minutes: 15, color: "lilac" },
   { key: "publish", name: "Published", detail: "Shopify, TikTok, Pinterest", minutes: 10, color: "blush" },
 ] as const;
 
