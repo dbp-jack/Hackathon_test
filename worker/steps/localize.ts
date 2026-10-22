@@ -1,0 +1,79 @@
+import { db, logAction } from "../lib/db";
+import { structured, WRITER_MODEL } from "../lib/claude";
+import type { LaunchRow } from "../../src/lib/types";
+import type { Listing } from "./write";
+import type { Analysis } from "./analyze";
+
+const MARKETS: Record<string, { locale: string; currency: string; language: string; shipping_cents: number }> = {
+  GB: { locale: "en-GB", currency: "GBP", language: "British English", shipping_cents: 1800 },
+  DE: { locale: "de-DE", currency: "EUR", language: "German", shipping_cents: 2200 },
+  AU: { locale: "en-AU", currency: "AUD", language: "Australian English", shipping_cents: 2600 },
+  CA: { locale: "fr-CA", currency: "CAD", language: "Canadian French", shipping_cents: 1500 },
+};
+
+async function fxRates(): Promise<Record<string, number>> {
+  try {
+    const r = await fetch("https://api.frankfurter.app/latest?from=USD&to=GBP,EUR,AUD,CAD");
+    return (await r.json()).rates;
+  } catch { return { GBP: 0.79, EUR: 0.92, AUD: 1.52, CAD: 1.36 }; }
+}
+
+/** Step 9: localize — one Claude call translates and adapts tone for every requested market; frankfurter supplies FX. */
+export async function localize(launch: LaunchRow, listing: Listing, a: Analysis) {
+  const t0 = new Date();
+  const { data: req } = await db.from("launch_markets").select("market").eq("launch_id", launch.id);
+  const markets = (req ?? []).map((m) => m.market).filter((m) => MARKETS[m]);
+  if (!markets.length) return;
+  const rates = await fxRates();
+
+  const { data, usage } = await structured<{ versions: { market: string; title: string; tags: string[]; description: string }[] }>({
+    model: WRITER_MODEL, toolName: "localize_listing", maxTokens: 6000,
+    system: "You localize Etsy listings for handmade sellers. Translate meaning, not words: adapt units (cm/ml where the market uses them), spelling, idiom, and gift occasions. Keep the title ≤140 chars and exactly 13 lowercase tags in the target language. Keep paragraph structure.",
+    content: `Original listing (US): ${JSON.stringify({ title: listing.title, tags: listing.tags, description: listing.description })}
+Dimensions (inches/oz): ${JSON.stringify(a.attributes.dimensions)}
+Markets: ${markets.map((m) => `${m} → ${MARKETS[m].language} (${MARKETS[m].locale})`).join("; ")}
+Call localize_listing once with one version per market.`,
+    schema: {
+      type: "object", required: ["versions"],
+      properties: { versions: { type: "array", items: { type: "object", required: ["market", "title", "tags", "description"], properties: { market: { type: "string" }, title: { type: "string", maxLength: 140 }, tags: { type: "array", items: { type: "string" }, minItems: 13, maxItems: 13 }, description: { type: "string" } } } } },
+    },
+  });
+
+  for (const v of data.versions) {
+    const m = MARKETS[v.market]; if (!m) continue;
+    const rate = rates[m.currency] ?? 1;
+    const base = Math.round((listing.price_cents + m.shipping_cents) * rate);
+    const price = Math.round(base / 50) * 50 - (base % 50 === 0 ? 0 : 0); // round to .50
+    await db.from("listing_localizations").upsert({
+      launch_id: launch.id, market: v.market, locale: m.locale, title: v.title.slice(0, 140), tags: v.tags.slice(0, 13), description: v.description,
+      price_cents: price, currency: m.currency, fx_rate: rate, shipping_cents_included: m.shipping_cents, enabled: true,
+    }, { onConflict: "launch_id,market,locale" });
+  }
+  const words = listing.description.split(/\s+/).length * (data.versions.length + 1);
+  await logAction(launch.id, "localize", `wrote about ${words.toLocaleString()} words in ${data.versions.length + 1} languages`, { metrics: { markets: data.versions.map((v) => v.market) }, ...usage, started_at: t0 });
+}
+
+/** Step 10: format_for_channel — pin title, carousel order, draft publication rows. */
+export async function formatForChannels(launch: LaunchRow, listing: Listing) {
+  const t0 = new Date();
+  const { data: frames } = await db.from("frames").select("id, role").eq("launch_id", launch.id).eq("selected", true).order("sort_order");
+  const ids = (frames ?? []).map((f) => f.id);
+  const hero = (frames ?? []).find((f) => f.role === "hero")?.id ?? ids[0];
+
+  const { data, usage } = await structured<{ pin_title: string; pin_caption: string; carousel_caption: string }>({
+    model: WRITER_MODEL, toolName: "social_copy", maxTokens: 800,
+    system: "You write Pinterest and Instagram copy for handmade sellers. Pinterest title ≤60 chars, evocative but concrete, no hashtags. Instagram caption ≤150 chars + 5 hashtags.",
+    content: `Listing title: ${listing.title}\nFirst paragraph: ${listing.description.split(/\n\s*\n/)[0]}\nCall social_copy once.`,
+    schema: { type: "object", required: ["pin_title", "pin_caption", "carousel_caption"], properties: { pin_title: { type: "string", maxLength: 60 }, pin_caption: { type: "string" }, carousel_caption: { type: "string" } } },
+  });
+
+  await db.from("social_assets").insert([
+    { launch_id: launch.id, kind: "pinterest_pin", title: data.pin_title, caption: data.pin_caption, frame_ids: hero ? [hero] : [], sort_order: 0 },
+    { launch_id: launch.id, kind: "instagram_carousel", title: null, caption: data.carousel_caption, frame_ids: ids.slice(0, 5), sort_order: 1 },
+  ]);
+  await db.from("publications").upsert(
+    (launch.target_channels ?? []).map((channel) => ({ launch_id: launch.id, channel, status: "draft" as const })),
+    { onConflict: "launch_id,channel" },
+  );
+  await logAction(launch.id, "format_for_channel", `formatted for ${(launch.target_channels ?? []).length} channels, wrote the pin`, { ...usage, started_at: t0 });
+}

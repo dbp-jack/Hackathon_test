@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+/* Direction B — Sticker Sheet tokens. One output = one color, everywhere. */
+@theme {
+  --color-chalk: #F7F7F3;
+  --color-ink: #151515;
+  --color-ink-soft: #55554F;
+  --color-ink-mute: #6B6B65;
+  --color-line: #D9D9D3;
+  --color-butter: #F2CF5B;
+  --color-butter-ink: #3F3A22;
+  --color-blue: #4663E3;
+  --color-mint: #8FD6B4;
+  --color-mint-ink: #1F4A36;
+  --color-blush: #F3A7A0;
+  --color-blush-ink: #5A2B27;
+  --color-lilac: #B9A6F0;
+  --color-lilac-ink: #2E2358;
+  --radius-tile: 22px;
+  --radius-card: 14px;
+  --font-sans: "Outfit", system-ui, sans-serif;
+}
+
+html { background: var(--color-chalk); }
+body { margin: 0; color: var(--color-ink); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
+
+/* Pill buttons: the one button shape in the system */
+.btn { @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-ink px-5 py-3 text-sm font-semibold transition-colors; }
+.btn-primary { @apply bg-ink text-white hover:bg-ink/85; }
+.btn-ghost { @apply bg-white text-ink hover:bg-chalk; }
+.btn-sm { @apply px-3.5 py-1.5 text-xs; }
+.btn:focus-visible, button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid var(--color-blue); outline-offset: 2px; }
+
+.tile { border-radius: var(--radius-tile); }
+.card { border-radius: var(--radius-card); background: #fff; }
+.chip { @apply rounded-full bg-chalk px-2.5 py-1 text-xs font-medium; }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
