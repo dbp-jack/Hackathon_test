@@ -1,6 +1,6 @@
 import { execFile } from "node:child_process";
 import { promisify } from "node:util";
-import { mkdir, readdir, readFile } from "node:fs/promises";
+import { mkdir, readdir, readFile, writeFile, rm } from "node:fs/promises";
 import path from "node:path";
 import sharp from "sharp";
 
@@ -55,21 +55,33 @@ export async function hasDrawtext(): Promise<boolean> {
   return drawtextOk;
 }
 
-/** Concatenate cuts into a 1080×1920 vertical clip with optional burned-in captions. */
+// Output size for shorts. 720×1280 is plenty for TikTok/Reels previews and renders ~3× faster than 1080p on a shared vCPU.
+const OUT_W = Number(process.env.RENDER_WIDTH ?? 720), OUT_H = Math.round(OUT_W * 16 / 9);
+
+/**
+ * Concatenate cuts into a vertical clip with optional burned-in captions.
+ * Each cut is extracted with input seeking (-ss before -i), so only the seconds we keep get decoded —
+ * the old single filter graph decoded the whole source once per cut, which took 10+ min for a 2-minute 1080p video on Fly.
+ */
 export async function renderVertical(video: string, cuts: Cut[], out: string, font = process.env.CAPTION_FONT) {
   if (font && !(await hasDrawtext())) font = undefined;
-  const parts: string[] = [];
-  const concat: string[] = [];
-  cuts.forEach((c, i) => {
-    let chain = `[0:v]trim=start=${c.in}:end=${c.out},setpts=PTS-STARTPTS,scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920`;
+  const dir = path.dirname(out), base = path.basename(out, path.extname(out));
+  const segs: string[] = [];
+  for (const [i, c] of cuts.entries()) {
+    let vf = `scale=${OUT_W}:${OUT_H}:force_original_aspect_ratio=increase,crop=${OUT_W}:${OUT_H}`;
     if (c.caption && font) {
       const text = c.caption.replace(/[\\':]/g, (m) => "\\" + m);
-      chain += `,drawtext=fontfile='${font}':text='${text}':fontcolor=white:fontsize=64:borderw=4:bordercolor=black@0.6:x=(w-text_w)/2:y=h*0.78`;
+      vf += `,drawtext=fontfile='${font}':text='${text}':fontcolor=white:fontsize=${Math.round(OUT_W / 17)}:borderw=3:bordercolor=black@0.6:x=(w-text_w)/2:y=h*0.78`;
     }
-    parts.push(`${chain}[v${i}]`);
-    concat.push(`[v${i}]`);
-  });
-  const filter = `${parts.join(";")};${concat.join("")}concat=n=${cuts.length}:v=1:a=0[out]`;
-  await exec(FFMPEG, ["-y", "-i", video, "-filter_complex", filter, "-map", "[out]", "-c:v", "libx264", "-preset", "veryfast", "-crf", "23", "-pix_fmt", "yuv420p", "-movflags", "+faststart", "-an", out], { maxBuffer: 64 * 1024 * 1024 });
+    const seg = path.join(dir, `${base}_${i}.mp4`);
+    await exec(FFMPEG, ["-y", "-ss", String(c.in), "-t", String(Math.max(0.5, c.out - c.in)), "-i", video, "-vf", vf, "-r", "30",
+      "-c:v", "libx264", "-preset", "ultrafast", "-crf", "24", "-pix_fmt", "yuv420p", "-an", seg], { maxBuffer: 64 * 1024 * 1024 });
+    segs.push(seg);
+  }
+  const list = path.join(dir, `${base}_concat.txt`);
+  await writeFile(list, segs.map((s) => `file '${path.resolve(s).replace(/'/g, "'\\''")}'`).join("\n")); // concat resolves relative paths against the list file, so use absolute
+  // identical codec/size/fps → stream copy, no second encode
+  await exec(FFMPEG, ["-y", "-f", "concat", "-safe", "0", "-i", list, "-c", "copy", "-movflags", "+faststart", out], { maxBuffer: 64 * 1024 * 1024 });
+  await Promise.all([...segs, list].map((f) => rm(f, { force: true })));
   return readFile(out);
 }
