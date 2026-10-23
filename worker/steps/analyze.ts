@@ -14,6 +14,7 @@ export type Attributes = {
 export type Analysis = { scenes: Scene[]; attributes: Attributes; videoFile: string | null; duration: number };
 
 const ROLES: FrameRole[] = ["hero", "in_hand", "detail", "process", "scale"];
+const MAX_IMAGES = 60; // hard cap on images per vision call, photos included
 
 /**
  * Step 1–3: watch_footage → score_frames → extract_attributes.
@@ -40,12 +41,14 @@ export async function analyze(launch: LaunchRow, workDir: string): Promise<Analy
     await db.from("source_media").update({ duration_sec: info.duration, fps: info.fps, frame_count: Math.round(info.duration * info.fps), width_px: info.width, height_px: info.height }).eq("id", video.id);
 
     const frames = await extractFrames(videoFile, path.join(workDir, "frames"), 1);
+    if (!frames.length) throw new Error("Could not read video");
     const scored = await Promise.all(frames.map(async (f) => ({ ...f, sharp: await sharpness(f.file), source_id: video.id })));
     const threshold = percentile(scored.map((s) => s.sharp), 0.4);
     const sharpEnough = scored.filter((s) => s.sharp >= threshold);
-    // spread ~60 picks evenly across the timeline so every scene is represented
-    const stride = Math.max(1, Math.floor(sharpEnough.length / 60));
-    candidates = sharpEnough.filter((_, i) => i % stride === 0).slice(0, 60);
+    // spread picks evenly across the timeline so every scene is represented; leave room for uploaded photos
+    const budget = Math.max(10, MAX_IMAGES - photos.length);
+    const stride = Math.max(1, Math.floor(sharpEnough.length / budget));
+    candidates = sharpEnough.filter((_, i) => i % stride === 0).slice(0, budget);
 
     await logAction(launch.id, "watch_footage", `watched ${fmtDur(info.duration)} of footage`, {
       metrics: { duration_sec: info.duration, frames_sampled: frames.length, frames_after_blur_filter: sharpEnough.length, frames_sent_to_claude: candidates.length }, started_at: t0,
@@ -56,6 +59,7 @@ export async function analyze(launch: LaunchRow, workDir: string): Promise<Analy
     await writeFile(file, await download(p.storage_path));
     candidates.push({ file, sec: null, source_id: p.id, sharp: Number.MAX_SAFE_INTEGER });
   }
+  candidates = candidates.slice(0, MAX_IMAGES);
   if (!candidates.length) throw new Error("No usable frames or photos");
 
   // ── score_frames + extract_attributes (one vision call does both)
@@ -81,6 +85,16 @@ export async function analyze(launch: LaunchRow, workDir: string): Promise<Analy
       },
     },
   });
+
+  // one pick per role: dedupe by role, keep the highest score, drop out-of-range indexes
+  const byRole = new Map<FrameRole, (typeof data.picks)[number]>();
+  for (const p of data.picks ?? []) {
+    if (!ROLES.includes(p.role) || !candidates[p.frame_index]) continue;
+    const prev = byRole.get(p.role);
+    if (!prev || (p.score ?? 0) > (prev.score ?? 0)) byRole.set(p.role, p);
+  }
+  data.picks = ROLES.flatMap((r) => byRole.get(r) ?? []);
+  if (!data.picks.length) throw new Error("Claude picked no usable frames");
 
   // Persist frames: selected picks at full resolution, runners-up at contact size (for Swap)
   const framesDir = path.join(workDir, "picked");

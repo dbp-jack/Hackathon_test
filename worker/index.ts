@@ -15,6 +15,7 @@ import { researchComparables, writeListing } from "./steps/write";
 import { planVideos, renderVideos } from "./steps/video";
 import { localize, formatForChannels } from "./steps/localize";
 import { runMock } from "./steps/mock";
+import { processPublications } from "./steps/publish";
 import type { LaunchRow } from "../src/lib/types";
 
 const MOCK = process.env.MOCK_MODE === "true";
@@ -28,28 +29,35 @@ async function claim(): Promise<LaunchRow | null> {
   return row?.id ? (row as LaunchRow) : null;
 }
 
+/** Runs one phase and tags any error with the step name, so the failure log says *where* it died. */
+async function phase<T>(step: string, fn: () => Promise<T>): Promise<T> {
+  try { return await fn(); }
+  catch (e) { const err = e instanceof Error ? e : new Error(String(e)); (err as Error & { step?: string }).step ??= step; throw err; }
+}
+
 async function run(launch: LaunchRow) {
   const started = Date.now();
   const workDir = path.join(WORK_DIR, launch.id);
   console.log(`▶ launch ${launch.id} ${MOCK ? "(mock)" : ""}`);
   try {
     if (MOCK) {
-      await runMock(launch);
+      await phase("mock", () => runMock(launch));
     } else {
-      const analysis = await analyze(launch, workDir);
-      const comps = await researchComparables(launch, analysis);
-      const listing = await writeListing(launch, analysis, comps);
+      const analysis = await phase("analyze", () => analyze(launch, workDir));
+      const comps = await phase("research_comparables", () => researchComparables(launch, analysis));
+      const listing = await phase("write_listing", () => writeListing(launch, analysis, comps));
       // videos and localization don't depend on each other — run together to hit the 5-minute demo window
-      const plan = await planVideos(launch, analysis, listing);
-      await Promise.all([renderVideos(launch, analysis, plan, workDir), localize(launch, listing, analysis)]);
-      await formatForChannels(launch, listing);
+      const plan = await phase("plan_videos", () => planVideos(launch, analysis, listing));
+      await Promise.all([phase("render_videos", () => renderVideos(launch, analysis, plan, workDir)), phase("localize", () => localize(launch, listing, analysis))]);
+      await phase("format_for_channel", () => formatForChannels(launch, listing));
     }
     await setStatus(launch.id, "ready", { finished_at: new Date().toISOString(), minutes_saved_est: MINUTES_SAVED });
     console.log(`✓ ready in ${Math.round((Date.now() - started) / 1000)} s`);
   } catch (e) {
     const message = e instanceof Error ? e.message : String(e);
-    console.error(`✗ launch ${launch.id} failed:`, message);
-    await setStatus(launch.id, "failed", { error_message: message, finished_at: new Date().toISOString() });
+    const step = (e as { step?: string } | null)?.step ?? "unknown";
+    console.error(`✗ launch ${launch.id} failed at step "${step}" after ${Math.round((Date.now() - started) / 1000)} s:`, message);
+    await setStatus(launch.id, "failed", { error_message: `${step}: ${message}`, finished_at: new Date().toISOString() }).catch((err) => console.error("could not mark failed", err));
     // refund the credit
     await db.from("credit_ledger").insert({ seller_id: launch.seller_id, launch_id: launch.id, delta: 1, reason: "refund:failed" });
     await db.rpc("refund_credit", { p_seller: launch.seller_id }).then(() => undefined, () => undefined);
@@ -58,13 +66,26 @@ async function run(launch: LaunchRow) {
   }
 }
 
+// graceful shutdown: finish the launch in flight, then exit at the top of the loop
+let stopping = false;
+for (const sig of ["SIGINT", "SIGTERM"] as const) {
+  process.on(sig, () => {
+    if (stopping) { console.log("forcing exit"); process.exit(130); }
+    stopping = true;
+    console.log(`${sig} received — finishing current launch, then exiting (press again to force)`);
+  });
+}
+
 async function main() {
   console.log(`Launch Kit worker — ${MOCK ? "MOCK_MODE" : "live"} · polling every 3 s`);
-  for (;;) {
+  while (!stopping) {
     const launch = await claim();
-    if (launch) await run(launch);
-    else await new Promise((r) => setTimeout(r, 3000));
+    if (launch) { await run(launch); continue; }
+    await processPublications(); // idle: drain queued Shopify/TikTok publications
+    await new Promise((r) => setTimeout(r, 3000));
   }
+  console.log("worker stopped");
+  process.exit(0);
 }
 
 main().catch((e) => { console.error(e); process.exit(1); });

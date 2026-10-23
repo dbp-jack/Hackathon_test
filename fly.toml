@@ -1,0 +1,29 @@
+# Fly.io config for the Launch Kit worker (no HTTP — it only polls Supabase).
+#   fly launch --no-deploy --copy-config   (first time; keeps this file)
+#   fly secrets set NEXT_PUBLIC_SUPABASE_URL=... SUPABASE_SERVICE_ROLE_KEY=... ANTHROPIC_API_KEY=...
+#   fly deploy
+# No [http_service] block on purpose: nothing listens, and we never want auto-stop.
+app = "launch-kit-worker"
+primary_region = "sjc"
+
+[build]
+  dockerfile = "worker/Dockerfile"
+
+[env]
+  SUPABASE_BUCKET = "launches"
+  MOCK_MODE = "false"
+  CLAUDE_VISION_MODEL = "claude-sonnet-5-5"
+  CLAUDE_WRITER_MODEL = "claude-opus-5-5"
+  CAPTION_FONT = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
+  WORK_DIR = "/tmp/launch-kit-work"
+
+[processes]
+  worker = "npx tsx worker/index.ts"
+
+[[vm]]
+  size = "shared-cpu-1x"
+  memory = "1gb"
+  processes = ["worker"]
+
+[[restart]]
+  policy = "always"

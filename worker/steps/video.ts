@@ -1,4 +1,5 @@
 import path from "node:path";
+import { access } from "node:fs/promises";
 import { db, upload, logAction, setStatus } from "../lib/db";
 import { structured, WRITER_MODEL } from "../lib/claude";
 import { renderVertical, type Cut } from "../lib/ffmpeg";
@@ -45,14 +46,18 @@ Call plan_videos once with all four videos.`,
 export async function renderVideos(launch: LaunchRow, a: Analysis, plan: VideoPlan, workDir: string) {
   const t0 = new Date();
   await setStatus(launch.id, "rendering");
+  // captions need a real .ttf; if CAPTION_FONT is unset or missing, render without them instead of failing every video
+  let font: string | undefined = process.env.CAPTION_FONT || undefined;
+  if (font) await access(font).catch(() => { console.warn(`CAPTION_FONT not found at ${font}; rendering without captions`); font = undefined; });
+  else console.warn("CAPTION_FONT unset; rendering without captions");
   let order = 0;
   for (const v of plan.videos) {
     const dur = v.cuts.reduce((s, c) => s + (c.out - c.in), 0);
-    const { data: row } = await db.from("videos").insert({ launch_id: launch.id, kind: v.kind, platform: v.platform, hook_text: v.hook_text, hook_rationale: v.hook_rationale, cut_points: v.cuts, duration_sec: dur, aspect: "9:16", has_captions: v.cuts.some((c) => c.caption), sort_order: order++ }).select("id").single();
+    const { data: row } = await db.from("videos").insert({ launch_id: launch.id, kind: v.kind, platform: v.platform, hook_text: v.hook_text, hook_rationale: v.hook_rationale, cut_points: v.cuts, duration_sec: dur, aspect: "9:16", has_captions: !!font && v.cuts.some((c) => c.caption), sort_order: order++ }).select("id").single();
     if (!a.videoFile || !row) continue;
     try {
       const out = path.join(workDir, `${v.platform}.mp4`);
-      const buf = await renderVertical(a.videoFile, v.cuts, out);
+      const buf = await renderVertical(a.videoFile, v.cuts, out, font);
       const storagePath = await upload(`${launch.seller_id}/${launch.id}/videos/${v.platform}.mp4`, buf, "video/mp4");
       await db.from("videos").update({ storage_path: storagePath }).eq("id", row.id);
     } catch (e) {

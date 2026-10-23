@@ -144,7 +144,7 @@ export function KitView({ initial, preview }: { initial: Kit; preview?: { elapse
 
           {/* Videos — ink */}
           <section className="tile flex flex-col gap-3.5 bg-ink p-6 text-white">
-            <h2 className="text-xl font-bold">3 shorts <span className="text-[15px] font-normal opacity-80">and a 15 s listing video</span></h2>
+            <h2 className="text-xl font-bold">3 shorts <span className="text-[15px] font-normal opacity-80">and a {Math.round(kit.videos.find((v) => v.kind === "listing")?.duration_sec ?? 15)} s listing video</span></h2>
             <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
               {kit.videos.length ? kit.videos.map((v) => (
                 <div key={v.id} className="flex flex-col gap-2">
@@ -154,7 +154,7 @@ export function KitView({ initial, preview }: { initial: Kit; preview?: { elapse
                       {PLATFORM[v.platform]} · {Math.round(v.duration_sec ?? 0)} s
                     </span>
                   </div>
-                  <div className={`text-[13px] leading-snug ${v.hook_text ? "font-semibold" : "opacity-90"}`}>{v.hook_text ? `“${v.hook_text}”` : "Wheel, glaze, pour. No text."}</div>
+                  <div className={`text-[13px] leading-snug ${v.hook_text ? "font-semibold" : "opacity-90"}`}>{v.hook_text ? `“${v.hook_text}”` : "Listing video. No text."}</div>
                 </div>
               )) : Array.from({ length: 4 }).map((_, i) => <div key={i} className={`aspect-[9/16] rounded-xl bg-white/15 ${failed ? "" : "animate-pulse"}`} />)}
             </div>
