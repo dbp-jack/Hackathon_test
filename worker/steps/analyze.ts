@@ -22,8 +22,14 @@ const MAX_IMAGES = 60; // hard cap on images per vision call, photos included
  * ffmpeg samples 1 fps, a Laplacian pre-filter drops blurry frames, and Claude sees ~60 frames max.
  */
 export async function analyze(launch: LaunchRow, workDir: string): Promise<Analysis> {
-  const { data: media } = await db.from("source_media").select("*").eq("launch_id", launch.id);
-  const sources = (media ?? []) as SourceMediaRow[];
+  // the API inserts the launch before its media rows; if we got here first, give it a moment and re-read
+  let sources: SourceMediaRow[] = [];
+  for (let attempt = 0; attempt < 5 && !sources.length; attempt++) {
+    if (attempt) await new Promise((r) => setTimeout(r, 2000));
+    const { data: media } = await db.from("source_media").select("*").eq("launch_id", launch.id);
+    sources = (media ?? []) as SourceMediaRow[];
+  }
+  if (!sources.length) throw new Error("No uploaded files found for this launch");
   const video = sources.find((s) => s.kind === "video");
   const photos = sources.filter((s) => s.kind === "photo");
   await mkdir(workDir, { recursive: true });
