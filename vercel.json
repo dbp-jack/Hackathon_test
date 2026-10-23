@@ -1,8 +1,17 @@
 {
-  "$schema": "https://openapi.vercel.sh/vercel.json",
-  "framework": "nextjs",
-  "functions": {
-    "src/app/api/v1/launches/[id]/events/route.ts": { "maxDuration": 300 },
-    "src/app/api/v1/launches/[id]/download/route.ts": { "maxDuration": 60 }
-  }
+  "services": {
+    "web": {
+      "root": ".",
+      "framework": "nextjs"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": {
+        "type": "service",
+        "service": "web"
+      }
+    }
+  ]
 }
