@@ -120,13 +120,15 @@ export async function renderSlideshow(photos: string[], cuts: Cut[], out: string
   if (!photos.length) throw new Error("no photos for slideshow");
   if (font && !(await hasDrawtext())) font = undefined;
   const dir = path.dirname(out), base = path.basename(out, path.extname(out));
-  const fps = 30, segs: string[] = [];
+  // 24 fps and a 1.5× oversample: a 3× oversample at 30 fps took ~3 min per clip on Fly's shared vCPU (9× the pixels)
+  const fps = 24, OS = 1.5, segs: string[] = [];
+  const osW = Math.round(OUT_W * OS / 2) * 2, osH = Math.round(OUT_H * OS / 2) * 2;
   for (const [i, c] of cuts.entries()) {
     const photo = photos[Math.max(0, Math.floor(c.in / SLIDE_SEC)) % photos.length];
     const sec = Math.max(2, Math.min(6, c.out - c.in)), frames = Math.round(sec * fps);
-    // zoompan works per output frame on a single looped input; oversample 3× first so the pan doesn't jitter
-    const zoom = i % 2 === 0 ? "min(zoom+0.0010,1.22)" : "if(lte(on,1),1.22,max(zoom-0.0010,1.0))";
-    let vf = `scale=${OUT_W * 3}:${OUT_H * 3}:force_original_aspect_ratio=increase,crop=${OUT_W * 3}:${OUT_H * 3},zoompan=z='${zoom}':d=1:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':s=${OUT_W}x${OUT_H}:fps=${fps},trim=end_frame=${frames},setpts=PTS-STARTPTS,setsar=1`;
+    // zoompan works per output frame on a single looped input; a modest oversample keeps the pan from jittering
+    const zoom = i % 2 === 0 ? "min(zoom+0.00125,1.22)" : "if(lte(on,1),1.22,max(zoom-0.00125,1.0))";
+    let vf = `scale=${osW}:${osH}:force_original_aspect_ratio=increase,crop=${osW}:${osH},zoompan=z='${zoom}':d=1:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':s=${OUT_W}x${OUT_H}:fps=${fps},trim=end_frame=${frames},setpts=PTS-STARTPTS,setsar=1`;
     if (c.caption && font) vf += captionFilter(c.caption, font);
     const seg = path.join(dir, `${base}_${i}.mp4`);
     await exec(FFMPEG, ["-y", "-loop", "1", "-framerate", String(fps), "-t", String(sec), "-i", photo, "-vf", vf, "-r", String(fps),
