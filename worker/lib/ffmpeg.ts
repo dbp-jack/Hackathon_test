@@ -44,8 +44,20 @@ export async function fullResFrame(video: string, sec: number, out: string) {
 
 export type Cut = { in: number; out: number; caption: string | null };
 
+let drawtextOk: boolean | null = null;
+/** Some ffmpeg builds (e.g. Homebrew's default) ship without the drawtext filter; check once. */
+export async function hasDrawtext(): Promise<boolean> {
+  if (drawtextOk == null) {
+    try { const { stdout } = await exec(FFMPEG, ["-hide_banner", "-filters"]); drawtextOk = /\bdrawtext\b/.test(stdout); }
+    catch { drawtextOk = false; }
+    if (!drawtextOk) console.warn("ffmpeg: no drawtext filter in this build — rendering videos without captions");
+  }
+  return drawtextOk;
+}
+
 /** Concatenate cuts into a 1080×1920 vertical clip with optional burned-in captions. */
 export async function renderVertical(video: string, cuts: Cut[], out: string, font = process.env.CAPTION_FONT) {
+  if (font && !(await hasDrawtext())) font = undefined;
   const parts: string[] = [];
   const concat: string[] = [];
   cuts.forEach((c, i) => {
