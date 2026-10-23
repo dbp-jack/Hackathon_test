@@ -37,7 +37,8 @@ export async function planVideos(launch: LaunchRow, a: Analysis, listing: Listin
 3) short (reels): 18–25 s. Hook style: cost/what-goes-in ("What goes into one $42 mug"), captions name materials and hours.
 4) short (shorts): 15–20 s. Hook style: no talking / ASMR — one caption max.
 Rules: each cut 2–6 s, cuts must lie inside real scenes (use the given seconds), the last cut always shows the finished product, hooks ≤ 50 chars, captions ≤ 40 chars, plain words.${slides ? `
-This seller uploaded photos only, so you are planning PHOTO SLIDESHOWS: each "scene" is one still photo (role given), occupying ${SLIDE_SEC} s of a virtual timeline. A cut whose in-point falls inside a photo's span shows that photo for (out − in) seconds with a slow zoom. Reuse photos freely; the hero photo is the finished product.` : ""}`,
+This seller uploaded photos only, so you are planning PHOTO SLIDESHOWS: each "scene" is one still photo (role given), occupying ${SLIDE_SEC} s of a virtual timeline. A cut whose in-point falls inside a photo's span shows that photo for (out − in) seconds with a slow zoom. Reuse photos freely; the hero photo is the finished product.
+Because viewers will see stills, hooks and captions must not promise motion or elapsed time ("…in 30 seconds", "watch me make") — use hooks about the object, materials, price or feel instead (e.g. "Speckled glaze, thrown by hand", "What goes into one $42 mug").` : ""}`,
     content: `Scenes (seconds): ${JSON.stringify(scenes)}
 ${slides ? "Virtual timeline" : "Video duration"}: ${duration.toFixed(0)} s. Product: ${a.attributes.product_title}, price $${(listing.price_cents / 100).toFixed(0)}, production hours ${a.attributes.production_hours ?? "unknown"}, materials ${a.attributes.materials.join(", ")}, colors ${a.attributes.colors.join(", ")}.
 Call plan_videos once with all four videos.`,
