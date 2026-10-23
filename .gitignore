@@ -7,3 +7,8 @@ node_modules
 next-env.d.ts
 .vercel
 .env*
+
+# test input media lives in Supabase Storage, not git
+mock/inputs/.cache/
+mock/inputs/*/*.mp4
+mock/inputs/*/*.jpg

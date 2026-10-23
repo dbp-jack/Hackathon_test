@@ -1,0 +1,625 @@
+{
+  "knit-cable-scarf": [
+    {
+      "role": "hero",
+      "storage_path": "mock/knit-cable-scarf/frames/hero.jpg",
+      "title": "Launch Kit sample — photo-hero.jpg",
+      "creator": "Launch Kit team",
+      "license": "own work",
+      "foreign_landing_url": "/example"
+    },
+    {
+      "role": "in_hand",
+      "storage_path": "mock/knit-cable-scarf/frames/in_hand.jpg",
+      "title": "Launch Kit sample — photo-closeup.jpg",
+      "creator": "Launch Kit team",
+      "license": "own work",
+      "foreign_landing_url": "/example"
+    },
+    {
+      "role": "detail",
+      "storage_path": "mock/knit-cable-scarf/frames/detail.jpg",
+      "title": "Launch Kit sample — photo-cables.jpg",
+      "creator": "Launch Kit team",
+      "license": "own work",
+      "foreign_landing_url": "/example"
+    },
+    {
+      "role": "process",
+      "storage_path": "mock/knit-cable-scarf/frames/process.jpg",
+      "title": "Launch Kit sample — photo-progress.jpg",
+      "creator": "Launch Kit team",
+      "license": "own work",
+      "foreign_landing_url": "/example"
+    },
+    {
+      "role": "scale",
+      "storage_path": "mock/knit-cable-scarf/frames/scale.jpg",
+      "title": "Launch Kit sample — photo-yarn.jpg",
+      "creator": "Launch Kit team",
+      "license": "own work",
+      "foreign_landing_url": "/example"
+    }
+  ],
+  "speckled-stoneware-mug": [
+    {
+      "role": "hero",
+      "storage_path": "mock/speckled-stoneware-mug/frames/hero.jpg",
+      "title": "Mug - Bruce Gholson",
+      "creator": "Bulldog Pottery - Bruce Gholson and Samantha Henne",
+      "license": "CC BY-ND 2.0",
+      "foreign_landing_url": "https://www.flickr.com/photos/28573309@N06/14579162735",
+      "openverse_id": "62c4d159-077b-41d3-840d-332fd04a2e4c"
+    },
+    {
+      "role": "hero_alt1",
+      "storage_path": "mock/speckled-stoneware-mug/frames/hero_alt1.jpg",
+      "title": "Yunomi - Bruce Gholson",
+      "creator": "Bulldog Pottery - Bruce Gholson and Samantha Henne",
+      "license": "CC BY-ND 2.0",
+      "foreign_landing_url": "https://www.flickr.com/photos/28573309@N06/14392727687",
+      "openverse_id": "d9b60055-1fdf-4799-9080-34abbc579554"
+    },
+    {
+      "role": "in_hand",
+      "storage_path": "mock/speckled-stoneware-mug/frames/in_hand.jpg",
+      "title": "Coffee into Jars Ceramics mug",
+      "creator": "Didriks",
+      "license": "CC BY 2.0",
+      "foreign_landing_url": "https://www.flickr.com/photos/49889671@N03/5974877454",
+      "openverse_id": "89f8bf08-ad9f-438a-ba77-f8beea4cdb1c"
+    },
+    {
+      "role": "detail",
+      "storage_path": "mock/speckled-stoneware-mug/frames/detail.jpg",
+      "title": "Yunomi - Bruce Gholson",
+      "creator": "Bulldog Pottery - Bruce Gholson and Samantha Henne",
+      "license": "CC BY-ND 2.0",
+      "foreign_landing_url": "https://www.flickr.com/photos/28573309@N06/14556063676",
+      "openverse_id": "f69759ec-19a8-4797-8014-a9bf20eca702"
+    },
+    {
+      "role": "detail_alt1",
+      "storage_path": "mock/speckled-stoneware-mug/frames/detail_alt1.jpg",
+      "title": "Yunomi - Bruce Gholson",
+      "creator": "Bulldog Pottery - Bruce Gholson and Samantha Henne",
+      "license": "CC BY-ND 2.0",
+      "foreign_landing_url": "https://www.flickr.com/photos/28573309@N06/14392727687",
+      "openverse_id": "d9b60055-1fdf-4799-9080-34abbc579554"
+    },
+    {
+      "role": "detail_alt2",
+      "storage_path": "mock/speckled-stoneware-mug/frames/detail_alt2.jpg",
+      "title": "Yunomi - Bruce Gholson",
+      "creator": "Bulldog Pottery - Bruce Gholson and Samantha Henne",
+      "license": "CC BY-ND 2.0",
+      "foreign_landing_url": "https://www.flickr.com/photos/28573309@N06/14392505748",
+      "openverse_id": "323c98a7-48ec-41c5-b381-be122249a2c4"
+    },
+    {
+      "role": "process",
+      "storage_path": "mock/speckled-stoneware-mug/frames/process.jpg",
+      "title": "Turn Turn Turn",
+      "creator": "Sudhamshu",
+      "license": "CC BY 2.0",
+      "foreign_landing_url": "https://www.flickr.com/photos/10934572@N00/3518668561",
+      "openverse_id": "d6d15425-819c-4d8e-b396-4532b726b928"
+    },
+    {
+      "role": "process_alt1",
+      "storage_path": "mock/speckled-stoneware-mug/frames/process_alt1.jpg",
+      "title": "Potter's Hands",
+      "creator": "Walt Stoneburner",
+      "license": "CC BY 2.0",
+      "foreign_landing_url": "https://www.flickr.com/photos/8404611@N06/5745387762",
+      "openverse_id": "a9af635e-931d-4cbd-83d7-c626cb235439"
+    },
+    {
+      "role": "process_alt2",
+      "storage_path": "mock/speckled-stoneware-mug/frames/process_alt2.jpg",
+      "title": "A Mess Up",
+      "creator": "BLW Photography",
+      "license": "CC BY 2.0",
+      "foreign_landing_url": "https://www.flickr.com/photos/40536074@N04/3949857326",
+      "openverse_id": "6a304e17-a5dc-4088-9e35-4d78cd351f09"
+    },
+    {
+      "role": "scale",
+      "storage_path": "mock/speckled-stoneware-mug/frames/scale.jpg",
+      "title": "Mug - Bruce Gholson",
+      "creator": "Bulldog Pottery - Bruce Gholson and Samantha Henne",
+      "license": "CC BY-ND 2.0",
+      "foreign_landing_url": "https://www.flickr.com/photos/28573309@N06/14579162735",
+      "openverse_id": "62c4d159-077b-41d3-840d-332fd04a2e4c"
+    },
+    {
+      "role": "scale_alt1",
+      "storage_path": "mock/speckled-stoneware-mug/frames/scale_alt1.jpg",
+      "title": "black pencil on ruled notepad beside white ceramic mug and gray laptop computer - Credit to https://myfriendscoffee.com/",
+      "creator": "John Beans",
+      "license": "CC BY 2.0",
+      "foreign_landing_url": "https://www.flickr.com/photos/147592390@N06/32644268967",
+      "openverse_id": "ba2ea7a7-e009-4b1a-b93e-15f153dc33d3"
+    },
+    {
+      "role": "scale_alt2",
+      "storage_path": "mock/speckled-stoneware-mug/frames/scale_alt2.jpg",
+      "title": "red ceramic mug filled with coffee beside MacBook Pro on white wooden desk - Credit to https://myfriendscoffee.com/",
+      "creator": "John Beans",
+      "license": "CC BY 2.0",
+      "foreign_landing_url": "https://www.flickr.com/photos/147592390@N06/33766649748",
+      "openverse_id": "33266040-8398-4e8f-970e-143e985f93ec"
+    }
+  ],
+  "leather-card-wallet": [
+    {
+      "role": "hero",
+      "storage_path": "mock/leather-card-wallet/frames/hero.jpg",
+      "title": "Mens Black Bi-Fold Wallet",
+      "creator": "Across Leather",
+      "license": "CC BY 2.0",
+      "foreign_landing_url": "https://www.flickr.com/photos/41469556@N05/4996665289",
+      "openverse_id": "8d5e7be9-d22b-4e42-bc96-4ca4c5492b87"
+    },
+    {
+      "role": "in_hand",
+      "storage_path": "mock/leather-card-wallet/frames/in_hand.jpg",
+      "title": "Mens Black Bi-Fold Wallet",
+      "creator": "Across Leather",
+      "license": "CC BY 2.0",
+      "foreign_landing_url": "https://www.flickr.com/photos/41469556@N05/4996665289",
+      "openverse_id": "8d5e7be9-d22b-4e42-bc96-4ca4c5492b87"
+    },
+    {
+      "role": "detail",
+      "storage_path": "mock/leather-card-wallet/frames/detail.jpg",
+      "title": "Mens Black Bi-Fold Wallet",
+      "creator": "Across Leather",
+      "license": "CC BY 2.0",
+      "foreign_landing_url": "https://www.flickr.com/photos/41469556@N05/4996665289",
+      "openverse_id": "8d5e7be9-d22b-4e42-bc96-4ca4c5492b87"
+    },
+    {
+      "role": "process",
+      "storage_path": "mock/leather-card-wallet/frames/process.jpg",
+      "title": "Saddle stitch",
+      "creator": "Jomegat",
+      "license": "CC BY-SA 3.0",
+      "foreign_landing_url": "https://commons.wikimedia.org/w/index.php?curid=6043989",
+      "openverse_id": "dc1f0a4c-631e-4fd4-b570-f1ea2af3b799"
+    },
+    {
+      "role": "scale",
+      "storage_path": "mock/leather-card-wallet/frames/scale.jpg",
+      "title": "karins leather wallet",
+      "creator": "michael pollak",
+      "license": "CC BY 2.0",
+      "foreign_landing_url": "https://www.flickr.com/photos/22294215@N06/8547342013",
+      "openverse_id": "b6784490-0ccd-4b4c-83f8-bceea048f3f0"
+    }
+  ],
+  "walnut-cutting-board": [
+    {
+      "role": "hero",
+      "storage_path": "mock/walnut-cutting-board/frames/hero.jpg",
+      "title": "chocolate cake truffles on wood cutting board",
+      "creator": "Berries.com",
+      "license": "CC BY 2.0",
+      "foreign_landing_url": "https://www.flickr.com/photos/126560659@N06/16752483669",
+      "openverse_id": "4d1473bb-8d0d-46e3-bc1d-f15eb0f5b6f6"
+    },
+    {
+      "role": "hero_alt1",
+      "storage_path": "mock/walnut-cutting-board/frames/hero_alt1.jpg",
+      "title": "roll of pork belly on a pig cutting board",
+      "creator": "fishermansdaughter",
+      "license": "CC BY 2.0",
+      "foreign_landing_url": "https://www.flickr.com/photos/53194155@N00/10291807483",
+      "openverse_id": "a7507b64-b8ae-4f90-95c7-e6a8340d1d66"
+    },
+    {
+      "role": "hero_alt2",
+      "storage_path": "mock/walnut-cutting-board/frames/hero_alt2.jpg",
+      "title": "smoked meat salami slices on wood cutting board",
+      "creator": "Berries.com",
+      "license": "CC BY 2.0",
+      "foreign_landing_url": "https://www.flickr.com/photos/126560659@N06/17233807792",
+      "openverse_id": "431cb823-1646-4ba9-9ea2-85335de592cd"
+    },
+    {
+      "role": "in_hand",
+      "storage_path": "mock/walnut-cutting-board/frames/in_hand.jpg",
+      "title": "chocolate cake truffles on wood cutting board",
+      "creator": "Berries.com",
+      "license": "CC BY 2.0",
+      "foreign_landing_url": "https://www.flickr.com/photos/126560659@N06/16752483669",
+      "openverse_id": "4d1473bb-8d0d-46e3-bc1d-f15eb0f5b6f6"
+    },
+    {
+      "role": "detail",
+      "storage_path": "mock/walnut-cutting-board/frames/detail.jpg",
+      "title": "chocolate cake truffles on wood cutting board",
+      "creator": "Berries.com",
+      "license": "CC BY 2.0",
+      "foreign_landing_url": "https://www.flickr.com/photos/126560659@N06/16752483669",
+      "openverse_id": "4d1473bb-8d0d-46e3-bc1d-f15eb0f5b6f6"
+    },
+    {
+      "role": "detail_alt1",
+      "storage_path": "mock/walnut-cutting-board/frames/detail_alt1.jpg",
+      "title": "free texture, seamless wood, IKEA cutting board, seier+seier",
+      "creator": "seier+seier",
+      "license": "CC BY 2.0",
+      "foreign_landing_url": "https://www.flickr.com/photos/94852245@N00/4364156221",
+      "openverse_id": "8e2f9d56-0bfa-459b-85c6-bf47438536c0"
+    },
+    {
+      "role": "detail_alt2",
+      "storage_path": "mock/walnut-cutting-board/frames/detail_alt2.jpg",
+      "title": "Ye Olde Cutting Board",
+      "creator": "Sunset Sailor",
+      "license": "CC BY 2.0",
+      "foreign_landing_url": "https://www.flickr.com/photos/80039677@N00/2201480825",
+      "openverse_id": "77cf9106-d573-4c98-b81e-eeb1a5226d6a"
+    },
+    {
+      "role": "process",
+      "storage_path": "mock/walnut-cutting-board/frames/process.jpg",
+      "title": "chocolate cake truffles on wood cutting board",
+      "creator": "Berries.com",
+      "license": "CC BY 2.0",
+      "foreign_landing_url": "https://www.flickr.com/photos/126560659@N06/16752483669",
+      "openverse_id": "4d1473bb-8d0d-46e3-bc1d-f15eb0f5b6f6"
+    },
+    {
+      "role": "scale",
+      "storage_path": "mock/walnut-cutting-board/frames/scale.jpg",
+      "title": "Vegetables on Cutting Board",
+      "creator": "Didriks",
+      "license": "CC BY 2.0",
+      "foreign_landing_url": "https://www.flickr.com/photos/49889671@N03/6831883733",
+      "openverse_id": "28eb3282-d4a2-4834-8b86-7ff08dd9f088"
+    },
+    {
+      "role": "scale_alt1",
+      "storage_path": "mock/walnut-cutting-board/frames/scale_alt1.jpg",
+      "title": "fresh sliced green Granny Smith apples and cheese on wood cutting board",
+      "creator": "Berries.com",
+      "license": "CC BY 2.0",
+      "foreign_landing_url": "https://www.flickr.com/photos/126560659@N06/17047772758",
+      "openverse_id": "9f9c6eef-9217-496f-99c0-3ed1eeff95dd"
+    },
+    {
+      "role": "scale_alt2",
+      "storage_path": "mock/walnut-cutting-board/frames/scale_alt2.jpg",
+      "title": "skewer kebabs with marinated vegetables artichoke hearts sweet peppers bocconcini cheese and vinaigrette dressing on a cutting board",
+      "creator": "PersonalCreations.com",
+      "license": "CC BY 2.0",
+      "foreign_landing_url": "https://www.flickr.com/photos/127294011@N07/16327066322",
+      "openverse_id": "16fa8595-fd29-4712-af64-ff68b2b71344"
+    }
+  ],
+  "soy-candle-amber": [
+    {
+      "role": "hero",
+      "storage_path": "mock/soy-candle-amber/frames/hero.jpg",
+      "title": "Free soy candle lit glass",
+      "creator": null,
+      "license": "CC CC0 1.0",
+      "foreign_landing_url": "https://www.rawpixel.com/image/5918423/photo-image-public-domain-wooden-glass",
+      "openverse_id": "6c41a36d-e464-4b12-9bb1-648bd9118ca4"
+    },
+    {
+      "role": "hero_alt1",
+      "storage_path": "mock/soy-candle-amber/frames/hero_alt1.jpg",
+      "title": "Soy Candles",
+      "creator": "anniehp",
+      "license": "CC BY 2.0",
+      "foreign_landing_url": "https://www.flickr.com/photos/41869756@N05/5346054883",
+      "openverse_id": "eb7f2179-1167-4880-b119-bb8778ff3260"
+    },
+    {
+      "role": "in_hand",
+      "storage_path": "mock/soy-candle-amber/frames/in_hand.jpg",
+      "title": "Free soy candle lit glass",
+      "creator": null,
+      "license": "CC CC0 1.0",
+      "foreign_landing_url": "https://www.rawpixel.com/image/5918423/photo-image-public-domain-wooden-glass",
+      "openverse_id": "6c41a36d-e464-4b12-9bb1-648bd9118ca4"
+    },
+    {
+      "role": "detail",
+      "storage_path": "mock/soy-candle-amber/frames/detail.jpg",
+      "title": "Soy Candles",
+      "creator": "anniehp",
+      "license": "CC BY 2.0",
+      "foreign_landing_url": "https://www.flickr.com/photos/41869756@N05/5346050943",
+      "openverse_id": "e72ef936-832a-4981-927e-3d9a211d8a36"
+    },
+    {
+      "role": "detail_alt1",
+      "storage_path": "mock/soy-candle-amber/frames/detail_alt1.jpg",
+      "title": "Soy Candles",
+      "creator": "anniehp",
+      "license": "CC BY 2.0",
+      "foreign_landing_url": "https://www.flickr.com/photos/41869756@N05/5346054883",
+      "openverse_id": "eb7f2179-1167-4880-b119-bb8778ff3260"
+    },
+    {
+      "role": "process",
+      "storage_path": "mock/soy-candle-amber/frames/process.jpg",
+      "title": "Soy Candles",
+      "creator": "anniehp",
+      "license": "CC BY 2.0",
+      "foreign_landing_url": "https://www.flickr.com/photos/41869756@N05/5346053259",
+      "openverse_id": "55b6ae27-1d89-4074-af8f-1103a2a8497e"
+    },
+    {
+      "role": "process_alt1",
+      "storage_path": "mock/soy-candle-amber/frames/process_alt1.jpg",
+      "title": "More handmade soy candles - grapefruit orange in mason jars #holidaydiy",
+      "creator": "Shrie Bradford Spangler",
+      "license": "CC BY 2.0",
+      "foreign_landing_url": "https://www.flickr.com/photos/30418436@N00/15854008739",
+      "openverse_id": "220ef26d-0eb4-41a6-9e91-dafb355d059a"
+    },
+    {
+      "role": "scale",
+      "storage_path": "mock/soy-candle-amber/frames/scale.jpg",
+      "title": "A wooden table is set with three plates of dessert and a lit candle.",
+      "creator": "season321",
+      "license": "CC CC0 1.0",
+      "foreign_landing_url": "https://wordpress.org/photos/photo/37068d5320/",
+      "openverse_id": "f03dbe04-8798-4ea8-89bb-6b962ebfd42b"
+    }
+  ],
+  "macrame-wall-hanging": [
+    {
+      "role": "hero",
+      "storage_path": "mock/macrame-wall-hanging/frames/hero.jpg",
+      "title": "how to make a circular macrame wall hanging",
+      "creator": "apairandaspare",
+      "license": "CC BY 2.0",
+      "foreign_landing_url": "https://www.flickr.com/photos/66755335@N05/12152342596",
+      "openverse_id": "bd89fd05-b907-4103-ba8e-b8b178b5cd8f"
+    },
+    {
+      "role": "hero_alt1",
+      "storage_path": "mock/macrame-wall-hanging/frames/hero_alt1.jpg",
+      "title": "how to make a circular macrame wall hanging",
+      "creator": "apairandaspare",
+      "license": "CC BY 2.0",
+      "foreign_landing_url": "https://www.flickr.com/photos/66755335@N05/12152079594",
+      "openverse_id": "0d12cd97-3402-40bc-beeb-87093563e3bc"
+    },
+    {
+      "role": "hero_alt2",
+      "storage_path": "mock/macrame-wall-hanging/frames/hero_alt2.jpg",
+      "title": "how to make a circular macrame wall hanging",
+      "creator": "apairandaspare",
+      "license": "CC BY 2.0",
+      "foreign_landing_url": "https://www.flickr.com/photos/66755335@N05/12152344276",
+      "openverse_id": "19234a93-3c10-4d37-a7f6-2d3f7e251eba"
+    },
+    {
+      "role": "in_hand",
+      "storage_path": "mock/macrame-wall-hanging/frames/in_hand.jpg",
+      "title": "how to make a circular macrame wall hanging",
+      "creator": "apairandaspare",
+      "license": "CC BY 2.0",
+      "foreign_landing_url": "https://www.flickr.com/photos/66755335@N05/12152342596",
+      "openverse_id": "bd89fd05-b907-4103-ba8e-b8b178b5cd8f"
+    },
+    {
+      "role": "detail",
+      "storage_path": "mock/macrame-wall-hanging/frames/detail.jpg",
+      "title": "how to make a circular macrame wall hanging",
+      "creator": "apairandaspare",
+      "license": "CC BY 2.0",
+      "foreign_landing_url": "https://www.flickr.com/photos/66755335@N05/12151665945",
+      "openverse_id": "352fc1dc-7068-414c-8186-966a34b305d6"
+    },
+    {
+      "role": "detail_alt1",
+      "storage_path": "mock/macrame-wall-hanging/frames/detail_alt1.jpg",
+      "title": "how to make a circular macrame wall hanging",
+      "creator": "apairandaspare",
+      "license": "CC BY 2.0",
+      "foreign_landing_url": "https://www.flickr.com/photos/66755335@N05/12152343696",
+      "openverse_id": "d4901292-9446-4dc2-a7a6-8e4025ece9d6"
+    },
+    {
+      "role": "detail_alt2",
+      "storage_path": "mock/macrame-wall-hanging/frames/detail_alt2.jpg",
+      "title": "how to make a circular macrame wall hanging",
+      "creator": "apairandaspare",
+      "license": "CC BY 2.0",
+      "foreign_landing_url": "https://www.flickr.com/photos/66755335@N05/12152083654",
+      "openverse_id": "0b63f273-5f60-467f-8d09-43f65636e698"
+    },
+    {
+      "role": "process",
+      "storage_path": "mock/macrame-wall-hanging/frames/process.jpg",
+      "title": "how to make a circular macrame wall hanging",
+      "creator": "apairandaspare",
+      "license": "CC BY 2.0",
+      "foreign_landing_url": "https://www.flickr.com/photos/66755335@N05/12151929463",
+      "openverse_id": "82c30ed8-09e6-4d59-9cab-dbebd102d4f0"
+    },
+    {
+      "role": "process_alt1",
+      "storage_path": "mock/macrame-wall-hanging/frames/process_alt1.jpg",
+      "title": "how to make a circular macrame wall hanging",
+      "creator": "apairandaspare",
+      "license": "CC BY 2.0",
+      "foreign_landing_url": "https://www.flickr.com/photos/66755335@N05/12152083654",
+      "openverse_id": "0b63f273-5f60-467f-8d09-43f65636e698"
+    },
+    {
+      "role": "process_alt2",
+      "storage_path": "mock/macrame-wall-hanging/frames/process_alt2.jpg",
+      "title": "how to make a circular macrame wall hanging",
+      "creator": "apairandaspare",
+      "license": "CC BY 2.0",
+      "foreign_landing_url": "https://www.flickr.com/photos/66755335@N05/12152343696",
+      "openverse_id": "d4901292-9446-4dc2-a7a6-8e4025ece9d6"
+    },
+    {
+      "role": "scale",
+      "storage_path": "mock/macrame-wall-hanging/frames/scale.jpg",
+      "title": "how to make a circular macrame wall hanging",
+      "creator": "apairandaspare",
+      "license": "CC BY 2.0",
+      "foreign_landing_url": "https://www.flickr.com/photos/66755335@N05/12151668635",
+      "openverse_id": "9152f7b8-b26b-481f-b57f-1f734d154484"
+    },
+    {
+      "role": "scale_alt1",
+      "storage_path": "mock/macrame-wall-hanging/frames/scale_alt1.jpg",
+      "title": "how to make a circular macrame wall hanging",
+      "creator": "apairandaspare",
+      "license": "CC BY 2.0",
+      "foreign_landing_url": "https://www.flickr.com/photos/66755335@N05/12152340106",
+      "openverse_id": "c7572d6c-d404-49e6-a1c4-36deb0168aec"
+    }
+  ],
+  "sterling-stacking-rings": [
+    {
+      "role": "hero",
+      "storage_path": "mock/sterling-stacking-rings/frames/hero.jpg",
+      "title": "DSC_0459",
+      "creator": "August Axel",
+      "license": "CC BY 2.0",
+      "foreign_landing_url": "https://www.flickr.com/photos/39616364@N04/27345830386",
+      "openverse_id": "6fdbe68c-b3b2-4c7b-91b4-d748a7f6ffbd"
+    },
+    {
+      "role": "in_hand",
+      "storage_path": "mock/sterling-stacking-rings/frames/in_hand.jpg",
+      "title": "DSC_0459",
+      "creator": "August Axel",
+      "license": "CC BY 2.0",
+      "foreign_landing_url": "https://www.flickr.com/photos/39616364@N04/27345830386",
+      "openverse_id": "6fdbe68c-b3b2-4c7b-91b4-d748a7f6ffbd"
+    },
+    {
+      "role": "detail",
+      "storage_path": "mock/sterling-stacking-rings/frames/detail.jpg",
+      "title": "DSC_0459",
+      "creator": "August Axel",
+      "license": "CC BY 2.0",
+      "foreign_landing_url": "https://www.flickr.com/photos/39616364@N04/27345830386",
+      "openverse_id": "6fdbe68c-b3b2-4c7b-91b4-d748a7f6ffbd"
+    },
+    {
+      "role": "process",
+      "storage_path": "mock/sterling-stacking-rings/frames/process.jpg",
+      "title": "Hammered finish",
+      "creator": "Mauro Cateb",
+      "license": "CC BY 2.0",
+      "foreign_landing_url": "https://www.flickr.com/photos/69102917@N06/8239928484",
+      "openverse_id": "6e8d67d7-4e69-47da-9bfe-73de395d60da"
+    },
+    {
+      "role": "scale",
+      "storage_path": "mock/sterling-stacking-rings/frames/scale.jpg",
+      "title": "DSC_0459",
+      "creator": "August Axel",
+      "license": "CC BY 2.0",
+      "foreign_landing_url": "https://www.flickr.com/photos/39616364@N04/27345830386",
+      "openverse_id": "6fdbe68c-b3b2-4c7b-91b4-d748a7f6ffbd"
+    }
+  ],
+  "linen-tote-bag": [
+    {
+      "role": "hero",
+      "storage_path": "mock/linen-tote-bag/frames/hero.jpg",
+      "title": "New tote/messenger bag",
+      "creator": "lisaclarke",
+      "license": "CC BY-ND 2.0",
+      "foreign_landing_url": "https://www.flickr.com/photos/7926735@N03/1110213378",
+      "openverse_id": "2b6b5eb8-392c-4c8d-9fee-5d75f8e86c70"
+    },
+    {
+      "role": "hero_alt1",
+      "storage_path": "mock/linen-tote-bag/frames/hero_alt1.jpg",
+      "title": "New bag",
+      "creator": "lisaclarke",
+      "license": "CC BY-ND 2.0",
+      "foreign_landing_url": "https://www.flickr.com/photos/7926735@N03/1352657869",
+      "openverse_id": "74978861-c591-41a5-8238-f960308bd762"
+    },
+    {
+      "role": "hero_alt2",
+      "storage_path": "mock/linen-tote-bag/frames/hero_alt2.jpg",
+      "title": "241 made of linen canvas and cotton.",
+      "creator": "dryp fra dejnen",
+      "license": "CC BY-ND 2.0",
+      "foreign_landing_url": "https://www.flickr.com/photos/76284563@N04/8064053744",
+      "openverse_id": "d6d3f8de-711c-4931-b5bd-3de3ebef180b"
+    },
+    {
+      "role": "in_hand",
+      "storage_path": "mock/linen-tote-bag/frames/in_hand.jpg",
+      "title": "New tote/messenger bag",
+      "creator": "lisaclarke",
+      "license": "CC BY-ND 2.0",
+      "foreign_landing_url": "https://www.flickr.com/photos/7926735@N03/1109370263",
+      "openverse_id": "7a2db443-c293-4380-8c8e-70dee8d7a094"
+    },
+    {
+      "role": "detail",
+      "storage_path": "mock/linen-tote-bag/frames/detail.jpg",
+      "title": "New tote/messenger bag",
+      "creator": "lisaclarke",
+      "license": "CC BY-ND 2.0",
+      "foreign_landing_url": "https://www.flickr.com/photos/7926735@N03/1110212852",
+      "openverse_id": "512b924c-ee81-4fee-b910-1809566d0092"
+    },
+    {
+      "role": "detail_alt1",
+      "storage_path": "mock/linen-tote-bag/frames/detail_alt1.jpg",
+      "title": "New bag",
+      "creator": "lisaclarke",
+      "license": "CC BY-ND 2.0",
+      "foreign_landing_url": "https://www.flickr.com/photos/7926735@N03/1352657869",
+      "openverse_id": "74978861-c591-41a5-8238-f960308bd762"
+    },
+    {
+      "role": "detail_alt2",
+      "storage_path": "mock/linen-tote-bag/frames/detail_alt2.jpg",
+      "title": "241 made of linen canvas and cotton.",
+      "creator": "dryp fra dejnen",
+      "license": "CC BY-ND 2.0",
+      "foreign_landing_url": "https://www.flickr.com/photos/76284563@N04/8064053744",
+      "openverse_id": "d6d3f8de-711c-4931-b5bd-3de3ebef180b"
+    },
+    {
+      "role": "process",
+      "storage_path": "mock/linen-tote-bag/frames/process.jpg",
+      "title": "New tote/messenger bag",
+      "creator": "lisaclarke",
+      "license": "CC BY-ND 2.0",
+      "foreign_landing_url": "https://www.flickr.com/photos/7926735@N03/1110213378",
+      "openverse_id": "2b6b5eb8-392c-4c8d-9fee-5d75f8e86c70"
+    },
+    {
+      "role": "scale",
+      "storage_path": "mock/linen-tote-bag/frames/scale.jpg",
+      "title": "New bag",
+      "creator": "lisaclarke",
+      "license": "CC BY-ND 2.0",
+      "foreign_landing_url": "https://www.flickr.com/photos/7926735@N03/1353546392",
+      "openverse_id": "66124bd2-9268-486c-8f84-f1eabe52b4d6"
+    },
+    {
+      "role": "scale_alt1",
+      "storage_path": "mock/linen-tote-bag/frames/scale_alt1.jpg",
+      "title": "241 made of linen canvas and cotton.",
+      "creator": "dryp fra dejnen",
+      "license": "CC BY-ND 2.0",
+      "foreign_landing_url": "https://www.flickr.com/photos/76284563@N04/8064053744",
+      "openverse_id": "d6d3f8de-711c-4931-b5bd-3de3ebef180b"
+    }
+  ]
+}

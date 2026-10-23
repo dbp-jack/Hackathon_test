@@ -1,133 +1,167 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
-import { db, upload, logAction, setStatus } from "../lib/db";
+import sharp from "sharp";
+import { db, BUCKET, upload, logAction, setStatus } from "../lib/db";
 import type { LaunchRow } from "../../src/lib/types";
+import type { MockKit } from "../../mock/types";
+import {
+  DEFAULT_KITS_PATH, SAMPLE_KITS_PATH, mockPrefix, FRAME_ROLES, ALT_SUFFIXES, KNIT_SLUG, KNIT_PUBLIC_FILES, KNIT_PUBLIC_VIDEOS,
+  pickKit, kitActions, wordCount, frameCount, fxRate,
+} from "../../src/lib/mockKits";
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
-// Sample assets for the demo scarf (same files as /example and src/lib/exampleKnit.ts). The worker runs from repo root.
-const KNIT_DIR = path.resolve(process.cwd(), "public/example/knit");
-const asset = (name: string) => readFile(path.join(KNIT_DIR, name));
+// The worker runs from repo root. Knit sample files double as the no-seeder fallback.
+const ROOT = process.cwd();
+const KNIT_DIR = path.resolve(ROOT, "public/example/knit");
 
-const TITLE = "Hand-Knit Cable Scarf in Powder Blue | Chunky Knit Winter Scarf | Handmade Cable Knit Wrap | Cozy Gift for Her";
-const TAGS = ["cable knit scarf", "hand knit scarf", "powder blue scarf", "chunky knit scarf", "handmade scarf", "winter scarf", "light blue scarf", "knitted scarf", "cozy scarf", "gift for her", "cable scarf", "handknit gift", "soft winter wrap"];
-const DESCRIPTION = [
-  "Knit by hand, stitch by stitch, this scarf has a raised cable running down the middle and a soft powder blue that sits easily with grey coats, camel and cream.",
-  "It is knit in a chunky yarn on wooden needles, so every stitch is big and easy to see. The cables are crossed by hand as the scarf grows, which is why no two come out exactly alike.",
-  "Because it is made by hand, yours may differ slightly from the photos. That is how you can tell.",
-].join("\n\n");
-const WORDS = DESCRIPTION.split(/\s+/).length;
+/** Loads MOCK_KITS (default mock/kits.json), falling back to mock/kits.sample.json. */
+async function loadKits(): Promise<MockKit[]> {
+  const candidates = [process.env.MOCK_KITS, DEFAULT_KITS_PATH, SAMPLE_KITS_PATH].filter((p): p is string => !!p);
+  for (const p of candidates) {
+    try {
+      const kits = JSON.parse(await readFile(path.resolve(ROOT, p), "utf8")) as MockKit[];
+      if (Array.isArray(kits) && kits.length) return kits;
+    } catch { /* try next */ }
+  }
+  throw new Error(`no mock kits file found (tried ${candidates.join(", ")})`);
+}
 
-// Four markets: title/price from exampleKnit.ts, description translated by hand. FX frankfurter.dev 2026-10-22, rounded.
-const LOCALES: { market: string; locale: string; currency: string; price: number; fx: number; title: string; tags: string[]; description: string }[] = [
-  {
-    market: "GB", locale: "en-GB", currency: "GBP", price: 6000, fx: 0.75,
-    title: "Hand-Knitted Cable Scarf in Powder Blue | Chunky Knit Winter Scarf",
-    tags: ["cable knit scarf", "hand knitted scarf", "powder blue scarf", "chunky knit scarf", "handmade scarf", "winter scarf", "light blue scarf", "knitted scarf", "cosy scarf", "gift for her", "cable scarf", "hand knitted gift", "soft winter wrap"],
-    description: "Knitted by hand, stitch by stitch, this scarf has a raised cable running down the middle and a soft powder blue that sits easily with grey coats, camel and cream.\n\nIt is knitted in a chunky yarn on wooden needles, so every stitch is big and easy to see. The cables are crossed by hand as the scarf grows, which is why no two come out exactly alike.\n\nBecause it is made by hand, yours may differ slightly from the photos. That is how you can tell.",
-  },
-  {
-    market: "DE", locale: "de-DE", currency: "EUR", price: 7100, fx: 0.89,
-    title: "Handgestrickter Schal mit Zopfmuster in Puderblau | Grobstrick-Winterschal",
-    tags: ["zopfmuster schal", "handgestrickter schal", "puderblauer schal", "grobstrick schal", "handgemachter schal", "winterschal", "hellblauer schal", "strickschal", "kuscheliger schal", "geschenk für sie", "zopfschal", "handgestrickt geschenk", "weicher winterschal"],
-    description: "Von Hand gestrickt, Masche für Masche: Dieser Schal hat einen erhabenen Zopf in der Mitte und ein zartes Puderblau, das sich leicht mit grauen Mänteln, Camel und Creme kombinieren lässt.\n\nEr ist aus grober Wolle auf Holznadeln gestrickt, sodass jede Masche groß und gut zu erkennen ist. Die Zöpfe werden von Hand gekreuzt, während der Schal wächst – deshalb gleicht kein Stück dem anderen.\n\nDa er von Hand gefertigt ist, kann Ihr Schal leicht von den Fotos abweichen. Genau daran erkennt man ihn.",
-  },
-  {
-    market: "AU", locale: "en-AU", currency: "AUD", price: 11400, fx: 1.43,
-    title: "Hand-Knitted Cable Scarf in Powder Blue | Chunky Winter Scarf",
-    tags: ["cable knit scarf", "hand knitted scarf", "powder blue scarf", "chunky knit scarf", "handmade scarf", "winter scarf", "light blue scarf", "knitted scarf", "cosy scarf", "gift for her", "cable scarf", "hand knitted gift", "soft winter wrap"],
-    description: "Knitted by hand, stitch by stitch, this scarf has a raised cable running down the middle and a soft powder blue that sits easily with grey coats, camel and cream.\n\nIt is knitted in a chunky yarn on wooden needles, so every stitch is big and easy to see. The cables are crossed by hand as the scarf grows, which is why no two come out exactly alike.\n\nBecause it is made by hand, yours may differ slightly from the photos. That is how you can tell.",
-  },
-  {
-    market: "CA", locale: "fr-CA", currency: "CAD", price: 11200, fx: 1.40,
-    title: "Foulard tricoté à la main à torsades, bleu poudre | Foulard d’hiver en grosse maille",
-    tags: ["foulard torsades", "foulard tricoté main", "foulard bleu poudre", "foulard grosse maille", "foulard fait main", "foulard d'hiver", "foulard bleu pâle", "foulard tricot", "foulard douillet", "cadeau pour elle", "écharpe torsades", "cadeau tricot main", "écharpe douce hiver"],
-    description: "Tricoté à la main, maille après maille, ce foulard porte une torsade en relief au centre et un bleu poudre tout doux qui s’accorde facilement aux manteaux gris, camel et crème.\n\nIl est tricoté dans une grosse laine sur des aiguilles en bois, de sorte que chaque maille est grande et bien visible. Les torsades sont croisées à la main au fil du tricot, c’est pourquoi deux foulards ne sont jamais tout à fait identiques.\n\nComme il est fait à la main, le vôtre peut différer légèrement des photos. C’est à cela qu’on le reconnaît.",
-  },
-];
+/** Server-side copy of a seeded Storage object; false when the seeder has not uploaded it. */
+async function copyObject(from: string, to: string): Promise<boolean> {
+  const { error } = await db.storage.from(BUCKET).copy(from, to);
+  if (!error) return true;
+  if (/not found|does not exist|404/i.test(error.message)) return false;
+  // Re-running the same launch: the target already exists — remove and retry once.
+  await db.storage.from(BUCKET).remove([to]);
+  const retry = await db.storage.from(BUCKET).copy(from, to);
+  if (!retry.error) return true;
+  if (/not found|does not exist|404/i.test(retry.error.message)) return false;
+  throw new Error(`copy ${from} → ${to}: ${retry.error.message}`);
+}
+
+const ROLE_HUE: Record<string, string> = { hero: "#e8dfd0", in_hand: "#d9cbb8", detail: "#cdbfae", process: "#b9ab9b", scale: "#e2d6c6" };
+
+/** Neutral placeholder frame when neither the seeded asset nor a local sample exists. */
+async function placeholderJpeg(kit: MockKit, role: string, variant: string): Promise<Buffer> {
+  const bg = ROLE_HUE[role] ?? "#ddd3c4";
+  const title = kit.product_title.replace(/&/g, "&amp;").replace(/</g, "&lt;");
+  const label = `${role.replace("_", " ")}${variant ? ` ${variant.replace("_", "")}` : ""}`;
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200">
+    <rect width="1200" height="1200" fill="${bg}"/>
+    <circle cx="600" cy="560" r="260" fill="#ffffff" fill-opacity="0.35"/>
+    <text x="600" y="980" font-family="Helvetica, Arial, sans-serif" font-size="44" text-anchor="middle" fill="#3b3028">${title}</text>
+    <text x="600" y="1040" font-family="Helvetica, Arial, sans-serif" font-size="30" text-anchor="middle" fill="#6b5d50">${label} · mock frame</text>
+  </svg>`;
+  return sharp(Buffer.from(svg)).jpeg({ quality: 82 }).toBuffer();
+}
+
+/** Copies a seeded frame into the launch folder, else uploads a local knit photo or a generated JPEG. */
+async function placeFrame(kit: MockKit, sid: string, id: string, role: string, variant: string, altIndex: number): Promise<string> {
+  const to = `${sid}/${id}/frames/${role}${variant}.jpg`;
+  if (await copyObject(`${mockPrefix(kit.slug)}/frames/${role}${variant}.jpg`, to)) return to;
+  let body: Buffer | null = null;
+  if (kit.slug === KNIT_SLUG) {
+    const files = FRAME_ROLES.map((r) => KNIT_PUBLIC_FILES[r]);
+    const base = files.indexOf(KNIT_PUBLIC_FILES[role as keyof typeof KNIT_PUBLIC_FILES] ?? files[0]);
+    body = await readFile(path.join(KNIT_DIR, files[(base + altIndex) % files.length])).catch(() => null);
+  }
+  return upload(to, body ?? await placeholderJpeg(kit, role, variant), "image/jpeg");
+}
+
+/** Copies a seeded video, else the local knit clip; null when neither exists (storage_path stays null). */
+async function placeVideo(kit: MockKit, sid: string, id: string, platform: keyof typeof KNIT_PUBLIC_VIDEOS): Promise<string | null> {
+  const to = `${sid}/${id}/videos/${platform}.mp4`;
+  if (await copyObject(`${mockPrefix(kit.slug)}/videos/${platform}.mp4`, to)) return to;
+  if (kit.slug !== KNIT_SLUG) return null;
+  const body = await readFile(path.join(KNIT_DIR, KNIT_PUBLIC_VIDEOS[platform])).catch(() => null);
+  return body ? upload(to, body, "video/mp4") : null;
+}
 
 /**
- * MOCK_MODE pipeline: no Claude, no ffmpeg. Emits the demo scarf kit over ~40 s with the same
+ * MOCK_MODE pipeline: no Claude, no ffmpeg. Emits one kit from mock/kits.json over ~40 s with the same
  * claude_actions cadence, so the result screen fills in exactly as it will with the real worker.
- * Frames and videos are the real sample files from public/example/knit, uploaded to Storage.
- * Useful when the API key or ffmpeg is missing, or for rehearsing the pitch.
+ * The kit is chosen from the seller's product hint, else rotated by how many launches the seller has made.
+ * Frames/videos are copied from the seeded `mock/<slug>/...` Storage objects (scripts/seed-mock.ts);
+ * without the seeder it falls back to public/example/knit or a generated placeholder, so it never crashes.
  */
 export async function runMock(launch: LaunchRow) {
   const sid = launch.seller_id, id = launch.id;
+  const kits = await loadKits();
+  const { count } = await db.from("launches").select("id", { count: "exact", head: true }).eq("seller_id", sid).neq("id", id);
+  const kit = pickKit(kits, launch.product_name_hint, count ?? 0);
+  const act = kitActions(kit);
+  const say = (step: (typeof act)[number]["step"]) => act.find((a) => a.step === step)!.summary;
+  const { source, listing } = kit;
+  const frames = frameCount(kit);
+  console.log(`  mock kit: ${kit.slug}${launch.product_name_hint ? ` (hint "${launch.product_name_hint}")` : ` (rotation ${count ?? 0})`}`);
 
   await sleep(3000);
-  await db.from("source_media").update({ duration_sec: 10, fps: 30, frame_count: 300 }).eq("launch_id", id).eq("kind", "video");
-  await logAction(id, "watch_footage", "watched 10 s of footage", { metrics: { duration_sec: 10, fps: 30 } });
+  await db.from("source_media").update({ duration_sec: source.duration_sec, fps: source.fps, frame_count: frames }).eq("launch_id", id).eq("kind", "video");
+  await logAction(id, "watch_footage", say("watch_footage"), { metrics: { duration_sec: source.duration_sec, fps: source.fps } });
 
   await sleep(5000);
-  // [role, file, timecode_sec, score, reason] — one pick per role, then two runners-up (selected=false) so /swap has candidates.
-  const picks: [string, string, number, number, string][] = [
-    ["hero", "photo-hero.jpg", 8.4, 0.94, "finished scarf laid flat, cable centred, soft even light"],
-    ["detail", "photo-cables.jpg", 6.2, 0.91, "cable crossings fill the frame — texture reads at thumbnail size"],
-    ["in_hand", "photo-closeup.jpg", 7.1, 0.88, "hands holding the knit, shows stitch size and drape"],
-    ["process", "photo-progress.jpg", 3.5, 0.86, "scarf still on the needles — proof of handmade"],
-    ["scale", "photo-yarn.jpg", 0.8, 0.82, "ball of yarn next to the work, gives a sense of scale"],
-  ];
-  const files = picks.map((p) => p[1]);
-  const buffers = Object.fromEntries(await Promise.all(files.map(async (f) => [f, await asset(f)] as const)));
+  // One pick per role (from kit.frames), then two runners-up (selected=false) so /swap has candidates.
+  const byRole = new Map(kit.frames.map((f) => [f.role, f]));
   let i = 0;
-  for (const [n, [role, file, sec, score, reason]] of picks.entries()) {
-    const p = await upload(`${sid}/${id}/frames/${role}.jpg`, buffers[file], "image/jpeg");
-    await db.from("frames").insert({ launch_id: id, role, timecode_sec: sec, score, score_reason: reason, storage_path_raw: p, sort_order: i++, selected: true });
-    for (let k = 1; k <= 2; k++) {
-      const alt = files[(n + k) % files.length];
-      const q = await upload(`${sid}/${id}/frames/${role}-alt${k}.jpg`, buffers[alt], "image/jpeg");
-      await db.from("frames").insert({ launch_id: id, role, timecode_sec: Math.round((sec + k * 0.7) % 10 * 10) / 10, score: Math.round((score - 0.07 * k) * 100) / 100, score_reason: "runner-up for this role", storage_path_raw: q, sort_order: i++, selected: false });
+  for (const role of FRAME_ROLES) {
+    const f = byRole.get(role);
+    if (!f) continue;
+    const sec = f.timecode_sec;
+    const p = await placeFrame(kit, sid, id, role, "", 0);
+    await db.from("frames").insert({ launch_id: id, role, timecode_sec: sec, score: f.score, score_reason: f.reason, storage_path_raw: p, sort_order: i++, selected: true });
+    for (const [k, suffix] of ALT_SUFFIXES.entries()) {
+      const q = await placeFrame(kit, sid, id, role, suffix, k + 1);
+      const altSec = sec == null ? null : Math.round(((sec + (k + 1) * 0.7) % source.duration_sec) * 10) / 10;
+      await db.from("frames").insert({ launch_id: id, role, timecode_sec: altSec, score: Math.round((f.score - 0.07 * (k + 1)) * 100) / 100, score_reason: "runner-up for this role", storage_path_raw: q, sort_order: i++, selected: false });
     }
   }
-  await logAction(id, "score_frames", "scored 300 frames, kept 5", { metrics: { frames_scored: 300, frames_kept: 5 }, model: "mock" });
-  await db.from("launches").update({ product_title: "Hand-Knit Cable Scarf in Powder Blue" }).eq("id", id);
-  await logAction(id, "extract_attributes", "identified a hand-knit scarf — chunky yarn, centre cable, powder blue");
+  await logAction(id, "score_frames", say("score_frames"), { metrics: { frames_scored: frames, frames_kept: kit.frames.length }, model: "mock" });
+  await db.from("launches").update({ product_title: kit.product_title }).eq("id", id);
+  await logAction(id, "extract_attributes", say("extract_attributes"), { metrics: { materials: kit.attributes.materials, colors: kit.attributes.colors } });
   await setStatus(id, "writing");
 
   await sleep(5000);
-  await logAction(id, "research_comparables", "read 40 comparable listings for price and tags", { metrics: { low_cents: 3000, high_cents: 17500, mid_low_cents: 7500, mid_high_cents: 10000 } });
+  await logAction(id, "research_comparables", say("research_comparables"), { metrics: { comparables: listing.comparables_read, low_cents: listing.price_low_cents, high_cents: listing.price_high_cents } });
 
   await sleep(6000);
+  const words = wordCount(listing.description);
   await db.from("listings").upsert({
-    launch_id: id, title: TITLE, tags: TAGS, description: DESCRIPTION,
-    price_cents: 8000, currency: "USD", price_low_cents: 3000, price_high_cents: 17500, cost_basis_cents: 3200, comparables_read: 40,
-    price_reasoning: "Mid-range of 40 comparable hand-knit cable scarves ($30–$175, most at $75–$100); covers about $32 of yarn and 6 h of knitting with margin left.",
+    launch_id: id, title: listing.title, tags: listing.tags, description: listing.description,
+    price_cents: listing.price_cents, currency: "USD", price_low_cents: listing.price_low_cents, price_high_cents: listing.price_high_cents,
+    cost_basis_cents: listing.cost_basis_cents, comparables_read: listing.comparables_read, price_reasoning: listing.price_reasoning,
   });
-  await logAction(id, "write_listing", `wrote the title, 13 tags and a ${WORDS}-word description`, { metrics: { words: WORDS, title_chars: TITLE.length } });
-  await logAction(id, "price", "priced it at $80.00 against 40 comparables");
+  await logAction(id, "write_listing", say("write_listing"), { metrics: { words, tags: listing.tags.length, title_chars: listing.title.length } });
+  await logAction(id, "price", say("price"), { metrics: { price_cents: listing.price_cents, comparables: listing.comparables_read } });
 
   await sleep(4000);
-  await logAction(id, "write_hooks", "wrote 3 hooks: “From one ball of yarn to this”, “Every stitch, by hand.”, “Would you wear this blue?”");
+  const hooks = kit.videos.map((v) => v.hook_text).filter((h): h is string => !!h);
+  await logAction(id, "write_hooks", say("write_hooks"), { metrics: { hooks: hooks.length } });
   await setStatus(id, "rendering");
   await sleep(6000);
-  // [kind, platform, hook, duration_sec, file] — the Etsy listing video is the source clip itself.
-  const vids = [
-    ["listing", "etsy", null, 10, "input.mp4"], ["short", "tiktok", "From one ball of yarn to this", 10, "short-tiktok.mp4"],
-    ["short", "reels", "Every stitch, by hand.", 6, "short-reels.mp4"], ["short", "shorts", "Would you wear this blue?", 6, "short-shorts.mp4"],
-  ] as const;
-  const paths = await Promise.all(vids.map(async ([, platform, , , file]) => upload(`${sid}/${id}/videos/${platform}.mp4`, await asset(file), "video/mp4")));
-  await db.from("videos").insert(vids.map(([kind, platform, hook, dur], n) => ({
-    launch_id: id, kind, platform, hook_text: hook, hook_rationale: hook ? "demo" : null,
-    cut_points: dur === 10 ? [{ in: 0, out: 10, caption: hook }] : [{ in: 0.8, out: 2.8, caption: hook }, { in: 3.5, out: 5.5, caption: null }, { in: 8.0, out: 10.0, caption: null }],
-    duration_sec: dur, aspect: kind === "listing" ? "16:9" : "9:16", has_captions: !!hook, storage_path: paths[n], sort_order: n,
+  const paths = await Promise.all(kit.videos.map((v) => placeVideo(kit, sid, id, v.platform)));
+  await db.from("videos").insert(kit.videos.map((v, n) => ({
+    launch_id: id, kind: v.kind, platform: v.platform, hook_text: v.hook_text, hook_rationale: v.hook_rationale,
+    cut_points: v.cuts, duration_sec: v.duration_sec, aspect: v.kind === "listing" ? "16:9" : "9:16",
+    has_captions: !!v.hook_text, storage_path: paths[n], sort_order: n,
   })));
-  await logAction(id, "cut_points", "cut 4 videos with 3 hooks", { metrics: { videos: 4 } });
+  await logAction(id, "cut_points", say("cut_points"), { metrics: { videos: kit.videos.length, hooks: hooks.length } });
 
   await sleep(5000);
-  await db.from("listing_localizations").insert(LOCALES.map((l) => ({
+  await db.from("listing_localizations").insert(kit.localizations.map((l) => ({
     launch_id: id, market: l.market, locale: l.locale, title: l.title, tags: l.tags, description: l.description,
-    price_cents: l.price, currency: l.currency, fx_rate: l.fx, shipping_cents_included: 1500, enabled: true,
+    price_cents: l.price_cents, currency: l.currency, fx_rate: fxRate(kit, l), shipping_cents_included: 1500, enabled: true,
   })));
-  await logAction(id, "localize", "wrote 4 listings for UK, DE, AU and CA — translated and priced in local currency", { metrics: { markets: 4 } });
+  await logAction(id, "localize", say("localize"), { metrics: { markets: kit.localizations.length } });
 
   await sleep(2000);
-  const { data: frames } = await db.from("frames").select("id").eq("launch_id", id).eq("selected", true).order("sort_order");
-  const ids = (frames ?? []).map((f) => f.id);
+  const { data: picked } = await db.from("frames").select("id").eq("launch_id", id).eq("selected", true).order("sort_order");
+  const ids = (picked ?? []).map((f) => f.id);
   await db.from("social_assets").insert([
-    { launch_id: id, kind: "pinterest_pin", title: "Hand-knit cable scarf in powder blue — made stitch by stitch", caption: "Chunky cable knit, crossed by hand.", frame_ids: ids.slice(0, 1), sort_order: 0 },
-    { launch_id: id, kind: "instagram_carousel", caption: "One ball of yarn, one pair of needles, one scarf. #handknit #cableknit #knittersofinstagram #slowfashion #powderblue", frame_ids: ids, sort_order: 1 },
+    { launch_id: id, kind: "pinterest_pin", title: kit.social.pin_title, caption: kit.social.pin_caption, frame_ids: ids.slice(0, 1), sort_order: 0 },
+    { launch_id: id, kind: "instagram_carousel", caption: kit.social.carousel_caption, frame_ids: ids, sort_order: 1 },
   ]);
-  await db.from("publications").upsert((launch.target_channels ?? ["etsy", "shopify", "tiktok"]).map((channel) => ({ launch_id: id, channel, status: "draft" })), { onConflict: "launch_id,channel" });
-  await logAction(id, "format_for_channel", "formatted for 3 channels, wrote the pin");
+  const channels = launch.target_channels ?? ["etsy", "shopify", "tiktok"];
+  await db.from("publications").upsert(channels.map((channel) => ({ launch_id: id, channel, status: "draft" })), { onConflict: "launch_id,channel" });
+  await logAction(id, "format_for_channel", say("format_for_channel"), { metrics: { channels: channels.length } });
 }

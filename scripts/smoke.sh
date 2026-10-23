@@ -3,6 +3,7 @@
 #   BASE_URL=http://localhost:3000 scripts/smoke.sh
 #   SMOKE_FILE=/path/to/clip.mp4 scripts/smoke.sh   # upload a real video instead of a fake jpg
 #   POLL_SECONDS=120                                # how long to wait for ready|failed
+#   SMOKE_HINT="walnut cutting board"               # optional product-name hint (picks that mock kit); default none
 # Needs curl, plus jq (falls back to python3 -I if jq is missing). The worker must be running
 # (MOCK_MODE=true is enough) or the launch never reaches ready.
 set -u
@@ -109,7 +110,9 @@ PUT_CODE=$(curl -sS -o "$TMP/put.json" -w '%{http_code}' -X PUT \
 if [ "$PUT_CODE" = 200 ]; then pass "PUT signed upload -> 200 ($BYTES bytes)"; else fail "PUT signed upload -> $PUT_CODE $(head -c 200 "$TMP/put.json")"; fi
 
 # 5. POST /launches
-req POST "$API/launches" "{\"media_ids\":[\"$MEDIA_ID\"],\"hints\":{\"product_name\":\"Smoke test mug\"}}"
+# No product-name hint by default so smoke runs don't pollute product titles; SMOKE_HINT opts in.
+if [ -n "${SMOKE_HINT:-}" ]; then HINTS="{\"product_name\":\"$SMOKE_HINT\"}"; else HINTS="{}"; fi
+req POST "$API/launches" "{\"media_ids\":[\"$MEDIA_ID\"],\"hints\":$HINTS}"
 LAUNCH_ID=$(jget "$BODY" .launch_id)
 if [ "$CODE" = 202 ] && [ -n "$LAUNCH_ID" ]; then
   pass "POST /launches -> 202, launch_id=$LAUNCH_ID, credits_remaining=$(jget "$BODY" .credits_remaining)"
