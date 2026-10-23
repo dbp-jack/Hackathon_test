@@ -11,7 +11,8 @@ export type Attributes = {
   dimensions: Record<string, number | string>; care: string[]; production_hours: number | null;
   made_to_order: boolean; lead_time_days_min: number | null; lead_time_days_max: number | null;
 };
-export type Analysis = { scenes: Scene[]; attributes: Attributes; videoFile: string | null; duration: number };
+/** `photos`: the 5 selected frames in sort order (hero, in_hand, detail, process, scale) as local paths — only filled for photos-only uploads, where the clips are slideshows. */
+export type Analysis = { scenes: Scene[]; attributes: Attributes; videoFile: string | null; duration: number; photos: { role: FrameRole; file: string }[] };
 
 const ROLES: FrameRole[] = ["hero", "in_hand", "detail", "process", "scale"];
 const MAX_IMAGES = 60; // hard cap on images per vision call, photos included
@@ -59,6 +60,8 @@ export async function analyze(launch: LaunchRow, workDir: string): Promise<Analy
     await writeFile(file, await download(p.storage_path));
     candidates.push({ file, sec: null, source_id: p.id, sharp: Number.MAX_SAFE_INTEGER });
   }
+  // photos-only upload: still log the step so the "What Claude did" strip shows all 10
+  if (!video) await logAction(launch.id, "watch_footage", `reviewed ${photos.length} uploaded photos`, { metrics: { photos: photos.length }, started_at: t0 });
   candidates = candidates.slice(0, MAX_IMAGES);
   if (!candidates.length) throw new Error("No usable frames or photos");
 
@@ -100,10 +103,12 @@ export async function analyze(launch: LaunchRow, workDir: string): Promise<Analy
   const framesDir = path.join(workDir, "picked");
   await mkdir(framesDir, { recursive: true });
   let order = 0;
+  const picked: Analysis["photos"] = []; // local files stay in workDir until run() cleans up, so renderVideos can build slideshows from them
   for (const pick of data.picks) {
     const c = candidates[pick.frame_index];
     if (!c) continue;
     const buf = c.sec != null && videoFile ? await fullResFrame(videoFile, c.sec, path.join(framesDir, `${pick.role}.jpg`)) : await (await import("node:fs/promises")).readFile(c.file);
+    if (!videoFile) picked.push({ role: pick.role, file: c.file });
     const storagePath = await upload(`${launch.seller_id}/${launch.id}/frames/${pick.role}.jpg`, buf, "image/jpeg");
     await db.from("frames").insert({ launch_id: launch.id, source_id: c.source_id, role: pick.role, timecode_sec: c.sec, score: pick.score, score_reason: pick.reason, storage_path_raw: storagePath, sort_order: order++, selected: true });
     for (const ri of pick.runners_up ?? []) {
@@ -121,7 +126,7 @@ export async function analyze(launch: LaunchRow, workDir: string): Promise<Analy
   await logAction(launch.id, "extract_attributes", `identified a ${data.attributes.category.toLowerCase()} — ${data.attributes.materials.slice(0, 2).join(", ")}`, { metrics: { scenes: data.scenes.length } });
   await setStatus(launch.id, "writing");
 
-  return { scenes: data.scenes, attributes: data.attributes, videoFile, duration };
+  return { scenes: data.scenes, attributes: data.attributes, videoFile, duration, photos: picked };
 }
 
 function buildPrompt(launch: LaunchRow, labels: string[]) {

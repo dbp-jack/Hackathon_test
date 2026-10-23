@@ -114,6 +114,7 @@ export function Dropzone({ t }: { t: Messages["drop"] }) {
                 {video && `${(video.size / 1024 ** 2).toFixed(0)} MB`}{video && photos.length ? " · " : ""}{photos.length ? photoCount(photos.length) : ""}
                 {" · "}<button type="button" onClick={() => inputRef.current?.click()} className="underline">{t.change}</button>
               </div>
+              {!video && <div className="mt-1 text-xs text-ink-mute">{t.noVideo}</div>}
             </>
           )}
         </div>

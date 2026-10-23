@@ -63,6 +63,7 @@ const en = {
     oneVideo: "One video per launch — pick your best take.",
     outOfLaunches: "You're out of launches this month. Upgrade to keep going.",
     generic: "We couldn't start your launch kit. Wait a moment and try again.",
+    noVideo: "No video selected — we'll build the kit from your photos, including the 4 clips. Add a making-of video for footage-based clips.",
   },
   outputs: {
     heading: "What comes out, every time",
@@ -97,6 +98,7 @@ const es: Messages = {
     price: "Precio que tienes en mente", pricePh: "$42.00", shipsFrom: "Se envía desde", shipsFromPh: "Portland, OR",
     optional: "Todo es opcional. Los materiales cuesta verlos solo en video, así que añádelos si los sabes.", unsupported: "Aquí solo funcionan archivos de video o foto.", titleTouch: "Elige el video de tu proceso", oneVideo: "Un video por lanzamiento: elige tu mejor toma.",
     outOfLaunches: "Ya usaste tus lanzamientos de este mes. Mejora tu plan para seguir.", generic: "No pudimos empezar tu kit. Espera un momento y vuelve a intentarlo.",
+    noVideo: "No hay video: crearemos el kit con tus fotos, incluidos los 4 clips. Añade un video de tu proceso si quieres clips con metraje real.",
   },
   outputs: {
     heading: "Lo que recibes, siempre", saved: "Unas {h} horas de trabajo, hechas en 5 minutos",
@@ -121,6 +123,7 @@ const pt: Messages = {
     price: "Preço que você tem em mente", pricePh: "$42.00", shipsFrom: "Envia de", shipsFromPh: "Portland, OR",
     optional: "Tudo opcional. Materiais são difíceis de ver só pelo vídeo, então informe se souber.", unsupported: "Só funcionam arquivos de vídeo ou foto.", titleTouch: "Escolha o vídeo do processo", oneVideo: "Um vídeo por lançamento: escolha sua melhor gravação.",
     outOfLaunches: "Seus lançamentos deste mês acabaram. Faça upgrade para continuar.", generic: "Não conseguimos começar seu kit. Espere um pouco e tente de novo.",
+    noVideo: "Nenhum vídeo selecionado: vamos montar o kit com suas fotos, incluindo os 4 clipes. Envie um vídeo do processo para clipes com filmagem real.",
   },
   outputs: {
     heading: "O que sai, toda vez", saved: "Cerca de {h} horas de trabalho, feitas em 5 minutos",
@@ -145,6 +148,7 @@ const fr: Messages = {
     price: "Prix envisagé", pricePh: "42,00 $", shipsFrom: "Expédié depuis", shipsFromPh: "Portland, OR",
     optional: "Tout est facultatif. Les matières se devinent mal en vidéo : indiquez-les si vous les connaissez.", unsupported: "Seuls les fichiers vidéo ou photo sont acceptés.", titleTouch: "Choisissez votre vidéo de fabrication", oneVideo: "Une vidéo par lancement : choisissez votre meilleure prise.",
     outOfLaunches: "Vous n’avez plus de lancements ce mois-ci. Passez à l’offre supérieure pour continuer.", generic: "Impossible de lancer votre kit. Patientez un instant et réessayez.",
+    noVideo: "Aucune vidéo sélectionnée : le kit sera créé à partir de vos photos, y compris les 4 clips. Ajoutez une vidéo de fabrication pour des clips tirés de vos images.",
   },
   outputs: {
     heading: "Ce que vous obtenez, à chaque fois", saved: "Environ {h} heures de travail, faites en 5 minutes",
@@ -169,6 +173,7 @@ const de: Messages = {
     price: "Preisvorstellung", pricePh: "42,00 $", shipsFrom: "Versand aus", shipsFromPh: "Portland, OR",
     optional: "Alles optional. Materialien sieht man im Video schlecht, trag sie ein, wenn du sie kennst.", unsupported: "Hier gehen nur Video- oder Fotodateien.", titleTouch: "Wähle dein Making-of-Video", oneVideo: "Ein Video pro Launch – wähle deine beste Aufnahme.",
     outOfLaunches: "Deine Launches für diesen Monat sind aufgebraucht. Mach ein Upgrade, um weiterzumachen.", generic: "Dein Kit konnte nicht starten. Warte kurz und versuch es noch einmal.",
+    noVideo: "Kein Video ausgewählt – wir erstellen das Kit aus deinen Fotos, inklusive der 4 Clips. Lade ein Making-of-Video hoch, um Clips aus echtem Filmmaterial zu bekommen.",
   },
   outputs: {
     heading: "Das bekommst du, jedes Mal", saved: "Etwa {h} Stunden Arbeit, erledigt in 5 Minuten",
@@ -193,6 +198,7 @@ const it: Messages = {
     price: "Prezzo che hai in mente", pricePh: "42,00 $", shipsFrom: "Spedito da", shipsFromPh: "Portland, OR",
     optional: "Tutto facoltativo. I materiali si capiscono poco dal video: aggiungili se li conosci.", unsupported: "Qui funzionano solo file video o foto.", titleTouch: "Scegli il video della lavorazione", oneVideo: "Un video per lancio: scegli la ripresa migliore.",
     outOfLaunches: "Hai finito i lanci di questo mese. Passa a un piano superiore per continuare.", generic: "Non siamo riusciti ad avviare il tuo kit. Aspetta un momento e riprova.",
+    noVideo: "Nessun video selezionato: creeremo il kit dalle tue foto, compresi i 4 clip. Aggiungi un video della lavorazione per clip con riprese vere.",
   },
   outputs: {
     heading: "Cosa ottieni, ogni volta", saved: "Circa {h} ore di lavoro, fatte in 5 minuti",
@@ -217,6 +223,7 @@ const nl: Messages = {
     price: "Prijs die je in gedachten hebt", pricePh: "$42.00", shipsFrom: "Verzonden vanuit", shipsFromPh: "Portland, OR",
     optional: "Alles is optioneel. Materialen zie je slecht op video, dus vul ze in als je ze weet.", unsupported: "Alleen video- of fotobestanden werken hier.", titleTouch: "Kies je making-of-video", oneVideo: "Eén video per lancering: kies je beste opname.",
     outOfLaunches: "Je lanceringen voor deze maand zijn op. Upgrade om door te gaan.", generic: "Je kit kon niet starten. Wacht even en probeer het opnieuw.",
+    noVideo: "Geen video gekozen: we maken de kit van je foto’s, inclusief de 4 clips. Voeg een making-of-video toe voor clips uit echt beeldmateriaal.",
   },
   outputs: {
     heading: "Dit krijg je, elke keer", saved: "Ongeveer {h} uur werk, klaar in 5 minuten",
@@ -241,6 +248,7 @@ const tr: Messages = {
     price: "Aklındaki fiyat", pricePh: "$42.00", shipsFrom: "Gönderim yeri", shipsFromPh: "Portland, OR",
     optional: "Hepsi isteğe bağlı. Malzemeyi videodan anlamak zor, biliyorsan yaz.", unsupported: "Burada yalnızca video veya fotoğraf dosyaları çalışır.", titleTouch: "Yapım videonu seç", oneVideo: "Her lansmana bir video — en iyi çekimini seç.",
     outOfLaunches: "Bu ayki lansman hakkın bitti. Devam etmek için planını yükselt.", generic: "Kitin başlatılamadı. Biraz bekleyip tekrar dene.",
+    noVideo: "Video seçilmedi: kiti 4 klip dahil fotoğraflarından hazırlayacağız. Gerçek çekimden klipler için bir yapım videosu ekle.",
   },
   outputs: {
     heading: "Her seferinde elde ettiklerin", saved: "Yaklaşık {h} saatlik iş, 5 dakikada",
@@ -265,6 +273,7 @@ const ar: Messages = {
     price: "السعر الذي تفكر فيه", pricePh: "$42.00", shipsFrom: "يُشحن من", shipsFromPh: "Portland, OR",
     optional: "كل الحقول اختيارية. يصعب معرفة الخامات من الفيديو وحده، فأضفها إن كنت تعرفها.", unsupported: "تُقبل هنا ملفات الفيديو أو الصور فقط.", titleTouch: "اختر فيديو صناعة منتجك", oneVideo: "فيديو واحد لكل إطلاق، اختر أفضل لقطة.",
     outOfLaunches: "استنفدت إطلاقات هذا الشهر. رقِّ خطتك للمتابعة.", generic: "تعذّر بدء مجموعتك. انتظر قليلًا ثم حاول مرة أخرى.",
+    noVideo: "لم يُختر فيديو — سنُعدّ المجموعة من صورك، بما فيها المقاطع الأربعة. أضف فيديو لعملية الصنع لتحصل على مقاطع من تصوير حقيقي.",
   },
   outputs: {
     heading: "ما تحصل عليه في كل مرة", saved: "نحو {h} ساعات من العمل في 5 دقائق",
@@ -289,6 +298,7 @@ const hi: Messages = {
     price: "आपके मन की कीमत", pricePh: "$42.00", shipsFrom: "कहाँ से भेजा जाएगा", shipsFromPh: "Portland, OR",
     optional: "सब कुछ वैकल्पिक है। सिर्फ़ वीडियो से सामग्री पता करना मुश्किल है, पता हो तो लिख दें।", unsupported: "यहाँ सिर्फ़ वीडियो या फ़ोटो फ़ाइलें चलती हैं।", titleTouch: "अपना मेकिंग वीडियो चुनें", oneVideo: "हर लॉन्च में एक ही वीडियो — अपना सबसे अच्छा टेक चुनें।",
     outOfLaunches: "इस महीने के आपके लॉन्च खत्म हो गए हैं। जारी रखने के लिए अपग्रेड करें।", generic: "आपकी किट शुरू नहीं हो सकी। थोड़ा रुककर फिर से कोशिश करें।",
+    noVideo: "कोई वीडियो नहीं चुना — हम आपकी फ़ोटो से किट बनाएँगे, 4 क्लिप समेत। असली फ़ुटेज वाली क्लिप के लिए बनाने का वीडियो जोड़ें।",
   },
   outputs: {
     heading: "हर बार आपको मिलता है", saved: "लगभग {h} घंटे का काम, 5 मिनट में",
@@ -313,6 +323,7 @@ const id: Messages = {
     price: "Harga yang kamu bayangkan", pricePh: "$42.00", shipsFrom: "Dikirim dari", shipsFromPh: "Portland, OR",
     optional: "Semua opsional. Bahan sulit diketahui dari video saja, jadi isi kalau kamu tahu.", unsupported: "Hanya file video atau foto yang bisa dipakai.", titleTouch: "Pilih video proses pembuatanmu", oneVideo: "Satu video per peluncuran — pilih rekaman terbaikmu.",
     outOfLaunches: "Jatah peluncuranmu bulan ini sudah habis. Tingkatkan paket untuk lanjut.", generic: "Kit kamu belum bisa dimulai. Tunggu sebentar lalu coba lagi.",
+    noVideo: "Tidak ada video dipilih — kit akan dibuat dari fotomu, termasuk 4 klipnya. Tambahkan video proses pembuatan untuk klip dari rekaman asli.",
   },
   outputs: {
     heading: "Yang kamu dapat, setiap kali", saved: "Sekitar {h} jam kerja, selesai dalam 5 menit",
@@ -337,6 +348,7 @@ const ja: Messages = {
     price: "希望価格", pricePh: "$42.00", shipsFrom: "発送元", shipsFromPh: "Portland, OR",
     optional: "すべて任意です。素材は動画だけでは分かりにくいので、分かれば書いてください。", unsupported: "使えるのは動画か写真のファイルだけです。", titleTouch: "制作動画を選んでください", oneVideo: "動画は1回のローンチにつき1本です。いちばん良いテイクを選んでください。",
     outOfLaunches: "今月のローンチ回数を使い切りました。続けるにはプランをアップグレードしてください。", generic: "キットを開始できませんでした。少し待ってからもう一度お試しください。",
+    noVideo: "動画が選ばれていません — 写真からキットを作ります（4本のクリップも含む）。実際の映像からクリップを作るには、制作過程の動画を追加してください。",
   },
   outputs: {
     heading: "毎回つくられるもの", saved: "約{h}時間分の作業を5分で",
@@ -361,6 +373,7 @@ const ko: Messages = {
     price: "생각해 둔 가격", pricePh: "$42.00", shipsFrom: "배송 출발지", shipsFromPh: "Portland, OR",
     optional: "모두 선택 사항이에요. 재료는 영상만으로 알기 어려우니 아시면 적어 주세요.", unsupported: "영상이나 사진 파일만 올릴 수 있어요.", titleTouch: "제작 과정 영상을 골라 주세요", oneVideo: "한 번에 영상은 하나만 올릴 수 있어요. 가장 잘 나온 영상을 골라 주세요.",
     outOfLaunches: "이번 달 런치 횟수를 다 썼어요. 계속하려면 요금제를 올려 주세요.", generic: "런치 키트를 시작하지 못했어요. 잠시 뒤 다시 눌러 주세요.",
+    noVideo: "영상이 없어요 — 사진만으로 키트를 만들게요. 클립 4개도 포함돼요. 실제 촬영분으로 클립을 만들려면 만드는 과정 영상을 추가하세요.",
   },
   outputs: {
     heading: "매번 이만큼 나와요", saved: "약 {h}시간 걸릴 일을 5분 만에",
@@ -385,6 +398,7 @@ const zh: Messages = {
     price: "心理价位", pricePh: "$42.00", shipsFrom: "发货地", shipsFromPh: "Portland, OR",
     optional: "全部选填。材料光看视频很难判断，知道的话请填上。", unsupported: "这里只支持视频或照片文件。", titleTouch: "选择制作过程视频", oneVideo: "每次发布只能用一段视频，请选最好的一段。",
     outOfLaunches: "本月发布次数已用完。升级套餐即可继续。", generic: "没能开始制作。请稍等片刻再试一次。",
+    noVideo: "未选择视频——我们会用你的照片制作整套内容，包括 4 条片段。附上制作过程视频，即可用真实画面剪出片段。",
   },
   outputs: {
     heading: "每次都会得到", saved: "约 {h} 小时的工作，5 分钟完成",

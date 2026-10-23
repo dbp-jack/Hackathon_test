@@ -72,7 +72,7 @@ export async function hasDrawtext(): Promise<boolean> {
 }
 
 // Output size for shorts. 720×1280 is plenty for TikTok/Reels previews and renders ~3× faster than 1080p on a shared vCPU.
-const OUT_W = Number(process.env.RENDER_WIDTH ?? 720), OUT_H = Math.round(OUT_W * 16 / 9);
+export const OUT_W = Number(process.env.RENDER_WIDTH ?? 720), OUT_H = Math.round(OUT_W * 16 / 9);
 
 /**
  * Concatenate cuts into a vertical clip with optional burned-in captions.
@@ -85,19 +85,53 @@ export async function renderVertical(video: string, cuts: Cut[], out: string, fo
   const segs: string[] = [];
   for (const [i, c] of cuts.entries()) {
     let vf = `scale=${OUT_W}:${OUT_H}:force_original_aspect_ratio=increase,crop=${OUT_W}:${OUT_H}`;
-    if (c.caption && font) {
-      const text = c.caption.replace(/[\\':]/g, (m) => "\\" + m);
-      vf += `,drawtext=fontfile='${font}':text='${text}':fontcolor=white:fontsize=${Math.round(OUT_W / 17)}:borderw=3:bordercolor=black@0.6:x=(w-text_w)/2:y=h*0.78`;
-    }
+    if (c.caption && font) vf += captionFilter(c.caption, font);
     const seg = path.join(dir, `${base}_${i}.mp4`);
     await exec(FFMPEG, ["-y", "-ss", String(c.in), "-t", String(Math.max(0.5, c.out - c.in)), "-i", video, "-vf", vf, "-r", "30",
       "-c:v", "libx264", "-preset", "ultrafast", "-crf", "24", "-pix_fmt", "yuv420p", "-an", seg], { maxBuffer: 64 * 1024 * 1024 });
     segs.push(seg);
   }
+  return concatSegments(segs, out);
+}
+
+/** Burned-in caption filter shared by both renderers; escapes the drawtext specials. */
+function captionFilter(caption: string, font: string) {
+  const text = caption.replace(/[\\':]/g, (m) => "\\" + m);
+  return `,drawtext=fontfile='${font}':text='${text}':fontcolor=white:fontsize=${Math.round(OUT_W / 17)}:borderw=3:bordercolor=black@0.6:x=(w-text_w)/2:y=h*0.78`;
+}
+
+/** concat demuxer with stream copy — segments share codec/size/fps, so no second encode. Removes the segments afterwards. */
+async function concatSegments(segs: string[], out: string) {
+  const dir = path.dirname(out), base = path.basename(out, path.extname(out));
   const list = path.join(dir, `${base}_concat.txt`);
   await writeFile(list, segs.map((s) => `file '${path.resolve(s).replace(/'/g, "'\\''")}'`).join("\n")); // concat resolves relative paths against the list file, so use absolute
-  // identical codec/size/fps → stream copy, no second encode
   await exec(FFMPEG, ["-y", "-f", "concat", "-safe", "0", "-i", list, "-c", "copy", "-movflags", "+faststart", out], { maxBuffer: 64 * 1024 * 1024 });
   await Promise.all([...segs, list].map((f) => rm(f, { force: true })));
   return readFile(out);
+}
+
+const SLIDE_SEC = 3; // virtual timeline for photos-only plans: photo i spans [i*3, i*3+3)
+
+/**
+ * Photos-only fallback for renderVertical: a Ken-Burns slideshow at the same size/fps/codec.
+ * Each cut picks the photo at floor(in/3) (cycling when fewer than 5 were selected) and holds it 2–6 s with a slow zoom that alternates in/out.
+ */
+export async function renderSlideshow(photos: string[], cuts: Cut[], out: string, font = process.env.CAPTION_FONT) {
+  if (!photos.length) throw new Error("no photos for slideshow");
+  if (font && !(await hasDrawtext())) font = undefined;
+  const dir = path.dirname(out), base = path.basename(out, path.extname(out));
+  const fps = 30, segs: string[] = [];
+  for (const [i, c] of cuts.entries()) {
+    const photo = photos[Math.max(0, Math.floor(c.in / SLIDE_SEC)) % photos.length];
+    const sec = Math.max(2, Math.min(6, c.out - c.in)), frames = Math.round(sec * fps);
+    // zoompan works per output frame on a single looped input; oversample 3× first so the pan doesn't jitter
+    const zoom = i % 2 === 0 ? "min(zoom+0.0010,1.22)" : "if(lte(on,1),1.22,max(zoom-0.0010,1.0))";
+    let vf = `scale=${OUT_W * 3}:${OUT_H * 3}:force_original_aspect_ratio=increase,crop=${OUT_W * 3}:${OUT_H * 3},zoompan=z='${zoom}':d=1:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':s=${OUT_W}x${OUT_H}:fps=${fps},trim=end_frame=${frames},setpts=PTS-STARTPTS,setsar=1`;
+    if (c.caption && font) vf += captionFilter(c.caption, font);
+    const seg = path.join(dir, `${base}_${i}.mp4`);
+    await exec(FFMPEG, ["-y", "-loop", "1", "-framerate", String(fps), "-t", String(sec), "-i", photo, "-vf", vf, "-r", String(fps),
+      "-c:v", "libx264", "-preset", "ultrafast", "-crf", "24", "-pix_fmt", "yuv420p", "-an", seg], { maxBuffer: 64 * 1024 * 1024 });
+    segs.push(seg);
+  }
+  return concatSegments(segs, out);
 }
