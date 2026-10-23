@@ -145,6 +145,11 @@ export function KitView({ initial, preview }: { initial: Kit; preview?: { elapse
           {/* Videos — ink */}
           <section className="tile flex flex-col gap-3.5 bg-ink p-6 text-white">
             <h2 className="text-xl font-bold">3 shorts <span className="text-[15px] font-normal opacity-80">and a {Math.round(kit.videos.find((v) => v.kind === "listing")?.duration_sec ?? 15)} s listing video</span></h2>
+            {!live && !failed && !kit.videos.length && !kit.sources.some((s) => s.kind === "video") ? (
+              <div className="rounded-xl bg-white/10 px-4 py-3 text-sm leading-relaxed">
+                No making-of video was uploaded, so there are no clips this time. Drop a phone video of you making the piece and Launch Kit will cut a listing video and three shorts from it.
+              </div>
+            ) : (
             <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
               {kit.videos.length ? kit.videos.map((v) => (
                 <div key={v.id} className="flex flex-col gap-2">
@@ -158,17 +163,18 @@ export function KitView({ initial, preview }: { initial: Kit; preview?: { elapse
                 </div>
               )) : Array.from({ length: 4 }).map((_, i) => <div key={i} className={`aspect-[9/16] rounded-xl bg-white/15 ${failed ? "" : "animate-pulse"}`} />)}
             </div>
+            )}
           </section>
 
           {/* Markets — mint */}
           <section className="tile flex flex-col gap-3 bg-mint p-6 text-mint-ink">
-            <h2 className="text-xl font-bold text-ink">{kit.localizations.length || 4} markets</h2>
-            <div className="grid grid-cols-1 gap-x-10 gap-y-1.5 text-sm sm:grid-cols-2">
+            <h2 className="text-xl font-bold text-ink">{kit.localizations.length || 4} markets <span className="text-[15px] font-normal">translated, priced in local currency</span></h2>
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
               {kit.localizations.length ? kit.localizations.map((l) => (
-                <div key={l.id} className="flex justify-between gap-3"><span>{MARKET[l.market] ?? l.market}</span><span className="font-bold tabular-nums">{fmtMoney(l.price)}</span></div>
+                <MarketCard key={l.id} l={l} onCopy={() => { navigator.clipboard.writeText(`${l.title}\n\n${l.tags.join(", ")}\n\n${l.description}`); say(`${MARKET[l.market] ?? l.market} listing copied`); }} />
               )) : <Skeleton lines={4} light still={failed} />}
             </div>
-            <div className="text-xs">Shipping from your studio included.</div>
+            <div className="text-xs">Shipping from your studio included in each price.</div>
           </section>
         </div>
       </div>
@@ -188,6 +194,30 @@ export function KitView({ initial, preview }: { initial: Kit; preview?: { elapse
 function Pill({ tone, children }: { tone: "butter" | "mint" | "blush"; children: React.ReactNode }) {
   const t = { butter: "bg-butter text-butter-ink", mint: "bg-mint text-mint-ink", blush: "bg-blush text-blush-ink" }[tone];
   return <div className={`inline-flex w-max max-w-full items-center gap-2 rounded-full px-3 py-1.5 text-[13px] font-semibold ${t}`}>{children}</div>;
+}
+/** One localized listing: market, language, price, translated title; description + tags fold out. */
+function MarketCard({ l, onCopy }: { l: Kit["localizations"][number]; onCopy: () => void }) {
+  const [open, setOpen] = useState(false);
+  const lang = l.locale.startsWith("de") ? "Deutsch" : l.locale.startsWith("fr") ? "Français" : l.locale.endsWith("GB") ? "British English" : l.locale.endsWith("AU") ? "Australian English" : l.locale;
+  return (
+    <div className="card flex flex-col gap-2 px-4 py-3.5 text-ink">
+      <div className="flex items-baseline justify-between gap-3">
+        <span className="text-xs font-semibold text-ink-mute">{MARKET[l.market] ?? l.market} · {lang}</span>
+        <span className="font-bold tabular-nums">{fmtMoney(l.price)}</span>
+      </div>
+      <div lang={l.locale} className="text-[13px] font-medium leading-snug">{l.title}</div>
+      {open && (
+        <>
+          <div className="flex flex-wrap gap-1">{l.tags.map((t) => <span key={t} className="chip text-[11px]">{t}</span>)}</div>
+          <div lang={l.locale} className="whitespace-pre-line text-[12px] leading-relaxed text-[#33332F]">{l.description}</div>
+        </>
+      )}
+      <div className="flex gap-3 text-xs">
+        <button type="button" onClick={() => setOpen(!open)} className="text-ink-mute underline">{open ? "Hide" : "Show description and tags"}</button>
+        <button type="button" onClick={onCopy} className="text-ink-mute underline">Copy</button>
+      </div>
+    </div>
+  );
 }
 function Card({ label, children }: { label: string; children: React.ReactNode }) {
   return <div className="card flex flex-col gap-2 px-4.5 py-4"><div className="text-xs font-semibold text-ink-mute">{label}</div>{children}</div>;

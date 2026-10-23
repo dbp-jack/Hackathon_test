@@ -58,7 +58,7 @@ export async function structured<T>(opts: {
     model, max_tokens: opts.maxTokens ?? 4000, system,
     messages: [{ role: "user", content: opts.content }],
     tools: opts.webSearch
-      ? [...tools, { type: "web_search_20260209", name: "web_search", max_uses: 6 } as unknown as Anthropic.Messages.Tool]
+      ? [...tools, { type: "web_search_20260209", name: "web_search", max_uses: Number(process.env.WEB_SEARCH_MAX_USES ?? 3) } as unknown as Anthropic.Messages.Tool]
       : tools,
     tool_choice: opts.webSearch ? { type: "auto" } : toolChoice(),
   });

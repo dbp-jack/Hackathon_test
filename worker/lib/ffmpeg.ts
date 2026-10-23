@@ -15,11 +15,27 @@ export async function probe(file: string): Promise<{ duration: number; fps: numb
   return { duration: Number(j.format.duration), fps: n / (d || 1), width: j.streams[0].width, height: j.streams[0].height };
 }
 
-/** 1 fps contact frames, downscaled — the only thing Claude ever sees from a 2 GB video. */
+const MIN_KEYFRAMES = Number(process.env.MIN_KEYFRAMES ?? 24);
+
+/**
+ * Contact frames, downscaled — the only thing Claude ever sees from a 2 GB video.
+ * Fast path: decode keyframes only (phone footage usually has one per second), ~50× cheaper than a full decode —
+ * on Fly's shared vCPU a full 1 fps pass over a 2-minute 1080p clip took 5 minutes. Falls back to 1 fps when a clip
+ * has long GOPs and yields too few keyframes to pick 5 roles from.
+ */
 export async function extractFrames(file: string, outDir: string, fps = 1): Promise<{ file: string; sec: number }[]> {
   await mkdir(outDir, { recursive: true });
+  const { stdout } = await exec(FFPROBE, ["-v", "error", "-skip_frame", "nokey", "-select_streams", "v:0", "-show_entries", "frame=pts_time", "-of", "csv=p=0", file], { maxBuffer: 16 * 1024 * 1024 });
+  const keyTimes = stdout.split("\n").map((s) => Number(s.trim().replace(/,$/, ""))).filter((n) => Number.isFinite(n));
+  if (keyTimes.length >= MIN_KEYFRAMES) {
+    await exec(FFMPEG, ["-y", "-skip_frame", "nokey", "-i", file, "-fps_mode", "vfr", "-vf", "scale=768:-2", "-q:v", "3", path.join(outDir, "k_%05d.jpg")]);
+    const names = (await readdir(outDir)).filter((n) => n.startsWith("k_")).sort();
+    console.log(`frames: ${names.length} keyframes (fast path)`);
+    return names.map((n, i) => ({ file: path.join(outDir, n), sec: keyTimes[i] ?? i }));
+  }
+  console.log(`frames: only ${keyTimes.length} keyframes — full ${fps} fps decode`);
   await exec(FFMPEG, ["-y", "-i", file, "-vf", `fps=${fps},scale=768:-2`, "-q:v", "3", path.join(outDir, "f_%05d.jpg")]);
-  const names = (await readdir(outDir)).filter((n) => n.endsWith(".jpg")).sort();
+  const names = (await readdir(outDir)).filter((n) => n.startsWith("f_")).sort();
   return names.map((n, i) => ({ file: path.join(outDir, n), sec: i / fps }));
 }
 

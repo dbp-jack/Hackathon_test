@@ -17,6 +17,11 @@ export type VideoPlan = {
  */
 export async function planVideos(launch: LaunchRow, a: Analysis, listing: Listing): Promise<VideoPlan> {
   const t0 = new Date();
+  if (!a.videoFile) {
+    // photos-only upload: there is nothing to cut, so don't invent hooks for clips that can't exist
+    await logAction(launch.id, "write_hooks", "no making-of video uploaded — skipped the 4 clips (add a video next time to get them)", { started_at: t0 });
+    return { videos: [] };
+  }
   const { data, usage } = await structured<VideoPlan>({
     model: WRITER_MODEL, toolName: "plan_videos", maxTokens: 4000,
     system: `You are a short-form editor for handmade sellers. From a scene timeline you plan four vertical videos:
@@ -46,6 +51,10 @@ Call plan_videos once with all four videos.`,
 export async function renderVideos(launch: LaunchRow, a: Analysis, plan: VideoPlan, workDir: string) {
   const t0 = new Date();
   await setStatus(launch.id, "rendering");
+  if (!plan.videos.length) {
+    await logAction(launch.id, "cut_points", "no video to cut — 0 clips", { metrics: { videos: 0 }, started_at: t0 });
+    return;
+  }
   // captions need a real .ttf; if CAPTION_FONT is unset or missing, render without them instead of failing every video
   let font: string | undefined = process.env.CAPTION_FONT || undefined;
   if (font) await access(font).catch(() => { console.warn(`CAPTION_FONT not found at ${font}; rendering without captions`); font = undefined; });

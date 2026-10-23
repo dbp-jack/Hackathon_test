@@ -1,5 +1,5 @@
 import { db, logAction } from "../lib/db";
-import { structured, WRITER_MODEL } from "../lib/claude";
+import { structured, WRITER_MODEL, VISION_MODEL } from "../lib/claude";
 import type { LaunchRow } from "../../src/lib/types";
 import type { Analysis } from "./analyze";
 
@@ -27,7 +27,7 @@ export async function researchComparables(launch: LaunchRow, a: Analysis): Promi
 
 async function researchLive(launch: LaunchRow, a: Analysis, t0: Date): Promise<Comparables> {
   const { data, usage } = await structured<Comparables>({
-    model: WRITER_MODEL, toolName: "report_comparables", webSearch: true, maxTokens: 3000,
+    model: VISION_MODEL, toolName: "report_comparables", webSearch: true, maxTokens: 3000, // Sonnet: research is retrieval-heavy, not prose-heavy; ~2× faster and 1/2 the cost of Opus here
     system: "You research Etsy pricing for a handmade seller. Search Etsy and similar marketplaces for comparable handmade listings, then report what you found. Prices in US cents. If search fails, estimate from your knowledge and say so in notes.",
     content: `Product: ${a.attributes.product_title} (${a.attributes.category}). Materials: ${a.attributes.materials.join(", ")}. Dimensions: ${JSON.stringify(a.attributes.dimensions)}.
 Seller's price idea: ${launch.price_hint_cents ? `$${(launch.price_hint_cents / 100).toFixed(2)}` : "none"}.
