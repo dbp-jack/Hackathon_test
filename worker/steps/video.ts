@@ -71,13 +71,13 @@ export async function renderVideos(launch: LaunchRow, a: Analysis, plan: VideoPl
   else console.warn("CAPTION_FONT unset; rendering without captions");
   let order = 0;
   for (const v of plan.videos) {
-    // slideshow segments are clamped to 2–6 s each, so report the duration that will actually render
-    const dur = v.cuts.reduce((s, c) => s + (slides ? Math.max(2, Math.min(6, c.out - c.in)) : c.out - c.in), 0);
-    const { data: row } = await db.from("videos").insert({ launch_id: launch.id, kind: v.kind, platform: v.platform, hook_text: v.hook_text, hook_rationale: v.hook_rationale, cut_points: v.cuts, duration_sec: dur, aspect: "9:16", has_captions: !!font && v.cuts.some((c) => c.caption), sort_order: order++ }).select("id").single();
+    // slideshow segments are clamped to 2–6 s each and every cross-fade eats 0.35 s, so report the duration that will actually render
+    const dur = v.cuts.reduce((s, c) => s + (slides ? Math.max(2, Math.min(6, c.out - c.in)) : Math.max(0.5, c.out - c.in)), 0) - 0.35 * Math.max(0, v.cuts.length - 1);
+    const { data: row } = await db.from("videos").insert({ launch_id: launch.id, kind: v.kind, platform: v.platform, hook_text: v.hook_text, hook_rationale: v.hook_rationale, cut_points: v.cuts, duration_sec: dur, aspect: "9:16", has_captions: !!font && (!!v.hook_text || v.cuts.some((c) => c.caption)), sort_order: order++ }).select("id").single();
     if (!row) continue;
     try {
       const out = path.join(workDir, `${v.platform}.mp4`);
-      const buf = a.videoFile ? await renderVertical(a.videoFile, v.cuts, out, font) : await renderSlideshow(a.photos.map((p) => p.file), v.cuts, out, font);
+      const buf = a.videoFile ? await renderVertical(a.videoFile, v.cuts, out, font, v.hook_text) : await renderSlideshow(a.photos.map((p) => p.file), v.cuts, out, font, v.hook_text);
       const storagePath = await upload(`${launch.seller_id}/${launch.id}/videos/${v.platform}.mp4`, buf, "video/mp4");
       await db.from("videos").update({ storage_path: storagePath }).eq("id", row.id);
     } catch (e) {

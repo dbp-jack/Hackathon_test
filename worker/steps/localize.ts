@@ -1,4 +1,5 @@
-import { db, logAction } from "../lib/db";
+import { db, logAction, upload, download } from "../lib/db";
+import { renderPin, renderCarousel } from "../lib/cards";
 import { structured, WRITER_MODEL } from "../lib/claude";
 import type { LaunchRow } from "../../src/lib/types";
 import type { Listing } from "./write";
@@ -75,9 +76,9 @@ export async function formatForChannels(launch: LaunchRow, listing: Listing) {
 }
 
 async function formatLive(launch: LaunchRow, listing: Listing, t0: Date) {
-  const { data: frames } = await db.from("frames").select("id, role").eq("launch_id", launch.id).eq("selected", true).order("sort_order");
+  const { data: frames } = await db.from("frames").select("id, role, storage_path_raw").eq("launch_id", launch.id).eq("selected", true).order("sort_order");
   const ids = (frames ?? []).map((f) => f.id);
-  const hero = (frames ?? []).find((f) => f.role === "hero")?.id ?? ids[0];
+  const hero = (frames ?? []).find((f) => f.role === "hero") ?? (frames ?? [])[0];
 
   const { data, usage } = await structured<{ pin_title: string; pin_caption: string; carousel_caption: string }>({
     model: WRITER_MODEL, toolName: "social_copy", maxTokens: 800,
@@ -86,13 +87,53 @@ async function formatLive(launch: LaunchRow, listing: Listing, t0: Date) {
     schema: { type: "object", required: ["pin_title", "pin_caption", "carousel_caption"], properties: { pin_title: { type: "string", maxLength: 60 }, pin_caption: { type: "string" }, carousel_caption: { type: "string" } } },
   });
 
-  await db.from("social_assets").insert([
-    { launch_id: launch.id, kind: "pinterest_pin", title: data.pin_title, caption: data.pin_caption, frame_ids: hero ? [hero] : [], sort_order: 0 },
+  const { data: rows } = await db.from("social_assets").insert([
+    { launch_id: launch.id, kind: "pinterest_pin", title: data.pin_title, caption: data.pin_caption, frame_ids: hero ? [hero.id] : [], sort_order: 0 },
     { launch_id: launch.id, kind: "instagram_carousel", title: null, caption: data.carousel_caption, frame_ids: ids.slice(0, 5), sort_order: 1 },
-  ]);
+  ]).select("id, kind");
   await db.from("publications").upsert(
     (launch.target_channels ?? []).map((channel) => ({ launch_id: launch.id, channel, status: "draft" as const })),
     { onConflict: "launch_id,channel" },
   );
-  await logAction(launch.id, "format_for_channel", `formatted for ${(launch.target_channels ?? []).length} channels, wrote the pin`, { ...usage, started_at: t0 });
+
+  // design the actual images — optional, so a sharp/storage hiccup never fails the launch
+  let designed = "";
+  try {
+    const n = await renderSocialImages(launch, listing, data.pin_title, hero ? [hero, ...(frames ?? []).filter((f) => f.id !== hero.id)] : [], rows ?? []);
+    if (n) designed = `, designed the pin and a ${n}-slide carousel`;
+  } catch (e) {
+    console.error("social images failed, leaving the copy only:", e instanceof Error ? e.message : e);
+  }
+  await logAction(launch.id, "format_for_channel", `formatted for ${(launch.target_channels ?? []).length} channels, wrote the pin${designed}`, { ...usage, started_at: t0 });
+}
+
+/**
+ * Pin (1000×1500) + carousel (≤5 × 1080×1080) from the selected frames, uploaded under `${seller}/${launch}/social/`
+ * and linked from the social_assets rows. Returns the number of carousel slides, or 0 when there was nothing to draw.
+ */
+async function renderSocialImages(launch: LaunchRow, listing: Listing, pinTitle: string, frames: { id: string; storage_path_raw: string }[], rows: { id: string; kind: string }[]) {
+  const ordered = frames.filter((f) => f.storage_path_raw).slice(0, 5);
+  if (!ordered.length) return 0;
+  const [{ data: seller }, { data: attrs }, { data: videos }] = await Promise.all([
+    db.from("sellers").select("shop_name, ships_from_city").eq("id", launch.seller_id).maybeSingle(),
+    db.from("product_attributes").select("colors").eq("launch_id", launch.id).maybeSingle(),
+    db.from("videos").select("cut_points").eq("launch_id", launch.id).order("sort_order"),
+  ]);
+  const photos = await Promise.all(ordered.map((f) => download(f.storage_path_raw)));
+  // one-liners for the middle slides: the shorts' captions first, then listing sentences
+  const fromVideos = (videos ?? []).flatMap((v) => ((v.cut_points ?? []) as { caption: string | null }[]).map((c) => c.caption)).filter((c): c is string => !!c);
+  const fromListing = listing.description.split(/(?<=[.!?])\s+/).map((s) => s.trim()).filter((s) => s.length > 12 && s.length <= 60);
+  const captions = [...new Set([...fromVideos, ...fromListing])];
+  const opts = {
+    photos, title: listing.title, priceCents: listing.price_cents, currency: "USD", shopName: seller?.shop_name ?? null, city: seller?.ships_from_city ?? null,
+    colors: (attrs?.colors as string[] | null) ?? [], captions,
+  };
+  const base = `${launch.seller_id}/${launch.id}/social`;
+  const [pin, slides] = await Promise.all([renderPin({ ...opts, title: pinTitle || listing.title }), renderCarousel(opts)]);
+  const pinPath = await upload(`${base}/pin.jpg`, pin, "image/jpeg");
+  const slidePaths = await Promise.all(slides.map((s, i) => upload(`${base}/carousel-${i + 1}.jpg`, s, "image/jpeg")));
+  const pinRow = rows.find((r) => r.kind === "pinterest_pin"), carRow = rows.find((r) => r.kind === "instagram_carousel");
+  if (pinRow) await db.from("social_assets").update({ storage_paths: [pinPath] }).eq("id", pinRow.id);
+  if (carRow) await db.from("social_assets").update({ storage_paths: slidePaths }).eq("id", carRow.id);
+  return slides.length;
 }
