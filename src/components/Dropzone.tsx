@@ -8,6 +8,11 @@ type Stage = "idle" | "signing" | "uploading" | "starting" | "error";
 
 const BUCKET = process.env.NEXT_PUBLIC_SUPABASE_BUCKET ?? "launches";
 
+// Error bodies aren't always JSON (a missing backend answers with an empty 500), so read them defensively.
+async function errorCode(res: Response): Promise<string | undefined> {
+  try { return (await res.json()).error; } catch { return undefined; }
+}
+
 export function Dropzone({ t }: { t: Messages["drop"] }) {
   const photoCount = (n: number) => (n === 1 ? t.photoOne : fmt(t.photoMany, { n }));
   const router = useRouter();
@@ -22,10 +27,11 @@ export function Dropzone({ t }: { t: Messages["drop"] }) {
   const accept = useCallback((list: FileList | File[]) => {
     const arr = Array.from(list).filter((f) => f.type.startsWith("video/") || f.type.startsWith("image/"));
     const videos = arr.filter((f) => f.type.startsWith("video/"));
+    if (!arr.length) { setError(t.unsupported); return; }
     if (videos.length > 1) { setError(t.oneVideo); return; }
     setError(null);
     setFiles(arr.slice(0, 21));
-  }, [t.oneVideo]);
+  }, [t.oneVideo, t.unsupported]);
 
   async function start() {
     if (!files.length) { inputRef.current?.click(); return; }
@@ -35,7 +41,11 @@ export function Dropzone({ t }: { t: Messages["drop"] }) {
         method: "POST", headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ files: files.map((f) => ({ name: f.name, mime: f.type, bytes: f.size })) }),
       });
-      if (!signRes.ok) throw new Error((await signRes.json()).error);
+      if (!signRes.ok) {
+        const code = await errorCode(signRes);
+        if (code === "too_many_videos") { setStage("error"); setError(t.oneVideo); return; }
+        throw new Error(`uploads/sign ${signRes.status} ${code ?? ""}`);
+      }
       const { uploads } = await signRes.json() as { uploads: { media_id: string; path: string; token: string }[] };
 
       setStage("uploading");
@@ -61,14 +71,16 @@ export function Dropzone({ t }: { t: Messages["drop"] }) {
         }),
       });
       if (!res.ok) {
-        const body = await res.json();
-        throw new Error(body.error === "insufficient_credits" ? t.outOfLaunches : body.message ?? body.error);
+        const code = await errorCode(res);
+        if (code === "insufficient_credits") { setStage("error"); setError(t.outOfLaunches); return; }
+        throw new Error(`launches ${res.status} ${code ?? ""}`);
       }
       const { launch_id } = await res.json();
       router.push(`/launches/${launch_id}`);
     } catch (e) {
+      console.error("Launch Kit: couldn't start the kit", e);
       setStage("error");
-      setError(e instanceof Error && e.message ? e.message : t.generic);
+      setError(t.generic);
     }
   }
 
@@ -87,7 +99,10 @@ export function Dropzone({ t }: { t: Messages["drop"] }) {
         <div className="flex min-w-0 flex-1 flex-col gap-1">
           {files.length === 0 ? (
             <>
-              <div className="text-[22px] font-bold tracking-tight">{t.title}</div>
+              <div className="text-[22px] font-bold tracking-tight">
+                <span className="pointer-coarse:hidden">{t.title}</span>
+                <span className="hidden pointer-coarse:inline">{t.titleTouch}</span>
+              </div>
               <div className="text-sm text-ink-mute">{t.sub}</div>
             </>
           ) : (
@@ -110,7 +125,7 @@ export function Dropzone({ t }: { t: Messages["drop"] }) {
       </div>
 
       {files.length > 0 && (
-        <div className="card grid grid-cols-1 gap-3 border border-line p-4 sm:grid-cols-2">
+        <div className="card grid grid-cols-1 gap-3 border border-line p-4 text-start sm:grid-cols-2">
           <Field id="product-name" label={t.productName} value={hints.product_name} onChange={(v) => setHints({ ...hints, product_name: v })} placeholder={t.productNamePh} />
           <Field id="materials" label={t.materials} value={hints.materials} onChange={(v) => setHints({ ...hints, materials: v })} placeholder={t.materialsPh} />
           <Field id="price" label={t.price} value={hints.price} onChange={(v) => setHints({ ...hints, price: v })} placeholder={t.pricePh} />

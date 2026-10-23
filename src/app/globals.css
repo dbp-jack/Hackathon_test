@@ -22,6 +22,8 @@
 }
 
 html { background: var(--color-chalk); }
+/* Korean breaks between words, never inside one */
+:lang(ko) { word-break: keep-all; overflow-wrap: break-word; }
 body { margin: 0; color: var(--color-ink); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
 
 /* Pill buttons: the one button shape in the system */
@@ -35,4 +37,5 @@ body { margin: 0; color: var(--color-ink); font-family: var(--font-sans); -webki
 .card { border-radius: var(--radius-card); background: #fff; }
 .chip { @apply rounded-full bg-chalk px-2.5 py-1 text-xs font-medium; }
 
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }

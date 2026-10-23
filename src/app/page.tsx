@@ -1,7 +1,9 @@
+import Link from "next/link";
 import { Dropzone } from "@/components/Dropzone";
 import { OutputExample } from "@/components/OutputExample";
 import { OUTPUTS, PLANS } from "@/lib/types";
 import { MESSAGES, fmt, type OutputKey } from "@/lib/i18n";
+import { EXAMPLE } from "@/lib/i18n-example";
 import { getLocale } from "@/lib/i18n-server";
 
 const TILE: Record<string, string> = {
@@ -15,7 +17,8 @@ const TILE: Record<string, string> = {
 const SPAN: Record<string, string> = { listing: "sm:col-span-2 lg:col-span-3", photos: "lg:col-span-2", shorts: "lg:col-span-3", markets: "lg:col-span-2", publish: "lg:col-span-2" };
 
 export default async function UploadPage() {
-  const t = MESSAGES[await getLocale()];
+  const locale = await getLocale();
+  const t = MESSAGES[locale];
   const total = OUTPUTS.reduce((s, o) => s + o.minutes, 0);
   return (
     <main className="flex flex-1 flex-col">
@@ -27,6 +30,10 @@ export default async function UploadPage() {
           {t.hero.sub}
         </p>
         <div className="mt-2 flex w-full justify-center"><Dropzone t={t.drop} /></div>
+        <Link href="/example" className="inline-flex items-center gap-1.5 text-sm font-medium text-ink-soft underline underline-offset-4 hover:text-ink">
+          {EXAMPLE[locale].seeExample}
+          <svg className="h-3.5 w-3.5 rtl:-scale-x-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.2} strokeLinecap="round" strokeLinejoin="round" aria-hidden><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+        </Link>
       </section>
 
       <section className="flex flex-col gap-3.5 px-6 pt-11 sm:px-14">
@@ -48,7 +55,8 @@ export default async function UploadPage() {
         </div>
       </section>
 
-      <section id="pricing" className="px-6 pt-12 sm:px-14">
+      <section id="pricing" className="flex scroll-mt-6 flex-col gap-3.5 px-6 pt-12 sm:px-14">
+        <h2 className="text-[15px] font-semibold text-ink-soft">{t.nav.pricing}</h2>
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
           {PLANS.map((p) => (
             <div key={p.tier} className={`tile flex flex-col gap-2 border-2 border-ink p-5 ${p.tier === "maker" ? "bg-ink text-white" : "bg-white"}`}>

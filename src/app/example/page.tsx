@@ -11,132 +11,169 @@ export const metadata: Metadata = {
   description: "A 10-second knitting video and everything Launch Kit makes from it: listing, photos, shorts, four markets.",
 };
 
+// Each output keeps its color from the home page and result screen; here it only marks the section.
+const MARK = { listing: "bg-butter", photos: "bg-blue", shorts: "bg-white", markets: "bg-mint", publish: "bg-blush" } as const;
+type Part = keyof typeof MARK;
+
 export default async function ExamplePage() {
   const locale = await getLocale();
   const t = MESSAGES[locale];
   const x = EXAMPLE[locale];
   const li = KNIT.listing;
   const words = li.description.join(" ").split(/\s+/).length;
+  const parts: Part[] = ["listing", "photos", "shorts", "markets", "publish"];
 
   return (
-    <main className="flex flex-1 flex-col gap-5 px-6 pb-12 pt-4 sm:px-14">
+    <main className="flex flex-1 flex-col">
       {/* What goes in */}
-      <section className="grid items-center gap-8 pt-2 lg:grid-cols-12 lg:gap-12">
+      <section className="grid gap-10 px-6 pb-14 pt-6 sm:px-14 lg:grid-cols-12 lg:items-center lg:gap-14">
         <div className="flex flex-col items-start gap-5 lg:col-span-5">
-          <h1 className="break-keep text-[40px] font-extrabold leading-[1.04] tracking-[-0.03em] [text-wrap:balance] sm:text-[56px]">{x.title}</h1>
-          <p className="max-w-[460px] break-keep text-lg leading-relaxed text-ink-soft">{x.sub}</p>
-          <Link href="/" className="btn btn-primary text-base no-underline">{x.cta}</Link>
+          <span className="rounded-full border-[1.5px] border-ink px-2.5 py-0.5 text-xs font-semibold">{x.sampleTag}</span>
+          <h1 className="text-[40px] font-extrabold leading-[1.04] tracking-[-0.03em] [text-wrap:balance] sm:text-[60px]">{x.title}</h1>
+          <p className="m-0 max-w-[460px] text-lg leading-relaxed text-ink-soft">{x.sub}</p>
+          <p className="m-0 max-w-[460px] text-sm leading-relaxed text-ink-mute">{x.sampleNote}</p>
+          <Link href="/" className="btn btn-primary mt-1 text-base no-underline">{x.cta}</Link>
         </div>
-        <figure className="m-0 flex flex-col gap-2.5 lg:col-span-7">
-          <div className="tile relative overflow-hidden border-2 border-ink bg-ink">
-            <AutoVideo src={KNIT.input.src} poster={KNIT.input.poster} label={x.inLabel} className="aspect-video w-full object-cover" />
-            <span className="absolute start-3 top-3 rounded-full bg-butter px-3 py-1.5 text-[13px] font-semibold text-ink">{x.inLabel}</span>
-          </div>
-          <figcaption className="text-sm text-ink-mute">{x.inMeta}</figcaption>
+        <figure className="m-0 flex flex-col gap-3 lg:col-span-7">
+          <AutoVideo src={KNIT.input.src} poster={KNIT.input.poster} label={`${x.inLabel}: ${x.inMeta}`} className="aspect-video w-full rounded-[18px] bg-ink object-cover" />
+          <figcaption className="text-sm text-ink-mute"><span className="font-semibold text-ink">{x.inLabel}</span> · {x.inMeta}</figcaption>
         </figure>
       </section>
 
-      <div className="flex items-center gap-3 pt-8">
-        <span className="grid h-8 w-8 flex-none place-items-center rounded-full bg-ink text-white" aria-hidden>
-          <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.2} strokeLinecap="round" strokeLinejoin="round"><path d="M12 5v14M5 12l7 7 7-7" /></svg>
-        </span>
-        <h2 className="text-[15px] font-semibold text-ink-soft">{x.outLabel}</h2>
-        <span className="h-px flex-1 bg-line" />
+      {/* What comes out: a one-line index, then each output as it would really look */}
+      <div className="flex flex-col gap-4 px-6 pb-4 pt-6 sm:px-14">
+        <h2 className="text-[32px] font-extrabold tracking-[-0.02em] sm:text-[40px]">{x.outLabel}</h2>
+        <nav aria-label={x.outLabel} className="flex flex-wrap gap-x-6 gap-y-2 text-[15px] font-medium">
+          {parts.map((p) => (
+            <a key={p} href={`#${p}`} className="inline-flex items-center gap-2 text-ink no-underline hover:underline hover:underline-offset-4">
+              <Mark part={p} />{t.outputs[p][0]}
+            </a>
+          ))}
+        </nav>
       </div>
 
-      {/* What comes out */}
-      <div className="grid grid-cols-1 gap-3.5 lg:grid-cols-12">
-        <section className="tile flex flex-col gap-4 bg-butter p-6 lg:col-span-5">
-          <h3 className="text-xl font-bold">{t.outputs.listing[0]}</h3>
-          <Card label={fmt(x.titleLabel, { n: li.title.length })}>
-            <div lang="en" dir="ltr" className="text-start text-[15px] font-medium leading-snug">{li.title}</div>
-          </Card>
-          <Card label={fmt(x.tagsLabel, { n: li.tags.length })}>
-            <div lang="en" dir="ltr" className="flex flex-wrap gap-1.5">{li.tags.map((tag) => <span key={tag} className="chip">{tag}</span>)}</div>
-          </Card>
-          <Card label={fmt(x.descLabel, { n: words })}>
-            <div lang="en" dir="ltr" className="flex flex-col gap-2 text-start">
-              {li.description.map((p) => <p key={p} className="m-0 text-[13px] leading-relaxed text-[#33332F]">{p}</p>)}
+      <Section id="listing" title={t.outputs.listing[0]} sub={t.outputs.listing[1]}>
+        <div className="flex max-w-[760px] flex-col gap-9">
+          <Field label={fmt(x.titleLabel, { n: li.title.length })}>
+            <p lang="en" dir="ltr" className="m-0 text-start text-[21px] font-semibold leading-snug tracking-tight sm:text-[26px]">{li.title}</p>
+          </Field>
+          <Field label={fmt(x.tagsLabel, { n: li.tags.length })}>
+            <ul lang="en" dir="ltr" className="m-0 flex list-none flex-wrap gap-2 p-0">
+              {li.tags.map((tag) => <li key={tag} className="rounded-full border border-ink/20 px-3 py-1 text-[13px]">{tag}</li>)}
+            </ul>
+          </Field>
+          <Field label={fmt(x.descLabel, { n: words })}>
+            <div lang="en" dir="ltr" className="flex max-w-[62ch] flex-col gap-3 text-start text-[15px] leading-relaxed text-[#33332F]">
+              {li.description.map((p) => <p key={p} className="m-0">{p}</p>)}
             </div>
-            <div className="mt-1 flex flex-col gap-2 rounded-xl border-2 border-dashed border-line p-3">
-              <span className="text-xs font-semibold text-ink-mute">{x.askLabel}</span>
-              <div className="flex flex-wrap gap-1.5">
-                {[x.yarn, x.size, x.care].map((k) => (
-                  <span key={k} className="rounded-full border border-dashed border-ink/35 px-2.5 py-1 text-xs font-medium">{k} <span className="text-ink-mute">____</span></span>
-                ))}
-              </div>
+          </Field>
+          <Field label={x.askLabel}>
+            <div className="flex flex-wrap gap-x-8 gap-y-3 text-[15px]">
+              {[x.yarn, x.size, x.care].map((k) => (
+                <span key={k} className="inline-flex items-end gap-2">{k}<span aria-hidden className="mb-1 inline-block w-24 border-b-2 border-dashed border-ink/30" /></span>
+              ))}
             </div>
-          </Card>
-          <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-            <span className="text-[32px] font-extrabold tracking-tight">{li.price}</span>
-            <a href={li.comparables.url} target="_blank" rel="noreferrer" className="text-[13px] text-butter-ink underline underline-offset-2">
-              {fmt(x.comparables, { range: li.comparables.range, mid: li.comparables.mid })}
+          </Field>
+          <div className="flex flex-col gap-1.5">
+            <span className="text-[48px] font-extrabold leading-none tracking-tight tabular-nums">{li.price}</span>
+            <a href={li.comparables.url} target="_blank" rel="noreferrer" className="text-sm text-ink-soft underline underline-offset-4 hover:text-ink">
+              {fmt(x.comparables, { range: `\u2066${li.comparables.range}\u2069`, mid: `\u2066${li.comparables.mid}\u2069` })}
             </a>
           </div>
-        </section>
-
-        <div className="flex flex-col gap-3.5 lg:col-span-7">
-          <section className="tile flex flex-col gap-3.5 bg-blue p-6 text-white">
-            <h3 className="text-xl font-bold">{t.outputs.photos[0]} <span className="text-[15px] font-normal opacity-85">{t.outputs.photos[1]}</span></h3>
-            <div className="grid grid-cols-3 gap-2.5 sm:grid-cols-5">
-              {KNIT.photos.map((p) => (
-                <figure key={p.key} className="m-0 flex flex-col gap-1.5">
-                  <img src={p.src} alt={x.photos[p.key]} className="aspect-square w-full rounded-xl object-cover" />
-                  <figcaption className="text-xs opacity-90">{x.photos[p.key]}</figcaption>
-                </figure>
-              ))}
-            </div>
-          </section>
-
-          <section className="tile flex flex-col gap-3.5 bg-ink p-6 text-white">
-            <h3 className="text-xl font-bold">{t.outputs.shorts[0]} <span className="text-[15px] font-normal opacity-80">{t.outputs.shorts[1]}</span></h3>
-            <div className="grid grid-cols-3 gap-3">
-              {KNIT.shorts.map((s) => (
-                <div key={s.platform} className="relative aspect-[9/16] overflow-hidden rounded-xl bg-[#2E2E2E]">
-                  <AutoVideo src={s.src} poster={s.poster} label={`${s.platform}: “${s.hook}”`} className="h-full w-full object-cover" />
-                  <span className={`absolute bottom-2.5 start-2.5 rounded-full px-2 py-1 text-[11px] font-semibold text-ink ${s.badge}`}>{s.platform} · {s.seconds} s</span>
-                </div>
-              ))}
-            </div>
-          </section>
         </div>
+      </Section>
 
-        <section className="tile flex flex-col gap-3 bg-mint p-6 text-mint-ink lg:col-span-7">
-          <h3 className="text-xl font-bold text-ink">{t.outputs.markets[0]} <span className="text-[15px] font-normal">{t.outputs.markets[1]}</span></h3>
-          <ul className="m-0 flex list-none flex-col gap-2 p-0">
-            {KNIT.markets.map((m) => (
-              <li key={m.code} className="flex items-center gap-3 rounded-xl bg-white/70 px-3 py-2.5 text-sm text-ink">
-                <span className="w-8 flex-none rounded-md bg-mint py-0.5 text-center text-xs font-bold">{m.code}</span>
-                <span lang={m.lang} dir="ltr" className="min-w-0 flex-1 truncate text-start">{m.title}</span>
-                <span className="flex-none font-bold tabular-nums">{m.price}</span>
-              </li>
-            ))}
-          </ul>
-          <div className="text-xs">{x.rates}</div>
-        </section>
+      <Section id="photos" title={t.outputs.photos[0]} sub={t.outputs.photos[1]}>
+        <ul className="-mx-6 flex snap-x snap-mandatory gap-3 overflow-x-auto px-6 pb-1 sm:mx-0 sm:grid sm:grid-cols-5 sm:overflow-visible sm:px-0">
+          {KNIT.photos.map((p) => (
+            <li key={p.key} className="w-[58%] flex-none snap-start sm:w-auto">
+              <figure className="m-0 flex flex-col gap-2">
+                <img src={p.src} alt={x.photos[p.key]} className="aspect-square w-full rounded-[14px] object-cover" />
+                <figcaption className="text-[13px] text-ink-soft">{x.photos[p.key]}</figcaption>
+              </figure>
+            </li>
+          ))}
+        </ul>
+      </Section>
 
-        <section className="tile flex flex-col gap-3 bg-blush p-6 text-blush-ink lg:col-span-5">
-          <h3 className="text-xl font-bold text-ink">{t.outputs.publish[0]}</h3>
-          <ul className="m-0 flex list-none flex-col gap-2 p-0">
+      <Section id="shorts" title={t.outputs.shorts[0]} sub={t.outputs.shorts[1]} dark>
+        <ul className="-mx-6 flex max-w-[860px] snap-x snap-mandatory gap-4 overflow-x-auto px-6 pb-1 sm:mx-0 sm:grid sm:grid-cols-3 sm:overflow-visible sm:px-0">
+          {KNIT.shorts.map((s) => (
+            <li key={s.platform} className="flex w-[62%] flex-none snap-start flex-col gap-3 sm:w-auto">
+              <AutoVideo src={s.src} poster={s.poster} label={`${s.platform}: “${s.hook}”`} className="aspect-[9/16] w-full rounded-[14px] bg-[#2E2E2E] object-cover" />
+              <div className="flex flex-col gap-0.5">
+                <span className="text-[13px] text-white/70">{s.platform} · {s.seconds} s</span>
+                <span lang="en" dir="ltr" className="text-start text-[15px] font-semibold">“{s.hook}”</span>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </Section>
+
+      <Section id="markets" title={t.outputs.markets[0]} sub={t.outputs.markets[1]}>
+        <div className="flex max-w-[860px] flex-col gap-3">
+          <table className="w-full border-collapse text-[15px]">
+            <tbody>
+              {KNIT.markets.map((m) => (
+                <tr key={m.code} className="border-b border-line align-baseline last:border-b-0">
+                  <th scope="row" className="w-12 py-3.5 text-start text-[13px] font-bold">{m.code}</th>
+                  <td lang={m.lang} dir="ltr" className="py-3.5 pe-6 text-start">{m.title}</td>
+                  <td className="whitespace-nowrap py-3.5 text-end font-bold tabular-nums">{m.price}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <p className="m-0 text-[13px] text-ink-mute">{x.rates}</p>
+        </div>
+      </Section>
+
+      <Section id="publish" title={t.outputs.publish[0]} sub={t.outputs.publish[1]}>
+        <div className="flex max-w-[520px] flex-col gap-3">
+          <ul className="m-0 flex list-none flex-col p-0">
             {KNIT.channels.map((c) => (
-              <li key={c} className="flex items-center justify-between rounded-full bg-white px-4 py-2.5 text-sm font-semibold text-ink">
-                <span>{c}</span>
-                <span className="rounded-full border border-dashed border-ink/40 px-2.5 py-0.5 text-xs font-medium">{x.draft}</span>
+              <li key={c} className="flex items-center justify-between gap-4 border-b border-line py-3.5 last:border-b-0">
+                <span className="text-lg font-semibold">{c}</span>
+                <span className="inline-flex items-center gap-2 text-sm text-ink-soft">
+                  <span aria-hidden className="h-2 w-2 rounded-full border-[1.5px] border-ink/50" />{x.draft}
+                </span>
               </li>
             ))}
           </ul>
-          <div className="text-xs">{x.drafts}</div>
-        </section>
-      </div>
+          <p className="m-0 text-[13px] text-ink-mute">{x.drafts}</p>
+        </div>
+      </Section>
 
-      <div className="tile mt-6 flex flex-wrap items-center justify-between gap-4 border-2 border-ink bg-white px-6 py-5">
-        <span className="text-xl font-bold tracking-tight">{t.hero.line1} {t.hero.line2}</span>
-        <Link href="/" className="btn btn-primary no-underline">{x.cta}</Link>
-      </div>
+      <section className="flex flex-col items-center gap-10 px-6 pb-24 pt-20 text-center sm:px-14">
+        <p className="m-0 text-[44px] font-extrabold leading-[1.1] tracking-[-0.035em] [text-wrap:balance] sm:text-[88px]">{t.hero.line1}<br />{t.hero.line2}</p>
+        {/* .btn is unlayered CSS, so the larger size needs ! to win over it */}
+        <Link href="/" className="btn btn-primary px-9! py-4.5! text-lg! no-underline sm:px-12! sm:py-5! sm:text-xl!">{x.cta}</Link>
+      </section>
     </main>
   );
 }
 
-function Card({ label, children }: { label: string; children: React.ReactNode }) {
-  return <div className="card flex flex-col gap-2 px-4.5 py-4"><div className="text-xs font-semibold text-ink-mute">{label}</div>{children}</div>;
+function Mark({ part }: { part: Part }) {
+  return <span aria-hidden className={`inline-block h-2.5 w-2.5 flex-none rounded-[3px] ${part === "shorts" ? "bg-ink" : MARK[part]}`} />;
+}
+
+function Section({ id, title, sub, dark, children }: { id: Part; title: string; sub: string; dark?: boolean; children: React.ReactNode }) {
+  return (
+    <section id={id} aria-labelledby={`${id}-title`} className={`grid scroll-mt-4 gap-6 px-6 py-14 sm:px-14 lg:grid-cols-12 lg:gap-10 ${dark ? "my-6 bg-ink py-16 text-white" : ""}`}>
+      <header className="flex flex-col gap-2 lg:sticky lg:top-8 lg:col-span-3 lg:self-start">
+        <span aria-hidden className={`h-2.5 w-2.5 rounded-[3px] ${MARK[id]}`} />
+        <h3 id={`${id}-title`} className="text-2xl font-bold tracking-tight">{title}</h3>
+        <p className={`m-0 text-sm leading-relaxed ${dark ? "text-white/70" : "text-ink-soft"}`}>{sub}</p>
+      </header>
+      <div className="min-w-0 lg:col-span-9">{children}</div>
+    </section>
+  );
+}
+
+function Field({ label, children }: { label: string; children: React.ReactNode }) {
+  return (
+    <div className="flex flex-col gap-2.5">
+      <span className="text-[13px] font-semibold text-ink-mute">{label}</span>
+      {children}
+    </div>
+  );
 }

@@ -16,7 +16,8 @@ export function KitView({ initial, preview }: { initial: Kit; preview?: { elapse
   const [elapsed, setElapsed] = useState(preview?.elapsed ?? 0);
   const [busy, setBusy] = useState<string | null>(null);
   const [toast, setToast] = useState<string | null>(null);
-  const live = kit.status !== "ready" && kit.status !== "published" && kit.status !== "failed";
+  const failed = kit.status === "failed";
+  const live = kit.status !== "ready" && kit.status !== "published" && !failed;
   const started = useRef(Date.now());
 
   // Live timer while building — the demo's stopwatch
@@ -65,7 +66,10 @@ export function KitView({ initial, preview }: { initial: Kit; preview?: { elapse
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div className="flex flex-col gap-2">
           {kit.status === "failed" ? (
-            <Pill tone="blush">Something went wrong. {initial.status === "failed" ? "Try uploading again." : ""}</Pill>
+            <div className="flex flex-wrap items-center gap-3">
+              <Pill tone="blush">Something went wrong while building this kit.</Pill>
+              <a href="/" className="text-sm font-semibold underline underline-offset-4">Upload again</a>
+            </div>
           ) : live ? (
             <Pill tone="butter"><Spinner /> {stepLabel} · {fmtDuration(elapsed)} · {kit.progress.pct}%</Pill>
           ) : (
@@ -78,9 +82,9 @@ export function KitView({ initial, preview }: { initial: Kit; preview?: { elapse
           </div>
         </div>
         <div className="flex flex-wrap gap-2.5">
-          <a href={`/api/v1/launches/${kit.id}/download`} onClick={(e) => { if (preview) { e.preventDefault(); say("Preview only — connect Supabase to download"); } }} className={`btn btn-ghost ${live ? "pointer-events-none opacity-50" : ""}`}>Download everything</a>
+          <a href={`/api/v1/launches/${kit.id}/download`} onClick={(e) => { if (preview) { e.preventDefault(); say("Preview only — connect Supabase to download"); } }} aria-disabled={live || failed} className={`btn btn-ghost ${live || failed ? "pointer-events-none opacity-50" : ""}`}>Download everything</a>
           <a href={`/api/v1/launches/${kit.id}/export/etsy.csv`} onClick={(e) => { if (preview) { e.preventDefault(); say("Preview only — connect Supabase to export"); } }} className={`btn btn-ghost ${!li ? "pointer-events-none opacity-50" : ""}`}>Etsy CSV</a>
-          <button type="button" onClick={publish} disabled={live || busy === "publish"} className="btn btn-primary disabled:opacity-50">
+          <button type="button" onClick={publish} disabled={live || failed || busy === "publish"} className="btn btn-primary disabled:opacity-50">
             {kit.publications.some((p) => p.channel === "shopify" && p.status !== "draft") ? "Queued" : "Publish to Shopify and TikTok"}
           </button>
         </div>
@@ -98,7 +102,7 @@ export function KitView({ initial, preview }: { initial: Kit; preview?: { elapse
 
       <div className="grid grid-cols-1 gap-3.5 lg:grid-cols-12">
         {/* Etsy listing — butter */}
-        <section className="tile flex flex-col gap-4 bg-butter p-6 lg:col-span-5">
+        <section className="tile flex flex-col gap-4 bg-butter p-6 lg:col-span-5 lg:self-start">
           <div className="flex items-center justify-between">
             <h2 className="text-xl font-bold">Etsy listing</h2>
             <button type="button" onClick={copyAll} disabled={!li} className="btn btn-sm border-ink bg-transparent disabled:opacity-40">Copy all</button>
@@ -118,7 +122,7 @@ export function KitView({ initial, preview }: { initial: Kit; preview?: { elapse
                 </span>
               </div>
             </>
-          ) : <Skeleton lines={6} />}
+          ) : <Skeleton lines={6} still={failed} />}
         </section>
 
         <div className="flex flex-col gap-3.5 lg:col-span-7">
@@ -134,7 +138,7 @@ export function KitView({ initial, preview }: { initial: Kit; preview?: { elapse
                   <img src={f.url_clean ?? f.url_raw} alt={f.label} className="aspect-square w-full rounded-xl bg-white/90 object-cover" />
                   <figcaption className="text-xs opacity-90">{f.label}</figcaption>
                 </figure>
-              )) : Array.from({ length: 5 }).map((_, i) => <div key={i} className="aspect-square animate-pulse rounded-xl bg-white/30" />)}
+              )) : Array.from({ length: 5 }).map((_, i) => <div key={i} className={`aspect-square rounded-xl bg-white/30 ${failed ? "" : "animate-pulse"}`} />)}
             </div>
           </section>
 
@@ -152,7 +156,7 @@ export function KitView({ initial, preview }: { initial: Kit; preview?: { elapse
                   </div>
                   <div className={`text-[13px] leading-snug ${v.hook_text ? "font-semibold" : "opacity-90"}`}>{v.hook_text ? `“${v.hook_text}”` : "Wheel, glaze, pour. No text."}</div>
                 </div>
-              )) : Array.from({ length: 4 }).map((_, i) => <div key={i} className="aspect-[9/16] animate-pulse rounded-xl bg-white/15" />)}
+              )) : Array.from({ length: 4 }).map((_, i) => <div key={i} className={`aspect-[9/16] rounded-xl bg-white/15 ${failed ? "" : "animate-pulse"}`} />)}
             </div>
           </section>
 
@@ -162,7 +166,7 @@ export function KitView({ initial, preview }: { initial: Kit; preview?: { elapse
             <div className="grid grid-cols-1 gap-x-10 gap-y-1.5 text-sm sm:grid-cols-2">
               {kit.localizations.length ? kit.localizations.map((l) => (
                 <div key={l.id} className="flex justify-between gap-3"><span>{MARKET[l.market] ?? l.market}</span><span className="font-bold tabular-nums">{fmtMoney(l.price)}</span></div>
-              )) : <Skeleton lines={4} light />}
+              )) : <Skeleton lines={4} light still={failed} />}
             </div>
             <div className="text-xs">Shipping from your studio included.</div>
           </section>
@@ -188,8 +192,8 @@ function Pill({ tone, children }: { tone: "butter" | "mint" | "blush"; children:
 function Card({ label, children }: { label: string; children: React.ReactNode }) {
   return <div className="card flex flex-col gap-2 px-4.5 py-4"><div className="text-xs font-semibold text-ink-mute">{label}</div>{children}</div>;
 }
-function Skeleton({ lines, light }: { lines: number; light?: boolean }) {
-  return <div className="flex flex-col gap-2">{Array.from({ length: lines }).map((_, i) => <div key={i} className={`h-3.5 animate-pulse rounded ${light ? "bg-white/50" : "bg-white/60"}`} style={{ width: `${90 - (i % 3) * 18}%` }} />)}</div>;
+function Skeleton({ lines, light, still }: { lines: number; light?: boolean; still?: boolean }) {
+  return <div className="flex flex-col gap-2">{Array.from({ length: lines }).map((_, i) => <div key={i} className={`h-3.5 rounded ${still ? "" : "animate-pulse"} ${light ? "bg-white/50" : "bg-white/60"}`} style={{ width: `${90 - (i % 3) * 18}%` }} />)}</div>;
 }
 function Expandable({ text }: { text: string }) {
   const [open, setOpen] = useState(false);
