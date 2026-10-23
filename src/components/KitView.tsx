@@ -44,6 +44,10 @@ export function KitView({ initial, preview, t, locale }: { initial: Kit; preview
     await navigator.clipboard.writeText(`${li.title}\n\n${li.tags.join(", ")}\n\n${li.description}`);
     say(t.toast.copied);
   }
+  async function copySocial(s: Kit["social"][number]) {
+    await navigator.clipboard.writeText([s.title, s.caption].filter(Boolean).join("\n\n"));
+    say(fmt(t.social.copied, { kind: s.kind === "pinterest_pin" ? t.social.pinterest : t.social.instagram }));
+  }
   async function publish() {
     if (preview) { say(t.toast.previewPublish); return; }
     setBusy("publish");
@@ -175,6 +179,22 @@ export function KitView({ initial, preview, t, locale }: { initial: Kit; preview
             </div>
             <div className="text-xs">{t.markets.shipping}</div>
           </section>
+
+          {/* Pin + carousel — blush */}
+          <section className="tile flex flex-col gap-3.5 bg-blush p-6 text-blush-ink">
+            <h2 className="text-xl font-bold text-ink">{t.social.title} <span className="text-[15px] font-normal">{t.social.sub}</span></h2>
+            {kit.social.length ? (
+              <div className="grid grid-cols-1 gap-3.5 sm:grid-cols-[minmax(0,2fr)_minmax(0,3fr)]">
+                {kit.social.filter((s) => s.kind === "pinterest_pin").map((s) => <SocialAsset key={s.id} s={s} t={t} ready={!live && !failed} onCopy={() => copySocial(s)} />)}
+                {kit.social.filter((s) => s.kind === "instagram_carousel").map((s) => <SocialAsset key={s.id} s={s} t={t} ready={!live && !failed} onCopy={() => copySocial(s)} />)}
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 gap-3.5 sm:grid-cols-[minmax(0,2fr)_minmax(0,3fr)]">
+                <div className={`aspect-[2/3] rounded-xl bg-white/50 ${live ? "animate-pulse" : ""}`} />
+                <div className="flex gap-2.5 overflow-hidden">{Array.from({ length: 3 }).map((_, i) => <div key={i} className={`aspect-square w-40 shrink-0 rounded-xl bg-white/50 ${live ? "animate-pulse" : ""}`} />)}</div>
+              </div>
+            )}
+          </section>
         </div>
       </div>
 
@@ -214,6 +234,32 @@ function MarketCard({ l, t, name, onCopy }: { l: Kit["localizations"][number]; t
       <div className="flex gap-3 text-xs">
         <button type="button" onClick={() => setOpen(!open)} className="text-ink-mute underline">{open ? t.buttons.hide : t.buttons.showDesc}</button>
         <button type="button" onClick={onCopy} className="text-ink-mute underline">{t.buttons.copy}</button>
+      </div>
+    </div>
+  );
+}
+/** One social asset: Pinterest pin (2:3) or Instagram carousel (scrollable squares), each image opening full-size. */
+function SocialAsset({ s, t, ready, onCopy }: { s: Kit["social"][number]; t: KitMessages; ready: boolean; onCopy: () => void }) {
+  const pin = s.kind === "pinterest_pin";
+  const label = pin ? t.social.pinterest : t.social.instagram;
+  return (
+    <div className="flex min-w-0 flex-col gap-2.5">
+      {s.urls.length ? (
+        pin ? (
+          <a href={s.urls[0]} target="_blank" rel="noreferrer" className="block"><img src={s.urls[0]} alt={s.title ?? label} className="aspect-[2/3] w-full rounded-xl bg-white/90 object-cover" /></a>
+        ) : (
+          <div className="flex gap-2.5 overflow-x-auto pb-1">
+            {s.urls.map((u, i) => <a key={u + i} href={u} target="_blank" rel="noreferrer" className="w-40 shrink-0"><img src={u} alt={`${label} ${i + 1}`} className="aspect-square w-full rounded-xl bg-white/90 object-cover" /></a>)}
+          </div>
+        )
+      ) : ready ? (
+        <div className="rounded-xl bg-white/40 px-3.5 py-2.5 text-xs">{t.social.noImages}</div>
+      ) : null}
+      {s.title && <div className="text-[14px] font-semibold leading-snug text-ink">{s.title}</div>}
+      {s.caption && <div className="whitespace-pre-line text-[13px] leading-relaxed">{s.caption}</div>}
+      <div className="mt-auto flex items-center gap-3">
+        <span className="chip text-ink">{label}</span>
+        <button type="button" onClick={onCopy} className="text-xs underline">{t.social.copyCaption}</button>
       </div>
     </div>
   );

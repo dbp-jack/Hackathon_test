@@ -51,8 +51,8 @@ export function demoKit(state: DemoState): Kit {
       aspect: v.kind === "listing" ? "16:9" : "9:16", has_captions: !!v.hook_text, storage_path: `${BASE}/${KNIT_PUBLIC_VIDEOS[v.platform]}`, sort_order: n, url: `${BASE}/${KNIT_PUBLIC_VIDEOS[v.platform]}`,
     })) : [],
     social: ready ? [
-      { id: "s0", launch_id: ID, kind: "pinterest_pin", title: KIT.social.pin_title, caption: KIT.social.pin_caption, frame_ids: ["f0"], storage_paths: null, sort_order: 0, urls: [frameUrl(FRAMES[0]?.role ?? "hero")] },
-      { id: "s1", launch_id: ID, kind: "instagram_carousel", title: null, caption: KIT.social.carousel_caption, frame_ids: FRAMES.map((_, i) => `f${i}`), storage_paths: null, sort_order: 1, urls: FRAMES.map((f) => frameUrl(f.role)) },
+      { id: "s0", launch_id: ID, kind: "pinterest_pin", title: KIT.social.pin_title, caption: KIT.social.pin_caption, frame_ids: ["f0"], storage_paths: null, sort_order: 0, urls: [`${BASE}/photo-hero.jpg`] },
+      { id: "s1", launch_id: ID, kind: "instagram_carousel", title: null, caption: KIT.social.carousel_caption, frame_ids: FRAMES.map((_, i) => `f${i}`), storage_paths: null, sort_order: 1, urls: ["photo-hero", "photo-closeup", "photo-cables", "photo-progress", "photo-yarn"].map((f) => `${BASE}/${f}.jpg`) },
     ] : [],
     localizations: ready ? KIT.localizations.map((l, n) => ({
       id: `l${n}`, launch_id: ID, market: l.market, locale: l.locale, title: l.title, tags: l.tags, description: l.description, price_cents: l.price_cents, currency: l.currency,
