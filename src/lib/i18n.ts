@@ -73,10 +73,11 @@ const en = {
     markets: ["4 markets", "UK, DE, AU, CA — translated and priced"],
     publish: ["Published", "Shopify, TikTok, Pinterest"],
   },
+  claude: { heading: "What Claude does", photos: "Watches your footage and picks the five moments most likely to sell, as photos.", listing: "Searches the web for similar listings, then writes the title, 13 tags, description and price.", shorts: "Reads the flow of scenes and decides each short's opening line and where to cut.", markets: "Rewrites the listing for each country's units, spelling and phrasing, and converts the price." },
   plans: {
     free: "Free", maker: "Maker", studio: "Studio", perMonth: "/ mo",
     launches: "{n} launches a month", unlimited: "Unlimited launches",
-    watermark: "watermark", studioExtras: "auto-publish, markets, analytics",
+    watermark: "watermark", studioExtras: "auto-publish, markets, analytics", launchesRow: "Launches a month", unlimitedShort: "Unlimited", noWatermark: "No watermark", autoPublish: "Auto-publish", analytics: "Performance analytics", limits: "Videos up to 10 minutes or 2 GB, photos up to 20.",
   },
   footer: { extra: "Extra launches $2 each. Cancel anytime.", editable: "Everything is editable before you publish." },
 };
@@ -103,7 +104,8 @@ const es: Messages = {
     shorts: ["3 videos cortos", "TikTok, Reels, Shorts: tres ganchos distintos"], markets: ["4 mercados", "UK, DE, AU, CA: traducido y con precio"],
     publish: ["Publicado", "Shopify, TikTok, Pinterest"],
   },
-  plans: { free: "Gratis", maker: "Maker", studio: "Studio", perMonth: "/ mes", launches: "{n} lanzamientos al mes", unlimited: "Lanzamientos ilimitados", watermark: "marca de agua", studioExtras: "publicación automática, mercados, analíticas" },
+  claude: { heading: "Lo que hace Claude", photos: "Mira tu video y elige como fotos los cinco momentos con más opciones de vender.", listing: "Busca en la web anuncios parecidos y luego escribe el título, 13 etiquetas, la descripción y el precio.", shorts: "Lee el orden de las escenas y decide la primera frase de cada video corto y dónde cortar.", markets: "Adapta el anuncio a las unidades, la ortografía y las expresiones de cada país, y convierte el precio." },
+  plans: { free: "Gratis", maker: "Maker", studio: "Studio", perMonth: "/ mes", launches: "{n} lanzamientos al mes", unlimited: "Lanzamientos ilimitados", watermark: "marca de agua", studioExtras: "publicación automática, mercados, analíticas", launchesRow: "Lanzamientos al mes", unlimitedShort: "Ilimitados", noWatermark: "Sin marca de agua", autoPublish: "Publicación automática", analytics: "Analíticas de rendimiento", limits: "Videos de hasta 10 minutos o 2 GB, hasta 20 fotos." },
   footer: { extra: "Lanzamientos extra a $2 cada uno. Cancela cuando quieras.", editable: "Puedes editar todo antes de publicar." },
 };
 
@@ -126,7 +128,8 @@ const pt: Messages = {
     shorts: ["3 vídeos curtos", "TikTok, Reels, Shorts: três ganchos diferentes"], markets: ["4 mercados", "UK, DE, AU, CA: traduzido e com preço"],
     publish: ["Publicado", "Shopify, TikTok, Pinterest"],
   },
-  plans: { free: "Grátis", maker: "Maker", studio: "Studio", perMonth: "/ mês", launches: "{n} lançamentos por mês", unlimited: "Lançamentos ilimitados", watermark: "marca d’água", studioExtras: "publicação automática, mercados, análises" },
+  claude: { heading: "O que o Claude faz", photos: "Assiste ao seu vídeo e escolhe, como fotos, os cinco momentos com mais chance de vender.", listing: "Busca anúncios parecidos na web e depois escreve o título, 13 tags, a descrição e o preço.", shorts: "Lê a sequência de cenas e decide a primeira frase de cada vídeo curto e onde cortar.", markets: "Adapta o anúncio às unidades, à ortografia e às expressões de cada país, e converte o preço." },
+  plans: { free: "Grátis", maker: "Maker", studio: "Studio", perMonth: "/ mês", launches: "{n} lançamentos por mês", unlimited: "Lançamentos ilimitados", watermark: "marca d’água", studioExtras: "publicação automática, mercados, análises", launchesRow: "Lançamentos por mês", unlimitedShort: "Ilimitados", noWatermark: "Sem marca d’água", autoPublish: "Publicação automática", analytics: "Análise de desempenho", limits: "Vídeos de até 10 minutos ou 2 GB, até 20 fotos." },
   footer: { extra: "Lançamentos extras por $2 cada. Cancele quando quiser.", editable: "Tudo pode ser editado antes de publicar." },
 };
 
@@ -149,7 +152,8 @@ const fr: Messages = {
     shorts: ["3 vidéos courtes", "TikTok, Reels, Shorts : trois accroches différentes"], markets: ["4 marchés", "UK, DE, AU, CA : traduit et au bon prix"],
     publish: ["Publié", "Shopify, TikTok, Pinterest"],
   },
-  plans: { free: "Gratuit", maker: "Maker", studio: "Studio", perMonth: "/ mois", launches: "{n} lancements par mois", unlimited: "Lancements illimités", watermark: "filigrane", studioExtras: "publication auto, marchés, statistiques" },
+  claude: { heading: "Ce que fait Claude", photos: "Regarde votre vidéo et choisit, en photos, les cinq moments qui vendront le mieux.", listing: "Cherche sur le web des annonces similaires, puis écrit le titre, 13 mots-clés, la description et le prix.", shorts: "Lit l’enchaînement des scènes et choisit la phrase d’ouverture et les coupes de chaque vidéo courte.", markets: "Adapte l’annonce aux unités, à l’orthographe et aux tournures de chaque pays, et convertit le prix." },
+  plans: { free: "Gratuit", maker: "Maker", studio: "Studio", perMonth: "/ mois", launches: "{n} lancements par mois", unlimited: "Lancements illimités", watermark: "filigrane", studioExtras: "publication auto, marchés, statistiques", launchesRow: "Lancements par mois", unlimitedShort: "Illimités", noWatermark: "Sans filigrane", autoPublish: "Publication automatique", analytics: "Statistiques de performance", limits: "Vidéos jusqu’à 10 minutes ou 2 Go, jusqu’à 20 photos." },
   footer: { extra: "Lancements supplémentaires à 2 $ chacun. Résiliable à tout moment.", editable: "Tout reste modifiable avant publication." },
 };
 
@@ -172,7 +176,8 @@ const de: Messages = {
     shorts: ["3 Kurzvideos", "TikTok, Reels, Shorts – drei verschiedene Hooks"], markets: ["4 Märkte", "UK, DE, AU, CA – übersetzt und mit Preis"],
     publish: ["Veröffentlicht", "Shopify, TikTok, Pinterest"],
   },
-  plans: { free: "Kostenlos", maker: "Maker", studio: "Studio", perMonth: "/ Monat", launches: "{n} Launches pro Monat", unlimited: "Unbegrenzte Launches", watermark: "Wasserzeichen", studioExtras: "Auto-Veröffentlichung, Märkte, Analysen" },
+  claude: { heading: "Was Claude macht", photos: "Schaut dein Video an und wählt die fünf Momente, die sich am besten verkaufen, als Fotos.", listing: "Sucht im Web nach ähnlichen Angeboten und schreibt dann Titel, 13 Tags, Beschreibung und Preis.", shorts: "Liest den Ablauf der Szenen und legt für jedes Kurzvideo den ersten Satz und die Schnitte fest.", markets: "Passt das Angebot an Maßeinheiten, Schreibweise und Ausdrucksweise jedes Landes an und rechnet den Preis um." },
+  plans: { free: "Kostenlos", maker: "Maker", studio: "Studio", perMonth: "/ Monat", launches: "{n} Launches pro Monat", unlimited: "Unbegrenzte Launches", watermark: "Wasserzeichen", studioExtras: "Auto-Veröffentlichung, Märkte, Analysen", launchesRow: "Launches pro Monat", unlimitedShort: "Unbegrenzt", noWatermark: "Ohne Wasserzeichen", autoPublish: "Automatisch veröffentlichen", analytics: "Performance-Analysen", limits: "Videos bis 10 Minuten oder 2 GB, bis zu 20 Fotos." },
   footer: { extra: "Zusätzliche Launches je 2 $. Jederzeit kündbar.", editable: "Vor dem Veröffentlichen ist alles bearbeitbar." },
 };
 
@@ -195,7 +200,8 @@ const it: Messages = {
     shorts: ["3 video brevi", "TikTok, Reels, Shorts: tre attacchi diversi"], markets: ["4 mercati", "UK, DE, AU, CA: tradotto e con prezzo"],
     publish: ["Pubblicato", "Shopify, TikTok, Pinterest"],
   },
-  plans: { free: "Gratis", maker: "Maker", studio: "Studio", perMonth: "/ mese", launches: "{n} lanci al mese", unlimited: "Lanci illimitati", watermark: "filigrana", studioExtras: "pubblicazione automatica, mercati, statistiche" },
+  claude: { heading: "Cosa fa Claude", photos: "Guarda il tuo video e sceglie come foto i cinque momenti che vendono meglio.", listing: "Cerca sul web inserzioni simili, poi scrive titolo, 13 tag, descrizione e prezzo.", shorts: "Legge la sequenza delle scene e decide la prima frase di ogni video breve e dove tagliare.", markets: "Adatta l’inserzione a unità, ortografia ed espressioni di ogni paese e converte il prezzo." },
+  plans: { free: "Gratis", maker: "Maker", studio: "Studio", perMonth: "/ mese", launches: "{n} lanci al mese", unlimited: "Lanci illimitati", watermark: "filigrana", studioExtras: "pubblicazione automatica, mercati, statistiche", launchesRow: "Lanci al mese", unlimitedShort: "Illimitati", noWatermark: "Senza filigrana", autoPublish: "Pubblicazione automatica", analytics: "Analisi dei risultati", limits: "Video fino a 10 minuti o 2 GB, fino a 20 foto." },
   footer: { extra: "Lanci extra a 2 $ l’uno. Disdici quando vuoi.", editable: "Puoi modificare tutto prima di pubblicare." },
 };
 
@@ -218,7 +224,8 @@ const nl: Messages = {
     shorts: ["3 korte video’s", "TikTok, Reels, Shorts: drie verschillende hooks"], markets: ["4 markten", "UK, DE, AU, CA: vertaald en geprijsd"],
     publish: ["Gepubliceerd", "Shopify, TikTok, Pinterest"],
   },
-  plans: { free: "Gratis", maker: "Maker", studio: "Studio", perMonth: "/ mnd", launches: "{n} lanceringen per maand", unlimited: "Onbeperkt lanceren", watermark: "watermerk", studioExtras: "automatisch publiceren, markten, statistieken" },
+  claude: { heading: "Wat Claude doet", photos: "Bekijkt je video en kiest de vijf momenten die het best verkopen als foto’s.", listing: "Zoekt online naar vergelijkbare advertenties en schrijft dan de titel, 13 tags, de beschrijving en de prijs.", shorts: "Leest de volgorde van de scènes en bepaalt per korte video de openingszin en de knippunten.", markets: "Past de advertentie aan op de eenheden, spelling en woordkeus van elk land en rekent de prijs om." },
+  plans: { free: "Gratis", maker: "Maker", studio: "Studio", perMonth: "/ mnd", launches: "{n} lanceringen per maand", unlimited: "Onbeperkt lanceren", watermark: "watermerk", studioExtras: "automatisch publiceren, markten, statistieken", launchesRow: "Lanceringen per maand", unlimitedShort: "Onbeperkt", noWatermark: "Geen watermerk", autoPublish: "Automatisch publiceren", analytics: "Prestatieanalyse", limits: "Video’s tot 10 minuten of 2 GB, tot 20 foto’s." },
   footer: { extra: "Extra lanceringen $2 per stuk. Altijd opzegbaar.", editable: "Alles is aan te passen voordat je publiceert." },
 };
 
@@ -241,7 +248,8 @@ const tr: Messages = {
     shorts: ["3 kısa video", "TikTok, Reels, Shorts — üç farklı giriş"], markets: ["4 pazar", "UK, DE, AU, CA — çevrildi ve fiyatlandı"],
     publish: ["Yayında", "Shopify, TikTok, Pinterest"],
   },
-  plans: { free: "Ücretsiz", maker: "Maker", studio: "Studio", perMonth: "/ ay", launches: "Ayda {n} lansman", unlimited: "Sınırsız lansman", watermark: "filigranlı", studioExtras: "otomatik yayın, pazarlar, analiz" },
+  claude: { heading: "Claude ne yapar", photos: "Videonu izler ve en çok satacak beş anı fotoğraf olarak seçer.", listing: "Web’de benzer ilanları bulup okur, sonra başlığı, 13 etiketi, açıklamayı ve fiyatı yazar.", shorts: "Sahnelerin akışına bakıp her kısa videonun ilk cümlesini ve kesim noktalarını belirler.", markets: "İlanı her ülkenin birimlerine, yazımına ve ifadelerine göre uyarlar, fiyatı çevirir." },
+  plans: { free: "Ücretsiz", maker: "Maker", studio: "Studio", perMonth: "/ ay", launches: "Ayda {n} lansman", unlimited: "Sınırsız lansman", watermark: "filigranlı", studioExtras: "otomatik yayın, pazarlar, analiz", launchesRow: "Aylık lansman", unlimitedShort: "Sınırsız", noWatermark: "Filigran yok", autoPublish: "Otomatik yayınlama", analytics: "Performans analizi", limits: "Videolar en fazla 10 dakika veya 2 GB, fotoğraflar en fazla 20." },
   footer: { extra: "Ek lansmanlar tanesi $2. İstediğin zaman iptal et.", editable: "Yayınlamadan önce her şey düzenlenebilir." },
 };
 
@@ -264,7 +272,8 @@ const ar: Messages = {
     shorts: ["3 فيديوهات قصيرة", "TikTok وReels وShorts، ثلاث بدايات مختلفة"], markets: ["4 أسواق", "UK وDE وAU وCA، مترجمة ومسعّرة"],
     publish: ["منشور", "Shopify وTikTok وPinterest"],
   },
-  plans: { free: "مجاني", maker: "Maker", studio: "Studio", perMonth: "/ شهر", launches: "الإطلاقات شهريًا: {n}", unlimited: "إطلاقات غير محدودة", watermark: "علامة مائية", studioExtras: "نشر تلقائي، أسواق، تحليلات" },
+  claude: { heading: "ما يفعله Claude", photos: "يشاهد الفيديو ويختار كصور اللحظات الخمس الأقرب إلى البيع.", listing: "يبحث في الويب عن قوائم مشابهة، ثم يكتب العنوان و13 وسمًا والوصف والسعر.", shorts: "يقرأ تسلسل المشاهد ويحدد الجملة الأولى ونقاط القص لكل فيديو قصير.", markets: "يكيّف القائمة مع وحدات كل بلد وإملائه وتعابيره، ويحوّل السعر." },
+  plans: { free: "مجاني", maker: "Maker", studio: "Studio", perMonth: "/ شهر", launches: "الإطلاقات شهريًا: {n}", unlimited: "إطلاقات غير محدودة", watermark: "علامة مائية", studioExtras: "نشر تلقائي، أسواق، تحليلات", launchesRow: "الإطلاقات شهريًا", unlimitedShort: "غير محدود", noWatermark: "بلا علامة مائية", autoPublish: "نشر تلقائي", analytics: "تحليلات الأداء", limits: "فيديو حتى 10 دقائق أو 2 غيغابايت، وحتى 20 صورة." },
   footer: { extra: "الإطلاق الإضافي بـ 2$. ألغِ متى شئت.", editable: "يمكنك تعديل كل شيء قبل النشر." },
 };
 
@@ -287,7 +296,8 @@ const hi: Messages = {
     shorts: ["3 शॉर्ट्स", "TikTok, Reels, Shorts — तीन अलग हुक"], markets: ["4 बाज़ार", "UK, DE, AU, CA — अनुवाद और कीमत के साथ"],
     publish: ["प्रकाशित", "Shopify, TikTok, Pinterest"],
   },
-  plans: { free: "मुफ़्त", maker: "Maker", studio: "Studio", perMonth: "/ महीना", launches: "महीने में {n} लॉन्च", unlimited: "असीमित लॉन्च", watermark: "वॉटरमार्क", studioExtras: "ऑटो-पब्लिश, बाज़ार, एनालिटिक्स" },
+  claude: { heading: "Claude क्या करता है", photos: "आपका वीडियो देखकर बिकने लायक पाँच पल चुनता है और उन्हें फ़ोटो बनाता है।", listing: "वेब पर मिलती-जुलती लिस्टिंग खोजकर पढ़ता है, फिर टाइटल, 13 टैग, विवरण और कीमत लिखता है।", shorts: "सीन का क्रम देखकर हर शॉर्ट की पहली लाइन और कट की जगह तय करता है।", markets: "हर देश की इकाइयों, वर्तनी और भाषा के हिसाब से लिस्टिंग ढालता है और कीमत को वहाँ की मुद्रा में बदलता है।" },
+  plans: { free: "मुफ़्त", maker: "Maker", studio: "Studio", perMonth: "/ महीना", launches: "महीने में {n} लॉन्च", unlimited: "असीमित लॉन्च", watermark: "वॉटरमार्क", studioExtras: "ऑटो-पब्लिश, बाज़ार, एनालिटिक्स", launchesRow: "हर महीने लॉन्च", unlimitedShort: "असीमित", noWatermark: "बिना वॉटरमार्क", autoPublish: "ऑटो-पब्लिश", analytics: "परफ़ॉर्मेंस एनालिटिक्स", limits: "वीडियो 10 मिनट या 2 GB तक, फ़ोटो 20 तक।" },
   footer: { extra: "अतिरिक्त लॉन्च $2 प्रति लॉन्च। कभी भी रद्द करें।", editable: "प्रकाशित करने से पहले सब कुछ बदला जा सकता है।" },
 };
 
@@ -310,7 +320,8 @@ const id: Messages = {
     shorts: ["3 video pendek", "TikTok, Reels, Shorts — tiga pembuka berbeda"], markets: ["4 pasar", "UK, DE, AU, CA — diterjemahkan dan diberi harga"],
     publish: ["Terbit", "Shopify, TikTok, Pinterest"],
   },
-  plans: { free: "Gratis", maker: "Maker", studio: "Studio", perMonth: "/ bln", launches: "{n} peluncuran per bulan", unlimited: "Peluncuran tanpa batas", watermark: "tanda air", studioExtras: "terbit otomatis, pasar, analitik" },
+  claude: { heading: "Yang dikerjakan Claude", photos: "Menonton videomu dan memilih lima momen yang paling menjual sebagai foto.", listing: "Mencari listing serupa di web, lalu menulis judul, 13 tag, deskripsi, dan harga.", shorts: "Membaca alur adegan dan menentukan kalimat pembuka serta titik potong tiap video pendek.", markets: "Menyesuaikan listing dengan satuan, ejaan, dan ungkapan tiap negara, lalu mengonversi harga." },
+  plans: { free: "Gratis", maker: "Maker", studio: "Studio", perMonth: "/ bln", launches: "{n} peluncuran per bulan", unlimited: "Peluncuran tanpa batas", watermark: "tanda air", studioExtras: "terbit otomatis, pasar, analitik", launchesRow: "Peluncuran per bulan", unlimitedShort: "Tanpa batas", noWatermark: "Tanpa watermark", autoPublish: "Terbit otomatis", analytics: "Analitik performa", limits: "Video hingga 10 menit atau 2 GB, foto hingga 20." },
   footer: { extra: "Peluncuran tambahan $2 per kali. Batalkan kapan saja.", editable: "Semua bisa diubah sebelum diterbitkan." },
 };
 
@@ -333,7 +344,8 @@ const ja: Messages = {
     shorts: ["ショート動画3本", "TikTok、リール、ショート。それぞれ違うつかみ"], markets: ["4つの市場", "UK、DE、AU、CA向けに翻訳と価格設定"],
     publish: ["公開", "Shopify、TikTok、Pinterest"],
   },
-  plans: { free: "無料", maker: "Maker", studio: "Studio", perMonth: "/ 月", launches: "月{n}回のローンチ", unlimited: "ローンチ無制限", watermark: "透かし入り", studioExtras: "自動公開、海外市場、分析" },
+  claude: { heading: "Claudeがすること", photos: "動画を見て、いちばん売れそうな5つの場面を選び、写真にします。", listing: "ウェブで似た出品を探して読み、タイトル・タグ13個・説明・価格を書きます。", shorts: "場面の流れを見て、ショート動画ごとに最初のひと言と切る位置を決めます。", markets: "国ごとの単位・つづり・言い回しに合わせて書き直し、価格を現地通貨に換算します。" },
+  plans: { free: "無料", maker: "Maker", studio: "Studio", perMonth: "/ 月", launches: "月{n}回のローンチ", unlimited: "ローンチ無制限", watermark: "透かし入り", studioExtras: "自動公開、海外市場、分析", launchesRow: "月のローンチ数", unlimitedShort: "無制限", noWatermark: "透かしなし", autoPublish: "自動公開", analytics: "成果の分析", limits: "動画は10分または2GBまで、写真は20枚まで。" },
   footer: { extra: "追加ローンチは1回$2。いつでも解約できます。", editable: "公開前にすべて編集できます。" },
 };
 
@@ -356,7 +368,8 @@ const ko: Messages = {
     shorts: ["숏폼 3개", "틱톡, 릴스, 쇼츠. 서로 다른 첫 장면"], markets: ["4개국", "UK, DE, AU, CA 번역과 가격"],
     publish: ["발행", "Shopify, TikTok, Pinterest"],
   },
-  plans: { free: "무료", maker: "Maker", studio: "Studio", perMonth: "/ 월", launches: "한 달 {n}번", unlimited: "무제한", watermark: "워터마크", studioExtras: "자동 발행, 해외 판매, 분석" },
+  claude: { heading: "Claude가 하는 일", photos: "영상을 보고 가장 잘 팔릴 장면 5개를 골라 사진으로 만들어요.", listing: "웹에서 비슷한 판매 글을 찾아 읽고, 제목·태그 13개·설명·가격을 써요.", shorts: "장면 흐름을 보고 숏폼마다 첫 문장과 자를 지점을 정해요.", markets: "나라마다 단위·철자·표현을 맞춰 고쳐 쓰고, 가격을 현지 통화로 바꿔요." },
+  plans: { free: "무료", maker: "Maker", studio: "Studio", perMonth: "/ 월", launches: "한 달 {n}번", unlimited: "무제한", watermark: "워터마크", studioExtras: "자동 발행, 해외 판매, 분석", launchesRow: "한 달 런치", unlimitedShort: "무제한", noWatermark: "워터마크 없음", autoPublish: "자동 발행", analytics: "성과 분석", limits: "영상은 10분 또는 2GB, 사진은 20장까지 올릴 수 있어요." },
   footer: { extra: "추가 런치는 1회 $2. 언제든 해지할 수 있어요.", editable: "발행 전에 모두 고칠 수 있어요." },
 };
 
@@ -379,7 +392,8 @@ const zh: Messages = {
     shorts: ["3 条短视频", "TikTok、Reels、Shorts，三种不同开头"], markets: ["4 个市场", "UK、DE、AU、CA：已翻译并定价"],
     publish: ["已发布", "Shopify、TikTok、Pinterest"],
   },
-  plans: { free: "免费", maker: "Maker", studio: "Studio", perMonth: "/ 月", launches: "每月 {n} 次发布", unlimited: "无限次发布", watermark: "带水印", studioExtras: "自动发布、多市场、数据分析" },
+  claude: { heading: "Claude 做什么", photos: "看完你的视频，挑出最有卖相的 5 个画面做成照片。", listing: "在网上找到类似的商品页并读完，再写标题、13 个标签、描述和价格。", shorts: "看清画面顺序，为每条短视频定好开头那句话和剪辑点。", markets: "按各国的单位、拼写和说法改写商品页，并把价格换算成当地货币。" },
+  plans: { free: "免费", maker: "Maker", studio: "Studio", perMonth: "/ 月", launches: "每月 {n} 次发布", unlimited: "无限次发布", watermark: "带水印", studioExtras: "自动发布、多市场、数据分析", launchesRow: "每月发布次数", unlimitedShort: "无限", noWatermark: "无水印", autoPublish: "自动发布", analytics: "效果分析", limits: "视频最长 10 分钟或 2 GB，照片最多 20 张。" },
   footer: { extra: "额外发布每次 $2，随时可取消。", editable: "发布前一切都可以修改。" },
 };
 
