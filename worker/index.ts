@@ -9,6 +9,7 @@
 import "dotenv/config";
 import path from "node:path";
 import { rm } from "node:fs/promises";
+import { createServer } from "node:http";
 import { db, setStatus } from "./lib/db";
 import { analyze } from "./steps/analyze";
 import { researchComparables, writeListing } from "./steps/write";
@@ -53,6 +54,7 @@ async function run(launch: LaunchRow) {
     }
     await setStatus(launch.id, "ready", { finished_at: new Date().toISOString(), minutes_saved_est: MINUTES_SAVED });
     console.log(`✓ ready in ${Math.round((Date.now() - started) / 1000)} s`);
+    lastLaunch = { id: launch.id, status: "ready", at: new Date().toISOString() };
   } catch (e) {
     const message = e instanceof Error ? e.message : String(e);
     const step = (e as { step?: string } | null)?.step ?? "unknown";
@@ -76,7 +78,21 @@ for (const sig of ["SIGINT", "SIGTERM"] as const) {
   });
 }
 
+// Tiny health endpoint so container hosts that expect an open port (Hugging Face Spaces, Render) see us as healthy.
+// Also what the keep-alive ping hits. Disable with HEALTH_PORT=0.
+const bootedAt = Date.now();
+let lastLaunch: { id: string; status: string; at: string } | null = null;
+function startHealthServer() {
+  const port = Number(process.env.HEALTH_PORT ?? process.env.PORT ?? 7860);
+  if (!port) return;
+  createServer((_req, res) => {
+    res.setHeader("Content-Type", "application/json");
+    res.end(JSON.stringify({ ok: true, service: "launch-kit-worker", mode: MOCK ? "mock" : "live", uptime_s: Math.round((Date.now() - bootedAt) / 1000), last_launch: lastLaunch }));
+  }).listen(port, "0.0.0.0", () => console.log(`health on :${port}`));
+}
+
 async function main() {
+  startHealthServer();
   console.log(`Launch Kit worker — ${MOCK ? "MOCK_MODE" : "live"} · polling every 3 s`);
   while (!stopping) {
     const launch = await claim();
