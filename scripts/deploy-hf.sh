@@ -15,9 +15,10 @@ if [ "$code" = "404" ]; then
 else echo "  exists ($code)"; fi
 
 echo "▶ secrets from .env"
-set -a; . ./.env 2>/dev/null || true; set +a
+# read KEY=value lines without sourcing (values may contain spaces); strip optional surrounding quotes
+envval() { grep -E "^$1=" .env 2>/dev/null | tail -1 | cut -d= -f2- | sed -E "s/^['\"]//; s/['\"]\$//"; }
 for k in NEXT_PUBLIC_SUPABASE_URL SUPABASE_SERVICE_ROLE_KEY ANTHROPIC_API_KEY DEMO_SELLER_ID; do
-  v="${!k:-}"; [ -n "$v" ] || { echo "  skip $k (empty)"; continue; }
+  v="$(envval "$k")"; [ -n "$v" ] || { echo "  skip $k (empty)"; continue; }
   api -X POST "https://huggingface.co/api/spaces/$REPO/secrets" -d "$(python3 -I -c 'import json,sys;print(json.dumps({"key":sys.argv[1],"value":sys.argv[2]}))' "$k" "$v")" >/dev/null && echo "  set $k"
 done
 for kv in MOCK_MODE=false SUPABASE_BUCKET=launches; do
