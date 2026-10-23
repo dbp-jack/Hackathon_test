@@ -93,12 +93,21 @@ function startHealthServer() {
 
 async function main() {
   startHealthServer();
-  console.log(`Launch Kit worker — ${MOCK ? "MOCK_MODE" : "live"} · polling every 3 s`);
-  while (!stopping) {
-    const launch = await claim();
-    if (launch) { await run(launch); continue; }
-    await processPublications(); // idle: drain queued Shopify/TikTok publications
-    await new Promise((r) => setTimeout(r, 3000));
+  // WORKER_CONCURRENCY launches run side by side (default 2) so a team testing together doesn't queue behind one another.
+  const CONCURRENCY = Math.max(1, Number(process.env.WORKER_CONCURRENCY ?? 2));
+  console.log(`Launch Kit worker — ${MOCK ? "MOCK_MODE" : "live"} · polling every 3 s · up to ${CONCURRENCY} at once`);
+  const inFlight = new Set<Promise<void>>();
+  while (!stopping || inFlight.size) {
+    if (!stopping && inFlight.size < CONCURRENCY) {
+      const launch = await claim();
+      if (launch) {
+        const p = run(launch).finally(() => inFlight.delete(p));
+        inFlight.add(p);
+        continue; // claim again right away in case more are queued
+      }
+    }
+    if (!inFlight.size) await processPublications(); // idle: drain queued Shopify/TikTok publications
+    await Promise.race([new Promise((r) => setTimeout(r, 3000)), ...inFlight]);
   }
   console.log("worker stopped");
   process.exit(0);
