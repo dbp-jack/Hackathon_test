@@ -429,15 +429,6 @@
       "openverse_id": "d4901292-9446-4dc2-a7a6-8e4025ece9d6"
     },
     {
-      "role": "detail_alt2",
-      "storage_path": "mock/macrame-wall-hanging/frames/detail_alt2.jpg",
-      "title": "how to make a circular macrame wall hanging",
-      "creator": "apairandaspare",
-      "license": "CC BY 2.0",
-      "foreign_landing_url": "https://www.flickr.com/photos/66755335@N05/12152083654",
-      "openverse_id": "0b63f273-5f60-467f-8d09-43f65636e698"
-    },
-    {
       "role": "process",
       "storage_path": "mock/macrame-wall-hanging/frames/process.jpg",
       "title": "how to make a circular macrame wall hanging",
@@ -534,6 +525,15 @@
     {
       "role": "hero",
       "storage_path": "mock/linen-tote-bag/frames/hero.jpg",
+      "title": "241 made of linen canvas and cotton.",
+      "creator": "dryp fra dejnen",
+      "license": "CC BY-ND 2.0",
+      "foreign_landing_url": "https://www.flickr.com/photos/76284563@N04/8064053744",
+      "openverse_id": "d6d3f8de-711c-4931-b5bd-3de3ebef180b"
+    },
+    {
+      "role": "hero_alt1",
+      "storage_path": "mock/linen-tote-bag/frames/hero_alt1.jpg",
       "title": "New tote/messenger bag",
       "creator": "lisaclarke",
       "license": "CC BY-ND 2.0",
@@ -541,22 +541,13 @@
       "openverse_id": "2b6b5eb8-392c-4c8d-9fee-5d75f8e86c70"
     },
     {
-      "role": "hero_alt1",
-      "storage_path": "mock/linen-tote-bag/frames/hero_alt1.jpg",
+      "role": "hero_alt2",
+      "storage_path": "mock/linen-tote-bag/frames/hero_alt2.jpg",
       "title": "New bag",
       "creator": "lisaclarke",
       "license": "CC BY-ND 2.0",
       "foreign_landing_url": "https://www.flickr.com/photos/7926735@N03/1352657869",
       "openverse_id": "74978861-c591-41a5-8238-f960308bd762"
-    },
-    {
-      "role": "hero_alt2",
-      "storage_path": "mock/linen-tote-bag/frames/hero_alt2.jpg",
-      "title": "241 made of linen canvas and cotton.",
-      "creator": "dryp fra dejnen",
-      "license": "CC BY-ND 2.0",
-      "foreign_landing_url": "https://www.flickr.com/photos/76284563@N04/8064053744",
-      "openverse_id": "d6d3f8de-711c-4931-b5bd-3de3ebef180b"
     },
     {
       "role": "in_hand",
@@ -588,15 +579,6 @@
     {
       "role": "detail_alt2",
       "storage_path": "mock/linen-tote-bag/frames/detail_alt2.jpg",
-      "title": "241 made of linen canvas and cotton.",
-      "creator": "dryp fra dejnen",
-      "license": "CC BY-ND 2.0",
-      "foreign_landing_url": "https://www.flickr.com/photos/76284563@N04/8064053744",
-      "openverse_id": "d6d3f8de-711c-4931-b5bd-3de3ebef180b"
-    },
-    {
-      "role": "process",
-      "storage_path": "mock/linen-tote-bag/frames/process.jpg",
       "title": "New tote/messenger bag",
       "creator": "lisaclarke",
       "license": "CC BY-ND 2.0",
@@ -604,22 +586,31 @@
       "openverse_id": "2b6b5eb8-392c-4c8d-9fee-5d75f8e86c70"
     },
     {
-      "role": "scale",
-      "storage_path": "mock/linen-tote-bag/frames/scale.jpg",
-      "title": "New bag",
-      "creator": "lisaclarke",
-      "license": "CC BY-ND 2.0",
-      "foreign_landing_url": "https://www.flickr.com/photos/7926735@N03/1353546392",
-      "openverse_id": "66124bd2-9268-486c-8f84-f1eabe52b4d6"
-    },
-    {
-      "role": "scale_alt1",
-      "storage_path": "mock/linen-tote-bag/frames/scale_alt1.jpg",
+      "role": "process",
+      "storage_path": "mock/linen-tote-bag/frames/process.jpg",
       "title": "241 made of linen canvas and cotton.",
       "creator": "dryp fra dejnen",
       "license": "CC BY-ND 2.0",
       "foreign_landing_url": "https://www.flickr.com/photos/76284563@N04/8064053744",
       "openverse_id": "d6d3f8de-711c-4931-b5bd-3de3ebef180b"
+    },
+    {
+      "role": "scale",
+      "storage_path": "mock/linen-tote-bag/frames/scale.jpg",
+      "title": "241 made of linen canvas and cotton.",
+      "creator": "dryp fra dejnen",
+      "license": "CC BY-ND 2.0",
+      "foreign_landing_url": "https://www.flickr.com/photos/76284563@N04/8064053744",
+      "openverse_id": "d6d3f8de-711c-4931-b5bd-3de3ebef180b"
+    },
+    {
+      "role": "scale_alt1",
+      "storage_path": "mock/linen-tote-bag/frames/scale_alt1.jpg",
+      "title": "New bag",
+      "creator": "lisaclarke",
+      "license": "CC BY-ND 2.0",
+      "foreign_landing_url": "https://www.flickr.com/photos/7926735@N03/1353546392",
+      "openverse_id": "66124bd2-9268-486c-8f84-f1eabe52b4d6"
     }
   ]
 }
