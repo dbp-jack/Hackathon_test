@@ -1,5 +1,5 @@
 import { db, logAction } from "../lib/db";
-import { structured, WRITER_MODEL } from "../lib/claude";
+import { structured, WRITER_MODEL, VISION_MODEL } from "../lib/claude";
 import type { LaunchRow } from "../../src/lib/types";
 import type { Analysis } from "./analyze";
 
@@ -9,8 +9,25 @@ export type Listing = { title: string; tags: string[]; description: string; pric
 /** Step 4: research_comparables — Claude with web search reads the market before writing. */
 export async function researchComparables(launch: LaunchRow, a: Analysis): Promise<Comparables> {
   const t0 = new Date();
+  try {
+    return await researchLive(launch, a, t0);
+  } catch (e) {
+    // never fail the launch over market research — fall back to a conservative estimate around the seller's price idea
+    console.error("research_comparables failed, using estimate:", e instanceof Error ? e.message : e);
+    const mid = launch.price_hint_cents ?? 4500;
+    const est: Comparables = {
+      count: 0, low_cents: Math.max(500, Math.round(mid * 0.7)), high_cents: Math.round(mid * 1.4), median_cents: mid,
+      common_tags: [a.attributes.category, ...a.attributes.materials, "handmade", "gift for her", "housewarming gift"].filter(Boolean).map((t) => t.toLowerCase()).slice(0, 15),
+      notes: "estimated, search unavailable",
+    };
+    await logAction(launch.id, "research_comparables", `estimated the price range (search unavailable)`, { metrics: { low_cents: est.low_cents, high_cents: est.high_cents, median_cents: est.median_cents, estimated: true }, started_at: t0 });
+    return est;
+  }
+}
+
+async function researchLive(launch: LaunchRow, a: Analysis, t0: Date): Promise<Comparables> {
   const { data, usage } = await structured<Comparables>({
-    model: WRITER_MODEL, toolName: "report_comparables", webSearch: true, maxTokens: 3000,
+    model: VISION_MODEL, toolName: "report_comparables", webSearch: true, maxTokens: 3000, // Sonnet: research is retrieval-heavy, not prose-heavy; ~2× faster and 1/2 the cost of Opus here
     system: "You research Etsy pricing for a handmade seller. Search Etsy and similar marketplaces for comparable handmade listings, then report what you found. Prices in US cents. If search fails, estimate from your knowledge and say so in notes.",
     content: `Product: ${a.attributes.product_title} (${a.attributes.category}). Materials: ${a.attributes.materials.join(", ")}. Dimensions: ${JSON.stringify(a.attributes.dimensions)}.
 Seller's price idea: ${launch.price_hint_cents ? `$${(launch.price_hint_cents / 100).toFixed(2)}` : "none"}.

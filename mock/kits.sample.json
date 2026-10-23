@@ -1,0 +1,148 @@
+[
+  {
+    "slug": "knit-cable-scarf",
+    "category": "hand-knit scarf",
+    "product_title": "Hand-Knit Cable Scarf in Powder Blue",
+    "image_queries": ["hand knit cable scarf powder blue", "chunky cable knit scarf", "knitting cable scarf wooden needles", "ball of chunky yarn"],
+    "seller": { "name": "Maya", "city": "Portland", "state": "OR", "craft": "knitting" },
+    "source": { "video_name": "scarf_cables_oct21.mp4", "duration_sec": 10, "fps": 24, "photos": 0 },
+    "attributes": {
+      "materials": ["chunky acrylic-wool blend yarn"],
+      "colors": ["powder blue"],
+      "dimensions": { "length_in": 68, "width_in": 7 },
+      "care": ["hand wash cold", "lay flat to dry"],
+      "production_hours": 6,
+      "made_to_order": true,
+      "lead_time_days": [5, 10]
+    },
+    "scenes": [
+      { "label": "yarn", "start_sec": 0, "end_sec": 2.5, "what_happens": "ball of powder blue yarn on the table, needles beside it" },
+      { "label": "knitting", "start_sec": 2.5, "end_sec": 6.0, "what_happens": "hands knitting, cable crossed on wooden needles" },
+      { "label": "closeup", "start_sec": 6.0, "end_sec": 8.0, "what_happens": "cable texture fills the frame" },
+      { "label": "finished", "start_sec": 8.0, "end_sec": 10.0, "what_happens": "finished scarf laid flat, cable centred" }
+    ],
+    "frames": [
+      { "role": "hero", "timecode_sec": 8.4, "score": 0.94, "reason": "finished scarf laid flat, cable centred, soft even light" },
+      { "role": "detail", "timecode_sec": 6.2, "score": 0.91, "reason": "cable crossings fill the frame — texture reads at thumbnail size" },
+      { "role": "in_hand", "timecode_sec": 7.1, "score": 0.88, "reason": "hands holding the knit, shows stitch size and drape" },
+      { "role": "process", "timecode_sec": 3.5, "score": 0.86, "reason": "scarf still on the needles — proof of handmade" },
+      { "role": "scale", "timecode_sec": 0.8, "score": 0.82, "reason": "ball of yarn next to the work, gives a sense of scale" }
+    ],
+    "listing": {
+      "title": "Hand-Knit Cable Scarf in Powder Blue | Chunky Knit Winter Scarf | Handmade Cable Knit Wrap | Cozy Gift for Her",
+      "tags": ["cable knit scarf", "hand knit scarf", "powder blue scarf", "chunky knit scarf", "handmade scarf", "winter scarf", "light blue scarf", "knitted scarf", "cozy scarf", "gift for her", "cable scarf", "handknit gift", "soft winter wrap"],
+      "description": "Knit by hand, stitch by stitch, this scarf has a raised cable running down the middle and a soft powder blue that sits easily with grey coats, camel and cream.\n\nIt is knit in a chunky yarn on wooden needles, so every stitch is big and easy to see. The cables are crossed by hand as the scarf grows, which is why no two come out exactly alike. The finished scarf is long enough to wrap twice and still hang, and the cable keeps its shape after a season of wear because the stitches are worked firmly rather than loosely.\n\nThe colour is a true powder blue, lighter than denim and warmer than ice blue. It photographs cooler in daylight and a touch softer indoors. If you would like the same scarf in cream, oatmeal or charcoal, send a message before ordering and it can be knit to order in the same cable.\n\nCare is simple: hand wash cold with a little wool wash, press the water out in a towel and lay flat to dry. Do not hang it wet or the cable will stretch.\n\nBecause it is made by hand, yours may differ slightly from the photos. That is how you can tell.",
+      "price_cents": 8000,
+      "price_low_cents": 3000,
+      "price_high_cents": 17500,
+      "comparables_read": 40,
+      "cost_basis_cents": 3200,
+      "price_reasoning": "Mid-range of 40 comparable hand-knit cable scarves ($30–$175, most at $75–$100); covers about $32 of yarn and 6 h of knitting with margin left."
+    },
+    "videos": [
+      { "kind": "listing", "platform": "etsy", "hook_text": null, "hook_rationale": null, "duration_sec": 10, "cuts": [{ "in": 0, "out": 10, "caption": null }] },
+      { "kind": "short", "platform": "tiktok", "hook_text": "From one ball of yarn to this", "hook_rationale": "Opens on the raw material so the finished scarf lands as a reveal.", "duration_sec": 10, "cuts": [{ "in": 0.8, "out": 2.8, "caption": "From one ball of yarn to this" }, { "in": 3.5, "out": 5.5, "caption": null }, { "in": 8.0, "out": 10.0, "caption": null }] },
+      { "kind": "short", "platform": "reels", "hook_text": "Every stitch, by hand.", "hook_rationale": "Reels rewards a calm process clip; the hands do the talking.", "duration_sec": 6, "cuts": [{ "in": 2.5, "out": 4.5, "caption": "Every stitch, by hand." }, { "in": 6.0, "out": 8.0, "caption": null }, { "in": 8.0, "out": 10.0, "caption": null }] },
+      { "kind": "short", "platform": "shorts", "hook_text": "Would you wear this blue?", "hook_rationale": "A question hook invites comments, which Shorts ranks on.", "duration_sec": 6, "cuts": [{ "in": 8.0, "out": 10.0, "caption": "Would you wear this blue?" }, { "in": 6.0, "out": 8.0, "caption": null }, { "in": 0.8, "out": 2.8, "caption": null }] }
+    ],
+    "localizations": [
+      { "market": "GB", "locale": "en-GB", "currency": "GBP", "price_cents": 6000, "title": "Hand-Knitted Cable Scarf in Powder Blue | Chunky Knit Winter Scarf", "tags": ["cable knit scarf", "hand knitted scarf", "powder blue scarf", "chunky knit scarf", "handmade scarf", "winter scarf", "light blue scarf", "knitted scarf", "cosy scarf", "gift for her", "cable scarf", "hand knitted gift", "soft winter wrap"], "description": "Knitted by hand, stitch by stitch, this scarf has a raised cable running down the middle and a soft powder blue that sits easily with grey coats, camel and cream.\n\nIt is knitted in a chunky yarn on wooden needles, so every stitch is big and easy to see. The cables are crossed by hand as the scarf grows, which is why no two come out exactly alike.\n\nBecause it is made by hand, yours may differ slightly from the photos. That is how you can tell." },
+      { "market": "DE", "locale": "de-DE", "currency": "EUR", "price_cents": 7100, "title": "Handgestrickter Schal mit Zopfmuster in Puderblau | Grobstrick-Winterschal", "tags": ["zopfmuster schal", "handgestrickter schal", "puderblauer schal", "grobstrick schal", "handgemachter schal", "winterschal", "hellblauer schal", "strickschal", "kuscheliger schal", "geschenk für sie", "zopfschal", "handgestrickt geschenk", "weicher winterschal"], "description": "Von Hand gestrickt, Masche für Masche: Dieser Schal hat einen erhabenen Zopf in der Mitte und ein zartes Puderblau, das sich leicht mit grauen Mänteln, Camel und Creme kombinieren lässt.\n\nEr ist aus grober Wolle auf Holznadeln gestrickt, sodass jede Masche groß und gut zu erkennen ist. Die Zöpfe werden von Hand gekreuzt, während der Schal wächst – deshalb gleicht kein Stück dem anderen.\n\nDa er von Hand gefertigt ist, kann Ihr Schal leicht von den Fotos abweichen. Genau daran erkennt man ihn." },
+      { "market": "AU", "locale": "en-AU", "currency": "AUD", "price_cents": 11400, "title": "Hand-Knitted Cable Scarf in Powder Blue | Chunky Winter Scarf", "tags": ["cable knit scarf", "hand knitted scarf", "powder blue scarf", "chunky knit scarf", "handmade scarf", "winter scarf", "light blue scarf", "knitted scarf", "cosy scarf", "gift for her", "cable scarf", "hand knitted gift", "soft winter wrap"], "description": "Knitted by hand, stitch by stitch, this scarf has a raised cable running down the middle and a soft powder blue that sits easily with grey coats, camel and cream.\n\nIt is knitted in a chunky yarn on wooden needles, so every stitch is big and easy to see. The cables are crossed by hand as the scarf grows, which is why no two come out exactly alike.\n\nBecause it is made by hand, yours may differ slightly from the photos. That is how you can tell." },
+      { "market": "CA", "locale": "fr-CA", "currency": "CAD", "price_cents": 11200, "title": "Foulard tricoté à la main à torsades, bleu poudre | Foulard d’hiver en grosse maille", "tags": ["foulard torsades", "foulard tricoté main", "foulard bleu poudre", "foulard grosse maille", "foulard fait main", "foulard d'hiver", "foulard bleu pâle", "foulard tricot", "foulard douillet", "cadeau pour elle", "écharpe torsades", "cadeau tricot main", "écharpe douce hiver"], "description": "Tricoté à la main, maille après maille, ce foulard porte une torsade en relief au centre et un bleu poudre tout doux qui s’accorde facilement aux manteaux gris, camel et crème.\n\nIl est tricoté dans une grosse laine sur des aiguilles en bois, de sorte que chaque maille est grande et bien visible. Les torsades sont croisées à la main au fil du tricot, c’est pourquoi deux foulards ne sont jamais tout à fait identiques.\n\nComme il est fait à la main, le vôtre peut différer légèrement des photos. C’est à cela qu’on le reconnaît." }
+    ],
+    "social": {
+      "pin_title": "Hand-knit cable scarf in powder blue — made stitch by stitch",
+      "pin_caption": "Chunky cable knit, crossed by hand.",
+      "carousel_caption": "One ball of yarn, one pair of needles, one scarf. #handknit #cableknit #knittersofinstagram #slowfashion #powderblue"
+    },
+    "what_claude_did": [
+      { "step": "watch_footage", "summary": "watched 10 s of footage at 24 fps — 240 frames" },
+      { "step": "score_frames", "summary": "scored 240 frames, kept 5" },
+      { "step": "extract_attributes", "summary": "identified a hand-knit scarf — chunky yarn, centre cable, powder blue" },
+      { "step": "research_comparables", "summary": "read 40 comparable listings for price and tags" },
+      { "step": "write_listing", "summary": "wrote the title, 13 tags and a 230-word description" },
+      { "step": "price", "summary": "priced it at $80.00 against 40 comparables" },
+      { "step": "write_hooks", "summary": "wrote 3 hooks: “From one ball of yarn to this”, “Every stitch, by hand.”, “Would you wear this blue?”" },
+      { "step": "cut_points", "summary": "cut 4 videos with 3 hooks" },
+      { "step": "localize", "summary": "wrote 4 listings for UK, DE, AU and CA — translated and priced in local currency" },
+      { "step": "format_for_channel", "summary": "formatted for 3 channels, wrote the pin" }
+    ],
+    "build_seconds": 212,
+    "minutes_saved_est": 185
+  },
+  {
+    "slug": "speckled-stoneware-mug",
+    "category": "ceramic mug",
+    "product_title": "Hand-Thrown Speckled Stoneware Mug",
+    "image_queries": ["speckled stoneware mug handmade", "handmade ceramic mug pottery", "pottery wheel throwing mug", "ceramic mug in hands", "stoneware coffee mug"],
+    "seller": { "name": "Maya", "city": "Portland", "state": "OR", "craft": "pottery" },
+    "source": { "video_name": "mug_making_oct21.mov", "duration_sec": 492, "fps": 30, "photos": 3 },
+    "attributes": {
+      "materials": ["speckled stoneware clay", "food-safe satin glaze"],
+      "colors": ["oatmeal", "warm white", "iron speckle"],
+      "dimensions": { "height_in": 3.6, "width_in": 3.2, "capacity_oz": 12 },
+      "care": ["dishwasher safe", "microwave safe"],
+      "production_hours": 2.5,
+      "made_to_order": false,
+      "lead_time_days": [1, 3]
+    },
+    "scenes": [
+      { "label": "wedging", "start_sec": 0, "end_sec": 48, "what_happens": "clay wedged on the bench, speckles visible" },
+      { "label": "centering", "start_sec": 48, "end_sec": 134, "what_happens": "clay centred on the wheel" },
+      { "label": "pulling", "start_sec": 134, "end_sec": 262, "what_happens": "walls pulled up, mug shape forms" },
+      { "label": "handle", "start_sec": 262, "end_sec": 355, "what_happens": "handle pulled and attached" },
+      { "label": "glazed", "start_sec": 355, "end_sec": 468, "what_happens": "glazed and fired mug turned in the hands" },
+      { "label": "finished", "start_sec": 468, "end_sec": 492, "what_happens": "finished mug on the table, coffee poured" }
+    ],
+    "frames": [
+      { "role": "hero", "timecode_sec": 471.0, "score": 0.95, "reason": "finished mug front-on, glaze speckle sharp, neutral background" },
+      { "role": "in_hand", "timecode_sec": 402.5, "score": 0.9, "reason": "held in one hand — shows the 12 oz size and handle grip" },
+      { "role": "detail", "timecode_sec": 437.0, "score": 0.89, "reason": "close on the iron speckle breaking through the satin glaze" },
+      { "role": "process", "timecode_sec": 188.0, "score": 0.87, "reason": "walls being pulled on the wheel — proof it is hand-thrown" },
+      { "role": "scale", "timecode_sec": 484.0, "score": 0.83, "reason": "mug next to a pour-over, gives a sense of scale" }
+    ],
+    "listing": {
+      "title": "Hand-Thrown Speckled Stoneware Mug | 12 oz Handmade Ceramic Coffee Cup | Oatmeal Satin Glaze | Pottery Gift",
+      "tags": ["stoneware mug", "handmade mug", "speckled mug", "ceramic coffee mug", "pottery mug", "hand thrown mug", "oatmeal mug", "12 oz mug", "wheel thrown", "coffee lover gift", "farmhouse mug", "neutral ceramics", "housewarming gift"],
+      "description": "Thrown on the wheel from a speckled stoneware clay, this mug holds a generous 12 ounces and sits comfortably in the hand. The satin glaze is a warm oatmeal white, and the iron in the clay burns through it in the kiln as small dark freckles, so every mug carries its own pattern.\n\nThe handle is pulled by hand and attached while the clay is still soft, then smoothed so there is no seam to catch your thumb. It is sized for three fingers and balanced so a full mug does not tip forward. The rim is thin enough to drink from easily and the base is sanded smooth so it will not scratch a table.\n\nEach mug is fired twice, the second time to stoneware temperature, which makes it dense and durable. It is dishwasher safe and microwave safe, and the glaze is food safe. Hand washing will keep the satin surface looking its best for longer, but it is not required.\n\nBecause these are made one at a time, the speckle, the exact shade of the glaze and the height may vary a little from the photographs. Dimensions are roughly 3.6 inches tall and 3.2 inches across, not counting the handle.\n\nMade in a small studio in Portland, Oregon, and packed in recycled paper rather than plastic.",
+      "price_cents": 4200,
+      "price_low_cents": 3400,
+      "price_high_cents": 5800,
+      "comparables_read": 40,
+      "cost_basis_cents": 3100,
+      "price_reasoning": "Middle of 40 comparable hand-thrown speckled mugs ($34–$58); covers about $31 of clay, glaze, firing and 2.5 h at the wheel with margin left."
+    },
+    "videos": [
+      { "kind": "listing", "platform": "etsy", "hook_text": null, "hook_rationale": null, "duration_sec": 15, "cuts": [{ "in": 468.0, "out": 473.0, "caption": null }, { "in": 134.0, "out": 139.0, "caption": null }, { "in": 437.0, "out": 442.0, "caption": null }] },
+      { "kind": "short", "platform": "tiktok", "hook_text": "3 hours at the wheel. 30 seconds.", "hook_rationale": "Time compression is the most-shared pottery format on TikTok.", "duration_sec": 12, "cuts": [{ "in": 134.0, "out": 138.0, "caption": "3 hours at the wheel. 30 seconds." }, { "in": 262.0, "out": 266.0, "caption": "pulling the handle" }, { "in": 468.0, "out": 472.0, "caption": null }] },
+      { "kind": "short", "platform": "reels", "hook_text": "The speckles come from the clay, not the glaze.", "hook_rationale": "A small fact people did not know keeps them to the end.", "duration_sec": 9, "cuts": [{ "in": 437.0, "out": 440.0, "caption": "The speckles come from the clay, not the glaze." }, { "in": 10.0, "out": 13.0, "caption": null }, { "in": 471.0, "out": 474.0, "caption": null }] },
+      { "kind": "short", "platform": "shorts", "hook_text": "Would you drink from this?", "hook_rationale": "A question hook invites comments, which Shorts ranks on.", "duration_sec": 8, "cuts": [{ "in": 484.0, "out": 488.0, "caption": "Would you drink from this?" }, { "in": 402.5, "out": 406.5, "caption": null }] }
+    ],
+    "localizations": [
+      { "market": "GB", "locale": "en-GB", "currency": "GBP", "price_cents": 3150, "title": "Hand-Thrown Speckled Stoneware Mug | 12 oz Handmade Ceramic Coffee Cup | Oatmeal Satin Glaze", "tags": ["stoneware mug", "handmade mug", "speckled mug", "ceramic coffee mug", "pottery mug", "hand thrown mug", "oatmeal mug", "340 ml mug", "wheel thrown", "coffee lover gift", "farmhouse mug", "neutral ceramics", "housewarming gift"], "description": "Thrown on the wheel from a speckled stoneware clay, this mug holds a generous 340 ml and sits comfortably in the hand. The satin glaze is a warm oatmeal white, and the iron in the clay burns through it in the kiln as small dark freckles, so every mug carries its own pattern.\n\nThe handle is pulled by hand and attached while the clay is still soft, then smoothed so there is no seam to catch your thumb.\n\nDishwasher and microwave safe. Because these are made one at a time, the speckle and the exact shade of the glaze may vary a little from the photographs." },
+      { "market": "DE", "locale": "de-DE", "currency": "EUR", "price_cents": 3750, "title": "Handgedrehte Steinzeug-Tasse mit Sprenkeln | 340 ml Keramik-Kaffeebecher | Haferweiße Satinglasur", "tags": ["steinzeug tasse", "handgemachte tasse", "gesprenkelte tasse", "keramik kaffeebecher", "töpfer tasse", "handgedrehte tasse", "haferweiße tasse", "340 ml tasse", "auf der scheibe", "geschenk kaffee", "landhaus tasse", "neutrale keramik", "einzugsgeschenk"], "description": "Auf der Töpferscheibe aus gesprenkeltem Steinzeugton gedreht, fasst diese Tasse großzügige 340 ml und liegt angenehm in der Hand. Die Satinglasur ist ein warmes Haferweiß, und das Eisen im Ton brennt im Ofen als kleine dunkle Sprenkel hindurch, sodass jede Tasse ihr eigenes Muster trägt.\n\nDer Henkel wird von Hand gezogen und angesetzt, solange der Ton noch weich ist, und dann geglättet.\n\nSpülmaschinen- und mikrowellenfest. Da jede Tasse einzeln entsteht, können Sprenkel und Glasurton leicht von den Fotos abweichen." },
+      { "market": "AU", "locale": "en-AU", "currency": "AUD", "price_cents": 6000, "title": "Hand-Thrown Speckled Stoneware Mug | 350 ml Handmade Ceramic Coffee Cup | Oatmeal Satin Glaze", "tags": ["stoneware mug", "handmade mug", "speckled mug", "ceramic coffee mug", "pottery mug", "hand thrown mug", "oatmeal mug", "350 ml mug", "wheel thrown", "coffee lover gift", "farmhouse mug", "neutral ceramics", "housewarming gift"], "description": "Thrown on the wheel from a speckled stoneware clay, this mug holds a generous 350 ml and sits comfortably in the hand. The satin glaze is a warm oatmeal white, and the iron in the clay burns through it in the kiln as small dark freckles, so every mug carries its own pattern.\n\nThe handle is pulled by hand and attached while the clay is still soft, then smoothed so there is no seam to catch your thumb.\n\nDishwasher and microwave safe. Because these are made one at a time, the speckle and the exact shade of the glaze may vary a little from the photographs." },
+      { "market": "CA", "locale": "fr-CA", "currency": "CAD", "price_cents": 5900, "title": "Tasse en grès moucheté tournée à la main | Tasse à café en céramique 350 ml | Glaçure satinée avoine", "tags": ["tasse en grès", "tasse faite main", "tasse mouchetée", "tasse café céramique", "tasse poterie", "tasse tournée main", "tasse avoine", "tasse 350 ml", "tournée au tour", "cadeau amateur café", "tasse champêtre", "céramique neutre", "cadeau pendaison"], "description": "Tournée au tour dans un grès moucheté, cette tasse contient 350 ml et tient confortablement dans la main. La glaçure satinée est d’un blanc avoine chaleureux, et le fer contenu dans l’argile la traverse à la cuisson en petites taches sombres, de sorte que chaque tasse porte son propre motif.\n\nL’anse est étirée à la main et fixée pendant que l’argile est encore souple, puis lissée.\n\nVa au lave-vaisselle et au micro-ondes. Comme elles sont faites une à la fois, les mouchetures et la teinte exacte de la glaçure peuvent varier légèrement des photos." }
+    ],
+    "social": {
+      "pin_title": "Hand-thrown speckled stoneware mug — 12 oz, oatmeal satin glaze",
+      "pin_caption": "The speckles come from the clay, not the glaze.",
+      "carousel_caption": "Wedged, centred, pulled, glazed, fired. One mug, start to finish. #pottery #stoneware #handmademug #ceramics #wheelthrown"
+    },
+    "what_claude_did": [
+      { "step": "watch_footage", "summary": "watched 8 min 12 s of footage at 30 fps — 14,760 frames" },
+      { "step": "score_frames", "summary": "scored 14,760 frames, kept 5" },
+      { "step": "extract_attributes", "summary": "identified a speckled stoneware mug — 12 oz, oatmeal satin glaze, pulled handle" },
+      { "step": "research_comparables", "summary": "read 40 comparable listings for price and tags" },
+      { "step": "write_listing", "summary": "wrote the title, 13 tags and a 240-word description" },
+      { "step": "price", "summary": "priced it at $42.00 against 40 comparables" },
+      { "step": "write_hooks", "summary": "wrote 3 hooks: “3 hours at the wheel. 30 seconds.”, “The speckles come from the clay, not the glaze.”, “Would you drink from this?”" },
+      { "step": "cut_points", "summary": "cut 4 videos with 3 hooks" },
+      { "step": "localize", "summary": "wrote 4 listings for UK, DE, AU and CA — translated and priced in local currency" },
+      { "step": "format_for_channel", "summary": "formatted for 3 channels, wrote the pin" }
+    ],
+    "build_seconds": 268,
+    "minutes_saved_est": 190
+  }
+]

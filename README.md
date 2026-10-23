@@ -72,3 +72,44 @@ supabase/migrations/0001_init.sql, supabase/seed.sql
 - **Captions**: `CAPTION_FONT` must point to a real .ttf or drawtext fails — test one caption before the demo.
 - **Rehearse with `MOCK_MODE=true`** — same event cadence, ~40 s, no keys. Then switch to live for the real take.
 - The `/events` route polls Supabase every second; on Vercel keep the function `maxDuration` ≥ 300 s or move the client to Supabase Realtime (`claude_actions` is already in the publication).
+
+## Deploy
+
+Two deployables: the Next.js app (Vercel) and the worker (a long-running Node process — Fly.io or Railway). Both talk to the same Supabase project.
+
+**Web → Vercel.** Import the repo; `vercel.json` sets `framework: nextjs` and raises `maxDuration` to 300 s for `/api/v1/launches/[id]/events` (the SSE route polls for up to five minutes) and 60 s for `/download`. Environment variables:
+
+| Var | Note |
+|---|---|
+| `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY` | browser upload via `uploadToSignedUrl` |
+| `SUPABASE_SERVICE_ROLE_KEY` | all API routes use the service role (`src/lib/supabase/admin.ts`) |
+| `SUPABASE_BUCKET` (`launches`), `NEXT_PUBLIC_SUPABASE_BUCKET` (`launches`) | server / browser bucket name |
+| `DEMO_SELLER_ID` | the seeded seller; no auth in the MVP |
+
+**Worker → Fly.io or Railway.** `worker/Dockerfile` (node:24-slim + ffmpeg + DejaVu fonts, `CAPTION_FONT` preset) is built from the repo root because the worker imports `src/lib/types.ts`. The worker must run continuously — it loops on `claim_next_launch()`; if it is down, launches sit at `uploaded` forever and the result screen never fills in. Keep exactly one instance unless the plan allows parallel launches.
+
+- Fly: `fly launch --no-deploy --copy-config` (uses `fly.toml`: app `launch-kit-worker`, one `shared-cpu-1x` 1 GB machine, no HTTP service), then `fly secrets set …`, then `fly deploy`.
+- Railway: new service from the repo; `railway.json` points at the Dockerfile. Set variables in the dashboard.
+
+| Var | Note |
+|---|---|
+| `NEXT_PUBLIC_SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `SUPABASE_BUCKET` | `worker/lib/db.ts` |
+| `ANTHROPIC_API_KEY` | read by the Anthropic SDK |
+| `CLAUDE_VISION_MODEL`, `CLAUDE_WRITER_MODEL` | defaults in `worker/lib/claude.ts` |
+| `MOCK_MODE` | `true` for a keyless demo run |
+| `FFMPEG_PATH`, `CAPTION_FONT`, `WORK_DIR` | preset in the Dockerfile |
+
+The Supabase Storage bucket `launches` is **public** (`supabase/seed.sql`); frame, video, and social URLs in the kit are plain public URLs, so no signed-read logic exists. Do not flip the bucket to private without also changing `publicUrl()` in `src/lib/supabase/admin.ts`.
+
+## Testing
+
+- `scripts/smoke.sh` runs the whole flow with curl: `/plans`, `/me`, `/uploads/sign`, a real `PUT` to the signed URL, `/launches`, polling to `ready|failed` (120 s default), `/kit` listing check, `/export/etsy.csv`, a 141-char `PATCH /listing` expecting 422, and `/download`. Needs `jq` or `python3`, a running web app, and a running worker (`MOCK_MODE=true npm run worker` is enough).
+
+  ```bash
+  scripts/smoke.sh                                   # against http://localhost:3000
+  BASE_URL=https://your-app.vercel.app scripts/smoke.sh
+  SMOKE_FILE=./clip.mp4 scripts/smoke.sh             # upload a real video for a live-worker run
+  ```
+
+- `docs/validation-checklist.md` is the manual checklist: every endpoint with its happy path and each error code the routes actually return, the UI states on `/`, `/launches/[id]`, `/launches`, `/example`, `/preview/*`, the demo-day rehearsal (mock run, live run, numbers to record, fallback plan), and deployment smoke checks.
+- `scripts/cost-report.sql` sums `claude_actions.cost_cents`, tokens, and `build_seconds` per launch — the "cents per launch" number for the pitch.

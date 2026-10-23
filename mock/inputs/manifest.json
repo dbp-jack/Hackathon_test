@@ -1,0 +1,367 @@
+{
+  "pottery-mug": {
+    "slug": "pottery-mug",
+    "product_name": "Speckled stoneware mug",
+    "hints": {
+      "product_name": "Speckled stoneware mug",
+      "materials": "Stoneware clay, food-safe glaze",
+      "price_usd": 42,
+      "ships_from": "Portland, OR"
+    },
+    "video": {
+      "file": "input.mp4",
+      "duration_s": 111.7,
+      "width": 720,
+      "height": 1192,
+      "bytes": 23173138,
+      "kind": "commons",
+      "sources": [
+        {
+          "title": "File:Pottery on porters wheel.webm",
+          "pageUrl": "https://commons.wikimedia.org/wiki/File:Pottery_on_porters_wheel.webm",
+          "author": "Alvin Ategyeka",
+          "license": "CC BY-SA 4.0",
+          "segment": "0s → 112s of 112s (721×1192)"
+        }
+      ]
+    },
+    "photos": [
+      {
+        "file": "photo-1.jpg",
+        "title": "Monmouth Coffee in my new Featherstone Pottery mug",
+        "pageUrl": "https://www.flickr.com/photos/7831824@N04/50059081813",
+        "creator": "Bex.Walton",
+        "license": "BY 2.0",
+        "reason": "Hero shot: a wheel-thrown glazed mug with the handle fully visible. It's sharp and well lit, and the blue-and-aqua glaze reads clearly. The garden setting adds in-context appeal. No faces, text or branding."
+      },
+      {
+        "file": "photo-2.jpg",
+        "title": "Tony Barnes Moonshine Pottery Mugs",
+        "pageUrl": "https://www.flickr.com/photos/154602998@N02/44659093962",
+        "creator": "lucinda103",
+        "license": "BY-SA 2.0",
+        "reason": "Clean studio-style shot of two handmade glazed stoneware mugs on a neutral background. It shows the glaze detail and the pulled handles, and works as a pair/set shot. There is no text or branding."
+      },
+      {
+        "file": "photo-3.jpg",
+        "title": "Featherstone Pottery mug",
+        "pageUrl": "https://www.flickr.com/photos/7831824@N04/50151622587",
+        "creator": "Bex.Walton",
+        "license": "BY 2.0",
+        "reason": "In-context lifestyle shot with a blurred natural background. The handmade blue-and-aqua glazed mug is in focus and shows the throwing lines and handle shape. It adds variety, with a vertical crop and a different setting from the others."
+      }
+    ],
+    "public_urls": {
+      "input.mp4": "https://ooqrmzzmunnvsqvcovcl.supabase.co/storage/v1/object/public/launches/mock/inputs/pottery-mug/input.mp4",
+      "photo-1.jpg": "https://ooqrmzzmunnvsqvcovcl.supabase.co/storage/v1/object/public/launches/mock/inputs/pottery-mug/photo-1.jpg",
+      "photo-2.jpg": "https://ooqrmzzmunnvsqvcovcl.supabase.co/storage/v1/object/public/launches/mock/inputs/pottery-mug/photo-2.jpg",
+      "photo-3.jpg": "https://ooqrmzzmunnvsqvcovcl.supabase.co/storage/v1/object/public/launches/mock/inputs/pottery-mug/photo-3.jpg",
+      "hints.json": "https://ooqrmzzmunnvsqvcovcl.supabase.co/storage/v1/object/public/launches/mock/inputs/pottery-mug/hints.json",
+      "SOURCE.md": "https://ooqrmzzmunnvsqvcovcl.supabase.co/storage/v1/object/public/launches/mock/inputs/pottery-mug/SOURCE.md"
+    }
+  },
+  "knit-scarf": {
+    "slug": "knit-scarf",
+    "product_name": "Chunky hand-knit cable scarf",
+    "hints": {
+      "product_name": "Chunky hand-knit cable scarf",
+      "materials": "100% merino wool",
+      "price_usd": 68,
+      "ships_from": "Burlington, VT"
+    },
+    "video": {
+      "file": "input.mp4",
+      "duration_s": 118.4,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 42217958,
+      "kind": "commons",
+      "sources": [
+        {
+          "title": "File:Knitting (close-up).webm",
+          "pageUrl": "https://commons.wikimedia.org/wiki/File:Knitting_(close-up).webm",
+          "author": "Clément Bucco-Lechat",
+          "license": "CC BY-SA 3.0",
+          "segment": "0s → 118s of 118s (1920×1080)"
+        }
+      ]
+    },
+    "photos": [
+      {
+        "file": "photo-1.jpg",
+        "title": "photo-hero.jpg",
+        "pageUrl": "public/example/knit/photo-hero.jpg",
+        "creator": "Launch Kit team",
+        "license": "project asset",
+        "reason": "Reused from the repo's bundled example assets (public/example/knit); produced by the Launch Kit team for the demo."
+      },
+      {
+        "file": "photo-2.jpg",
+        "title": "photo-closeup.jpg",
+        "pageUrl": "public/example/knit/photo-closeup.jpg",
+        "creator": "Launch Kit team",
+        "license": "project asset",
+        "reason": "Reused from the repo's bundled example assets (public/example/knit); produced by the Launch Kit team for the demo."
+      },
+      {
+        "file": "photo-3.jpg",
+        "title": "photo-cables.jpg",
+        "pageUrl": "public/example/knit/photo-cables.jpg",
+        "creator": "Launch Kit team",
+        "license": "project asset",
+        "reason": "Reused from the repo's bundled example assets (public/example/knit); produced by the Launch Kit team for the demo."
+      }
+    ],
+    "public_urls": {
+      "input.mp4": "https://ooqrmzzmunnvsqvcovcl.supabase.co/storage/v1/object/public/launches/mock/inputs/knit-scarf/input.mp4",
+      "photo-1.jpg": "https://ooqrmzzmunnvsqvcovcl.supabase.co/storage/v1/object/public/launches/mock/inputs/knit-scarf/photo-1.jpg",
+      "photo-2.jpg": "https://ooqrmzzmunnvsqvcovcl.supabase.co/storage/v1/object/public/launches/mock/inputs/knit-scarf/photo-2.jpg",
+      "photo-3.jpg": "https://ooqrmzzmunnvsqvcovcl.supabase.co/storage/v1/object/public/launches/mock/inputs/knit-scarf/photo-3.jpg",
+      "hints.json": "https://ooqrmzzmunnvsqvcovcl.supabase.co/storage/v1/object/public/launches/mock/inputs/knit-scarf/hints.json",
+      "SOURCE.md": "https://ooqrmzzmunnvsqvcovcl.supabase.co/storage/v1/object/public/launches/mock/inputs/knit-scarf/SOURCE.md",
+      "input-short.mp4": "https://ooqrmzzmunnvsqvcovcl.supabase.co/storage/v1/object/public/launches/mock/inputs/knit-scarf/input-short.mp4"
+    }
+  },
+  "hand-poured-candle": {
+    "slug": "hand-poured-candle",
+    "product_name": "Hand-dipped beeswax taper candles (pair)",
+    "hints": {
+      "product_name": "Hand-dipped beeswax taper candles (pair)",
+      "materials": "Pure beeswax, cotton wick",
+      "price_usd": 28,
+      "ships_from": "Asheville, NC"
+    },
+    "video": {
+      "file": "input.mp4",
+      "duration_s": 85.6,
+      "width": 640,
+      "height": 480,
+      "bytes": 8358967,
+      "kind": "commons",
+      "sources": [
+        {
+          "title": "File:Ljusstöpning-dopp.ogv",
+          "pageUrl": "https://commons.wikimedia.org/wiki/File:Ljusst%C3%B6pning-dopp.ogv",
+          "author": "Haxpett",
+          "license": "CC BY-SA 3.0",
+          "segment": "0s → 35s of 35s (640×480)"
+        },
+        {
+          "title": "File:Ljusstöpning-dopp och vändning.ogv",
+          "pageUrl": "https://commons.wikimedia.org/wiki/File:Ljusst%C3%B6pning-dopp_och_v%C3%A4ndning.ogv",
+          "author": "Haxpett",
+          "license": "CC BY-SA 3.0",
+          "segment": "0s → 30s of 30s (640×480)"
+        },
+        {
+          "title": "File:Ljusstöpning-droppklipp.ogv",
+          "pageUrl": "https://commons.wikimedia.org/wiki/File:Ljusst%C3%B6pning-droppklipp.ogv",
+          "author": "Haxpett",
+          "license": "CC BY-SA 3.0",
+          "segment": "0s → 21s of 21s (640×480)"
+        }
+      ]
+    },
+    "photos": [
+      {
+        "file": "photo-1.jpg",
+        "title": "Homemade beeswax candles",
+        "pageUrl": "https://www.flickr.com/photos/8536261@N07/4241172336",
+        "creator": "storebukkebruse",
+        "license": "BY 2.0",
+        "reason": "Best match: a pair of hand-dipped-style beeswax tapers with white cotton wicks, in focus, no faces or text. Natural honey color on a knit cloth makes a good hero shot."
+      },
+      {
+        "file": "photo-2.jpg",
+        "title": "Alessi and Simon Pearce",
+        "pageUrl": "https://www.flickr.com/photos/49889671@N03/10726799434",
+        "creator": "Didriks",
+        "license": "BY 2.0",
+        "reason": "Clean, sharp group shot of cream taper candles that shows their length and shape. It's a fair detail or variety shot. The holders are store-bought and it isn't clearly beeswax, so it's a compromise."
+      },
+      {
+        "file": "photo-3.jpg",
+        "title": "Beeswax candle and flowers",
+        "pageUrl": "https://www.flickr.com/photos/8536261@N07/5159693546",
+        "creator": "storebukkebruse",
+        "license": "BY 2.0",
+        "reason": "In-context lit shot of a natural beeswax-colored candle with dried hydrangea. It's sharp and warm, with no faces. It's a pillar rather than a taper, and there's some chalkboard text in the background, so it's one of the least-bad options."
+      }
+    ],
+    "public_urls": {
+      "input.mp4": "https://ooqrmzzmunnvsqvcovcl.supabase.co/storage/v1/object/public/launches/mock/inputs/hand-poured-candle/input.mp4",
+      "photo-1.jpg": "https://ooqrmzzmunnvsqvcovcl.supabase.co/storage/v1/object/public/launches/mock/inputs/hand-poured-candle/photo-1.jpg",
+      "photo-2.jpg": "https://ooqrmzzmunnvsqvcovcl.supabase.co/storage/v1/object/public/launches/mock/inputs/hand-poured-candle/photo-2.jpg",
+      "photo-3.jpg": "https://ooqrmzzmunnvsqvcovcl.supabase.co/storage/v1/object/public/launches/mock/inputs/hand-poured-candle/photo-3.jpg",
+      "hints.json": "https://ooqrmzzmunnvsqvcovcl.supabase.co/storage/v1/object/public/launches/mock/inputs/hand-poured-candle/hints.json",
+      "SOURCE.md": "https://ooqrmzzmunnvsqvcovcl.supabase.co/storage/v1/object/public/launches/mock/inputs/hand-poured-candle/SOURCE.md"
+    }
+  },
+  "woven-wall-hanging": {
+    "slug": "woven-wall-hanging",
+    "product_name": "Handwoven wall hanging",
+    "hints": {
+      "product_name": "Handwoven wall hanging",
+      "materials": "Cotton warp, wool and linen weft, driftwood dowel",
+      "price_usd": 145,
+      "ships_from": "Santa Fe, NM"
+    },
+    "video": {
+      "file": "input.mp4",
+      "duration_s": 76,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 49179392,
+      "kind": "commons",
+      "sources": [
+        {
+          "title": "File:Weaving demonstrated on a historic loom in Leiden.webm",
+          "pageUrl": "https://commons.wikimedia.org/wiki/File:Weaving_demonstrated_on_a_historic_loom_in_Leiden.webm",
+          "author": "Shani Evenstein (שני אבנשטיין)",
+          "license": "CC BY-SA 4.0",
+          "segment": "0s → 76s of 76s (1920×1080)"
+        }
+      ]
+    },
+    "photos": [
+      {
+        "file": "photo-1.jpg",
+        "title": "Woven wall-hanging",
+        "pageUrl": "https://www.flickr.com/photos/95142644@N00/49462115516",
+        "creator": "Ruth and Dave",
+        "license": "BY 2.0",
+        "reason": "Best match: a handwoven wall hanging on a dowel, hung in a room. It shows the full piece, the fringe and the plaid weave, so it works as the hero and in-context shot."
+      },
+      {
+        "file": "photo-2.jpg",
+        "title": "tapestry wallhanging",
+        "pageUrl": "https://www.flickr.com/photos/20581458@N00/4087983313",
+        "creator": "GollyGforce - Living My Worst Nightmare",
+        "license": "BY 2.0",
+        "reason": "Close-up of handwoven wool texture and a tapestry-style color transition. It is in focus and works as a detail shot. It shows no dowel or full piece, so it is a least-bad pick."
+      },
+      {
+        "file": "photo-3.jpg",
+        "title": "Woven tapestry",
+        "pageUrl": "https://www.flickr.com/photos/52574241@N00/4835965043",
+        "creator": "moon angel",
+        "license": "BY-SA 2.0",
+        "reason": "Flat, in-focus view of a woven textile with a clear weft stripe pattern. It works as a texture or detail shot. It is not a hanging and has no dowel, so it is a least-bad pick."
+      }
+    ],
+    "public_urls": {
+      "input.mp4": "https://ooqrmzzmunnvsqvcovcl.supabase.co/storage/v1/object/public/launches/mock/inputs/woven-wall-hanging/input.mp4",
+      "photo-1.jpg": "https://ooqrmzzmunnvsqvcovcl.supabase.co/storage/v1/object/public/launches/mock/inputs/woven-wall-hanging/photo-1.jpg",
+      "photo-2.jpg": "https://ooqrmzzmunnvsqvcovcl.supabase.co/storage/v1/object/public/launches/mock/inputs/woven-wall-hanging/photo-2.jpg",
+      "photo-3.jpg": "https://ooqrmzzmunnvsqvcovcl.supabase.co/storage/v1/object/public/launches/mock/inputs/woven-wall-hanging/photo-3.jpg",
+      "hints.json": "https://ooqrmzzmunnvsqvcovcl.supabase.co/storage/v1/object/public/launches/mock/inputs/woven-wall-hanging/hints.json",
+      "SOURCE.md": "https://ooqrmzzmunnvsqvcovcl.supabase.co/storage/v1/object/public/launches/mock/inputs/woven-wall-hanging/SOURCE.md"
+    }
+  },
+  "leather-wallet": {
+    "slug": "leather-wallet",
+    "product_name": "Minimalist full-grain leather bifold wallet",
+    "hints": {
+      "product_name": "Minimalist full-grain leather bifold wallet",
+      "materials": "Full-grain vegetable-tanned leather, waxed linen thread",
+      "price_usd": 85,
+      "ships_from": "Austin, TX"
+    },
+    "video": {
+      "file": "input.mp4",
+      "duration_s": 70,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 7212935,
+      "kind": "slideshow",
+      "sources": []
+    },
+    "photos": [
+      {
+        "file": "photo-1.jpg",
+        "title": "brown leather bifold wallet on table - Credit to https://myfriendscoffee.com/",
+        "pageUrl": "https://www.flickr.com/photos/147592390@N06/40692032623",
+        "creator": "John Beans",
+        "license": "BY 2.0",
+        "reason": "Best hero shot: a handmade-looking stitched leather bifold, open, in focus, with a dramatic background. Card logos are visible, so it is not perfect."
+      },
+      {
+        "file": "photo-2.jpg",
+        "title": "my wallet",
+        "pageUrl": "https://www.flickr.com/photos/22294215@N06/8784244485",
+        "creator": "michael pollak",
+        "license": "BY 2.0",
+        "reason": "A dark vegetable-tanned-style bifold shown closed on warm wood with coins and cash. It is a good lifestyle and flat-lay angle. It is a little dim, and there is a small knife logo."
+      },
+      {
+        "file": "photo-3.jpg",
+        "title": "Kyle's Wallet",
+        "pageUrl": "https://www.flickr.com/photos/34943037@N00/4081125688",
+        "creator": "MasonJars",
+        "license": "BY-SA 2.0",
+        "reason": "The only in-context shot, with the wallet in a back pocket. It adds variety. It is a snap-style wallet rather than a true bifold, and a small jeans tab shows, so it is a least-bad pick. The other finished photos are branded, collages, off-product, or have legible text."
+      }
+    ],
+    "public_urls": {
+      "input.mp4": "https://ooqrmzzmunnvsqvcovcl.supabase.co/storage/v1/object/public/launches/mock/inputs/leather-wallet/input.mp4",
+      "photo-1.jpg": "https://ooqrmzzmunnvsqvcovcl.supabase.co/storage/v1/object/public/launches/mock/inputs/leather-wallet/photo-1.jpg",
+      "photo-2.jpg": "https://ooqrmzzmunnvsqvcovcl.supabase.co/storage/v1/object/public/launches/mock/inputs/leather-wallet/photo-2.jpg",
+      "photo-3.jpg": "https://ooqrmzzmunnvsqvcovcl.supabase.co/storage/v1/object/public/launches/mock/inputs/leather-wallet/photo-3.jpg",
+      "hints.json": "https://ooqrmzzmunnvsqvcovcl.supabase.co/storage/v1/object/public/launches/mock/inputs/leather-wallet/hints.json",
+      "SOURCE.md": "https://ooqrmzzmunnvsqvcovcl.supabase.co/storage/v1/object/public/launches/mock/inputs/leather-wallet/SOURCE.md"
+    }
+  },
+  "handmade-soap": {
+    "slug": "handmade-soap",
+    "product_name": "Cold process oatmeal honey soap bar",
+    "hints": {
+      "product_name": "Cold process oatmeal honey soap bar",
+      "materials": "Olive oil, coconut oil, shea butter, oatmeal, honey",
+      "price_usd": 9,
+      "ships_from": "Madison, WI"
+    },
+    "video": {
+      "file": "input.mp4",
+      "duration_s": 66,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 4677319,
+      "kind": "slideshow",
+      "sources": []
+    },
+    "photos": [
+      {
+        "file": "photo-1.jpg",
+        "title": "Handmade Soap 2",
+        "pageUrl": "https://commons.wikimedia.org/w/index.php?curid=9825582",
+        "creator": "Chia Wei Ku",
+        "license": "BY-SA 4.0",
+        "reason": "Best hero shot: two cold-process bars with natural swirl and flecks that suit an oatmeal-honey soap. It has no text or people, and the bars are clearly visible. The lighting is a bit warm and the background is plain."
+      },
+      {
+        "file": "photo-2.jpg",
+        "title": "Handmade soap cropped and simplified",
+        "pageUrl": "https://commons.wikimedia.org/w/index.php?curid=90085224",
+        "creator": "Malene Thyssen, simplified by HLHJ",
+        "license": "BY 2.5",
+        "reason": "In-context shot: a honey-toned bar on a wet stone with natural lather bubbles. It shows the soap in use and fits the honey theme. It is clean, with no text or faces."
+      },
+      {
+        "file": "photo-3.jpg",
+        "title": "mosaic package side",
+        "pageUrl": "https://www.flickr.com/photos/60608121@N00/312466026",
+        "creator": "soapylovedeb",
+        "license": "BY 2.0",
+        "reason": "Least-bad third pick, as a gift-packaged presentation shot. It has no text or faces and a clean background. The green mosaic bar looks like melt-and-pour, not oatmeal honey, so this is a weak match."
+      }
+    ],
+    "public_urls": {
+      "input.mp4": "https://ooqrmzzmunnvsqvcovcl.supabase.co/storage/v1/object/public/launches/mock/inputs/handmade-soap/input.mp4",
+      "photo-1.jpg": "https://ooqrmzzmunnvsqvcovcl.supabase.co/storage/v1/object/public/launches/mock/inputs/handmade-soap/photo-1.jpg",
+      "photo-2.jpg": "https://ooqrmzzmunnvsqvcovcl.supabase.co/storage/v1/object/public/launches/mock/inputs/handmade-soap/photo-2.jpg",
+      "photo-3.jpg": "https://ooqrmzzmunnvsqvcovcl.supabase.co/storage/v1/object/public/launches/mock/inputs/handmade-soap/photo-3.jpg",
+      "hints.json": "https://ooqrmzzmunnvsqvcovcl.supabase.co/storage/v1/object/public/launches/mock/inputs/handmade-soap/hints.json",
+      "SOURCE.md": "https://ooqrmzzmunnvsqvcovcl.supabase.co/storage/v1/object/public/launches/mock/inputs/handmade-soap/SOURCE.md"
+    }
+  }
+}

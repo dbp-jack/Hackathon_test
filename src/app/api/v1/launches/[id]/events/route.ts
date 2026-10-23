@@ -5,6 +5,8 @@ import { PIPELINE_STEPS, type ClaudeActionRow } from "@/lib/types";
 
 type Ctx = { params: Promise<{ id: string }> };
 export const dynamic = "force-dynamic";
+export const maxDuration = 300; // Vercel: longest allowed function run (s)
+const MAX_STREAM_MS = 20 * 60 * 1000; // stop polling after 20 min so an abandoned tab never leaves a zombie stream
 
 /**
  * GET /launches/{id}/events — Server-Sent Events.
@@ -21,6 +23,7 @@ export async function GET(req: NextRequest, { params }: Ctx) {
   const enc = new TextEncoder();
   let lastActionId = 0;
   let closed = false;
+  const startedAt = Date.now();
   req.signal.addEventListener("abort", () => { closed = true; });
 
   const stream = new ReadableStream({
@@ -51,6 +54,7 @@ export async function GET(req: NextRequest, { params }: Ctx) {
           break;
         }
         if (current.status === "failed") { send("error", { message: current.error_message }); break; }
+        if (Date.now() - startedAt > MAX_STREAM_MS) { send("error", { message: "stream timed out — reload to reconnect" }); break; }
         controller.enqueue(enc.encode(": keepalive\n\n"));
         await new Promise((r) => setTimeout(r, 1000));
       }

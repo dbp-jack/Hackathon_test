@@ -21,6 +21,16 @@ async function fxRates(): Promise<Record<string, number>> {
 /** Step 9: localize — one Claude call translates and adapts tone for every requested market; frankfurter supplies FX. */
 export async function localize(launch: LaunchRow, listing: Listing, a: Analysis) {
   const t0 = new Date();
+  try {
+    await localizeLive(launch, listing, a, t0);
+  } catch (e) {
+    // optional output — never fail the launch over it
+    console.error("localize failed, skipping:", e instanceof Error ? e.message : e);
+    await logAction(launch.id, "localize", "skipped localization (translation unavailable)", { metrics: { skipped: true }, started_at: t0 }).catch(() => undefined);
+  }
+}
+
+async function localizeLive(launch: LaunchRow, listing: Listing, a: Analysis, t0: Date) {
   const { data: req } = await db.from("launch_markets").select("market").eq("launch_id", launch.id);
   const markets = (req ?? []).map((m) => m.market).filter((m) => MARKETS[m]);
   if (!markets.length) return;
@@ -43,7 +53,7 @@ Call localize_listing once with one version per market.`,
     const m = MARKETS[v.market]; if (!m) continue;
     const rate = rates[m.currency] ?? 1;
     const base = Math.round((listing.price_cents + m.shipping_cents) * rate);
-    const price = Math.round(base / 50) * 50 - (base % 50 === 0 ? 0 : 0); // round to .50
+    const price = Math.round(base / 50) * 50; // round to the nearest 50 cents
     await db.from("listing_localizations").upsert({
       launch_id: launch.id, market: v.market, locale: m.locale, title: v.title.slice(0, 140), tags: v.tags.slice(0, 13), description: v.description,
       price_cents: price, currency: m.currency, fx_rate: rate, shipping_cents_included: m.shipping_cents, enabled: true,
@@ -56,6 +66,15 @@ Call localize_listing once with one version per market.`,
 /** Step 10: format_for_channel — pin title, carousel order, draft publication rows. */
 export async function formatForChannels(launch: LaunchRow, listing: Listing) {
   const t0 = new Date();
+  try {
+    await formatLive(launch, listing, t0);
+  } catch (e) {
+    console.error("format_for_channel failed, skipping:", e instanceof Error ? e.message : e);
+    await logAction(launch.id, "format_for_channel", "skipped social copy (unavailable)", { metrics: { skipped: true }, started_at: t0 }).catch(() => undefined);
+  }
+}
+
+async function formatLive(launch: LaunchRow, listing: Listing, t0: Date) {
   const { data: frames } = await db.from("frames").select("id, role").eq("launch_id", launch.id).eq("selected", true).order("sort_order");
   const ids = (frames ?? []).map((f) => f.id);
   const hero = (frames ?? []).find((f) => f.role === "hero")?.id ?? ids[0];

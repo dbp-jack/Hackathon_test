@@ -1,0 +1,3345 @@
+[
+  {
+    "slug": "speckled-stoneware-mug",
+    "category": "ceramic mug",
+    "product_title": "Hand-thrown Speckled Stoneware Mug",
+    "image_queries": [
+      "speckled stoneware mug",
+      "pottery wheel hands clay",
+      "handmade ceramic mug on wooden table",
+      "potter trimming mug studio"
+    ],
+    "seller": {
+      "name": "Maya",
+      "city": "Portland",
+      "state": "OR",
+      "craft": "potter"
+    },
+    "source": {
+      "video_name": "mug_making_oct21.mov",
+      "duration_sec": 492,
+      "fps": 30,
+      "photos": 0
+    },
+    "attributes": {
+      "materials": [
+        "speckled stoneware clay",
+        "glaze (seller will confirm exact glaze)"
+      ],
+      "colors": [
+        "cream",
+        "brown speckle"
+      ],
+      "dimensions": {
+        "height_in": 4,
+        "rim_diameter_in": 3.25,
+        "capacity_oz": 12
+      },
+      "care": [
+        "hand wash recommended",
+        "avoid sudden temperature changes",
+        "seller will confirm dishwasher and microwave use"
+      ],
+      "production_hours": 2.5,
+      "made_to_order": true,
+      "lead_time_days": [
+        14,
+        21
+      ]
+    },
+    "scenes": [
+      {
+        "label": "Wedging the clay",
+        "start_sec": 0,
+        "end_sec": 70,
+        "what_happens": "Maya wedges a ball of speckled stoneware on a canvas-covered table."
+      },
+      {
+        "label": "Centering and throwing",
+        "start_sec": 70,
+        "end_sec": 200,
+        "what_happens": "The clay is centered on the wheel, opened and the walls are pulled up into a cylinder."
+      },
+      {
+        "label": "Trimming",
+        "start_sec": 200,
+        "end_sec": 270,
+        "what_happens": "The leather-hard mug is flipped and the foot ring is trimmed."
+      },
+      {
+        "label": "Pulling and attaching the handle",
+        "start_sec": 270,
+        "end_sec": 340,
+        "what_happens": "A handle is pulled by hand, shaped and attached to the body."
+      },
+      {
+        "label": "Glazing",
+        "start_sec": 340,
+        "end_sec": 365,
+        "what_happens": "The bisqued mug is dipped into a bucket of cream glaze."
+      },
+      {
+        "label": "Out of the kiln",
+        "start_sec": 365,
+        "end_sec": 440,
+        "what_happens": "The kiln is opened and the camera moves close on the fired glaze and speckles."
+      },
+      {
+        "label": "Finished mug",
+        "start_sec": 440,
+        "end_sec": 492,
+        "what_happens": "The finished mug sits on a wooden board by the window, then is picked up and held."
+      }
+    ],
+    "frames": [
+      {
+        "role": "hero",
+        "timecode_sec": 468,
+        "score": 94,
+        "reason": "Finished mug on a wooden board at 07:48, sharp focus on the speckled glaze, soft window side light, clean centered composition."
+      },
+      {
+        "role": "in_hand",
+        "timecode_sec": 482,
+        "score": 88,
+        "reason": "Mug held by the pulled handle at 08:02, shows grip and size, even light, slight background blur."
+      },
+      {
+        "role": "detail",
+        "timecode_sec": 375,
+        "score": 82,
+        "reason": "Close-up of fired glaze at 06:15, speckles and the brown break at the rim in crisp focus."
+      },
+      {
+        "role": "process",
+        "timecode_sec": 134,
+        "score": 79,
+        "reason": "Hands pulling the walls on the wheel at 02:14, wet clay sheen, motion frozen, good overhead light."
+      },
+      {
+        "role": "scale",
+        "timecode_sec": 488,
+        "score": 74,
+        "reason": "Mug set down beside a hand and a teaspoon at 08:08, gives a clear sense of size, level framing."
+      }
+    ],
+    "listing": {
+      "title": "Speckled Stoneware Mug | Hand-thrown 12 oz Coffee Mug | Handmade Pottery Gift for Coffee Lovers | Pulled Handle Ceramic Tea Cup",
+      "tags": [
+        "speckled mug",
+        "stoneware mug",
+        "handmade coffee mug",
+        "pottery gift",
+        "hand thrown pottery",
+        "ceramic coffee cup",
+        "12 oz tea cup",
+        "gift for tea lover",
+        "rustic kitchen decor",
+        "portland pottery",
+        "wheel thrown ceramic",
+        "housewarming gift",
+        "speckled glaze cup"
+      ],
+      "description": "This is a hand-thrown mug I made on my wheel from speckled stoneware. It holds about 12 oz, enough for a full pour of coffee or a big cup of tea. The walls are thrown thin so it feels light, and the pulled handle fits three fingers with room for your thumb on top. The speckles in the clay show through the glaze, so every sip comes with a little texture to look at.\n\nThe mug is speckled stoneware clay with a satin cream glaze that breaks to brown at the rim. It measures about 4 inches tall and 3.25 inches across the rim, and holds 12 oz filled to the brim. I will confirm the exact clay body and glaze details on request. Hand washing keeps the glaze looking its best; avoid sudden temperature changes such as going straight from fridge to hot oven.\n\nEach mug is made to order in my home studio. Throwing, trimming, handles, glazing and two kiln firings take time, so please allow 2 to 3 weeks before it ships from Portland, Oregon. I wrap every mug in recycled paper and a sturdy box.\n\nBecause each mug is thrown and glazed by hand, the speckles, glaze breaks and exact size will vary a little from the photos.",
+      "price_cents": 4200,
+      "price_low_cents": 3400,
+      "price_high_cents": 5800,
+      "comparables_read": 40,
+      "cost_basis_cents": 3100,
+      "price_reasoning": "Forty comparable hand-thrown speckled mugs list between $34 and $58, with most 12 oz pieces clustered around $40 to $45. At 2.5 hours of hands-on work and a $31 cost basis, $42 covers labor and materials while sitting just below the middle of the range."
+    },
+    "videos": [
+      {
+        "kind": "listing",
+        "platform": "etsy",
+        "hook_text": null,
+        "hook_rationale": null,
+        "duration_sec": 15,
+        "cuts": [
+          {
+            "in": 134,
+            "out": 139,
+            "caption": null
+          },
+          {
+            "in": 375,
+            "out": 380,
+            "caption": null
+          },
+          {
+            "in": 466,
+            "out": 471,
+            "caption": null
+          }
+        ]
+      },
+      {
+        "kind": "short",
+        "platform": "tiktok",
+        "hook_text": "3 hours at the wheel. 30 seconds.",
+        "hook_rationale": "Time compression rewards TikTok's watch-to-the-end loop by promising the whole process in one short scroll.",
+        "duration_sec": 28,
+        "cuts": [
+          {
+            "in": 20,
+            "out": 23,
+            "caption": "Wedging"
+          },
+          {
+            "in": 100,
+            "out": 104,
+            "caption": "Centering"
+          },
+          {
+            "in": 134,
+            "out": 138,
+            "caption": "Pulling the walls"
+          },
+          {
+            "in": 220,
+            "out": 223,
+            "caption": "Trimming the foot"
+          },
+          {
+            "in": 300,
+            "out": 304,
+            "caption": "Pulling the handle"
+          },
+          {
+            "in": 350,
+            "out": 353,
+            "caption": "Glaze dip"
+          },
+          {
+            "in": 372,
+            "out": 375,
+            "caption": "Out of the kiln"
+          },
+          {
+            "in": 466,
+            "out": 470,
+            "caption": null
+          }
+        ]
+      },
+      {
+        "kind": "short",
+        "platform": "reels",
+        "hook_text": "What goes into one $42 mug",
+        "hook_rationale": "Reels viewers save and share value breakdowns, and naming the price answers the question every comment section asks.",
+        "duration_sec": 22,
+        "cuts": [
+          {
+            "in": 15,
+            "out": 19,
+            "caption": "Speckled stoneware clay"
+          },
+          {
+            "in": 130,
+            "out": 135,
+            "caption": "Thrown on the wheel by hand"
+          },
+          {
+            "in": 285,
+            "out": 289,
+            "caption": "Handle pulled and attached"
+          },
+          {
+            "in": 345,
+            "out": 349,
+            "caption": "Dipped in glaze, then the kiln"
+          },
+          {
+            "in": 476,
+            "out": 481,
+            "caption": "2.5 hours of hands-on work"
+          }
+        ]
+      },
+      {
+        "kind": "short",
+        "platform": "shorts",
+        "hook_text": "No talking. Just clay.",
+        "hook_rationale": "Silent ASMR process clips hold YouTube Shorts viewers who watch with sound on for the wheel and clay noises.",
+        "duration_sec": 19,
+        "cuts": [
+          {
+            "in": 40,
+            "out": 44,
+            "caption": null
+          },
+          {
+            "in": 140,
+            "out": 145,
+            "caption": null
+          },
+          {
+            "in": 230,
+            "out": 234,
+            "caption": null
+          },
+          {
+            "in": 470,
+            "out": 476,
+            "caption": "Out of the kiln"
+          }
+        ]
+      }
+    ],
+    "localizations": [
+      {
+        "market": "GB",
+        "locale": "en-GB",
+        "currency": "GBP",
+        "price_cents": 3350,
+        "title": "Speckled Stoneware Mug | Hand-thrown 350 ml Coffee Mug | Handmade Pottery Gift for Tea Lovers | Pulled Handle Ceramic Cup",
+        "tags": [
+          "speckled mug",
+          "stoneware mug",
+          "handmade tea mug",
+          "pottery gift",
+          "hand thrown pottery",
+          "ceramic coffee cup",
+          "350ml tea cup",
+          "gift for tea lover",
+          "rustic kitchen decor",
+          "wheel thrown ceramic",
+          "housewarming gift",
+          "speckled glaze cup",
+          "mothering sunday"
+        ],
+        "description": "This is a hand-thrown mug I made on my wheel from speckled stoneware. It holds about 350 ml, enough for a proper mug of tea or a full pour of coffee. The walls are thrown thin so it feels light, and the pulled handle fits three fingers with room for your thumb on top. The speckles in the clay show through the glaze, so your favourite brew comes with a little texture to look at.\n\nThe mug is speckled stoneware clay with a satin cream glaze that breaks to brown at the rim. It measures about 10 cm tall and 8.3 cm across the rim, and holds 350 ml filled to the brim. I will confirm the exact clay body and glaze colour details on request. Hand washing keeps the glaze looking its best; avoid sudden temperature changes such as going straight from the fridge into a hot oven.\n\nEach mug is made to order in my home studio in Portland, Oregon. Throwing, trimming, handles, glazing and two kiln firings take time, so please allow 2 to 3 weeks before it ships, plus international delivery time to the UK. It makes a thoughtful Mothering Sunday or birthday present.\n\nBecause each mug is thrown and glazed by hand, the speckles, glaze breaks and exact size will vary a little from the photos."
+      },
+      {
+        "market": "DE",
+        "locale": "de-DE",
+        "currency": "EUR",
+        "price_cents": 3900,
+        "title": "Gesprenkelte Steinzeugtasse | Handgedrehte Kaffeetasse 350 ml | Handgemachtes Keramik-Geschenk | Gezogener Henkel",
+        "tags": [
+          "steinzeug tasse",
+          "gesprenkelte tasse",
+          "handgemachte tasse",
+          "kaffeebecher keramik",
+          "töpferei geschenk",
+          "handgedrehte keramik",
+          "teebecher 350 ml",
+          "geschenk für sie",
+          "muttertag geschenk",
+          "rustikale küche",
+          "einweihungsgeschenk",
+          "drehscheibe keramik",
+          "gesprenkelte glasur"
+        ],
+        "description": "Diese Tasse habe ich auf meiner Töpferscheibe aus gesprenkeltem Steinzeug gedreht. Sie fasst etwa 350 ml, genug für einen großen Kaffee oder einen ordentlichen Becher Tee. Die Wände sind dünn gedreht, deshalb liegt sie leicht in der Hand, und der gezogene Henkel bietet Platz für drei Finger und den Daumen obendrauf. Die Sprenkel im Ton scheinen durch die Glasur, so hat jeder Schluck ein wenig Struktur fürs Auge.\n\nDie Tasse besteht aus gesprenkeltem Steinzeugton mit einer seidenmatten, cremefarbenen Glasur, die am Rand ins Braune übergeht. Sie ist etwa 10 cm hoch, hat oben einen Durchmesser von 8,3 cm und fasst randvoll 350 ml. Die genaue Tonmasse und Glasur bestätige ich gern auf Anfrage. Handwäsche schont die Glasur; bitte plötzliche Temperaturwechsel vermeiden, etwa direkt aus dem Kühlschrank in den heißen Ofen.\n\nJede Tasse wird auf Bestellung in meinem kleinen Atelier gefertigt. Drehen, Abdrehen, Henkel, Glasieren und zwei Brände brauchen Zeit, bitte rechne mit 2 bis 3 Wochen, bis sie in Portland, Oregon, verschickt wird, zuzüglich Versandzeit nach Deutschland. Ein persönliches Geschenk zum Muttertag, zum Geburtstag oder zu Weihnachten.\n\nDa jede Tasse von Hand gedreht und glasiert wird, weichen Sprenkel, Glasurverlauf und Größe leicht von den Fotos ab."
+      },
+      {
+        "market": "AU",
+        "locale": "en-AU",
+        "currency": "AUD",
+        "price_cents": 6400,
+        "title": "Speckled Stoneware Mug | Hand-thrown 350 ml Coffee Mug | Handmade Pottery Gift for Coffee Lovers | Pulled Handle Ceramic Cup",
+        "tags": [
+          "speckled mug",
+          "stoneware mug",
+          "handmade coffee mug",
+          "hand thrown pottery",
+          "ceramic coffee cup",
+          "flat white cup",
+          "gift for tea lover",
+          "rustic kitchen decor",
+          "wheel thrown ceramic",
+          "housewarming gift",
+          "speckled glaze cup",
+          "mothers day gift",
+          "portland pottery"
+        ],
+        "description": "This is a hand-thrown mug I made on my wheel from speckled stoneware. It holds about 350 ml, enough for a long black, a big flat white or a decent cuppa. The walls are thrown thin so it feels light, and the pulled handle fits three fingers with room for your thumb on top. The speckles in the clay show through the glaze, so your favourite brew comes with a little texture to look at.\n\nThe mug is speckled stoneware clay with a satin cream glaze that breaks to brown at the rim. It measures about 10 cm tall and 8.3 cm across the rim, and holds 350 ml filled to the brim. I will confirm the exact clay body and glaze colour details on request. Hand washing keeps the glaze looking its best; avoid sudden temperature changes such as going straight from the fridge into a hot oven.\n\nEach mug is made to order in my home studio in Portland, Oregon. Throwing, trimming, handles, glazing and two kiln firings take time, so please allow 2 to 3 weeks before it ships, plus international delivery time to Australia. It makes a thoughtful Mother's Day, birthday or Christmas present.\n\nBecause each mug is thrown and glazed by hand, the speckles, glaze breaks and exact size will vary a little from the photos."
+      },
+      {
+        "market": "CA",
+        "locale": "fr-CA",
+        "currency": "CAD",
+        "price_cents": 5700,
+        "title": "Tasse en grès moucheté | Tasse à café tournée à la main 350 ml | Cadeau poterie artisanale | Anse tirée à la main",
+        "tags": [
+          "tasse en grès",
+          "tasse mouchetée",
+          "tasse artisanale",
+          "poterie fait main",
+          "grès moucheté",
+          "cadeau céramique",
+          "tournée à la main",
+          "café et thé",
+          "fête des mères",
+          "cuisine rustique",
+          "cadeau pendaison",
+          "céramique faite main",
+          "cadeau amateur café"
+        ],
+        "description": "J'ai tourné cette tasse sur mon tour de potier dans un grès moucheté. Elle contient environ 350 ml, assez pour un grand café ou une bonne tasse de thé. Les parois sont tournées minces, alors elle est légère en main, et l'anse tirée accueille trois doigts avec de la place pour le pouce sur le dessus. Les mouchetures de l'argile transparaissent sous la glaçure, ce qui donne un peu de texture à chaque gorgée.\n\nLa tasse est en grès moucheté avec une glaçure crème satinée qui tourne au brun sur le rebord. Elle mesure environ 10 cm de haut et 8,3 cm de diamètre au rebord, et contient 350 ml à ras bord. Je peux confirmer la pâte d'argile et la glaçure exactes sur demande. Le lavage à la main garde la glaçure en bon état plus longtemps; évitez les chocs thermiques, par exemple passer directement du frigo au four chaud.\n\nChaque tasse est faite sur commande dans mon petit atelier. Le tournage, le tournassage, l'anse, l'émaillage et deux cuissons prennent du temps : prévoyez de 2 à 3 semaines avant l'expédition depuis Portland, en Oregon, plus le délai de livraison au Canada. Une idée cadeau attentionnée pour la fête des Mères, un anniversaire ou Noël.\n\nComme chaque tasse est tournée et émaillée à la main, les mouchetures, les coulures de glaçure et la taille varient légèrement par rapport aux photos."
+      }
+    ],
+    "social": {
+      "pin_title": "Hand-thrown speckled stoneware mug, 12 oz",
+      "pin_caption": "A 12 oz speckled stoneware mug thrown, trimmed and glazed by hand in Portland, Oregon. Made to order, ships in 2 to 3 weeks.",
+      "carousel_caption": "From a ball of speckled clay to your morning coffee: 2.5 hours of hands-on work in one 12 oz mug. Made to order in Portland. #handmadepottery #stonewaremug #speckledglaze #potterystudio #portlandmakers"
+    },
+    "what_claude_did": [
+      {
+        "step": "watch_footage",
+        "summary": "watched 8 min 12 s of footage"
+      },
+      {
+        "step": "score_frames",
+        "summary": "scored 14,760 frames, kept 5"
+      },
+      {
+        "step": "extract_attributes",
+        "summary": "identified a ceramic mug — speckled stoneware, satin cream glaze; 7 scenes"
+      },
+      {
+        "step": "research_comparables",
+        "summary": "read 40 comparable listings for price and tags"
+      },
+      {
+        "step": "write_listing",
+        "summary": "wrote the title, 13 tags and a 212-word description"
+      },
+      {
+        "step": "price",
+        "summary": "priced it at $42.00 against 40 comparables"
+      },
+      {
+        "step": "write_hooks",
+        "summary": "wrote 3 hooks: “3 hours at the wheel. 30 seconds.”, “What goes into one $42 mug”, “No talking. Just clay.”"
+      },
+      {
+        "step": "cut_points",
+        "summary": "cut 4 videos with 3 hooks, 20 cuts"
+      },
+      {
+        "step": "localize",
+        "summary": "wrote about 1,240 words in 5 languages"
+      },
+      {
+        "step": "format_for_channel",
+        "summary": "formatted for 3 channels, wrote the pin"
+      }
+    ],
+    "build_seconds": 246,
+    "minutes_saved_est": 185
+  },
+  {
+    "slug": "knit-cable-scarf",
+    "category": "knit scarf",
+    "product_title": "Hand-Knit Cable Scarf in Powder Blue",
+    "image_queries": [
+      "powder blue cable knit scarf",
+      "hands knitting chunky yarn wooden needles",
+      "cable knit texture close up",
+      "light blue knitted scarf"
+    ],
+    "seller": {
+      "name": "Ellie",
+      "city": "Burlington",
+      "state": "VT",
+      "craft": "knitter"
+    },
+    "source": {
+      "video_name": "knitting_oct23.mp4",
+      "duration_sec": 10,
+      "fps": 30,
+      "photos": 0
+    },
+    "attributes": {
+      "materials": [
+        "chunky yarn (fiber content: the seller will confirm)",
+        "knit on wooden needles"
+      ],
+      "colors": [
+        "powder blue"
+      ],
+      "dimensions": {
+        "length": "the seller will confirm",
+        "width": "the seller will confirm"
+      },
+      "care": [
+        "the seller will confirm care instructions once the yarn fiber is confirmed"
+      ],
+      "production_hours": 4.5,
+      "made_to_order": true,
+      "lead_time_days": [
+        7,
+        14
+      ]
+    },
+    "scenes": [
+      {
+        "label": "Opening frame",
+        "start_sec": 0,
+        "end_sec": 0.5,
+        "what_happens": "The phone settles on the work-in-progress resting in the knitter's lap."
+      },
+      {
+        "label": "Knitting rows",
+        "start_sec": 0.5,
+        "end_sec": 4,
+        "what_happens": "Hands work powder blue chunky yarn across wooden needles, with the yarn ball and needles visible together for scale."
+      },
+      {
+        "label": "Cable close-up",
+        "start_sec": 4,
+        "end_sec": 7,
+        "what_happens": "The camera moves in on the raised cable twists as a cable is crossed by hand."
+      },
+      {
+        "label": "Finished scarf",
+        "start_sec": 7,
+        "end_sec": 10,
+        "what_happens": "The finished scarf is lifted in both hands, then laid flat to show the full cable run."
+      }
+    ],
+    "frames": [
+      {
+        "role": "hero",
+        "timecode_sec": 8.4,
+        "score": 94,
+        "reason": "Finished scarf laid flat in soft window light, cables in sharp focus, centered composition with clean background."
+      },
+      {
+        "role": "in_hand",
+        "timecode_sec": 7.1,
+        "score": 88,
+        "reason": "Scarf held up in both hands, showing drape and thickness; even light, hands framing the powder blue."
+      },
+      {
+        "role": "detail",
+        "timecode_sec": 6.2,
+        "score": 85,
+        "reason": "Tight close-up of the raised cable twists, crisp stitch definition, slight shallow depth of field."
+      },
+      {
+        "role": "process",
+        "timecode_sec": 3.5,
+        "score": 79,
+        "reason": "Hands mid-stitch on wooden needles, yarn tension visible, mild motion blur at the needle tips."
+      },
+      {
+        "role": "scale",
+        "timecode_sec": 0.8,
+        "score": 70,
+        "reason": "Yarn ball, needles and fabric in one frame giving a sense of size; wider and a little softer in focus."
+      }
+    ],
+    "listing": {
+      "title": "Hand-Knit Cable Scarf in Powder Blue | Chunky Knit Winter Scarf | Handmade Cable Knit Wrap | Cozy Gift for Her",
+      "tags": [
+        "cable knit scarf",
+        "hand knit scarf",
+        "powder blue scarf",
+        "chunky knit scarf",
+        "handmade scarf",
+        "winter scarf",
+        "light blue scarf",
+        "knitted scarf",
+        "cozy scarf",
+        "gift for her",
+        "cable scarf",
+        "handknit gift",
+        "soft winter wrap"
+      ],
+      "description": "This is a hand-knit cable scarf in powder blue, worked in chunky yarn on wooden needles. The cables run down the length in raised twists, so the fabric has a thick, textured feel when you wrap it around your neck. It is the kind of scarf you reach for on cold mornings, and it makes a cozy gift for her.\n\nI knit it in chunky yarn on wooden needles, and the color is a light powder blue. The exact fiber content, the finished length and width in inches, and the care instructions are details the seller will confirm before you order. If you have a question about the yarn or the sizing, message me and I will answer within a day.\n\nEach scarf is made to order, so I start knitting yours once you place your order. Please allow 7 to 14 days for me to knit, block and pack it before it ships. I knit every piece myself in my home studio, and it ships from Burlington, Vermont, with tracking included.\n\nBecause every scarf is knit by hand, the cables and the shade of blue will vary slightly from piece to piece.",
+      "price_cents": 8000,
+      "price_low_cents": 3000,
+      "price_high_cents": 17500,
+      "comparables_read": 40,
+      "cost_basis_cents": 7200,
+      "price_reasoning": "Etsy cable knit scarves run $30–$175 across 40 comparables, with most hand-knit chunky ones clustered at $75–$100. At $80 the scarf sits at the low end of that cluster and covers a $72 cost basis: about $18 in yarn plus 4.5 hours of knitting at $12/h."
+    },
+    "videos": [
+      {
+        "kind": "listing",
+        "platform": "etsy",
+        "hook_text": null,
+        "hook_rationale": null,
+        "duration_sec": 10,
+        "cuts": [
+          {
+            "in": 0.5,
+            "out": 4,
+            "caption": null
+          },
+          {
+            "in": 4,
+            "out": 7,
+            "caption": null
+          },
+          {
+            "in": 7,
+            "out": 10,
+            "caption": null
+          }
+        ]
+      },
+      {
+        "kind": "short",
+        "platform": "tiktok",
+        "hook_text": "From one ball of yarn to this",
+        "hook_rationale": "A before-and-after promise squeezes the whole making into seconds, which is the time-compression payoff TikTok viewers stay for.",
+        "duration_sec": 10,
+        "cuts": [
+          {
+            "in": 0.5,
+            "out": 4,
+            "caption": "One ball of chunky yarn"
+          },
+          {
+            "in": 4,
+            "out": 7,
+            "caption": "Cables crossed by hand"
+          },
+          {
+            "in": 7,
+            "out": 10,
+            "caption": "Finished: powder blue"
+          }
+        ]
+      },
+      {
+        "kind": "short",
+        "platform": "reels",
+        "hook_text": "Every stitch, by hand.",
+        "hook_rationale": "Reels viewers respond to the craft and hours behind a product, and this line puts the handwork in front before the price question comes up.",
+        "duration_sec": 6,
+        "cuts": [
+          {
+            "in": 4,
+            "out": 7,
+            "caption": "Chunky yarn, wooden needles"
+          },
+          {
+            "in": 7,
+            "out": 10,
+            "caption": "About 4.5 hours of knitting"
+          }
+        ]
+      },
+      {
+        "kind": "short",
+        "platform": "shorts",
+        "hook_text": "Would you wear this blue?",
+        "hook_rationale": "A quiet no-talking clip with one simple question gets Shorts viewers commenting without needing a voiceover.",
+        "duration_sec": 6,
+        "cuts": [
+          {
+            "in": 1,
+            "out": 4,
+            "caption": null
+          },
+          {
+            "in": 7,
+            "out": 10,
+            "caption": "Hand-knit in powder blue"
+          }
+        ]
+      }
+    ],
+    "localizations": [
+      {
+        "market": "GB",
+        "locale": "en-GB",
+        "currency": "GBP",
+        "price_cents": 6000,
+        "title": "Hand-Knitted Cable Scarf in Powder Blue | Chunky Knit Winter Scarf",
+        "tags": [
+          "cable knit scarf",
+          "hand knitted scarf",
+          "powder blue scarf",
+          "chunky knitwear",
+          "handmade knitwear",
+          "winter neck warmer",
+          "cosy winter wrap",
+          "cable knit wrap",
+          "pale blue accessory",
+          "christmas gift idea",
+          "mothering sunday",
+          "gift for her",
+          "handmade in vermont"
+        ],
+        "description": "This is a hand-knitted cable scarf in powder blue, worked in chunky yarn on wooden needles. The cables run down its length in raised twists, so the fabric has a thick, textured feel when you wrap it round your neck. It is the scarf you reach for on cold mornings, and it makes a cosy Christmas or birthday present for her.\n\nI knit it in chunky yarn on wooden needles, and the colour is a light powder blue. The exact fibre content, the finished length and width in centimetres, and the care instructions are details the seller will confirm before you order. If you have a question about the yarn or the sizing, message me and I will answer within a day.\n\nEach scarf is made to order, so I start knitting yours once you place your order. Please allow 7 to 14 days for me to knit, block and pack it before it ships. I knit every piece myself in my home studio, and it ships from Burlington, Vermont, in the US, with tracking included.\n\nBecause every scarf is knitted by hand, the cables and the shade of blue will vary slightly from piece to piece."
+      },
+      {
+        "market": "DE",
+        "locale": "de-DE",
+        "currency": "EUR",
+        "price_cents": 7100,
+        "title": "Handgestrickter Schal mit Zopfmuster in Puderblau | Grobstrick-Winterschal",
+        "tags": [
+          "zopfmuster schal",
+          "handgestrickt",
+          "puderblauer schal",
+          "grobstrick schal",
+          "winterschal",
+          "strickschal",
+          "hellblauer strick",
+          "handarbeit",
+          "geschenk für sie",
+          "weihnachtsgeschenk",
+          "muttertag geschenk",
+          "zopfstrick tuch",
+          "winteraccessoire"
+        ],
+        "description": "Das ist ein handgestrickter Schal mit Zopfmuster in Puderblau, gestrickt aus grobem Garn auf Holznadeln. Die Zöpfe laufen als erhabene Verdrehungen über die ganze Länge, deshalb fühlt sich das Gestrick dick und strukturiert an, wenn Sie ihn um den Hals wickeln. Es ist der Schal, zu dem man an kalten Morgen greift, und ein gemütliches Geschenk für sie zu Weihnachten oder zum Geburtstag.\n\nIch stricke ihn aus grobem Garn auf Holznadeln, die Farbe ist ein helles Puderblau. Die genaue Faserzusammensetzung, die fertige Länge und Breite in Zentimetern sowie die Pflegehinweise bestätigt die Verkäuferin vor Ihrer Bestellung. Wenn Sie Fragen zum Garn oder zur Größe haben, schreiben Sie mir, ich antworte innerhalb eines Tages.\n\nJeder Schal wird auf Bestellung gefertigt, ich beginne also erst nach Ihrer Bestellung mit dem Stricken. Bitte rechnen Sie mit 7 bis 14 Tagen zum Stricken, Spannen und Verpacken, bevor er verschickt wird. Ich stricke jedes Stück selbst in meinem Atelier zu Hause, der Versand erfolgt mit Sendungsverfolgung aus Burlington, Vermont (USA).\n\nDa jeder Schal von Hand gestrickt wird, variieren Zöpfe und Blauton von Stück zu Stück leicht."
+      },
+      {
+        "market": "AU",
+        "locale": "en-AU",
+        "currency": "AUD",
+        "price_cents": 11400,
+        "title": "Hand-Knitted Cable Scarf in Powder Blue | Chunky Winter Scarf",
+        "tags": [
+          "cable knit scarf",
+          "hand knitted scarf",
+          "powder blue scarf",
+          "chunky knitwear",
+          "handmade knitwear",
+          "winter neck warmer",
+          "cosy winter wrap",
+          "cable knit wrap",
+          "pale blue accessory",
+          "mothers day gift",
+          "birthday gift idea",
+          "gift for her",
+          "handmade in vermont"
+        ],
+        "description": "This is a hand-knitted cable scarf in powder blue, worked in chunky yarn on wooden needles. The cables run down its length in raised twists, so the fabric has a thick, textured feel when you wrap it round your neck. It is the scarf you reach for on cold winter mornings, and it makes a cosy Mother's Day or birthday gift for her.\n\nI knit it in chunky yarn on wooden needles, and the colour is a light powder blue. The exact fibre content, the finished length and width in centimetres, and the care instructions are details the seller will confirm before you order. If you have a question about the yarn or the sizing, message me and I will answer within a day.\n\nEach scarf is made to order, so I start knitting yours once you place your order. Please allow 7 to 14 days for me to knit, block and pack it before it ships. I knit every piece myself in my home studio, and it ships from Burlington, Vermont, in the US, with tracking included.\n\nBecause every scarf is knitted by hand, the cables and the shade of blue will vary slightly from piece to piece."
+      },
+      {
+        "market": "CA",
+        "locale": "fr-CA",
+        "currency": "CAD",
+        "price_cents": 11200,
+        "title": "Foulard tricoté à la main à torsades, bleu poudre | Foulard d’hiver en grosse maille",
+        "tags": [
+          "foulard torsades",
+          "foulard tricoté main",
+          "foulard bleu poudre",
+          "grosse maille",
+          "tricot fait main",
+          "cache-cou hiver",
+          "bleu pâle",
+          "tricot torsadé",
+          "cadeau pour elle",
+          "cadeau de noël",
+          "fête des mères",
+          "accessoire d'hiver",
+          "fait au vermont"
+        ],
+        "description": "Voici un foulard tricoté à la main à torsades, bleu poudre, travaillé avec un fil épais sur des aiguilles en bois. Les torsades courent en relief sur toute la longueur, ce qui donne au tricot une texture épaisse quand vous l'enroulez autour du cou. C'est le foulard qu'on attrape les matins froids, et un cadeau douillet pour elle à Noël ou pour son anniversaire.\n\nJe le tricote avec un fil épais sur des aiguilles en bois, dans un bleu poudre pâle. La composition exacte de la fibre, la longueur et la largeur finales en centimètres ainsi que les consignes d'entretien seront confirmées par la vendeuse avant votre commande. Si vous avez une question sur le fil ou les dimensions, écrivez-moi et je vous réponds en moins d'une journée.\n\nChaque foulard est fait sur commande : je commence à tricoter le vôtre dès que vous passez votre commande. Prévoyez de 7 à 14 jours pour le tricot, le blocage et l'emballage avant l'expédition. Je tricote chaque pièce moi-même dans mon atelier à la maison, et elle est expédiée de Burlington, au Vermont, avec numéro de suivi.\n\nComme chaque foulard est tricoté à la main, les torsades et la teinte de bleu varient légèrement d'une pièce à l'autre."
+      }
+    ],
+    "social": {
+      "pin_title": "Hand-Knit Cable Scarf in Powder Blue",
+      "pin_caption": "A chunky cable scarf in powder blue, knit by hand on wooden needles in Burlington, Vermont. Made to order and ready to ship in 7 to 14 days.",
+      "carousel_caption": "One ball of chunky yarn, about 4.5 hours on wooden needles, one powder blue cable scarf. Made to order in Burlington, VT. #handknit #cableknit #knittersofinstagram #chunkyknit #handmadegift"
+    },
+    "what_claude_did": [
+      {
+        "step": "watch_footage",
+        "summary": "watched 10 s of footage across 4 scenes"
+      },
+      {
+        "step": "score_frames",
+        "summary": "scored 300 frames, kept 5"
+      },
+      {
+        "step": "extract_attributes",
+        "summary": "identified a knit scarf — chunky yarn, powder blue cables; 4 scenes, 3 details left for the seller to confirm"
+      },
+      {
+        "step": "research_comparables",
+        "summary": "read 40 comparable listings for price and tags"
+      },
+      {
+        "step": "write_listing",
+        "summary": "wrote the title, 13 tags and a 194-word description"
+      },
+      {
+        "step": "price",
+        "summary": "priced it at $80.00 against 40 comparables"
+      },
+      {
+        "step": "write_hooks",
+        "summary": "wrote 3 hooks: “From one ball of yarn to this”, “Every stitch, by hand.”, “Would you wear this blue?”"
+      },
+      {
+        "step": "cut_points",
+        "summary": "cut 4 videos with 3 hooks, 10 cuts"
+      },
+      {
+        "step": "localize",
+        "summary": "wrote about 950 words for 4 markets in 3 languages"
+      },
+      {
+        "step": "format_for_channel",
+        "summary": "formatted for 7 channels, wrote the pin and a 5-hashtag carousel"
+      }
+    ],
+    "build_seconds": 186,
+    "minutes_saved_est": 180
+  },
+  {
+    "slug": "walnut-cutting-board",
+    "category": "cutting board",
+    "product_title": "Edge-Grain Black Walnut Cutting Board",
+    "image_queries": [
+      "edge grain black walnut cutting board",
+      "oiled walnut chopping board",
+      "woodworking clamps glue up boards",
+      "wooden cutting board on kitchen counter"
+    ],
+    "seller": {
+      "name": "Dana Whitfield",
+      "city": "Knoxville",
+      "state": "TN",
+      "craft": "woodworking"
+    },
+    "source": {
+      "video_name": "walnut_board_shop_take2.MOV",
+      "duration_sec": 384,
+      "fps": 30,
+      "photos": 5
+    },
+    "attributes": {
+      "materials": [
+        "black walnut (edge grain)",
+        "food-safe oil and wax finish (exact blend: the seller will confirm)",
+        "wood glue (type: the seller will confirm)"
+      ],
+      "colors": [
+        "dark chocolate brown",
+        "cream sapwood streaks"
+      ],
+      "dimensions": {
+        "length_in": 18,
+        "width_in": 12,
+        "thickness_in": 1.25,
+        "edges": "softly rounded"
+      },
+      "care": [
+        "hand wash with warm soapy water",
+        "dry standing on edge",
+        "rub in mineral oil once a month",
+        "no dishwasher",
+        "do not soak"
+      ],
+      "production_hours": 4.5,
+      "made_to_order": true,
+      "lead_time_days": [
+        5,
+        10
+      ]
+    },
+    "scenes": [
+      {
+        "label": "Rough lumber",
+        "start_sec": 0,
+        "end_sec": 48,
+        "what_happens": "Seller picks rough black walnut boards from a rack and faces them on the jointer."
+      },
+      {
+        "label": "Ripping strips",
+        "start_sec": 48,
+        "end_sec": 102,
+        "what_happens": "Boards are ripped into even strips on the table saw and laid out to match grain."
+      },
+      {
+        "label": "Glue-up",
+        "start_sec": 102,
+        "end_sec": 165,
+        "what_happens": "Glue is rolled onto the strips, which are edge-glued and clamped with bar clamps."
+      },
+      {
+        "label": "Flattening and sizing",
+        "start_sec": 165,
+        "end_sec": 228,
+        "what_happens": "The cured panel goes through the planer and is cross-cut to final length."
+      },
+      {
+        "label": "Edges and sanding",
+        "start_sec": 228,
+        "end_sec": 300,
+        "what_happens": "Edges are rounded over with a router, then the board is sanded through grits with a random-orbit sander."
+      },
+      {
+        "label": "Oiling",
+        "start_sec": 300,
+        "end_sec": 348,
+        "what_happens": "Oil is flooded onto the surface by hand and the grain darkens; wax is buffed in."
+      },
+      {
+        "label": "Finished reveal",
+        "start_sec": 348,
+        "end_sec": 384,
+        "what_happens": "The finished board sits on a kitchen counter, is lifted in hand and measured with a tape."
+      }
+    ],
+    "frames": [
+      {
+        "role": "hero",
+        "timecode_sec": 362,
+        "score": 94,
+        "reason": "Finished board flat on a pale counter in window light, full grain in sharp focus, clean centered composition."
+      },
+      {
+        "role": "in_hand",
+        "timecode_sec": 371.5,
+        "score": 88,
+        "reason": "Seller holds the board on edge, hands give scale and the rounded edge catches soft side light."
+      },
+      {
+        "role": "detail",
+        "timecode_sec": 322,
+        "score": 85,
+        "reason": "Close-up of oil wetting the walnut grain, sapwood streak and figure in crisp macro focus."
+      },
+      {
+        "role": "process",
+        "timecode_sec": 138,
+        "score": 79,
+        "reason": "Strips clamped in bar clamps with glue squeeze-out, steady overhead framing under shop lights."
+      },
+      {
+        "role": "scale",
+        "timecode_sec": 378,
+        "score": 76,
+        "reason": "Tape measure laid across the board reading 18 inches, chef's knife alongside for size reference."
+      }
+    ],
+    "listing": {
+      "title": "Black Walnut Cutting Board | Edge Grain Wood Chopping Board | Hand Oiled Finish | Housewarming Gift for Cooks",
+      "tags": [
+        "walnut cutting board",
+        "edge grain board",
+        "black walnut kitchen",
+        "wood chopping block",
+        "housewarming gift",
+        "gift for cooks",
+        "handmade kitchenware",
+        "oiled hardwood",
+        "charcuterie serving",
+        "wedding gift couple",
+        "large wooden board",
+        "made to order wood",
+        "cutting surface"
+      ],
+      "description": "This is an edge-grain black walnut cutting board I make one at a time in my shop. It is heavy enough to stay put on the counter while you chop, and the surface has a smooth, slightly satin feel after oiling. I use mine every day for vegetables, bread and the occasional cheese spread for friends.\n\nThe board is built from strips of black walnut, glued edge to edge, planed flat and sanded to 220 grit. It measures 18 x 12 inches and 1.25 inches thick, with softly rounded edges. I finish it with a food-safe oil and wax; I will confirm the exact blend if you message me. Hand wash with warm soapy water, dry it standing on edge, and rub in a little mineral oil once a month. Please keep it out of the dishwasher and don't leave it soaking.\n\nEach board is made to order, so please allow 5 to 10 days before it ships. I pack it in recycled paper and ship from Knoxville, Tennessee, with tracking. If you would like a different size, send me a note before ordering.\n\nWalnut grain and color shift from tree to tree, so the board you receive will vary a little from the photos.",
+      "price_cents": 11800,
+      "price_low_cents": 8500,
+      "price_high_cents": 16500,
+      "comparables_read": 38,
+      "cost_basis_cents": 9600,
+      "price_reasoning": "Thirty-eight comparable edge-grain walnut boards around 18 x 12 in are listed between $85 and $165, clustering near $110 to $125. With 4.5 production hours and a $96 cost basis ($42 materials plus labor), $118 sits mid-range and still covers lumber and time."
+    },
+    "videos": [
+      {
+        "kind": "listing",
+        "platform": "etsy",
+        "hook_text": null,
+        "hook_rationale": null,
+        "duration_sec": 14,
+        "cuts": [
+          {
+            "in": 140,
+            "out": 144,
+            "caption": null
+          },
+          {
+            "in": 318,
+            "out": 323,
+            "caption": null
+          },
+          {
+            "in": 352,
+            "out": 357,
+            "caption": null
+          }
+        ]
+      },
+      {
+        "kind": "short",
+        "platform": "tiktok",
+        "hook_text": "4.5 hours in the shop. 25 seconds.",
+        "hook_rationale": "Time compression suits TikTok's fast-cut process format and promises a full transformation before viewers can scroll away.",
+        "duration_sec": 25,
+        "cuts": [
+          {
+            "in": 10,
+            "out": 13,
+            "caption": "rough walnut, straight off the rack"
+          },
+          {
+            "in": 60,
+            "out": 63,
+            "caption": "ripping strips on the table saw"
+          },
+          {
+            "in": 125,
+            "out": 129,
+            "caption": "glue-up and clamps"
+          },
+          {
+            "in": 190,
+            "out": 193,
+            "caption": "planing it flat"
+          },
+          {
+            "in": 260,
+            "out": 263,
+            "caption": "sanding up to 220 grit"
+          },
+          {
+            "in": 315,
+            "out": 319,
+            "caption": "first coat of oil"
+          },
+          {
+            "in": 355,
+            "out": 360,
+            "caption": "18 x 12 in, ready to cut on"
+          }
+        ]
+      },
+      {
+        "kind": "short",
+        "platform": "reels",
+        "hook_text": "What goes into one $118 cutting board",
+        "hook_rationale": "Reels viewers save value-explainer content, and naming the price invites them to see the materials and hours that justify it.",
+        "duration_sec": 20,
+        "cuts": [
+          {
+            "in": 20,
+            "out": 24,
+            "caption": "about $38 of black walnut lumber"
+          },
+          {
+            "in": 130,
+            "out": 134,
+            "caption": "edge-glued, left overnight in clamps"
+          },
+          {
+            "in": 240,
+            "out": 244,
+            "caption": "4.5 hours of milling and sanding"
+          },
+          {
+            "in": 305,
+            "out": 309,
+            "caption": "hand-rubbed food-safe oil and wax"
+          },
+          {
+            "in": 362,
+            "out": 366,
+            "caption": "one board, 18 x 12 x 1.25 in"
+          }
+        ]
+      },
+      {
+        "kind": "short",
+        "platform": "shorts",
+        "hook_text": "No talking. Just walnut and oil.",
+        "hook_rationale": "YouTube Shorts rewards rewatchable ASMR loops, and sander hum plus oil soaking into grain plays without words.",
+        "duration_sec": 17,
+        "cuts": [
+          {
+            "in": 235,
+            "out": 239,
+            "caption": null
+          },
+          {
+            "in": 310,
+            "out": 315,
+            "caption": null
+          },
+          {
+            "in": 325,
+            "out": 329,
+            "caption": null
+          },
+          {
+            "in": 365,
+            "out": 369,
+            "caption": "black walnut, hand oiled"
+          }
+        ]
+      }
+    ],
+    "localizations": [
+      {
+        "market": "GB",
+        "locale": "en-GB",
+        "currency": "GBP",
+        "price_cents": 10750,
+        "title": "Black Walnut Chopping Board | Edge Grain Wooden Board | Hand Oiled Finish | Housewarming Gift for Cooks",
+        "tags": [
+          "walnut chop board",
+          "edge grain board",
+          "wood chopping block",
+          "housewarming gift",
+          "gift for cooks",
+          "handmade kitchenware",
+          "oiled hardwood",
+          "cheese serving board",
+          "wedding gift couple",
+          "black walnut kitchen",
+          "christmas present",
+          "made to order wood",
+          "cutting surface"
+        ],
+        "description": "This is an edge-grain black walnut chopping board I make one at a time in my workshop. It is heavy enough to stay put on the worktop while you chop, and the surface has a smooth, slightly satin feel after oiling. I use mine every day for vegetables, bread and the odd cheese board for friends.\n\nThe board is built from strips of black walnut, glued edge to edge, planed flat and sanded to 220 grit. It measures 46 x 30.5 cm and is 3.2 cm thick, with softly rounded edges. I finish it with a food-safe oil and wax; I will confirm the exact blend if you message me. Hand wash in warm soapy water, dry it standing on its edge, and rub in a little mineral oil once a month. Please keep it out of the dishwasher and don't leave it soaking.\n\nEach board is made to order, so please allow 5 to 10 days before it is dispatched. I wrap it in recycled paper and post it from Knoxville, Tennessee, with tracking; UK import charges may apply on delivery. If you would like a different size, send me a note before ordering.\n\nWalnut grain and colour shift from tree to tree, so your board will vary a little from the photos."
+      },
+      {
+        "market": "DE",
+        "locale": "de-DE",
+        "currency": "EUR",
+        "price_cents": 12900,
+        "title": "Schneidebrett aus Schwarznuss | Längsholz Küchenbrett | Handgeölt | Geschenk zum Einzug für Hobbyköche",
+        "tags": [
+          "schneidebrett nuss",
+          "schwarznuss holz",
+          "längsholz brett",
+          "küchenbrett holz",
+          "geschenk zum einzug",
+          "geschenk für köche",
+          "handarbeit küche",
+          "geöltes hartholz",
+          "käsebrett servieren",
+          "geschenk hochzeit",
+          "großes holzbrett",
+          "auf bestellung",
+          "brotzeitbrett nuss"
+        ],
+        "description": "Dies ist ein Schneidebrett aus amerikanischem Schwarznussholz, das ich einzeln in meiner Werkstatt fertige. Es ist schwer genug, um beim Schneiden ruhig auf der Arbeitsplatte zu liegen, und die Oberfläche fühlt sich nach dem Ölen glatt und seidenmatt an. Ich nutze meins jeden Tag für Gemüse, Brot und gelegentlich eine Käseplatte für Freunde.\n\nDas Brett besteht aus Längsholz-Leisten aus Schwarznuss, Kante an Kante verleimt, plan gehobelt und bis Körnung 220 geschliffen. Es misst 46 x 30,5 cm bei 3,2 cm Stärke, mit sanft gerundeten Kanten. Ich behandle es mit einem lebensmittelechten Öl und Wachs; die genaue Mischung bestätige ich gern auf Nachfrage. Bitte von Hand mit warmem Spülwasser reinigen, hochkant trocknen lassen und einmal im Monat etwas Mineralöl einreiben. Nicht in die Spülmaschine geben und nicht im Wasser liegen lassen.\n\nJedes Brett wird auf Bestellung gefertigt, bitte rechne mit 5 bis 10 Tagen bis zum Versand. Ich verpacke es in Recyclingpapier und verschicke es mit Sendungsverfolgung aus Knoxville, Tennessee; bei der Einfuhr können Zollgebühren anfallen. Wenn du eine andere Größe möchtest, schreib mir vor der Bestellung.\n\nMaserung und Farbe von Nussholz unterscheiden sich von Baum zu Baum, daher weicht jedes Brett leicht von den Fotos ab."
+      },
+      {
+        "market": "AU",
+        "locale": "en-AU",
+        "currency": "AUD",
+        "price_cents": 21900,
+        "title": "Black Walnut Chopping Board | Edge Grain Timber Board | Hand Oiled Finish | Housewarming Gift for Cooks",
+        "tags": [
+          "walnut chop board",
+          "edge grain board",
+          "timber serving board",
+          "housewarming gift",
+          "gift for cooks",
+          "handmade kitchenware",
+          "oiled hardwood",
+          "grazing platter",
+          "wedding gift couple",
+          "black walnut kitchen",
+          "kris kringle present",
+          "made to order timber",
+          "cutting surface"
+        ],
+        "description": "This is an edge-grain black walnut chopping board I make one at a time in my workshop. It is heavy enough to stay put on the benchtop while you chop, and the surface has a smooth, slightly satin feel after oiling. I use mine every day for veggies, bread and the odd grazing platter for mates.\n\nThe board is built from strips of black walnut, glued edge to edge, planed flat and sanded to 220 grit. It measures 46 x 30.5 cm and is 3.2 cm thick, with softly rounded edges. I finish it with a food-safe oil and wax; I will confirm the exact blend if you message me. Hand wash in warm soapy water, dry it standing on its edge, and rub in a little mineral oil once a month. Please keep it out of the dishwasher and don't leave it soaking.\n\nEach board is made to order, so please allow 5 to 10 days before it is dispatched. I wrap it in recycled paper and post it from Knoxville, Tennessee, with tracking; import charges and biosecurity checks may apply on arrival in Australia. If you would like a different size, send me a note before ordering.\n\nWalnut grain and colour shift from tree to tree, so your board will vary a little from the photos."
+      },
+      {
+        "market": "CA",
+        "locale": "fr-CA",
+        "currency": "CAD",
+        "price_cents": 18100,
+        "title": "Planche à découper en noyer noir | Bois de fil | Fini à l'huile à la main | Cadeau de pendaison de crémaillère",
+        "tags": [
+          "planche à découper",
+          "noyer noir massif",
+          "planche bois de fil",
+          "bois franc huilé",
+          "cadeau crémaillère",
+          "cadeau cuisinier",
+          "fait à la main",
+          "accessoire cuisine",
+          "planche fromages",
+          "cadeau de mariage",
+          "ustensile en noyer",
+          "sur commande",
+          "billot de cuisine"
+        ],
+        "description": "Voici une planche à découper en noyer noir, en bois de fil, que je fabrique une à la fois dans mon atelier. Elle est assez lourde pour rester en place sur le comptoir pendant que vous coupez, et sa surface est douce et légèrement satinée après l'huilage. J'utilise la mienne tous les jours pour les légumes, le pain et, à l'occasion, un plateau de fromages entre amis.\n\nLa planche est faite de lattes de noyer noir collées chant contre chant, rabotées à plat et poncées jusqu'au grain 220. Elle mesure 46 x 30,5 cm et 3,2 cm d'épaisseur, avec des rebords légèrement arrondis. Je la finis avec une huile et une cire alimentaires; je vous confirmerai le mélange exact sur demande. Lavez-la à la main à l'eau chaude savonneuse, laissez-la sécher debout sur le chant et appliquez un peu d'huile minérale une fois par mois. Pas de lave-vaisselle, et ne la laissez pas tremper.\n\nChaque planche est fabriquée sur commande; prévoyez de 5 à 10 jours avant l'expédition. Je l'emballe dans du papier recyclé et je l'expédie de Knoxville, au Tennessee, avec suivi. Des frais de douane peuvent s'appliquer à la livraison. Pour un autre format, écrivez-moi avant de commander.\n\nLe grain et la couleur du noyer changent d'un arbre à l'autre; votre planche variera donc un peu des photos."
+      }
+    ],
+    "social": {
+      "pin_title": "Edge-grain black walnut cutting board, 18 x 12 in",
+      "pin_caption": "One edge-grain black walnut board, milled, glued, sanded and hand-oiled in a Knoxville shop. It's made to order and ships in 5 to 10 days.",
+      "carousel_caption": "Rough walnut lumber to an oiled 18 x 12 in cutting board in 4.5 hours of shop time. Swipe for the glue-up. #woodworking #blackwalnut #cuttingboard #handmadekitchen #knoxvillemakers"
+    },
+    "what_claude_did": [
+      {
+        "step": "watch_footage",
+        "summary": "watched 6 min 24 s of footage"
+      },
+      {
+        "step": "score_frames",
+        "summary": "scored 11,520 frames, kept 5"
+      },
+      {
+        "step": "extract_attributes",
+        "summary": "identified a cutting board — black walnut, edge grain, oil finish; 7 scenes"
+      },
+      {
+        "step": "research_comparables",
+        "summary": "read 38 comparable listings for price and tags"
+      },
+      {
+        "step": "write_listing",
+        "summary": "wrote the title, 13 tags and a 205-word description"
+      },
+      {
+        "step": "price",
+        "summary": "priced it at $118.00 against 38 comparables"
+      },
+      {
+        "step": "write_hooks",
+        "summary": "wrote 3 hooks: “4.5 hours in the shop. 25 seconds.”, “What goes into one $118 cutting board”, “No talking. Just walnut and oil.”"
+      },
+      {
+        "step": "cut_points",
+        "summary": "cut 4 videos with 3 hooks, 19 cuts"
+      },
+      {
+        "step": "localize",
+        "summary": "wrote about 1,400 words in 5 languages"
+      },
+      {
+        "step": "format_for_channel",
+        "summary": "formatted for 3 channels, wrote the pin"
+      }
+    ],
+    "build_seconds": 241,
+    "minutes_saved_est": 185
+  },
+  {
+    "slug": "soy-candle-amber",
+    "category": "soy candle",
+    "product_title": "Hand-Poured Soy Candle in Amber Glass Jar",
+    "image_queries": [
+      "soy candle amber glass jar",
+      "pouring candle wax into jar",
+      "cotton wick candle making",
+      "lit candle on wooden table"
+    ],
+    "seller": {
+      "name": "Rosa Delgado",
+      "city": "Tucson",
+      "state": "AZ",
+      "craft": "hand-poured soy candles"
+    },
+    "source": {
+      "video_name": "IMG_4821.MOV",
+      "duration_sec": 378,
+      "fps": 30,
+      "photos": 0
+    },
+    "attributes": {
+      "materials": [
+        "soy wax (exact blend the seller will confirm)",
+        "amber glass jar",
+        "black metal lid",
+        "cotton wick",
+        "fragrance oil (the seller will confirm)"
+      ],
+      "colors": [
+        "amber",
+        "cream",
+        "black"
+      ],
+      "dimensions": {
+        "height_in": 3.5,
+        "diameter_in": 3,
+        "net_wt_oz": 8,
+        "wick_trim_in": 0.25
+      },
+      "care": [
+        "trim wick to 1/4 inch before every burn",
+        "let the first burn reach a full melt pool",
+        "burn no longer than 4 hours at a time",
+        "keep away from drafts, pets and children"
+      ],
+      "production_hours": 0.75,
+      "made_to_order": true,
+      "lead_time_days": [
+        5,
+        10
+      ]
+    },
+    "scenes": [
+      {
+        "label": "Weighing wax",
+        "start_sec": 0,
+        "end_sec": 42,
+        "what_happens": "Rosa pours cream soy wax flakes into a steel pour pot on a kitchen scale."
+      },
+      {
+        "label": "Melting",
+        "start_sec": 42,
+        "end_sec": 118,
+        "what_happens": "The pour pot sits in a double boiler; a clip-on thermometer climbs as the flakes turn clear."
+      },
+      {
+        "label": "Prepping jars",
+        "start_sec": 118,
+        "end_sec": 176,
+        "what_happens": "She sticks cotton wicks to the bottoms of amber glass jars and presses them to center."
+      },
+      {
+        "label": "Adding fragrance",
+        "start_sec": 176,
+        "end_sec": 228,
+        "what_happens": "Fragrance oil is measured into the melted wax and stirred slowly for about two minutes."
+      },
+      {
+        "label": "Pouring",
+        "start_sec": 228,
+        "end_sec": 290,
+        "what_happens": "Wax is poured into each jar and wooden wick bars hold the wicks upright."
+      },
+      {
+        "label": "Setting and trimming",
+        "start_sec": 290,
+        "end_sec": 336,
+        "what_happens": "A time-lapse shows the wax turning opaque overnight; she trims each wick with a wick trimmer."
+      },
+      {
+        "label": "Finished candle",
+        "start_sec": 336,
+        "end_sec": 378,
+        "what_happens": "Label and black lid go on, then the candle is lit on a wooden table and held up to the window."
+      }
+    ],
+    "frames": [
+      {
+        "role": "hero",
+        "timecode_sec": 352,
+        "score": 94,
+        "reason": "Lit candle centered on a wooden table, sharp flame, soft window light glowing through the amber glass."
+      },
+      {
+        "role": "in_hand",
+        "timecode_sec": 365,
+        "score": 88,
+        "reason": "Candle held in both hands at chest height, label readable, focus on the jar with a blurred background."
+      },
+      {
+        "role": "detail",
+        "timecode_sec": 318,
+        "score": 82,
+        "reason": "Close top-down view of the smooth cured wax surface and freshly trimmed cotton wick, even light."
+      },
+      {
+        "role": "process",
+        "timecode_sec": 252,
+        "score": 79,
+        "reason": "Steady stream of wax pouring from the steel pot into an amber jar, wick bar in frame, good motion clarity."
+      },
+      {
+        "role": "scale",
+        "timecode_sec": 344,
+        "score": 74,
+        "reason": "Lidded candle beside a coffee mug and a paperback on the table, showing its size at a glance."
+      }
+    ],
+    "listing": {
+      "title": "Soy Candle in Amber Glass Jar | Hand Poured 8 oz Cotton Wick Candle | Small Batch Home Fragrance | Housewarming Gift for Her",
+      "tags": [
+        "soy candle",
+        "amber jar candle",
+        "hand poured candle",
+        "cotton wick jar",
+        "housewarming gift",
+        "small batch soy wax",
+        "amber glass jar",
+        "gift for her",
+        "home fragrance",
+        "8 oz soy container",
+        "cozy living room",
+        "hostess gift idea",
+        "made to order decor"
+      ],
+      "description": "This is a hand-poured soy candle in an amber glass jar with a cotton wick. I pour each one in small batches at my kitchen studio, and the wax sets with a smooth, creamy top. Once lit, it settles into an even melt pool and a steady flame, and the amber glass gives off a warm glow on a desk or nightstand. It is a simple candle for slow evenings, and it makes an easy housewarming or hostess gift.\n\nThe jar is amber glass with a black metal lid, and each candle holds about 8 oz of soy wax with a single cotton wick. It measures 3.5 inches tall and 3 inches across. I will confirm the exact wax blend and fragrance oil for your order, since a video can't show those. Trim the wick to 1/4 inch before every burn, let the first burn reach a full melt pool, burn no longer than 4 hours at a time, and keep it away from drafts, pets and kids.\n\nEvery candle is made to order. I pour, cure and label it after you buy, which takes 5 to 10 business days, and then it ships from my studio in Tucson, Arizona, packed in recycled paper.\n\nEach candle is poured by hand, so the wax top and the label placement vary a little from piece to piece.",
+      "price_cents": 2400,
+      "price_low_cents": 1600,
+      "price_high_cents": 3400,
+      "comparables_read": 38,
+      "cost_basis_cents": 1450,
+      "price_reasoning": "38 comparable 8 oz soy candles in amber jars listed between $16 and $34, with most sitting around $22 to $26. With about $5.50 in wax, jar, wick and fragrance plus 0.75 hours of hands-on work, $24.00 covers the $14.50 cost basis and leaves room for Etsy fees."
+    },
+    "videos": [
+      {
+        "kind": "listing",
+        "platform": "etsy",
+        "hook_text": null,
+        "hook_rationale": null,
+        "duration_sec": 13,
+        "cuts": [
+          {
+            "in": 248,
+            "out": 252,
+            "caption": null
+          },
+          {
+            "in": 318,
+            "out": 322,
+            "caption": null
+          },
+          {
+            "in": 350,
+            "out": 355,
+            "caption": null
+          }
+        ]
+      },
+      {
+        "kind": "short",
+        "platform": "tiktok",
+        "hook_text": "Melt, pour, set overnight. 26 seconds.",
+        "hook_rationale": "Time compression works on TikTok because viewers stay to watch a slow overnight process squeezed into one quick loop.",
+        "duration_sec": 26,
+        "cuts": [
+          {
+            "in": 10,
+            "out": 14,
+            "caption": "weighing 8 oz of soy wax"
+          },
+          {
+            "in": 80,
+            "out": 85,
+            "caption": "melting low and slow"
+          },
+          {
+            "in": 140,
+            "out": 144,
+            "caption": "centering the cotton wick"
+          },
+          {
+            "in": 240,
+            "out": 245,
+            "caption": "pouring into amber glass"
+          },
+          {
+            "in": 300,
+            "out": 304,
+            "caption": "setting overnight"
+          },
+          {
+            "in": 352,
+            "out": 356,
+            "caption": "trimmed, lit, done"
+          }
+        ]
+      },
+      {
+        "kind": "short",
+        "platform": "reels",
+        "hook_text": "What goes into one $24 soy candle",
+        "hook_rationale": "Reels viewers save posts that explain value, so naming the price and showing each material makes the case for buying handmade.",
+        "duration_sec": 21,
+        "cuts": [
+          {
+            "in": 20,
+            "out": 24,
+            "caption": "8 oz soy wax, weighed by hand"
+          },
+          {
+            "in": 150,
+            "out": 154,
+            "caption": "cotton wick, centered by hand"
+          },
+          {
+            "in": 200,
+            "out": 204,
+            "caption": "fragrance oil, stirred 2 minutes"
+          },
+          {
+            "in": 260,
+            "out": 264,
+            "caption": "amber glass jar, poured at 135°F"
+          },
+          {
+            "in": 340,
+            "out": 345,
+            "caption": "45 minutes of hands-on work"
+          }
+        ]
+      },
+      {
+        "kind": "short",
+        "platform": "shorts",
+        "hook_text": "No talking. Just wax and a pour.",
+        "hook_rationale": "On YouTube Shorts, quiet ASMR process clips get replayed, and the sound of the pour does the selling.",
+        "duration_sec": 17,
+        "cuts": [
+          {
+            "in": 95,
+            "out": 99,
+            "caption": null
+          },
+          {
+            "in": 245,
+            "out": 250,
+            "caption": "listen to the pour"
+          },
+          {
+            "in": 320,
+            "out": 324,
+            "caption": null
+          },
+          {
+            "in": 356,
+            "out": 360,
+            "caption": null
+          }
+        ]
+      }
+    ],
+    "localizations": [
+      {
+        "market": "GB",
+        "locale": "en-GB",
+        "currency": "GBP",
+        "price_cents": 3300,
+        "title": "Soy Candle in Amber Glass Jar | Hand Poured 230 g Cotton Wick Candle | Small Batch Home Fragrance | Housewarming Gift",
+        "tags": [
+          "soy candle",
+          "amber jar candle",
+          "hand poured candle",
+          "cotton wick jar",
+          "housewarming gift",
+          "small batch soy wax",
+          "amber glass jar",
+          "gift for her",
+          "home fragrance",
+          "mothers day gift",
+          "cosy living room",
+          "230g soy container",
+          "made to order decor"
+        ],
+        "description": "This is a hand-poured soy candle in an amber glass jar with a cotton wick. I pour each one in small batches in my kitchen studio, and the wax sets with a smooth, creamy top. Once lit, it settles into an even melt pool and a steady flame, and the amber colour of the glass gives a warm glow on a desk or bedside table. It is a simple candle for slow evenings and an easy housewarming or Mother's Day gift.\n\nThe jar is amber glass with a black metal lid, and each candle holds about 230 g of soy wax with a single cotton wick. It measures 8.9 centimetres tall and 7.6 centimetres across. I will confirm the exact wax blend and fragrance oil for your order, as a video can't show those. Trim the wick to 6 mm before every burn, let the first burn reach a full melt pool, burn for no longer than 4 hours at a time, and keep it away from draughts, pets and children.\n\nEvery candle is made to order. I pour, cure and label it after you buy, which takes 5 to 10 working days, then it ships from my studio in Tucson, Arizona, packed in recycled paper. UK delivery is included in the price.\n\nEach candle is poured by hand, so the wax top and the label placement vary a little from piece to piece."
+      },
+      {
+        "market": "DE",
+        "locale": "de-DE",
+        "currency": "EUR",
+        "price_cents": 4250,
+        "title": "Sojakerze im Braunglas | Handgegossen, 230 g mit Baumwolldocht | Duftkerze aus Kleinserie | Geschenk zum Einzug",
+        "tags": [
+          "sojakerze handmade",
+          "sojawachs duft",
+          "braunglas kerze",
+          "duftkerze im glas",
+          "docht aus baumwolle",
+          "geschenk zum einzug",
+          "handgegossene kerze",
+          "geschenk für sie",
+          "zum muttertag",
+          "gemütliches zuhause",
+          "kleinserie deko",
+          "wohndeko duft",
+          "gastgeber geschenk"
+        ],
+        "description": "Das ist eine handgegossene Sojakerze im Braunglas mit Baumwolldocht. Ich gieße jede Kerze in kleinen Serien in meinem Küchenatelier, und das Wachs erstarrt mit einer glatten, cremigen Oberfläche. Angezündet bildet sie einen gleichmäßigen Brennteller und eine ruhige Flamme, und das Braunglas wirft ein warmes Licht auf Schreibtisch oder Nachttisch. Eine schlichte Kerze für ruhige Abende und ein einfaches Geschenk zum Einzug oder zum Muttertag.\n\nDas Glas ist bernsteinfarbenes Braunglas mit schwarzem Metalldeckel; jede Kerze enthält etwa 230 g Sojawachs und einen Baumwolldocht. Sie ist 8,9 cm hoch und hat 7,6 cm Durchmesser. Die genaue Wachsmischung und das Duftöl bestätige ich für deine Bestellung, denn ein Video kann das nicht zeigen. Kürze den Docht vor jedem Anzünden auf 6 mm, lass die Kerze beim ersten Mal brennen, bis die ganze Oberfläche geschmolzen ist, brenne sie nie länger als 4 Stunden am Stück und halte sie von Zugluft, Haustieren und Kindern fern.\n\nJede Kerze wird auf Bestellung gefertigt. Ich gieße, härte und etikettiere sie nach deinem Kauf, das dauert 5 bis 10 Werktage; danach geht sie aus meinem Atelier in Tucson, Arizona (USA), in Recyclingpapier verpackt auf den Weg. Der Versand nach Deutschland ist im Preis enthalten.\n\nJede Kerze ist von Hand gegossen, daher variieren Oberfläche und Etikett leicht von Stück zu Stück."
+      },
+      {
+        "market": "AU",
+        "locale": "en-AU",
+        "currency": "AUD",
+        "price_cents": 7600,
+        "title": "Soy Candle in Amber Glass Jar | Hand Poured 230 g Cotton Wick Candle | Small Batch Home Fragrance | Housewarming Gift",
+        "tags": [
+          "soy candle",
+          "amber jar candle",
+          "hand poured candle",
+          "cotton wick jar",
+          "housewarming gift",
+          "small batch soy wax",
+          "amber glass jar",
+          "gift for her",
+          "home fragrance",
+          "christmas gift idea",
+          "cosy lounge room",
+          "230g soy container",
+          "made to order decor"
+        ],
+        "description": "This is a hand-poured soy candle in an amber glass jar with a cotton wick. I pour each one in small batches in my kitchen studio, and the wax sets with a smooth, creamy top. Once lit, it settles into an even melt pool and a steady flame, and the amber colour of the glass gives a warm glow on a desk or bedside table. It is a simple candle for slow evenings and an easy housewarming or Christmas gift.\n\nThe jar is amber glass with a black metal lid, and each candle holds about 230 g of soy wax with a single cotton wick. It measures 8.9 centimetres tall and 7.6 centimetres across. I will confirm the exact wax blend and fragrance oil for your order, as a video can't show those. Trim the wick to 6 mm before every burn, let the first burn reach a full melt pool, burn for no longer than 4 hours at a time, and keep it away from draughts, pets and kids.\n\nEvery candle is made to order. I pour, cure and label it after you buy, which takes 5 to 10 business days, then it ships from my studio in Tucson, Arizona, packed in recycled paper. Delivery to Australia is included in the price.\n\nEach candle is poured by hand, so the wax top and the label placement vary a little from piece to piece."
+      },
+      {
+        "market": "CA",
+        "locale": "fr-CA",
+        "currency": "CAD",
+        "price_cents": 5300,
+        "title": "Bougie de soya en pot de verre ambré | Coulée à la main, 230 g, mèche de coton | Petite série | Cadeau de pendaison de crémaillère",
+        "tags": [
+          "bougie de soya",
+          "pot verre ambré",
+          "coulée à la main",
+          "mèche de coton",
+          "cadeau crémaillère",
+          "cire de soya",
+          "bougie artisanale",
+          "cadeau pour elle",
+          "parfum d'intérieur",
+          "fête des mères",
+          "déco chaleureuse",
+          "petite série",
+          "fait sur commande"
+        ],
+        "description": "Voici une bougie de soya coulée à la main dans un pot de verre ambré, avec une mèche de coton. Je coule chaque bougie en petite série dans mon atelier-cuisine, et la cire fige avec un dessus lisse et crémeux. Une fois allumée, elle forme un bassin de cire uniforme et une flamme stable, et le verre ambré diffuse une lueur chaude sur un bureau ou une table de chevet. C'est une bougie simple pour les soirées tranquilles, et un cadeau facile pour une pendaison de crémaillère ou la fête des Mères.\n\nLe pot est en verre ambré avec un couvercle de métal noir, et chaque bougie contient environ 230 g de cire de soya et une mèche de coton. Elle mesure 8,9 cm de haut et 7,6 cm de diamètre. Je confirmerai le mélange de cire exact et l'huile parfumée pour votre commande, puisqu'une vidéo ne peut pas les montrer. Taillez la mèche à 6 mm avant chaque utilisation, laissez la première combustion faire fondre toute la surface, ne la laissez pas brûler plus de 4 heures d'affilée et gardez-la loin des courants d'air, des animaux et des enfants.\n\nChaque bougie est faite sur commande. Je la coule, la laisse durcir et l'étiquette après votre achat, ce qui prend de 5 à 10 jours ouvrables, puis elle part de mon atelier à Tucson, en Arizona, emballée dans du papier recyclé. La livraison au Canada est incluse dans le prix.\n\nChaque bougie est coulée à la main, donc le dessus de cire et la position de l'étiquette varient un peu d'une pièce à l'autre."
+      }
+    ],
+    "social": {
+      "pin_title": "Hand-Poured Soy Candle in an Amber Glass Jar",
+      "pin_caption": "An 8 oz soy candle with a cotton wick, poured in small batches in Tucson and made to order. Watch it go from wax flakes to a lit flame.",
+      "carousel_caption": "From wax flakes to a steady flame: one 8 oz soy candle, poured by hand in an amber jar in my Tucson kitchen studio. #soycandle #handpoured #candlemaking #smallbatch #tucsonmade"
+    },
+    "what_claude_did": [
+      {
+        "step": "watch_footage",
+        "summary": "watched 6 min 18 s of footage"
+      },
+      {
+        "step": "score_frames",
+        "summary": "scored 11,340 frames, kept 5"
+      },
+      {
+        "step": "extract_attributes",
+        "summary": "identified a soy candle — amber glass jar, cotton wick, cream wax; 7 scenes"
+      },
+      {
+        "step": "research_comparables",
+        "summary": "read 38 comparable listings for price and tags"
+      },
+      {
+        "step": "write_listing",
+        "summary": "wrote the title, 13 tags and a 225-word description"
+      },
+      {
+        "step": "price",
+        "summary": "priced it at $24.00 against 38 comparables"
+      },
+      {
+        "step": "write_hooks",
+        "summary": "wrote 3 hooks: “Melt, pour, set overnight. 26 seconds.”, “What goes into one $24 soy candle”, “No talking. Just wax and a pour.”"
+      },
+      {
+        "step": "cut_points",
+        "summary": "cut 4 videos with 3 hooks, 18 cuts"
+      },
+      {
+        "step": "localize",
+        "summary": "wrote about 1,050 words for 4 markets in 3 languages"
+      },
+      {
+        "step": "format_for_channel",
+        "summary": "formatted for 3 channels, wrote the pin"
+      }
+    ],
+    "build_seconds": 236,
+    "minutes_saved_est": 185
+  },
+  {
+    "slug": "leather-card-wallet",
+    "category": "leather wallet",
+    "product_title": "Hand-Stitched Full-Grain Leather Card Wallet",
+    "image_queries": [
+      "hand stitched leather card wallet",
+      "saddle stitching leather two needles",
+      "leather wallet burnished edge",
+      "leather card holder on wooden table"
+    ],
+    "seller": {
+      "name": "Anders Holm",
+      "city": "Duluth",
+      "state": "MN",
+      "craft": "leatherworker"
+    },
+    "source": {
+      "video_name": "card_wallet_bench_IMG_4417.mov",
+      "duration_sec": 384,
+      "fps": 30,
+      "photos": 0
+    },
+    "attributes": {
+      "materials": [
+        "full-grain leather (exact tannage the seller will confirm)",
+        "waxed thread (fiber the seller will confirm)",
+        "edge burnishing compound"
+      ],
+      "colors": [
+        "tan",
+        "dark brown burnished edges"
+      ],
+      "dimensions": {
+        "width_in": 4.1,
+        "height_in": 3,
+        "thickness_empty_in": 0.25,
+        "pockets": 3
+      },
+      "care": [
+        "wipe with a dry cloth",
+        "keep out of soaking water",
+        "rub in a little leather balm every few months"
+      ],
+      "production_hours": 2.5,
+      "made_to_order": true,
+      "lead_time_days": [
+        3,
+        5
+      ]
+    },
+    "scenes": [
+      {
+        "label": "Pattern and cutting",
+        "start_sec": 0,
+        "end_sec": 62,
+        "what_happens": "Anders traces a card-wallet template onto a tan full-grain hide and cuts the panels with a round knife against a steel rule."
+      },
+      {
+        "label": "Edge beveling",
+        "start_sec": 62,
+        "end_sec": 118,
+        "what_happens": "He bevels the edges of each panel and glues the pocket layers together."
+      },
+      {
+        "label": "Punching stitch holes",
+        "start_sec": 118,
+        "end_sec": 176,
+        "what_happens": "A stitching chisel is tapped along a scribed line with a mallet to punch evenly spaced holes."
+      },
+      {
+        "label": "Saddle stitching",
+        "start_sec": 176,
+        "end_sec": 268,
+        "what_happens": "Two needles on one length of waxed thread pass through each hole in a saddle stitch while the piece sits in a stitching clam."
+      },
+      {
+        "label": "Sanding and burnishing",
+        "start_sec": 268,
+        "end_sec": 330,
+        "what_happens": "Edges are sanded flush, coated with burnishing compound and rubbed with a wooden slicker until they shine dark."
+      },
+      {
+        "label": "Finished wallet reveal",
+        "start_sec": 330,
+        "end_sec": 384,
+        "what_happens": "The finished wallet is shown on the bench, loaded with cards, held in hand and placed next to a phone for scale."
+      }
+    ],
+    "frames": [
+      {
+        "role": "hero",
+        "timecode_sec": 352,
+        "score": 94,
+        "reason": "Finished wallet flat on the walnut bench, sharp focus on the stitch line, soft window light from the left, centered with clean negative space."
+      },
+      {
+        "role": "in_hand",
+        "timecode_sec": 364,
+        "score": 88,
+        "reason": "Wallet held in one hand with three cards fanned from the top pocket; skin and leather tones balanced, slight background blur."
+      },
+      {
+        "role": "detail",
+        "timecode_sec": 302,
+        "score": 83,
+        "reason": "Macro of a freshly burnished edge beside the saddle stitches; crisp focus on the glossy edge, raking light shows grain texture."
+      },
+      {
+        "role": "process",
+        "timecode_sec": 214,
+        "score": 79,
+        "reason": "Two needles crossing mid-stitch in the stitching clam; hands in frame, stable shot, warm bench lamp."
+      },
+      {
+        "role": "scale",
+        "timecode_sec": 374,
+        "score": 72,
+        "reason": "Wallet lying next to a smartphone and a credit card on the bench, showing its size; even light, slightly flat contrast."
+      }
+    ],
+    "listing": {
+      "title": "Leather Card Wallet | Hand Stitched Full Grain Leather | Minimalist Front Pocket Wallet | Gift for Him | Burnished Edges",
+      "tags": [
+        "leather card wallet",
+        "minimalist wallet",
+        "front pocket wallet",
+        "hand stitched gift",
+        "full grain leather",
+        "saddle stitch",
+        "card holder for men",
+        "gift for him",
+        "slim card case",
+        "burnished edges",
+        "anniversary gift",
+        "handmade in duluth",
+        "groomsmen present"
+      ],
+      "description": "This is a slim card wallet I cut, stitch and finish by hand at my bench in Duluth. It has two outer pockets and a center pocket, and it holds four to six cards plus a few folded bills without making a bump in your front pocket. The leather starts out firm and softens quickly, and after a few weeks of use it shapes itself around the cards you carry most.\n\nIt is made from full-grain leather in a tan color, saddle stitched with waxed thread, and the edges are sanded and burnished by hand. I will confirm the exact tannage and thread fiber on request. The finished wallet measures 4.1 x 3.0 inches and is about 0.25 inches thick when empty. To care for it, wipe it with a dry cloth, keep it out of soaking water, and rub in a little leather balm every few months.\n\nEach wallet is made to order, so please allow 3 to 5 business days for me to cut and stitch yours before it ships. Orders ship from my workshop in Duluth, Minnesota, in a padded mailer. It makes a good gift for a birthday, Father's Day or an anniversary.\n\nBecause every hide has its own grain and marks, each wallet varies slightly in color and texture from the one in the photos.",
+      "price_cents": 4800,
+      "price_low_cents": 2800,
+      "price_high_cents": 7500,
+      "comparables_read": 38,
+      "cost_basis_cents": 3900,
+      "price_reasoning": "38 comparable hand-stitched full-grain card wallets on Etsy sell between $28 and $75, with saddle-stitched, burnished-edge pieces clustering around $45 to $55. At 2.5 production hours ($30 of labor) plus about $9 in leather, thread and finish, a $48.00 price covers the $39.00 cost basis and sits in the middle of the range."
+    },
+    "videos": [
+      {
+        "kind": "listing",
+        "platform": "etsy",
+        "hook_text": null,
+        "hook_rationale": null,
+        "duration_sec": 13,
+        "cuts": [
+          {
+            "in": 205,
+            "out": 209,
+            "caption": null
+          },
+          {
+            "in": 296,
+            "out": 300,
+            "caption": null
+          },
+          {
+            "in": 348,
+            "out": 353,
+            "caption": null
+          }
+        ]
+      },
+      {
+        "kind": "short",
+        "platform": "tiktok",
+        "hook_text": "2.5 hours at the bench. 25 seconds.",
+        "hook_rationale": "Time compression suits TikTok's fast-cut making-of format and promises the whole build before viewers can swipe away.",
+        "duration_sec": 25,
+        "cuts": [
+          {
+            "in": 20,
+            "out": 23,
+            "caption": "Cutting full-grain leather"
+          },
+          {
+            "in": 80,
+            "out": 83,
+            "caption": "Beveling every edge"
+          },
+          {
+            "in": 140,
+            "out": 143,
+            "caption": "Punching stitch holes"
+          },
+          {
+            "in": 200,
+            "out": 204,
+            "caption": "Saddle stitch, two needles"
+          },
+          {
+            "in": 250,
+            "out": 253,
+            "caption": null
+          },
+          {
+            "in": 290,
+            "out": 294,
+            "caption": "Sanding and burnishing"
+          },
+          {
+            "in": 340,
+            "out": 345,
+            "caption": "Done."
+          }
+        ]
+      },
+      {
+        "kind": "short",
+        "platform": "reels",
+        "hook_text": "What goes into one $48 card wallet",
+        "hook_rationale": "Reels viewers save posts that explain value, so naming the price and showing the hours behind it justifies the cost.",
+        "duration_sec": 22,
+        "cuts": [
+          {
+            "in": 10,
+            "out": 14,
+            "caption": "Full-grain leather, cut by hand"
+          },
+          {
+            "in": 150,
+            "out": 154,
+            "caption": "About 30 min of stitch holes"
+          },
+          {
+            "in": 220,
+            "out": 225,
+            "caption": "Waxed thread, 1 hour of stitching"
+          },
+          {
+            "in": 305,
+            "out": 309,
+            "caption": "Edges burnished by hand"
+          },
+          {
+            "in": 358,
+            "out": 363,
+            "caption": "2.5 hours, one wallet"
+          }
+        ]
+      },
+      {
+        "kind": "short",
+        "platform": "shorts",
+        "hook_text": "No talking. Just leather and thread.",
+        "hook_rationale": "YouTube Shorts rewards loop-friendly ASMR clips, and the knife, mallet and thread sounds carry the video without narration.",
+        "duration_sec": 19,
+        "cuts": [
+          {
+            "in": 45,
+            "out": 49,
+            "caption": null
+          },
+          {
+            "in": 125,
+            "out": 129,
+            "caption": null
+          },
+          {
+            "in": 230,
+            "out": 234,
+            "caption": null
+          },
+          {
+            "in": 315,
+            "out": 318,
+            "caption": null
+          },
+          {
+            "in": 368,
+            "out": 372,
+            "caption": "Hand-stitched card wallet"
+          }
+        ]
+      }
+    ],
+    "localizations": [
+      {
+        "market": "GB",
+        "locale": "en-GB",
+        "currency": "GBP",
+        "price_cents": 5200,
+        "title": "Leather Card Wallet | Hand Stitched Full Grain Leather | Slim Card Holder | Gift for Him | Burnished Edges",
+        "tags": [
+          "leather card wallet",
+          "slim card holder",
+          "full grain leather",
+          "hand stitched gift",
+          "saddle stitch",
+          "gift for him",
+          "fathers day gift",
+          "minimalist wallet",
+          "front pocket wallet",
+          "burnished edges",
+          "handmade in usa",
+          "groomsmen present",
+          "anniversary present"
+        ],
+        "description": "This is a slim card wallet I cut, stitch and finish by hand at my bench in Duluth, Minnesota. It has two outer pockets and a centre pocket, and it holds four to six cards plus a few folded notes without making a bump in your front pocket. The leather starts out firm and softens quickly, and after a few weeks it shapes itself around the cards you carry most.\n\nIt is made from full-grain leather in a tan colour, saddle stitched with waxed thread, and the edges are sanded and burnished by hand. I will confirm the exact tannage and thread fibre on request. The finished wallet measures 10.4 x 7.6 cm and is about 0.6 cm thick when empty. To care for it, wipe it with a dry cloth, keep it out of soaking water, and rub in a little leather balm every few months.\n\nEach wallet is made to order, so please allow 3 to 5 working days for me to cut and stitch yours before it ships. Orders ship from my workshop in Duluth, Minnesota, in a padded mailer; please allow extra time for delivery to the UK and any import charges. It makes a good gift for a birthday, Father's Day or an anniversary.\n\nBecause every hide has its own grain and marks, each wallet varies slightly in colour and texture from the one in the photos."
+      },
+      {
+        "market": "DE",
+        "locale": "de-DE",
+        "currency": "EUR",
+        "price_cents": 6450,
+        "title": "Kartenetui aus Leder | Handgenäht im Sattelstich | Vollnarbenleder | Geschenk für Ihn | Polierte Kanten",
+        "tags": [
+          "kartenetui leder",
+          "vollnarbenleder",
+          "sattelstich naht",
+          "handgenähtes leder",
+          "geschenk für ihn",
+          "schlanke geldbörse",
+          "kreditkartenetui",
+          "polierte kanten",
+          "vatertagsgeschenk",
+          "jahrestag geschenk",
+          "lederetui handmade",
+          "kartenhalter herren",
+          "geschenk trauzeuge"
+        ],
+        "description": "Das ist ein schlankes Kartenetui, das ich an meiner Werkbank in Duluth, Minnesota, von Hand zuschneide, nähe und veredle. Es hat zwei Außenfächer und ein Mittelfach und fasst vier bis sechs Karten sowie ein paar gefaltete Scheine, ohne in der Hosentasche aufzutragen. Das Leder ist anfangs fest, wird schnell weicher und passt sich nach einigen Wochen den Karten an, die Sie am häufigsten dabeihaben.\n\nEs besteht aus hellbraunem Vollnarbenleder, ist mit gewachstem Faden im Sattelstich genäht, und die Kanten sind von Hand geschliffen und poliert. Die genaue Gerbung und das Fadenmaterial bestätige ich gern auf Anfrage. Das fertige Etui misst 10,4 x 7,6 cm und ist leer etwa 0,6 cm dick. Zur Pflege einfach mit einem trockenen Tuch abwischen, nicht durchnässen lassen und alle paar Monate etwas Lederbalsam einarbeiten.\n\nJedes Etui wird auf Bestellung gefertigt; bitte rechnen Sie mit 3 bis 5 Werktagen, bis ich Ihres zugeschnitten und genäht habe. Der Versand erfolgt aus meiner Werkstatt in Duluth, Minnesota, in einem gepolsterten Umschlag; für die Lieferung nach Deutschland und mögliche Einfuhrabgaben bitte etwas mehr Zeit einplanen. Ein passendes Geschenk zum Geburtstag, zum Vatertag oder zum Jahrestag.\n\nDa jede Haut ihre eigene Narbung und Zeichnung hat, weicht jedes Etui in Farbe und Struktur leicht vom Exemplar auf den Fotos ab."
+      },
+      {
+        "market": "AU",
+        "locale": "en-AU",
+        "currency": "AUD",
+        "price_cents": 11250,
+        "title": "Leather Card Wallet | Hand Stitched Full Grain Leather | Minimalist Card Holder | Father's Day Gift | Burnished Edges",
+        "tags": [
+          "leather card wallet",
+          "minimalist wallet",
+          "card holder for men",
+          "full grain leather",
+          "hand stitched gift",
+          "saddle stitch",
+          "fathers day gift",
+          "gift for him",
+          "front pocket wallet",
+          "burnished edges",
+          "handmade leather",
+          "groomsmen present",
+          "christmas present"
+        ],
+        "description": "This is a slim card wallet I cut, stitch and finish by hand at my bench in Duluth, Minnesota. It has two outer pockets and a centre pocket, and it holds four to six cards plus a few folded notes without making a bump in your front pocket. The leather starts out firm and softens quickly, and after a few weeks it shapes itself around the cards you carry most.\n\nIt is made from full-grain leather in a tan colour, saddle stitched with waxed thread, and the edges are sanded and burnished by hand. I will confirm the exact tannage and thread fibre on request. The finished wallet measures 10.4 x 7.6 cm and is about 0.6 cm thick when empty. To care for it, wipe it with a dry cloth, keep it out of soaking water, and rub in a little leather balm every few months.\n\nEach wallet is made to order, so please allow 3 to 5 business days for me to cut and stitch yours before it ships. Orders ship from my workshop in Duluth, Minnesota, in a padded mailer; please allow extra time for delivery to Australia and any import charges. It makes a good gift for a birthday, Father's Day in September or Christmas.\n\nBecause every hide has its own grain and marks, each wallet varies slightly in colour and texture from the one in the photos."
+      },
+      {
+        "market": "CA",
+        "locale": "fr-CA",
+        "currency": "CAD",
+        "price_cents": 8550,
+        "title": "Porte-cartes en cuir | Cousu main au point sellier | Cuir pleine fleur | Cadeau pour lui | Tranches lissées",
+        "tags": [
+          "porte-cartes cuir",
+          "cuir pleine fleur",
+          "cousu à la main",
+          "point sellier",
+          "cadeau pour lui",
+          "portefeuille mince",
+          "portefeuille minimal",
+          "tranches lissées",
+          "fête des pères",
+          "cadeau anniversaire",
+          "étui à cartes",
+          "maroquinerie main",
+          "cadeau témoin"
+        ],
+        "description": "C'est un porte-cartes mince que je coupe, couds et finis à la main à mon établi de Duluth, au Minnesota. Il a deux pochettes extérieures et une pochette centrale, et il contient de quatre à six cartes et quelques billets pliés sans faire de bosse dans votre poche avant. Le cuir est ferme au départ, s'assouplit vite et, après quelques semaines, prend la forme des cartes que vous utilisez le plus.\n\nIl est fait de cuir pleine fleur de couleur fauve, cousu au point sellier avec du fil ciré, et les tranches sont poncées et lissées à la main. Je confirmerai sur demande le tannage exact et la fibre du fil. Le porte-cartes fini mesure 10,4 x 7,6 cm et fait environ 0,6 cm d'épaisseur à vide. Pour l'entretenir, essuyez-le avec un linge sec, évitez de le tremper et appliquez un peu de baume pour cuir aux quelques mois.\n\nChaque porte-cartes est fait sur commande; prévoyez de 3 à 5 jours ouvrables pour que je coupe et couse le vôtre avant l'expédition. Les commandes partent de mon atelier de Duluth, au Minnesota, dans une enveloppe matelassée; prévoyez un délai supplémentaire pour la livraison au Canada et les frais de douane éventuels. C'est un bon cadeau pour un anniversaire, la fête des Pères ou Noël.\n\nComme chaque peau a son propre grain et ses propres marques, chaque porte-cartes varie légèrement en couleur et en texture par rapport à celui des photos."
+      }
+    ],
+    "social": {
+      "pin_title": "Hand-Stitched Leather Card Wallet, Made in Duluth",
+      "pin_caption": "A slim full-grain leather card wallet, saddle stitched with two needles and burnished by hand in about 2.5 hours. Holds four to six cards in a front pocket.",
+      "carousel_caption": "One hide, two needles, 2.5 hours: cut, punched, saddle stitched and burnished by hand in Duluth, MN. Swipe for the build. #leathercraft #saddlestitch #cardwallet #handmadeleather #madeinminnesota"
+    },
+    "what_claude_did": [
+      {
+        "step": "watch_footage",
+        "summary": "watched 6 min 24 s of footage"
+      },
+      {
+        "step": "score_frames",
+        "summary": "scored 11,520 frames, kept 5"
+      },
+      {
+        "step": "extract_attributes",
+        "summary": "identified a leather card wallet — full-grain leather, saddle stitch, burnished edges; 6 scenes"
+      },
+      {
+        "step": "research_comparables",
+        "summary": "read 38 comparable listings for price and tags"
+      },
+      {
+        "step": "write_listing",
+        "summary": "wrote the title, 13 tags and a 220-word description"
+      },
+      {
+        "step": "price",
+        "summary": "priced it at $48.00 against 38 comparables"
+      },
+      {
+        "step": "write_hooks",
+        "summary": "wrote 3 hooks: “2.5 hours at the bench. 25 seconds.”, “What goes into one $48 card wallet”, “No talking. Just leather and thread.”"
+      },
+      {
+        "step": "cut_points",
+        "summary": "cut 4 videos with 3 hooks, 20 cuts"
+      },
+      {
+        "step": "localize",
+        "summary": "wrote about 1,350 words in 5 languages"
+      },
+      {
+        "step": "format_for_channel",
+        "summary": "formatted for 7 channels, wrote the pin and a 5-slide carousel"
+      }
+    ],
+    "build_seconds": 246,
+    "minutes_saved_est": 185
+  },
+  {
+    "slug": "macrame-wall-hanging",
+    "category": "macrame wall hanging",
+    "product_title": "Macramé Wall Hanging in Natural Cord on Driftwood",
+    "image_queries": [
+      "macrame wall hanging driftwood",
+      "natural cotton macrame fringe",
+      "hands tying macrame knots",
+      "boho wall hanging white wall"
+    ],
+    "seller": {
+      "name": "Hannah Reyes",
+      "city": "Boise",
+      "state": "ID",
+      "craft": "fiber artist"
+    },
+    "source": {
+      "video_name": "IMG_4471_macrame_driftwood.MOV",
+      "duration_sec": 384,
+      "fps": 30,
+      "photos": 4
+    },
+    "attributes": {
+      "materials": [
+        "natural undyed cord, cream (seller will confirm fiber content)",
+        "driftwood rod"
+      ],
+      "colors": [
+        "cream",
+        "natural",
+        "weathered gray-brown wood"
+      ],
+      "dimensions": {
+        "rod_width_in": 18,
+        "body_width_in": 16,
+        "length_in": 30,
+        "hanging_loop": "single cord loop"
+      },
+      "care": [
+        "dust with a soft brush or hair dryer on cool",
+        "spot clean with mild soap and cold water",
+        "comb fringe if tangled"
+      ],
+      "production_hours": 4,
+      "made_to_order": true,
+      "lead_time_days": [
+        5,
+        10
+      ]
+    },
+    "scenes": [
+      {
+        "label": "Measure and cut cord",
+        "start_sec": 0,
+        "end_sec": 38,
+        "what_happens": "Hannah measures cord lengths against a tape on the table and cuts them with fabric scissors."
+      },
+      {
+        "label": "Mount on driftwood",
+        "start_sec": 38,
+        "end_sec": 92,
+        "what_happens": "Folded cords are attached to the driftwood rod with lark's head knots while the rod hangs from a clothing rack."
+      },
+      {
+        "label": "Square knot rows",
+        "start_sec": 92,
+        "end_sec": 190,
+        "what_happens": "Alternating rows of square knots build the upper body of the hanging."
+      },
+      {
+        "label": "Diagonal half hitches",
+        "start_sec": 190,
+        "end_sec": 270,
+        "what_happens": "A diagonal band of double half hitch knots forms a V across the middle."
+      },
+      {
+        "label": "Comb the fringe",
+        "start_sec": 270,
+        "end_sec": 318,
+        "what_happens": "Cord ends are unraveled and combed out with a pet brush into soft fringe."
+      },
+      {
+        "label": "Trim the fringe",
+        "start_sec": 318,
+        "end_sec": 352,
+        "what_happens": "Fringe is trimmed into a clean angled edge with long scissors."
+      },
+      {
+        "label": "Hang and reveal",
+        "start_sec": 352,
+        "end_sec": 384,
+        "what_happens": "The finished piece is hung on a white wall, a tape measure shows its length, then a slow pull-back reveal."
+      }
+    ],
+    "frames": [
+      {
+        "role": "hero",
+        "timecode_sec": 368,
+        "score": 94,
+        "reason": "Finished hanging centered on a white wall in soft window light, rod level, fringe sharp edge to edge."
+      },
+      {
+        "role": "in_hand",
+        "timecode_sec": 330,
+        "score": 86,
+        "reason": "Hannah holds the piece up by the rod mid-trim, hands in frame, knots in focus, warm side light."
+      },
+      {
+        "role": "detail",
+        "timecode_sec": 215,
+        "score": 82,
+        "reason": "Macro of the diagonal half hitch band, individual cord twist visible, shallow depth of field."
+      },
+      {
+        "role": "process",
+        "timecode_sec": 140,
+        "score": 78,
+        "reason": "Overhead-angle shot of hands tying a square knot row, clear motion, even daylight."
+      },
+      {
+        "role": "scale",
+        "timecode_sec": 360,
+        "score": 74,
+        "reason": "Tape measure held beside the hanging on the wall showing roughly 30 inches of length."
+      }
+    ],
+    "listing": {
+      "title": "Macrame Wall Hanging | Natural Cotton Cord on Driftwood | Boho Housewarming Gift | Hand Knotted Fringe Wall Decor",
+      "tags": [
+        "macrame wall hanging",
+        "driftwood wall art",
+        "boho wall decor",
+        "housewarming gift",
+        "cotton cord macrame",
+        "large macrame decor",
+        "fiber art tapestry",
+        "bohemian nursery",
+        "neutral living room",
+        "handmade fringe art",
+        "woven boho tapestry",
+        "above bed decor",
+        "new home present"
+      ],
+      "description": "This macramé wall hanging is knotted by hand from natural cord and hung on a driftwood rod. It brings soft texture to a bare wall above a bed, sofa or crib, and the long combed fringe moves a little when the air shifts in the room. The pattern runs from rows of square knots into a diagonal band of half hitches, then opens into fringe.\n\nThe cord is undyed and cream colored; I will confirm the exact fiber content when you order. The driftwood rod is about 18 inches wide, the knotted body is about 16 inches wide, and the piece hangs about 30 inches long from rod to fringe tip. A loop of the same cord is tied on for hanging from a single nail. To care for it, dust it with a soft brush or a hair dryer on cool, spot clean with mild soap and cold water, and comb the fringe out if it tangles.\n\nEach hanging is made to order in my home studio and takes me about four hours of knotting, combing and trimming. Please allow 5 to 10 days before it ships from Boise, Idaho. I roll it loosely around the rod and pack it in a box so the fringe arrives straight.\n\nBecause every knot is tied by hand and every piece of driftwood is different, each hanging will vary slightly from the one in the photos.",
+      "price_cents": 7800,
+      "price_low_cents": 4500,
+      "price_high_cents": 12000,
+      "comparables_read": 38,
+      "cost_basis_cents": 6500,
+      "price_reasoning": "Across 38 comparable natural-cord driftwood hangings, prices ran from $45 to $120, with pieces near 16 by 30 inches and about four hours of knotting clustered at $70–$85. At $78 the hanging covers its $65.00 cost basis (about $17 in cord and driftwood plus 4 hours at $12/h) and sits just above the median for its size."
+    },
+    "videos": [
+      {
+        "kind": "listing",
+        "platform": "etsy",
+        "hook_text": null,
+        "hook_rationale": null,
+        "duration_sec": 13,
+        "cuts": [
+          {
+            "in": 100,
+            "out": 104,
+            "caption": null
+          },
+          {
+            "in": 290,
+            "out": 294,
+            "caption": null
+          },
+          {
+            "in": 366,
+            "out": 371,
+            "caption": null
+          }
+        ]
+      },
+      {
+        "kind": "short",
+        "platform": "tiktok",
+        "hook_text": "4 hours of knots. 25 seconds.",
+        "hook_rationale": "Time compression suits TikTok's fast loop and promises the whole build before viewers can scroll away.",
+        "duration_sec": 25,
+        "cuts": [
+          {
+            "in": 10,
+            "out": 13,
+            "caption": "cutting the cord"
+          },
+          {
+            "in": 50,
+            "out": 54,
+            "caption": "lark's head knots"
+          },
+          {
+            "in": 120,
+            "out": 124,
+            "caption": "square knot rows"
+          },
+          {
+            "in": 220,
+            "out": 224,
+            "caption": "half hitch diagonal"
+          },
+          {
+            "in": 295,
+            "out": 299,
+            "caption": "combing the fringe"
+          },
+          {
+            "in": 365,
+            "out": 371,
+            "caption": "4 hours later"
+          }
+        ]
+      },
+      {
+        "kind": "short",
+        "platform": "reels",
+        "hook_text": "What goes into one $78 wall hanging",
+        "hook_rationale": "Reels viewers save cost-breakdown posts, and naming the price up front makes the handwork feel worth it.",
+        "duration_sec": 22,
+        "cuts": [
+          {
+            "in": 5,
+            "out": 9,
+            "caption": "about 100 yards of natural cord"
+          },
+          {
+            "in": 60,
+            "out": 64,
+            "caption": "one driftwood rod, 18 inches"
+          },
+          {
+            "in": 150,
+            "out": 155,
+            "caption": "4 hours of knotting"
+          },
+          {
+            "in": 300,
+            "out": 304,
+            "caption": "combing every strand by hand"
+          },
+          {
+            "in": 366,
+            "out": 371,
+            "caption": "one wall hanging, $78"
+          }
+        ]
+      },
+      {
+        "kind": "short",
+        "platform": "shorts",
+        "hook_text": "No talking. Just knots.",
+        "hook_rationale": "YouTube Shorts rewards rewatchable ASMR, and the quiet sound of cord and comb carries the clip by itself.",
+        "duration_sec": 17,
+        "cuts": [
+          {
+            "in": 110,
+            "out": 114,
+            "caption": null
+          },
+          {
+            "in": 230,
+            "out": 234,
+            "caption": null
+          },
+          {
+            "in": 280,
+            "out": 284,
+            "caption": null
+          },
+          {
+            "in": 368,
+            "out": 373,
+            "caption": "made in Boise, Idaho"
+          }
+        ]
+      }
+    ],
+    "localizations": [
+      {
+        "market": "GB",
+        "locale": "en-GB",
+        "currency": "GBP",
+        "price_cents": 7600,
+        "title": "Macramé Wall Hanging | Natural Cotton Cord on Driftwood | Boho Housewarming Gift | Hand-Knotted Fringe Wall Décor",
+        "tags": [
+          "macrame wall hanging",
+          "driftwood wall art",
+          "boho wall decor",
+          "housewarming gift",
+          "cotton cord macrame",
+          "macrame tapestry",
+          "fibre art hanging",
+          "neutral colour decor",
+          "boho nursery decor",
+          "new home present",
+          "living room textile",
+          "above bed art",
+          "moving house gift"
+        ],
+        "description": "This macramé wall hanging is knotted by hand from natural cord and hung on a driftwood rod. It adds soft texture to a bare wall above a bed, sofa or cot, and the long combed fringe moves gently when the air shifts. The pattern runs from rows of square knots into a diagonal band of half hitches, then opens into fringe.\n\nThe cord is undyed and cream in colour; I will confirm the exact fibre content when you order. The rod is about 46 cm wide, the knotted body about 41 cm wide, and the piece hangs about 76 cm from rod to fringe tip. A loop of the same cord is tied on for hanging from a single nail. Dust with a soft brush or a hairdryer on cool, spot clean with mild soap and cold water, and comb the fringe if it tangles.\n\nEach hanging is made to order in my home studio and takes about four hours of knotting, combing and trimming. Please allow 5 to 10 days before it ships from Boise, Idaho, USA. It travels rolled round the rod in a box, and import duties may apply.\n\nBecause every knot is tied by hand and every piece of driftwood is different, each hanging will vary slightly from the one in the photos."
+      },
+      {
+        "market": "DE",
+        "locale": "de-DE",
+        "currency": "EUR",
+        "price_cents": 9200,
+        "title": "Makramee Wandbehang | Naturfarbene Baumwollkordel an Treibholz | Boho Geschenk zum Einzug | Handgeknüpfte Fransen Wanddeko",
+        "tags": [
+          "makramee wandbehang",
+          "treibholz wanddeko",
+          "boho wanddekoration",
+          "geschenk zum einzug",
+          "makramee baumwolle",
+          "wandteppich boho",
+          "fransen wandbehang",
+          "kinderzimmer deko",
+          "naturfarbener behang",
+          "handgeknüpfte deko",
+          "einweihung geschenk",
+          "deko über dem bett",
+          "faserkunst handmade"
+        ],
+        "description": "Dieser Makramee-Wandbehang ist von Hand aus naturfarbener Kordel geknüpft und hängt an einem Treibholzstab. Er bringt weiche Struktur an eine leere Wand über dem Bett, dem Sofa oder dem Kinderbett, und die lang ausgekämmten Fransen bewegen sich leicht im Luftzug. Das Muster geht von Reihen aus Kreuzknoten in ein diagonales Band aus Rippenknoten über und öffnet sich dann in Fransen.\n\nDie Kordel ist ungefärbt und cremefarben; den genauen Fasergehalt bestätige ich dir bei der Bestellung. Der Stab ist etwa 46 cm breit, der geknüpfte Teil etwa 41 cm, und das Stück ist vom Stab bis zur Fransenspitze etwa 76 cm lang. Eine Schlaufe aus derselben Kordel ist zum Aufhängen an einem einzelnen Nagel angeknotet. Zur Pflege mit einer weichen Bürste oder dem Föhn auf kalter Stufe abstauben, Flecken mit milder Seife und kaltem Wasser behandeln und die Fransen bei Bedarf auskämmen.\n\nJeder Wandbehang wird auf Bestellung in meinem Atelier zu Hause gefertigt; ich brauche dafür etwa vier Stunden zum Knüpfen, Kämmen und Schneiden. Bitte rechne mit 5 bis 10 Tagen, bis er aus Boise, Idaho (USA) verschickt wird. Er reist locker um den Stab gerollt in einem Karton; Einfuhrabgaben können anfallen.\n\nDa jeder Knoten von Hand geknüpft wird und jedes Treibholz anders ist, weicht jedes Stück leicht von den Fotos ab."
+      },
+      {
+        "market": "AU",
+        "locale": "en-AU",
+        "currency": "AUD",
+        "price_cents": 15800,
+        "title": "Macramé Wall Hanging | Natural Cotton Cord on Driftwood | Boho Housewarming or Mother's Day Gift | Fringe Wall Décor",
+        "tags": [
+          "macrame wall hanging",
+          "driftwood wall art",
+          "boho wall decor",
+          "housewarming gift",
+          "mothers day gift",
+          "cotton cord macrame",
+          "macrame tapestry",
+          "fibre art hanging",
+          "neutral colour decor",
+          "boho nursery decor",
+          "coastal boho style",
+          "new home present",
+          "above bed art"
+        ],
+        "description": "This macramé wall hanging is knotted by hand from natural cord and hung on a driftwood rod. It brings soft texture to a bare wall above a bed, lounge or cot, and the long combed fringe moves gently in a breeze. The pattern runs from rows of square knots into a diagonal band of half hitches, then opens into fringe.\n\nThe cord is undyed and cream in colour; I'll confirm the exact fibre content when you order. The rod is about 46 cm wide, the knotted body about 41 cm wide, and the piece hangs about 76 cm from rod to fringe tip. A loop of the same cord is tied on so it hangs from a single nail. Dust with a soft brush or a hairdryer on cool, spot clean with mild soap and cold water, and comb the fringe if it tangles.\n\nEach hanging is made to order in my home studio and takes about four hours of knotting, combing and trimming. Please allow 5 to 10 days before it ships from Boise, Idaho, USA. It's posted rolled loosely round the rod in a box; import charges may apply.\n\nBecause every knot is tied by hand and every piece of driftwood is different, each hanging will vary slightly from the one in the photos."
+      },
+      {
+        "market": "CA",
+        "locale": "fr-CA",
+        "currency": "CAD",
+        "price_cents": 12650,
+        "title": "Macramé mural | Corde de coton naturel sur bois flotté | Cadeau de pendaison de crémaillère | Décor bohème à franges",
+        "tags": [
+          "macramé mural",
+          "décor bois flotté",
+          "décoration bohème",
+          "cadeau crémaillère",
+          "macramé coton",
+          "tapisserie murale",
+          "art textile mural",
+          "décor chambre bébé",
+          "couleur naturelle",
+          "fait à la main",
+          "fête des mères",
+          "franges en coton",
+          "déco tête de lit"
+        ],
+        "description": "Ce macramé mural est noué à la main en corde naturelle et suspendu à une branche de bois flotté. Il ajoute une texture douce à un mur nu au-dessus d'un lit, d'un divan ou d'un berceau, et les longues franges peignées bougent doucement au moindre courant d'air. Le motif passe de rangées de nœuds plats à une bande diagonale de demi-clés, puis s'ouvre en franges.\n\nLa corde est non teinte, de couleur crème; je vous confirmerai la composition exacte de la fibre à la commande. La branche mesure environ 46 cm de large, la partie nouée environ 41 cm, et la pièce fait environ 76 cm de long, de la branche au bout des franges. Une boucle de la même corde est attachée pour l'accrocher à un seul clou. Pour l'entretien, époussetez avec une brosse douce ou un séchoir à cheveux à l'air froid, nettoyez les taches avec un savon doux et de l'eau froide, et peignez les franges au besoin.\n\nChaque pièce est faite sur commande dans mon atelier à la maison et me demande environ quatre heures de nouage, de peignage et de coupe. Prévoyez de 5 à 10 jours avant l'expédition depuis Boise, en Idaho (États-Unis). Elle voyage roulée autour de la branche dans une boîte; des frais de douane peuvent s'appliquer.\n\nComme chaque nœud est fait à la main et que chaque morceau de bois flotté est différent, chaque pièce variera légèrement de celle des photos."
+      }
+    ],
+    "social": {
+      "pin_title": "Macramé wall hanging on driftwood, knotted in 4 hours",
+      "pin_caption": "A 16 by 30 inch macramé hanging in cream cord on a driftwood rod, knotted by hand in Boise, Idaho. It hangs from one nail above a bed, sofa or crib.",
+      "carousel_caption": "From a pile of cord to a 30-inch wall hanging: four hours of square knots, half hitches and a lot of combing. Made to order in Boise. #macrame #macramewallhanging #fiberart #driftwoodart #bohodecor"
+    },
+    "what_claude_did": [
+      {
+        "step": "watch_footage",
+        "summary": "watched 6 min 24 s of footage"
+      },
+      {
+        "step": "score_frames",
+        "summary": "scored 11,520 frames, kept 5"
+      },
+      {
+        "step": "extract_attributes",
+        "summary": "identified a macramé wall hanging — natural cord, driftwood rod; 7 scenes"
+      },
+      {
+        "step": "research_comparables",
+        "summary": "read 38 comparable listings for price and tags"
+      },
+      {
+        "step": "write_listing",
+        "summary": "wrote the title, 13 tags and a 234-word description"
+      },
+      {
+        "step": "price",
+        "summary": "priced it at $78.00 against 38 comparables"
+      },
+      {
+        "step": "write_hooks",
+        "summary": "wrote 3 hooks: “4 hours of knots. 25 seconds.”, “What goes into one $78 wall hanging”, “No talking. Just knots.”"
+      },
+      {
+        "step": "cut_points",
+        "summary": "cut 4 videos with 3 hooks, 18 cuts"
+      },
+      {
+        "step": "localize",
+        "summary": "wrote about 1,070 words for 4 markets in 3 languages"
+      },
+      {
+        "step": "format_for_channel",
+        "summary": "formatted for 3 channels, wrote the pin"
+      }
+    ],
+    "build_seconds": 238,
+    "minutes_saved_est": 185
+  },
+  {
+    "slug": "linen-tote-bag",
+    "category": "linen tote bag",
+    "product_title": "Linen Tote Bag with Interior Pocket and Reinforced Straps",
+    "image_queries": [
+      "natural linen tote bag",
+      "sewing machine stitching linen fabric",
+      "fabric tote bag on shoulder",
+      "tote bag hanging on wooden peg"
+    ],
+    "seller": {
+      "name": "Tess Whitaker",
+      "city": "Dubuque",
+      "state": "IA",
+      "craft": "sewing and textile goods"
+    },
+    "source": {
+      "video_name": "tote_oatmeal_making_of.mov",
+      "duration_sec": 384,
+      "fps": 30,
+      "photos": 5
+    },
+    "attributes": {
+      "materials": [
+        "medium-weight woven fabric sold as linen (seller will confirm fiber content)",
+        "self-fabric straps, folded four times and topstitched",
+        "interior patch pocket in matching fabric",
+        "off-white thread (seller will confirm thread type)"
+      ],
+      "colors": [
+        "natural oatmeal",
+        "off-white topstitching"
+      ],
+      "dimensions": {
+        "width_in": 15,
+        "height_in": 16,
+        "gusset_in": 4,
+        "strap_drop_in": 11,
+        "pocket": "7 x 6 in"
+      },
+      "care": [
+        "machine wash cold, gentle cycle",
+        "line dry",
+        "press with a warm iron while slightly damp"
+      ],
+      "production_hours": 1.5,
+      "made_to_order": true,
+      "lead_time_days": [
+        3,
+        5
+      ]
+    },
+    "scenes": [
+      {
+        "label": "Cutting panels",
+        "start_sec": 0,
+        "end_sec": 62,
+        "what_happens": "Fabric laid on a cutting mat, body panels and strap strips cut with a rotary cutter and ruler."
+      },
+      {
+        "label": "Folding and stitching straps",
+        "start_sec": 62,
+        "end_sec": 130,
+        "what_happens": "Strap strips pressed into four folds and topstitched along both edges on the sewing machine."
+      },
+      {
+        "label": "Sewing the pocket",
+        "start_sec": 130,
+        "end_sec": 185,
+        "what_happens": "Pocket hem pressed and stitched, then the pocket is pinned and sewn onto the inside panel."
+      },
+      {
+        "label": "Assembling the body",
+        "start_sec": 185,
+        "end_sec": 262,
+        "what_happens": "Side and bottom seams sewn, corners boxed to make the 4-inch base, top edge folded and hemmed."
+      },
+      {
+        "label": "Attaching straps",
+        "start_sec": 262,
+        "end_sec": 318,
+        "what_happens": "Strap ends pinned inside the top hem and anchored with a box-and-cross stitch."
+      },
+      {
+        "label": "Pressing and finished bag",
+        "start_sec": 318,
+        "end_sec": 384,
+        "what_happens": "Bag turned right side out, pressed, held up by the straps, shown on the shoulder and hung on a peg."
+      }
+    ],
+    "frames": [
+      {
+        "role": "hero",
+        "timecode_sec": 372,
+        "score": 94,
+        "reason": "Finished tote hanging on a wooden peg against a white wall, soft window light from the left, straps and boxed base fully in frame and sharp."
+      },
+      {
+        "role": "in_hand",
+        "timecode_sec": 355,
+        "score": 88,
+        "reason": "Seller holds the bag open by both straps, interior pocket visible, even daylight and steady focus on the fabric weave."
+      },
+      {
+        "role": "detail",
+        "timecode_sec": 290,
+        "score": 85,
+        "reason": "Close-up of the box-and-cross stitch anchoring a strap, thread lines crisp, shallow depth of field blurs the background."
+      },
+      {
+        "role": "process",
+        "timecode_sec": 95,
+        "score": 81,
+        "reason": "Strap passing under the presser foot during topstitching, hands guiding the fabric, needle and stitch line in focus."
+      },
+      {
+        "role": "scale",
+        "timecode_sec": 378,
+        "score": 76,
+        "reason": "Tote worn on the shoulder from hip to underarm, showing the 11-inch strap drop against the body; slight motion softness."
+      }
+    ],
+    "listing": {
+      "title": "Linen Tote Bag with Interior Pocket | Reinforced Box Stitch Straps | Natural Oatmeal Market Bag | Gift for Her | Everyday Shoulder Tote",
+      "tags": [
+        "linen tote bag",
+        "natural linen tote",
+        "market bag",
+        "tote with pocket",
+        "reinforced straps",
+        "shoulder bag",
+        "gift for her",
+        "farmers market gift",
+        "handmade carryall",
+        "oatmeal linen",
+        "zero waste shopper",
+        "minimalist shopper",
+        "book lover gift"
+      ],
+      "description": "This is a linen tote bag I cut and sew one at a time in my home studio. It is roomy enough for a laptop, a library haul or a farmers market run, and the boxed bottom lets it stand on its own when you set it down. The straps are folded four times and topstitched, then anchored with a box-and-cross stitch, so they sit flat on your shoulder and do not pull loose under weight. Inside there is one patch pocket for keys and a phone.\n\nThe body is a medium-weight woven fabric in natural oatmeal with off-white topstitching. I buy it as linen, and I will confirm the exact fiber content with you before your order ships. The finished bag measures 15 inches wide, 16 inches tall and 4 inches deep at the base, with an 11-inch strap drop. The inside pocket is 7 by 6 inches. Wash it cold on a gentle cycle, line dry, and press with a warm iron while it is still slightly damp.\n\nEach tote is made to order. I need 3 to 5 business days to sew and press yours before it goes out, and it ships from my studio in Dubuque, Iowa.\n\nBecause every bag is cut and sewn by hand, small variations in the weave and stitching mean each one is slightly different.",
+      "price_cents": 4400,
+      "price_low_cents": 2800,
+      "price_high_cents": 6200,
+      "comparables_read": 38,
+      "cost_basis_cents": 2900,
+      "price_reasoning": "The 38 comparable sewn linen totes with pockets ran from $28 to $62, with reinforced-strap versions clustering between $40 and $50. At 1.5 production hours plus about $11 in fabric and thread, $44 covers the $29 cost basis and sits in the middle of that cluster."
+    },
+    "videos": [
+      {
+        "kind": "listing",
+        "platform": "etsy",
+        "hook_text": null,
+        "hook_rationale": null,
+        "duration_sec": 13,
+        "cuts": [
+          {
+            "in": 20,
+            "out": 24,
+            "caption": null
+          },
+          {
+            "in": 280,
+            "out": 284,
+            "caption": null
+          },
+          {
+            "in": 366,
+            "out": 371,
+            "caption": null
+          }
+        ]
+      },
+      {
+        "kind": "short",
+        "platform": "tiktok",
+        "hook_text": "1.5 hours at the machine. 25 seconds.",
+        "hook_rationale": "TikTok viewers stay for time-lapse payoff, so promising the whole build in under half a minute earns the first swipe-stop.",
+        "duration_sec": 25,
+        "cuts": [
+          {
+            "in": 8,
+            "out": 12,
+            "caption": "cutting the panels"
+          },
+          {
+            "in": 88,
+            "out": 92,
+            "caption": "straps folded four times"
+          },
+          {
+            "in": 150,
+            "out": 154,
+            "caption": "the inside pocket"
+          },
+          {
+            "in": 220,
+            "out": 224,
+            "caption": "boxing the corners"
+          },
+          {
+            "in": 290,
+            "out": 294,
+            "caption": "box-and-cross stitch"
+          },
+          {
+            "in": 360,
+            "out": 365,
+            "caption": "done"
+          }
+        ]
+      },
+      {
+        "kind": "short",
+        "platform": "reels",
+        "hook_text": "What goes into one $44 linen tote",
+        "hook_rationale": "Reels audiences save value-explainer content, and naming the price up front frames each step as part of what they pay for.",
+        "duration_sec": 21,
+        "cuts": [
+          {
+            "in": 30,
+            "out": 34,
+            "caption": "about 1 yard of fabric, cut by hand"
+          },
+          {
+            "in": 100,
+            "out": 104,
+            "caption": "straps folded 4x and topstitched"
+          },
+          {
+            "in": 165,
+            "out": 169,
+            "caption": "a 7 x 6 in inside pocket"
+          },
+          {
+            "in": 300,
+            "out": 304,
+            "caption": "box-and-cross stitch on each strap"
+          },
+          {
+            "in": 368,
+            "out": 373,
+            "caption": "1.5 hours, start to finish"
+          }
+        ]
+      },
+      {
+        "kind": "short",
+        "platform": "shorts",
+        "hook_text": "No talking. Just the sewing machine.",
+        "hook_rationale": "Shorts viewers loop quiet ASMR clips, and the steady hum of the machine carries the video without any captions.",
+        "duration_sec": 17,
+        "cuts": [
+          {
+            "in": 70,
+            "out": 74,
+            "caption": null
+          },
+          {
+            "in": 240,
+            "out": 244,
+            "caption": null
+          },
+          {
+            "in": 285,
+            "out": 289,
+            "caption": null
+          },
+          {
+            "in": 374,
+            "out": 379,
+            "caption": "linen tote, finished"
+          }
+        ]
+      }
+    ],
+    "localizations": [
+      {
+        "market": "GB",
+        "locale": "en-GB",
+        "currency": "GBP",
+        "price_cents": 4900,
+        "title": "Linen Tote Bag with Inside Pocket | Reinforced Box Stitch Straps | Natural Oatmeal Shopper | Birthday Gift for Her | Shoulder Bag",
+        "tags": [
+          "linen tote bag",
+          "natural linen tote",
+          "shopper bag",
+          "tote with pocket",
+          "reinforced straps",
+          "shoulder bag",
+          "gift for her",
+          "mothers day gift",
+          "handmade carryall",
+          "oatmeal linen",
+          "zero waste shopper",
+          "book lover gift",
+          "teacher thank you"
+        ],
+        "description": "This is a linen tote bag I cut and sew one at a time in my home studio. It is roomy enough for a laptop, a library haul or the weekly shop, and the boxed base lets it stand up on its own. The straps are folded four times and topstitched, then anchored with a box-and-cross stitch, so they lie flat on your shoulder and will not pull loose under weight. Inside there is one patch pocket for keys and a phone.\n\nThe body is a medium-weight woven fabric in natural oatmeal with off-white topstitching. I buy it as linen, and I will confirm the exact fibre content with you before your order is posted. The finished bag measures 38 cm wide, 40.5 cm tall and 10 cm deep at the base, with a 28 cm strap drop. The inside pocket is 18 by 15 cm. Wash cold on a gentle cycle, line dry, and press with a warm iron while still slightly damp.\n\nEach tote is made to order. I need 3 to 5 working days to sew and press yours, then it is posted from my studio in Dubuque, Iowa, USA.\n\nBecause every bag is cut and sewn by hand, small variations in the weave and stitching mean each one is slightly different."
+      },
+      {
+        "market": "DE",
+        "locale": "de-DE",
+        "currency": "EUR",
+        "price_cents": 6050,
+        "title": "Leinen-Tragetasche mit Innentasche | Verstärkte Henkel mit Kreuznaht | Natur Haferbeige | Geschenk für sie | Schultertasche für jeden Tag",
+        "tags": [
+          "leinen tragetasche",
+          "leinentasche",
+          "stofftasche natur",
+          "tasche mit innenfach",
+          "verstärkte henkel",
+          "schultertasche",
+          "geschenk für sie",
+          "muttertag geschenk",
+          "einkaufstasche",
+          "shopper leinen",
+          "nachhaltig einkaufen",
+          "handgenähte tasche",
+          "markttasche"
+        ],
+        "description": "Diese Leinen-Tragetasche schneide und nähe ich einzeln in meinem kleinen Atelier zu Hause. Sie bietet Platz für einen Laptop, einen Stapel Bücher oder den Wocheneinkauf, und dank des abgenähten Bodens steht sie von allein. Die Henkel sind viermal gefaltet und abgesteppt und mit einer Kästchen-Kreuznaht befestigt, damit sie flach auf der Schulter liegen und sich auch unter Last nicht lösen. Innen gibt es ein aufgesetztes Fach für Schlüssel und Handy.\n\nDer Taschenkörper ist aus einem mittelschweren Webstoff in Natur-Haferbeige mit cremeweißen Steppnähten. Ich kaufe den Stoff als Leinen ein; die genaue Faserzusammensetzung bestätige ich dir vor dem Versand. Die fertige Tasche misst 38 cm in der Breite, 40,5 cm in der Höhe und 10 cm in der Bodentiefe, die Henkel haben eine Fallhöhe von 28 cm. Das Innenfach misst 18 × 15 cm. Kalt im Schonwaschgang waschen, an der Leine trocknen und leicht feucht mit mittlerer Hitze bügeln.\n\nJede Tasche wird auf Bestellung gefertigt. Ich brauche 3 bis 5 Werktage zum Nähen und Bügeln, danach geht sie aus meinem Atelier in Dubuque, Iowa (USA) auf die Reise.\n\nDa jede Tasche von Hand zugeschnitten und genäht wird, sorgen kleine Unterschiede in Gewebe und Naht dafür, dass jedes Stück ein wenig anders ist."
+      },
+      {
+        "market": "AU",
+        "locale": "en-AU",
+        "currency": "AUD",
+        "price_cents": 10650,
+        "title": "Linen Tote Bag with Inside Pocket | Reinforced Box Stitch Straps | Natural Oatmeal Shopper | Christmas Gift for Her | Shoulder Bag",
+        "tags": [
+          "linen tote bag",
+          "natural linen tote",
+          "shopper bag",
+          "tote with pocket",
+          "reinforced straps",
+          "shoulder bag",
+          "gift for her",
+          "kris kringle gift",
+          "handmade carryall",
+          "oatmeal linen",
+          "zero waste shopper",
+          "secret santa gift",
+          "beach carryall"
+        ],
+        "description": "This is a linen tote bag I cut and sew one at a time in my home studio. It is roomy enough for a laptop, a library haul or a trip to the farmers' market, and the boxed base lets it stand up on its own. The straps are folded four times and topstitched, then anchored with a box-and-cross stitch, so they sit flat on your shoulder and won't pull loose under weight. Inside there is one patch pocket for keys and a phone.\n\nThe body is a medium-weight woven fabric in a natural oatmeal colour with off-white topstitching. I buy it as linen, and I will confirm the exact fibre content with you before your order is posted. The finished bag measures 38 cm wide, 40.5 cm tall and 10 cm deep at the base, with a 28 cm strap drop. The inside pocket is 18 by 15 cm. Wash cold on a gentle cycle, line dry, and iron on a warm setting while still slightly damp.\n\nEach tote is made to order. I need 3 to 5 business days to sew and press yours, then it is posted from my studio in Dubuque, Iowa, USA.\n\nBecause every bag is cut and sewn by hand, small variations in the weave and stitching mean each one is slightly different."
+      },
+      {
+        "market": "CA",
+        "locale": "fr-CA",
+        "currency": "CAD",
+        "price_cents": 8000,
+        "title": "Sac fourre-tout en lin avec poche intérieure | Anses renforcées cousues en croix | Lin naturel avoine | Cadeau pour elle | Sac d'épaule",
+        "tags": [
+          "sac fourre-tout lin",
+          "fourre-tout naturel",
+          "lin naturel",
+          "poche intérieure",
+          "anses renforcées",
+          "sac d'épaule",
+          "cadeau pour elle",
+          "fête des mères",
+          "sac fait main",
+          "lin avoine",
+          "zéro déchet",
+          "panier de marché",
+          "cadeau de noël"
+        ],
+        "description": "Ce sac fourre-tout en lin, je le taille et je le couds un à la fois dans mon atelier à la maison. Il est assez grand pour un portable, une pile de livres de la bibliothèque ou l'épicerie de la semaine, et son fond carré lui permet de tenir debout tout seul. Les anses sont pliées en quatre et surpiquées, puis fixées par une couture en carré et en croix : elles restent à plat sur l'épaule et ne lâchent pas sous le poids. À l'intérieur, une poche plaquée garde vos clés et votre téléphone.\n\nLe corps du sac est en tissu tissé de poids moyen, couleur avoine naturelle, avec des surpiqûres blanc cassé. J'achète ce tissu comme du lin et je vous confirmerai la composition exacte des fibres avant l'expédition. Le sac fini mesure 38 cm de large, 40,5 cm de haut et 10 cm de profondeur à la base, avec une hauteur d'anse de 28 cm. La poche intérieure mesure 18 × 15 cm. Lavez à l'eau froide au cycle délicat, séchez à l'air libre et repassez au fer tiède pendant que le tissu est encore légèrement humide.\n\nChaque sac est fait sur commande. Il me faut de 3 à 5 jours ouvrables pour le coudre et le repasser, puis il est expédié de mon atelier à Dubuque, en Iowa.\n\nComme chaque sac est taillé et cousu à la main, de petites variations dans le tissage et les coutures rendent chaque pièce légèrement différente."
+      }
+    ],
+    "social": {
+      "pin_title": "Linen Tote Bag with Inside Pocket, Sewn to Order",
+      "pin_caption": "An oatmeal linen tote with a boxed 4-inch base, an inside pocket and straps anchored with a box-and-cross stitch. Cut and sewn one at a time in Dubuque, Iowa.",
+      "carousel_caption": "From cutting mat to shoulder: one oatmeal linen tote, 1.5 hours of sewing, straps folded four times and box-stitched. #linentote #handmadebag #sewingstudio #toteBag #etsyseller"
+    },
+    "what_claude_did": [
+      {
+        "step": "watch_footage",
+        "summary": "watched 6 min 24 s of footage"
+      },
+      {
+        "step": "score_frames",
+        "summary": "scored 11,520 frames, kept 5"
+      },
+      {
+        "step": "extract_attributes",
+        "summary": "identified a linen tote bag — oatmeal woven fabric, box-stitched straps; 6 scenes"
+      },
+      {
+        "step": "research_comparables",
+        "summary": "read 38 comparable listings for price and tags"
+      },
+      {
+        "step": "write_listing",
+        "summary": "wrote the title, 13 tags and a 223-word description"
+      },
+      {
+        "step": "price",
+        "summary": "priced it at $44.00 against 38 comparables"
+      },
+      {
+        "step": "write_hooks",
+        "summary": "wrote 3 hooks: “1.5 hours at the machine. 25 seconds.”, “What goes into one $44 linen tote”, “No talking. Just the sewing machine.”"
+      },
+      {
+        "step": "cut_points",
+        "summary": "cut 4 videos with 3 hooks, 18 cuts"
+      },
+      {
+        "step": "localize",
+        "summary": "wrote about 1,350 words in 5 languages"
+      },
+      {
+        "step": "format_for_channel",
+        "summary": "formatted for 3 channels, wrote the pin"
+      }
+    ],
+    "build_seconds": 248,
+    "minutes_saved_est": 185
+  },
+  {
+    "slug": "sterling-stacking-rings",
+    "category": "sterling silver rings",
+    "product_title": "Hammered Sterling Silver Stacking Rings, Set of 3",
+    "image_queries": [
+      "hammered sterling silver stacking rings",
+      "silver ring on steel mandrel hammer",
+      "jeweler soldering silver ring torch",
+      "stacked silver rings on hand"
+    ],
+    "seller": {
+      "name": "Priya Natarajan",
+      "city": "Asheville",
+      "state": "NC",
+      "craft": "metalsmith"
+    },
+    "source": {
+      "video_name": "IMG_4471.MOV",
+      "duration_sec": 378,
+      "fps": 30,
+      "photos": 0
+    },
+    "attributes": {
+      "materials": [
+        "sterling silver round wire (seller will confirm .925 stamp)",
+        "silver solder (seller will confirm type)"
+      ],
+      "colors": [
+        "bright silver",
+        "hammered polished silver"
+      ],
+      "dimensions": {
+        "rings_per_set": 3,
+        "band_width_mm": 1.5,
+        "band_width_in": 0.06,
+        "ring_sizes_us": "4-10"
+      },
+      "care": [
+        "wipe with a polishing cloth",
+        "remove before swimming or cleaning",
+        "store in the included pouch"
+      ],
+      "production_hours": 2.5,
+      "made_to_order": true,
+      "lead_time_days": [
+        5,
+        8
+      ]
+    },
+    "scenes": [
+      {
+        "label": "Measuring wire",
+        "start_sec": 0,
+        "end_sec": 42,
+        "what_happens": "Priya lays round silver wire along a steel ruler and marks three lengths against a ring sizing chart."
+      },
+      {
+        "label": "Cutting",
+        "start_sec": 42,
+        "end_sec": 110,
+        "what_happens": "She cuts the three lengths with a jeweler's saw and files the ends flush."
+      },
+      {
+        "label": "Soldering",
+        "start_sec": 110,
+        "end_sec": 175,
+        "what_happens": "Each band is closed and soldered with a small torch on a soldering block, then quenched."
+      },
+      {
+        "label": "Rounding on mandrel",
+        "start_sec": 175,
+        "end_sec": 230,
+        "what_happens": "The bands are slid onto a steel mandrel and trued round with a rawhide mallet."
+      },
+      {
+        "label": "Hammering texture",
+        "start_sec": 230,
+        "end_sec": 285,
+        "what_happens": "Close-up of a texturing hammer striking each band on the mandrel, leaving small facets."
+      },
+      {
+        "label": "Sanding and polishing",
+        "start_sec": 285,
+        "end_sec": 340,
+        "what_happens": "She sands the inside smooth and polishes the outside with a cloth and polishing wheel."
+      },
+      {
+        "label": "Finished stack",
+        "start_sec": 340,
+        "end_sec": 378,
+        "what_happens": "The three rings are stacked on her finger, then set on a wooden block in window light."
+      }
+    ],
+    "frames": [
+      {
+        "role": "hero",
+        "timecode_sec": 368,
+        "score": 94,
+        "reason": "Three finished rings stacked on a wooden block, sharp focus on the hammered facets, soft window light, clean background."
+      },
+      {
+        "role": "in_hand",
+        "timecode_sec": 352,
+        "score": 88,
+        "reason": "The full stack worn on the index finger, hand relaxed, rings in focus, even daylight."
+      },
+      {
+        "role": "detail",
+        "timecode_sec": 262,
+        "score": 82,
+        "reason": "Macro of fresh hammer facets on one band on the mandrel, crisp texture, raking light."
+      },
+      {
+        "role": "process",
+        "timecode_sec": 142,
+        "score": 76,
+        "reason": "Torch flame on a band on the soldering block, clear subject, warm light from the flame."
+      },
+      {
+        "role": "scale",
+        "timecode_sec": 18,
+        "score": 70,
+        "reason": "Silver wire laid along a steel ruler, gauge and length readable, top-down framing."
+      }
+    ],
+    "listing": {
+      "title": "Hammered Sterling Silver Stacking Rings Set of 3 | Thin Textured Bands | Minimalist Stackable Rings | Gift for Her",
+      "tags": [
+        "hammered silver ring",
+        "stacking rings set",
+        "sterling stack rings",
+        "set of three bands",
+        "textured band ring",
+        "minimalist jewelry",
+        "thin silver bands",
+        "gift for her",
+        "handmade metalsmith",
+        "everyday jewelry",
+        "stackable bands",
+        "birthday gift idea",
+        "dainty hammered ring"
+      ],
+      "description": "These are three thin sterling silver stacking rings, each hammered by hand so the surface catches light in small facets. I made them to be worn together or split across fingers. They sit low and smooth on the inside, so they are easy to forget you have on while typing, cooking or sleeping. Stacked, they make a soft clink when you move your hand.\n\nEach band is cut from round sterling silver wire, soldered closed and shaped on a steel mandrel. The wire is about 1.5 mm thick, roughly 0.06 inches, and I size the bands to your US ring size from 4 to 10. I will confirm the .925 stamp and solder details in a message after you order. To care for them, wipe with a polishing cloth, take them off before swimming or cleaning, and store them in the pouch they ship in.\n\nEvery set is made to order at my bench. Please allow 5 to 8 business days before it ships, since I cut, solder and hammer each set after you choose your size. Your rings ship from Asheville, North Carolina, packed in a small cotton pouch inside a gift box, ready to hand over.\n\nBecause every band is hammered by hand, the facets on your set will differ slightly from the photos.",
+      "price_cents": 5800,
+      "price_low_cents": 3200,
+      "price_high_cents": 7800,
+      "comparables_read": 38,
+      "cost_basis_cents": 4400,
+      "price_reasoning": "38 comparable hammered sterling stacking sets sell between $32 and $78, with handmade, made-to-size sets clustering around $50 to $65. At 2.5 bench hours plus about $14 in silver, solder and packaging ($44 cost basis), $58 covers the labor and sits in the middle of that handmade cluster."
+    },
+    "videos": [
+      {
+        "kind": "listing",
+        "platform": "etsy",
+        "hook_text": null,
+        "hook_rationale": null,
+        "duration_sec": 13,
+        "cuts": [
+          {
+            "in": 240,
+            "out": 244,
+            "caption": null
+          },
+          {
+            "in": 300,
+            "out": 304,
+            "caption": null
+          },
+          {
+            "in": 362,
+            "out": 367,
+            "caption": null
+          }
+        ]
+      },
+      {
+        "kind": "short",
+        "platform": "tiktok",
+        "hook_text": "2.5 hours at the bench. 25 seconds.",
+        "hook_rationale": "TikTok rewards time-compressed process videos, and the promise of a full build in under half a minute keeps people watching to the finished stack.",
+        "duration_sec": 26,
+        "cuts": [
+          {
+            "in": 10,
+            "out": 13,
+            "caption": "measured to your ring size"
+          },
+          {
+            "in": 60,
+            "out": 63,
+            "caption": "three lengths of silver wire"
+          },
+          {
+            "in": 140,
+            "out": 144,
+            "caption": "soldered shut"
+          },
+          {
+            "in": 190,
+            "out": 194,
+            "caption": "rounded on a mandrel"
+          },
+          {
+            "in": 248,
+            "out": 252,
+            "caption": "hammered by hand"
+          },
+          {
+            "in": 310,
+            "out": 313,
+            "caption": "polished"
+          },
+          {
+            "in": 365,
+            "out": 370,
+            "caption": "ready to stack"
+          }
+        ]
+      },
+      {
+        "kind": "short",
+        "platform": "reels",
+        "hook_text": "What goes into one $58 ring stack",
+        "hook_rationale": "Reels viewers save and share price-transparency content, so naming the price up front turns the process into a reason to buy.",
+        "duration_sec": 21,
+        "cuts": [
+          {
+            "in": 15,
+            "out": 19,
+            "caption": "sterling silver wire, 3 bands"
+          },
+          {
+            "in": 120,
+            "out": 124,
+            "caption": "silver solder and a small torch"
+          },
+          {
+            "in": 236,
+            "out": 240,
+            "caption": "hand-hammered texture"
+          },
+          {
+            "in": 318,
+            "out": 322,
+            "caption": "2.5 hours of bench time"
+          },
+          {
+            "in": 348,
+            "out": 353,
+            "caption": "one set, made to your size"
+          }
+        ]
+      },
+      {
+        "kind": "short",
+        "platform": "shorts",
+        "hook_text": "No talking. Just a hammer and silver.",
+        "hook_rationale": "Shorts viewers loop satisfying sound-led clips, and the hammer strikes carry the video without any narration.",
+        "duration_sec": 17,
+        "cuts": [
+          {
+            "in": 150,
+            "out": 154,
+            "caption": null
+          },
+          {
+            "in": 255,
+            "out": 260,
+            "caption": null
+          },
+          {
+            "in": 325,
+            "out": 328,
+            "caption": null
+          },
+          {
+            "in": 370,
+            "out": 375,
+            "caption": "sterling stack, set of three"
+          }
+        ]
+      }
+    ],
+    "localizations": [
+      {
+        "market": "GB",
+        "locale": "en-GB",
+        "currency": "GBP",
+        "price_cents": 6000,
+        "title": "Hammered Sterling Silver Stacking Rings Set of 3 | Thin Textured Bands | Minimalist Stackable Rings | Birthday Gift for Her",
+        "tags": [
+          "hammered silver ring",
+          "stacking rings set",
+          "sterling stack rings",
+          "set of three bands",
+          "textured band ring",
+          "minimalist jewellery",
+          "thin silver bands",
+          "gift for her",
+          "handmade metalsmith",
+          "everyday jewellery",
+          "stackable bands",
+          "mothers day gift",
+          "dainty hammered ring"
+        ],
+        "description": "These are three thin sterling silver stacking rings, each hammered by hand so the surface catches the light in small facets. I made them to be worn together or split across fingers. They sit low and smooth on the inside, so they are easy to forget while typing, cooking or sleeping, and they make a soft clink when stacked.\n\nEach band is cut from round sterling silver wire, soldered closed and shaped on a steel mandrel. The wire is about 1.5 mm (0.15 cm) thick, and I make the bands in UK ring sizes H to U. I will confirm the .925 stamp and solder details in a message after you order. To care for them, wipe with a polishing cloth, take them off before swimming or cleaning, and keep them in the pouch they arrive in.\n\nEvery set is made to order at my bench. Please allow 5 to 8 working days before dispatch, as I cut, solder and hammer each set after you choose your size. Your rings are posted from Asheville, North Carolina, in a cotton pouch inside a gift box, ready for a birthday or Mother's Day.\n\nBecause every band is hammered by hand, the facets on your set will differ slightly from the photos."
+      },
+      {
+        "market": "DE",
+        "locale": "de-DE",
+        "currency": "EUR",
+        "price_cents": 7350,
+        "title": "Gehämmerte Stapelringe aus Sterlingsilber, 3er-Set | Schmale strukturierte Ringe | Minimalistische Ringe | Geschenk für sie",
+        "tags": [
+          "stapelringe silber",
+          "gehämmerter ring",
+          "sterlingsilber ring",
+          "ringe 3er set",
+          "schmale silberringe",
+          "minimalistisch",
+          "strukturierter ring",
+          "geschenk für sie",
+          "handarbeit schmuck",
+          "alltagsschmuck",
+          "stapelbare ringe",
+          "muttertagsgeschenk",
+          "geburtstagsgeschenk"
+        ],
+        "description": "Das sind drei schmale Stapelringe aus Sterlingsilber, jeder von Hand gehämmert, sodass die Oberfläche das Licht in kleinen Facetten einfängt. Ich habe sie so gemacht, dass du sie zusammen oder auf mehrere Finger verteilt tragen kannst. Innen sind sie glatt und flach, beim Tippen, Kochen oder Schlafen vergisst du sie schnell. Zusammen klingen sie leise, wenn du die Hand bewegst.\n\nJeder Ring wird aus rundem Sterlingsilberdraht geschnitten, verlötet und auf einem Stahldorn geformt. Der Draht ist etwa 1,5 mm stark, und ich fertige die Ringe in den Größen 47 bis 62 (Innenumfang in mm). Den 925er-Stempel und das Lot bestätige ich dir nach der Bestellung per Nachricht. Zur Pflege mit einem Poliertuch abwischen, vor dem Schwimmen oder Putzen abnehmen und im mitgelieferten Beutel aufbewahren.\n\nJedes Set wird nach Bestellung an meiner Werkbank gefertigt. Bitte rechne mit 5 bis 8 Werktagen bis zum Versand, da ich jedes Set erst nach deiner Größenwahl schneide, löte und hämmere. Die Ringe werden aus Asheville, North Carolina, verschickt, in einem Baumwollbeutel in einer Geschenkbox, bereit für Geburtstag, Muttertag oder Weihnachten.\n\nDa jeder Ring von Hand gehämmert ist, weichen die Facetten deines Sets leicht von den Fotos ab."
+      },
+      {
+        "market": "AU",
+        "locale": "en-AU",
+        "currency": "AUD",
+        "price_cents": 12750,
+        "title": "Hammered Sterling Silver Stacking Rings Set of 3 | Thin Textured Bands | Minimalist Stackable Rings | Christmas Gift for Her",
+        "tags": [
+          "hammered silver ring",
+          "stacking rings set",
+          "sterling stack rings",
+          "set of three bands",
+          "textured band ring",
+          "minimalist jewellery",
+          "thin silver bands",
+          "gift for her",
+          "handmade metalsmith",
+          "everyday jewellery",
+          "stackable bands",
+          "christmas gift idea",
+          "dainty hammered ring"
+        ],
+        "description": "These are three thin sterling silver stacking rings, each hammered by hand so the bright silver colour catches the light in small facets. I made them to be worn together or split across fingers. They sit low and smooth on the inside, so they are easy to forget while typing, cooking or sleeping, and they could become your favourite everyday stack.\n\nEach band is cut from round sterling silver wire, soldered closed and shaped on a steel mandrel. The wire is about 1.5 mm (0.15 cm) thick, and I make the bands in Australian ring sizes H to U. I will confirm the .925 stamp and solder details in a message after you order. To care for them, wipe with a polishing cloth, take them off before swimming or cleaning, and keep them in the pouch they arrive in.\n\nEvery set is made to order at my bench. Please allow 5 to 8 business days before dispatch, as I cut, solder and hammer each set after you choose your size. Your rings are posted from Asheville, North Carolina, in a cotton pouch inside a gift box, ready for a birthday, Mother's Day or Christmas.\n\nBecause every band is hammered by hand, the facets on your set will differ slightly from the photos."
+      },
+      {
+        "market": "CA",
+        "locale": "fr-CA",
+        "currency": "CAD",
+        "price_cents": 9950,
+        "title": "Bagues empilables en argent sterling martelé, ensemble de 3 | Anneaux fins texturés | Bagues minimalistes | Cadeau pour elle",
+        "tags": [
+          "bague argent martelé",
+          "bagues empilables",
+          "argent sterling",
+          "ensemble de 3 bagues",
+          "anneaux fins",
+          "bague texturée",
+          "bijou minimaliste",
+          "cadeau pour elle",
+          "bijou fait main",
+          "bijou au quotidien",
+          "anneaux empilables",
+          "fête des mères",
+          "idée cadeau noël"
+        ],
+        "description": "Voici trois bagues empilables fines en argent sterling, chacune martelée à la main pour que la surface capte la lumière en petites facettes. Je les ai conçues pour être portées ensemble ou réparties sur plusieurs doigts. Elles sont basses et lisses à l'intérieur, on les oublie vite en tapant au clavier, en cuisinant ou en dormant, et elles tintent doucement quand on bouge la main.\n\nChaque anneau est coupé dans un fil d'argent sterling rond, soudé puis formé sur un mandrin en acier. Le fil fait environ 1,5 mm d'épaisseur, et je fabrique les bagues dans les tailles américaines 4 à 10, utilisées au Canada. Je vous confirmerai le poinçon .925 et le type de soudure par message après votre commande. Pour l'entretien, essuyez-les avec un chiffon de polissage, retirez-les avant la baignade ou le ménage, et rangez-les dans la pochette fournie.\n\nChaque ensemble est fabriqué sur commande à mon établi. Prévoyez de 5 à 8 jours ouvrables avant l'expédition, puisque je coupe, soude et martèle chaque ensemble une fois votre taille choisie. Vos bagues sont expédiées d'Asheville, en Caroline du Nord, dans une pochette en coton et une boîte-cadeau, prêtes pour un anniversaire, la fête des Mères ou Noël.\n\nComme chaque anneau est martelé à la main, les facettes de votre ensemble varieront légèrement par rapport aux photos."
+      }
+    ],
+    "social": {
+      "pin_title": "Hammered sterling silver stacking rings, set of three",
+      "pin_caption": "Three thin sterling bands, cut, soldered and hammered by hand in Asheville, NC, and made to your ring size. Wear them stacked or split across fingers.",
+      "carousel_caption": "From silver wire to a set of three: measured, soldered, hammered and polished in about 2.5 hours at my bench. #stackingrings #sterlingsilver #metalsmith #handmadejewelry #hammeredrings"
+    },
+    "what_claude_did": [
+      {
+        "step": "watch_footage",
+        "summary": "watched 6 min 18 s of footage"
+      },
+      {
+        "step": "score_frames",
+        "summary": "scored 11,340 frames, kept 5"
+      },
+      {
+        "step": "extract_attributes",
+        "summary": "identified sterling silver stacking rings — round wire, hammered finish; 7 scenes"
+      },
+      {
+        "step": "research_comparables",
+        "summary": "read 38 comparable listings for price and tags"
+      },
+      {
+        "step": "write_listing",
+        "summary": "wrote the title, 13 tags and a 216-word description"
+      },
+      {
+        "step": "price",
+        "summary": "priced it at $58.00 against 38 comparables"
+      },
+      {
+        "step": "write_hooks",
+        "summary": "wrote 3 hooks: “2.5 hours at the bench. 25 seconds.”, “What goes into one $58 ring stack”, “No talking. Just a hammer and silver.”"
+      },
+      {
+        "step": "cut_points",
+        "summary": "cut 4 videos with 3 hooks, 19 cuts"
+      },
+      {
+        "step": "localize",
+        "summary": "wrote about 1,150 words in 5 languages"
+      },
+      {
+        "step": "format_for_channel",
+        "summary": "formatted for 3 channels, wrote the pin and a 5-hashtag carousel caption"
+      }
+    ],
+    "build_seconds": 246,
+    "minutes_saved_est": 185
+  }
+]
